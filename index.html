@@ -75,11 +75,11 @@
     letter-spacing:-.01em; margin:0 0 6px;
   }
   .item p{margin:0 0 6px; color:var(--soft-ink);}
+  .item em, .practice em{font-style:italic; color:var(--ink);}
   .source a{
     font-family:var(--mono); font-size:11px; letter-spacing:.06em; text-transform:uppercase;
     color:var(--accent); text-decoration:none; border-bottom:1px solid transparent;
   }
-  /* all source links open in a new tab — see target/rel on each anchor below */
   .source a:hover{border-bottom-color:var(--accent);}
   .source a::before{content:"↗ ";}
 
@@ -94,6 +94,7 @@
   }
   .practice p{margin:0; font-size:16.5px; line-height:1.55; color:var(--soft-ink);}
   .practice strong{color:var(--ink);}
+  .practice .source{margin-top:8px;}
 
   /* Footer */
   .foot{
@@ -109,7 +110,7 @@
 
   <header class="masthead">
     <div class="rule-top"></div>
-    <div class="kicker-top">Aggregated Morning Brief · No. 001</div>
+    <div class="kicker-top">Aggregated Morning Brief · No. 002</div>
     <h1>DC Daily Brief</h1>
     <p class="tagline">Data center, AI, networking, and the craft of project management — everything worth knowing, in one read.</p>
     <div class="dateline">
@@ -118,146 +119,55 @@
     </div>
   </header>
 
-  <!-- 01 -->
   <section class="section">
     <div class="section-head"><span class="section-num">01</span><span class="section-title">Equinix</span></div>
-    <div class="item">
-      <h3>Equinix, Cisco &amp; NVIDIA launch "Secure AI Factories" across the global footprint</h3>
-      <p>Announced July 1, the program packages pre-integrated, security-hardened AI infrastructure into Equinix colo, pushing the interconnect model deeper into enterprise AI. It reframes Equinix as core AI infrastructure rather than a cloud on-ramp — relevant context for xScale/SV12X capacity conversations.</p>
-      <div class="source"><a target="_blank" rel="noopener" href="https://newsroom.equinix.com/">Equinix Newsroom</a></div>
-    </div>
-    <div class="item">
-      <h3>Equinix raises 2026 revenue outlook; new capacity coming online</h3>
-      <p>Strong AI/cloud demand drove an outlook raise, with new facilities landing this year including Paris PA12x (xScale), Madrid MD5, and Lagos LG3. Q2 earnings call is July 29 — watch for xScale build commentary.</p>
-      <div class="source"><a target="_blank" rel="noopener" href="https://www.equinix.com/data-centers/expansions">Equinix Expansions</a></div>
-    </div>
-    <div class="practice">
-      <span class="label">In Practice · Interconnection is the moat</span>
-      <p>Equinix makes much of its margin not from space and power but from <strong>cross-connects</strong> — the links tenants buy to reach each other and the clouds. Every new tenant makes the campus more valuable to the next (a network effect), which is why "interconnection revenue" is the metric analysts watch, and why xScale sits next to the dense interconnect hubs.</p>
-    </div>
+    <div class="item"><h3>Equinix, Cisco &amp; NVIDIA launch "Secure AI Factories" across the global footprint</h3><p>Announced July 1, the program packages pre-integrated, security-hardened AI infrastructure into Equinix colo, pushing the interconnect model deeper into enterprise AI. It reframes Equinix as core AI infrastructure rather than a cloud on-ramp — relevant context for xScale/SV12X capacity conversations.</p><div class="source"><a target="_blank" rel="noopener" href="https://newsroom.equinix.com/">Equinix Newsroom</a></div></div>
+    <div class="item"><h3>Equinix raises 2026 revenue outlook; new capacity coming online</h3><p>Strong AI/cloud demand drove an outlook raise, with new facilities landing this year including Paris PA12x (xScale), Madrid MD5, and Lagos LG3. Q2 earnings call is July 29 — watch for xScale build commentary.</p><div class="source"><a target="_blank" rel="noopener" href="https://www.equinix.com/data-centers/expansions">Equinix Expansions</a></div></div>
+    <div class="practice"><span class="label">In Practice · Interconnection is the moat</span><p>Equinix makes much of its margin not from space and power but from <em>cross-connects</em> — the physical/virtual links tenants buy to reach each other and the clouds. Every new tenant makes the campus more valuable to the next (a network effect), which is why "interconnection revenue" is the metric analysts watch, and why xScale sits <em>next to</em> the dense interconnect hubs rather than in isolation.</p></div>
   </section>
-
-  <!-- 02 -->
   <section class="section">
     <div class="section-head"><span class="section-num">02</span><span class="section-title">Competitors</span></div>
-    <div class="item">
-      <h3>Digital Realty locks 1,440 acres in Kansas City + a 600MW power deal scaling to 2GW</h3>
-      <p>Utility power is contracted through early 2028, showing rivals racing to secure grid capacity years ahead of construction. Locking interconnect and power early is becoming the real competitive moat — a dynamic your ops/power background reads better than most.</p>
-      <div class="source"><a target="_blank" rel="noopener" href="https://www.datacenterknowledge.com/data-center-construction/new-data-center-developments-july-2026">Data Center Knowledge</a></div>
-    </div>
-    <div class="item">
-      <h3>CoreWeave stacks AI leases — 250MW + another 150MW with Applied Digital in North Dakota</h3>
-      <p>The GPU-cloud operator keeps signing massive high-density capacity outside the legacy colo playbook. It signals how fast AI-native "neoclouds" are moving, and where pricing pressure on traditional colo comes from.</p>
-      <div class="source"><a target="_blank" rel="noopener" href="https://ir.applieddigital.com/news-events/press-releases/detail/123/applied-digital-announces-250mw-ai-data-center-lease-with">Applied Digital</a></div>
-    </div>
-    <div class="practice">
-      <span class="label">In Practice · Colo vs. hyperscale vs. neocloud</span>
-      <p><strong>Colo</strong> (Equinix, Digital Realty) leases space/power and sells interconnection; <strong>hyperscalers</strong> (AWS/Azure/Google) build their own halls to run their own cloud; <strong>neoclouds</strong> (CoreWeave) are new GPU-only clouds that often rent capacity and resell it as AI compute. Knowing which model a player uses tells you how they compete — on network density, scale, or GPU availability.</p>
-    </div>
+    <div class="item"><h3>Digital Realty locks 1,440 acres in Kansas City + a 600MW power deal scaling to 2GW</h3><p>Utility power is contracted through early 2028, showing rivals racing to secure grid capacity years ahead of construction. Locking interconnect and power early is becoming the real competitive moat — a dynamic your ops/power background reads better than most.</p><div class="source"><a target="_blank" rel="noopener" href="https://www.datacenterknowledge.com/data-center-construction/new-data-center-developments-july-2026">Data Center Knowledge</a></div></div>
+    <div class="item"><h3>CoreWeave stacks AI leases — 250MW + another 150MW with Applied Digital in North Dakota</h3><p>The GPU-cloud operator keeps signing massive high-density capacity outside the legacy colo playbook. It signals how fast AI-native "neoclouds" are moving, and where pricing pressure on traditional colo comes from.</p><div class="source"><a target="_blank" rel="noopener" href="https://ir.applieddigital.com/news-events/press-releases/detail/123/applied-digital-announces-250mw-ai-data-center-lease-with">Applied Digital</a></div></div>
+    <div class="practice"><span class="label">In Practice · Colo vs. hyperscale vs. neocloud</span><p><em>Colo</em> (Equinix, Digital Realty) leases space/power and sells interconnection; <em>hyperscalers</em> (AWS/Azure/Google) build their own halls to run their own cloud; <em>neoclouds</em> (CoreWeave) are new GPU-only clouds that often <em>rent</em> capacity from others and resell it as AI compute. Knowing which model a player uses tells you how they compete — on network density, on scale, or on GPU availability.</p></div>
   </section>
-
-  <!-- 03 -->
   <section class="section">
     <div class="section-head"><span class="section-num">03</span><span class="section-title">DC Infrastructure</span></div>
-    <div class="item">
-      <h3>NVIDIA unveils liquid cooling that runs "hotter than a hot tub," cutting water use up to 100%</h3>
-      <p>Warmer coolant lets data centers shed water-hungry chillers, a direct answer to AI's mounting water/PUE scrutiny. Sustainability caveats remain, but it's where direct-to-chip is heading — squarely your liquid-to-chip wheelhouse.</p>
-      <div class="source"><a target="_blank" rel="noopener" href="https://www.tomshardware.com/tech-industry/data-centers/nvidia-announces-liquid-cooling-system-that-runs-hotter-than-a-hot-tub-promises-to-reduce-electricity-consumption-and-cut-water-use-by-up-to-100-percent-but-sustainability-challenges-remain">Tom's Hardware</a></div>
-    </div>
-    <div class="item">
-      <h3>Liquid cooling on track to double air-cooled capacity by end of 2026</h3>
-      <p>Direct-to-chip is now default for high-density builds (Rittal showed a 1MW unit supporting ~250kW/rack), and skidded modular 2MW cooling units are becoming standard kit. Air cooling is now the exception for AI halls.</p>
-      <div class="source"><a target="_blank" rel="noopener" href="https://www.techrepublic.com/article/news-ai-data-center-power-cooling-infrastructure-dcw/">TechRepublic</a></div>
-    </div>
-    <div class="practice">
-      <span class="label">In Practice · PUE, quickly</span>
-      <p>Power Usage Effectiveness = total facility power ÷ IT power. A PUE of 1.5 means 50% overhead (cooling, losses) on top of the compute; 1.1 is elite. Liquid cooling wins partly because it slashes the cooling share of that overhead — so when a vendor touts water/energy savings, translate it to "lower PUE" to compare apples to apples.</p>
-    </div>
+    <div class="item"><h3>NVIDIA unveils liquid cooling that runs "hotter than a hot tub," cutting water use up to 100%</h3><p>Warmer coolant lets data centers shed water-hungry chillers, a direct answer to AI's mounting water/PUE scrutiny. Sustainability caveats remain, but it's where direct-to-chip is heading — squarely your liquid-to-chip wheelhouse.</p><div class="source"><a target="_blank" rel="noopener" href="https://www.tomshardware.com/tech-industry/data-centers/nvidia-announces-liquid-cooling-system-that-runs-hotter-than-a-hot-tub-promises-to-reduce-electricity-consumption-and-cut-water-use-by-up-to-100-percent-but-sustainability-challenges-remain">Tom's Hardware</a></div></div>
+    <div class="item"><h3>Liquid cooling on track to double air-cooled capacity by end of 2026</h3><p>Direct-to-chip is now default for high-density builds (Rittal showed a 1MW unit supporting ~250kW/rack), and skidded modular 2MW cooling units are becoming standard kit. Air cooling is now the exception for AI halls.</p><div class="source"><a target="_blank" rel="noopener" href="https://www.techrepublic.com/article/news-ai-data-center-power-cooling-infrastructure-dcw/">TechRepublic</a></div></div>
+    <div class="practice"><span class="label">In Practice · PUE, quickly</span><p>Power Usage Effectiveness = total facility power ÷ IT power. A PUE of 1.5 means 50% overhead (cooling, losses) on top of the compute; 1.1 is elite. Liquid cooling wins partly because it slashes the cooling share of that overhead — so when a vendor touts water/energy savings, translate it to "lower PUE" to compare apples to apples.</p></div>
   </section>
-
-  <!-- 04 -->
   <section class="section">
     <div class="section-head"><span class="section-num">04</span><span class="section-title">AI &amp; Compute Demand</span></div>
-    <div class="item">
-      <h3>Power, not chips, is the binding constraint — US data center demand jumped from 23GW (2023) to 42GW (2026)</h3>
-      <p>The DOE projects data centers could hit ~12% of US electricity by 2028, and AI racks now pull 50–100kW vs 5–10kW for legacy. Natural gas is emerging as the near-term bridge while grid interconnects lag. Your critical-power depth is exactly the scarce skill this shortage rewards.</p>
-      <div class="source"><a target="_blank" rel="noopener" href="https://www.techrepublic.com/article/news-ai-data-center-power-cooling-infrastructure-dcw/">TechRepublic</a></div>
-    </div>
-    <div class="practice">
-      <span class="label">In Practice · Reading demand in megawatts</span>
-      <p>The industry now measures AI capacity in MW of IT load, not square feet. Rough intuition: 1MW powers on the order of ~500–1,000 modern GPUs once you include cooling and overhead — so a "250MW lease" is a genuinely huge cluster. When you see deal sizes in MW, convert to "how many GPUs and how much grid" to gauge scale.</p>
-    </div>
+    <div class="item"><h3>Power, not chips, is the binding constraint — US data center demand jumped from 23GW (2023) to 42GW (2026)</h3><p>The DOE projects data centers could hit ~12% of US electricity by 2028, and AI racks now pull 50–100kW vs 5–10kW for legacy. Natural gas is emerging as the near-term bridge while grid interconnects lag. Your critical-power depth is exactly the scarce skill this shortage rewards.</p><div class="source"><a target="_blank" rel="noopener" href="https://www.techrepublic.com/article/news-ai-data-center-power-cooling-infrastructure-dcw/">TechRepublic</a></div></div>
+    <div class="practice"><span class="label">In Practice · Reading demand in megawatts</span><p>The industry now measures AI capacity in MW of IT load, not square feet. Rough intuition: 1MW powers on the order of ~500–1,000 modern GPUs once you include cooling and overhead — so a "250MW lease" is a genuinely huge compute cluster. When you see deal sizes in MW, mentally convert to "how many GPUs and how much grid" to gauge scale.</p></div>
   </section>
-
-  <!-- 05 -->
   <section class="section">
     <div class="section-head"><span class="section-num">05</span><span class="section-title">New AI Models &amp; Releases</span></div>
-    <div class="item">
-      <h3>OpenAI ships GPT-5.6 to general availability (default in ChatGPT since July 9)</h3>
-      <p>The GPT-5.6 family exited a two-week gated preview and is now the default. Faster reasoning and coding gains — relevant because these releases are what drive the compute demand filling your industry's data halls.</p>
-      <div class="source"><a target="_blank" rel="noopener" href="https://llm-stats.com/llm-updates">LLM Stats</a></div>
-    </div>
-    <div class="item">
-      <h3>Frontier race stays frantic: Claude Fable 5 retakes the coding crown; Grok 4.5 and Gemini 3.5 Pro land in July</h3>
-      <p>New frontier models now arrive roughly every three days. The cadence matters because each capable release pulls forward more GPU, power, and cooling demand across the buildout pipeline.</p>
-      <div class="source"><a target="_blank" rel="noopener" href="https://llm-stats.com/ai-news">LLM Stats — AI News</a></div>
-    </div>
-    <div class="practice">
-      <span class="label">In Practice · What "SWE-Bench" measures</span>
-      <p>SWE-Bench (and the harder SWE-Bench Pro) tests whether a model can resolve <strong>real</strong> GitHub issues in real codebases — not trivia. A score like 80.3% means it fixed ~4 of 5 tasks. It's a better signal than generic "IQ" benchmarks for coding usefulness, so when labs quote it, they're claiming practical software-engineering ability.</p>
-    </div>
+    <div class="item"><h3>OpenAI ships GPT-5.6 to general availability (default in ChatGPT since July 9)</h3><p>The GPT-5.6 family exited a two-week gated preview and is now the default. Faster reasoning and coding gains — relevant because these releases are what drive the compute demand filling your industry's data halls.</p><div class="source"><a target="_blank" rel="noopener" href="https://llm-stats.com/llm-updates">LLM Stats</a></div></div>
+    <div class="item"><h3>Frontier race stays frantic: Anthropic's Claude Fable 5 retakes the coding crown (80.3% SWE-Bench Pro); Grok 4.5 and Gemini 3.5 Pro land in July</h3><p>New frontier models now arrive roughly every three days. The cadence matters because each capable release pulls forward more GPU, power, and cooling demand across the buildout pipeline.</p><div class="source"><a target="_blank" rel="noopener" href="https://llm-stats.com/ai-news">LLM Stats – AI News</a></div></div>
+    <div class="practice"><span class="label">In Practice · What "SWE-Bench" measures</span><p>SWE-Bench (and the harder SWE-Bench Pro) tests whether a model can resolve <em>real</em> GitHub issues in real codebases — not trivia. A score like 80.3% means it fixed ~4 of 5 tasks. It's a better signal than generic "IQ" benchmarks for coding usefulness, so when labs quote it, they're claiming practical software-engineering ability.</p></div>
   </section>
-
-  <!-- 06 -->
   <section class="section">
     <div class="section-head"><span class="section-num">06</span><span class="section-title">Networking</span></div>
-    <div class="item">
-      <h3>Cisco unveils 102.4Tbps N9100 and 800G switches for AI fabrics</h3>
-      <p>Cisco's new switches, co-engineered with NVIDIA, target ultra-low-latency AI training backends; 400G is now "entry-level" and 800G a mandatory requirement. CEO Chuck Robbins said AI will triple networking traffic within three years — a supercycle for data center networking.</p>
-      <div class="source"><a target="_blank" rel="noopener" href="https://www.networkworld.com/article/4080722/cisco-nvidia-strengthen-ai-ties-with-new-data-center-switch-reference-architectures.html">Network World</a></div>
-    </div>
-    <div class="practice">
-      <span class="label">In Practice · Spine-leaf (Clos) fabric</span>
-      <p>AI clusters ditched the old three-tier network for a flat <strong>spine-leaf</strong> design: every "leaf" (rack) switch connects to every "spine" switch, so any server is a predictable two hops from any other — critical when thousands of GPUs exchange gradients in lockstep. It's why AI backends need lossless, high-radix 800G Ethernet: one congested link stalls the whole training job.</p>
-    </div>
+    <div class="item"><h3>Cisco unveils 102.4Tbps N9100 (NVIDIA Spectrum-6) and 800G switches for AI fabrics</h3><p>Cisco's new switches, co-engineered with NVIDIA, target ultra-low-latency AI training backends; 400G is now "entry-level" and 800G a mandatory requirement. CEO Chuck Robbins said AI will <em>triple</em> networking traffic within three years — a supercycle for data center networking.</p><div class="source"><a target="_blank" rel="noopener" href="https://www.networkworld.com/article/4080722/cisco-nvidia-strengthen-ai-ties-with-new-data-center-switch-reference-architectures.html">Network World</a></div></div>
+    <div class="practice"><span class="label">In Practice · Spine-leaf (Clos) fabric</span><p>AI clusters ditched the old three-tier network for a flat <em>spine-leaf</em> design: every "leaf" (rack) switch connects to every "spine" switch, so any server is a predictable two hops from any other — critical when thousands of GPUs must exchange gradients in lockstep. It's why AI backends need lossless, high-radix 800G Ethernet: one slow or congested link stalls the whole training job.</p><div class="source"><a target="_blank" rel="noopener" href="https://blogs.cisco.com/networking">Cisco Blogs</a></div></div>
   </section>
-
-  <!-- 07 -->
   <section class="section">
-    <div class="section-head"><span class="section-num">07</span><span class="section-title">Backend · Cloud &amp; Data</span></div>
-    <div class="item">
-      <h3>Kubernetes plateaus at ~68% of production workloads as teams split to serverless</h3>
-      <p>Adoption dipped from its 2024 peak as workloads move to serverless container platforms (AWS Fargate, Google Cloud Run, Azure Container Apps); Amazon EKS now lets you reverse a cluster upgrade within 7 days. Meanwhile Red Hat found 45% of Kubernetes incidents stem from misconfiguration.</p>
-      <div class="source"><a target="_blank" rel="noopener" href="https://www.cncf.io/blog/2026/07/03/how-data-sovereignty-is-changing-cloud-native-infrastructure-design/">CNCF</a></div>
-    </div>
-    <div class="practice">
-      <span class="label">In Practice · The shared responsibility model</span>
-      <p>Gartner projects 99% of cloud security failures through 2026 are the <strong>customer's</strong> fault — almost always misconfiguration. The provider secures the infrastructure ("security of the cloud"); you secure what you put in it — IAM, network rules, data ("security in the cloud"). Most breaches aren't clever hacks; they're an exposed storage bucket or an over-permissive role.</p>
-    </div>
+    <div class="section-head"><span class="section-num">07</span><span class="section-title">Backend / Cloud &amp; Data</span></div>
+    <div class="item"><h3>Kubernetes plateaus at ~68% of production workloads as teams split to serverless</h3><p>Adoption dipped from its 2024 peak as workloads move to serverless container platforms (AWS Fargate, Google Cloud Run, Azure Container Apps); Amazon EKS now lets you <em>reverse</em> a cluster upgrade within 7 days. Meanwhile Red Hat found 45% of Kubernetes incidents stem from misconfiguration.</p><div class="source"><a target="_blank" rel="noopener" href="https://www.cncf.io/blog/2026/07/03/how-data-sovereignty-is-changing-cloud-native-infrastructure-design/">CNCF</a></div></div>
+    <div class="practice"><span class="label">In Practice · The shared responsibility model</span><p>Gartner projects 99% of cloud security failures through 2026 are the <em>customer's</em> fault — almost always misconfiguration. The cloud provider secures the infrastructure ("security <em>of</em> the cloud"); you secure what you put in it — IAM, network rules, data ("security <em>in</em> the cloud"). Most breaches aren't clever hacks; they're an exposed storage bucket or an over-permissive role.</p></div>
   </section>
-
-  <!-- 08 -->
   <section class="section">
     <div class="section-head"><span class="section-num">08</span><span class="section-title">Program &amp; PM</span></div>
-    <div class="item">
-      <h3>The updated PMP exam launches this month (July 2026): AI, sustainability, and stakeholder engagement become core content</h3>
-      <p>PMI refreshed the exam to reflect where the profession is heading, folding AI fluency and sustainability into the ECO. Good news for your prep: it confirms the domains your Study panel is built around are current.</p>
-      <div class="source"><a target="_blank" rel="noopener" href="https://www.pmi.org/whats-next">PMI — What's Next</a></div>
-    </div>
-    <div class="item">
-      <h3>PMI Agile 2026 runs July 26–28 — theme is "enterprise agility in an AI-shaped world"</h3>
-      <p>Sessions push past team-level agile toward enterprise agility, anchored by a new Manifesto for Enterprise Agility that centers human judgment as AI scales. A useful lens as you move from executing work to shaping how programs run.</p>
-      <div class="source"><a target="_blank" rel="noopener" href="https://events.pmi.org/flow/pmi/pmiagile26/landing/page/home">PMI Agile 2026</a></div>
-    </div>
-    <div class="practice">
-      <span class="label">In Practice · Risk vs. Issue</span>
-      <p>A <strong>risk</strong> might happen (future, uncertain — manage with a mitigation/response plan); an <strong>issue</strong> is happening now (certain — manage with a corrective action and an owner). Sloppy PMs call everything a "risk," hiding problems that need action today. In status updates, split them: "Top risks (watching)" vs. "Open issues (acting)" — it signals control and maps straight to the PMP's Process and People domains.</p>
-    </div>
+    <div class="item"><h3>The updated PMP exam launches this month (July 2026): AI, sustainability, and stakeholder engagement become core content</h3><p>PMI refreshed the exam to reflect where the profession is heading, folding AI fluency and sustainability into the ECO. Good news for your prep: it confirms the domains your Study panel is built around are current.</p><div class="source"><a target="_blank" rel="noopener" href="https://www.pmi.org/whats-next">PMI – What's Next</a></div></div>
+    <div class="item"><h3>PMI Agile 2026 runs July 26–28 — theme is "enterprise agility in an AI-shaped world"</h3><p>Sessions push past team-level agile toward enterprise agility, anchored by a new Manifesto for Enterprise Agility that centers human judgment as AI scales. A useful lens as you move from executing work to shaping how programs run.</p><div class="source"><a target="_blank" rel="noopener" href="https://events.pmi.org/flow/pmi/pmiagile26/landing/page/home">PMI Agile 2026</a></div></div>
+    <div class="practice"><span class="label">In Practice · Risk vs. Issue</span><p>A <em>risk</em> might happen (future, uncertain — manage with a mitigation/response plan); an <em>issue</em> is happening now (certain — manage with a corrective action and an owner). Sloppy PMs call everything a "risk," hiding problems that need action today. In status updates, split them: "Top risks (watching)" vs. "Open issues (acting)" — it signals control and maps straight to the PMP's Process and People domains.</p></div>
   </section>
 
   <footer class="foot">
     <div class="big">DC Daily Brief</div>
-    Covers news through July 10–13, 2026 · Compiled automatically each morning<br>
+    Covers news through July 10–13, 2026. Now with Networking + Backend sections and an "In Practice" learning bite in every section. · Compiled automatically each morning<br>
     Want to go deeper on any item? Just ask.
   </footer>
 
