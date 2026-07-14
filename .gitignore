@@ -1,0 +1,21 @@
+# macOS
+.DS_Store
+.AppleDouble
+Icon?
+._*
+
+# Editor / IDE
+.vscode/
+.idea/
+*.swp
+
+# Logs / temp
+*.log
+tmp/
+.cache/
+
+# Node (only if tooling is added later)
+node_modules/
+dist/
+
+# Never put this repo in iCloud/OneDrive — see CLAUDE.md
