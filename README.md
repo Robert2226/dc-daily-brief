@@ -5,7 +5,7 @@ data center industry, AI/compute, networking, backend/cloud, and the craft of
 project management. Built so I read *one* well-designed brief each morning instead of
 scanning a dozen sites, and learn something in every section.
 
-**Live site:** _(GitHub Pages URL — added once Pages is enabled)_
+**Live site:** https://robert2226.github.io/dc-daily-brief/
 
 ## What it is
 - A **no-backend static site** (`index.html`) styled as an editorial newsletter.
