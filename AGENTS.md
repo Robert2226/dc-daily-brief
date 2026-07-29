@@ -41,13 +41,15 @@ topic daily so it compounds). All source links open in a new tab.
   Data Centers latest news (`https://datacenters.google/discover-more/latest-news/`),
   and the Google Cloud Blog latest-news page
   (`https://cloud.google.com/blog/topics/inside-google-cloud/whats-new-google-cloud`).
-  Also check independent reporting such as Reuters and Data Center Dynamics.
+  Also check independent reporting such as Reuters and Data Center Dynamics so the
+  section is not limited to Google's framing.
 - Cover Google corporate infrastructure, Google Cloud/GCP, data centers, power and
   cooling, TPU/AI infrastructure, outages, partnerships, regions, and material platform
   releases.
 - Keep pure Gemini model launches in `New AI Models & Releases`; use `Google` when the
   important angle is GCP deployment, infrastructure, operations, or business impact.
-- Do not repeat the same Google story in another section.
+- Do not repeat the same Google story under `Competitors`, `AI & Compute Demand`, `New
+  AI Models & Releases`, or `Backend / Cloud & Data`.
 
 ## Design system (editorial newsletter)
 - **Layout:** single centered column, ~760px, newspaper masthead + dateline + numbered
@@ -61,11 +63,11 @@ topic daily so it compounds). All source links open in a new tab.
 - Reuse the CSS variables already defined in `index.html`; don't hardcode new hex values.
 
 ## How it's generated
-The user starts the workflow in Codex by asking to run today's brief. `AGENTS.md` is the
-authoritative workflow source; this file remains for legacy compatibility. Codex reviews
-recent editions, researches the nine sections, writes a dated markdown brief to
-`briefs/`, renders and validates `index.html`, and commits/pushes the content-only
-edition to `main`. Manual workflow or structure changes use a branch and PR.
+The user starts the workflow in Codex by asking to run today's brief. Codex reads this
+file as the workflow source of truth, reviews recent editions to avoid repetition,
+researches the nine sections, writes a dated markdown brief to `briefs/`, renders
+`index.html`, validates it, and commits/pushes the content-only edition to `main`.
+Editing the look or structure remains a manual branch-and-PR change.
 
 ## Roadmap / not yet
 - Archive/back-issues index page linking dated editions.
