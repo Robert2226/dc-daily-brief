@@ -49,6 +49,20 @@ topic daily so it compounds). All source links open in a new tab.
   important angle is GCP deployment, infrastructure, operations, or business impact.
 - Do not repeat the same Google story in another section.
 
+### Crusoe monitoring
+- Check Crusoe's homepage, newsroom, and resource pages during every daily research
+  pass, together with general web searches for independent coverage.
+- Use independent reporting such as Reuters, AP, Data Center Dynamics, Bloomberg,
+  TechRadar, ITPro, and other credible outlets. Prefer independent confirmation for
+  material capacity, financing, customer, schedule, and reliability claims.
+- Route Crusoe coverage by its primary angle: strategy, financing, partnerships,
+  market position, or pipeline to `Competitors`; campuses, construction, power, UPS,
+  cooling, batteries, manufacturing, or commissioning to `DC Infrastructure`;
+  contracted capacity, GPU deployments, hyperscaler demand, or AI-factory growth to
+  `AI & Compute Demand`; Crusoe Cloud and developer services to `Backend / Cloud &
+  Data`; and cluster networking or edge connectivity to `Networking`.
+- Do not add a dedicated Crusoe section or repeat one Crusoe story across sections.
+
 ## Design system (editorial newsletter)
 - **Layout:** single centered column, ~760px, newspaper masthead + dateline + numbered
   sections + "In Practice" callout boxes + footer. Responsive (phone-first reading).
