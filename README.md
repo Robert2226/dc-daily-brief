@@ -21,6 +21,11 @@ Models & Releases · Networking · Backend / Cloud & Data · Program & PM — ea
 data centers, infrastructure, operations, partnerships, regions, and material platform
 news.
 
+Crusoe is also monitored every day through its newsroom and general web searches.
+Crusoe stories are placed in the existing section that matches their main angle—such
+as competitors, infrastructure, compute demand, cloud, or networking—and are checked
+against independent reporting for material claims. Crusoe does not add a tenth section.
+
 ## Structure
 ```
 index.html      # the published newsletter (latest edition)

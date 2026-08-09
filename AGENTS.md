@@ -51,6 +51,23 @@ topic daily so it compounds). All source links open in a new tab.
 - Do not repeat the same Google story under `Competitors`, `AI & Compute Demand`, `New
   AI Models & Releases`, or `Backend / Cloud & Data`.
 
+### Crusoe monitoring
+- Check Crusoe's homepage, newsroom, and resource pages during every daily research
+  pass, along with general web searches for independent coverage.
+- Use independent reporting such as Reuters, AP, Data Center Dynamics, Bloomberg,
+  TechRadar, ITPro, and other credible outlets so coverage is not limited to Crusoe's
+  own framing. Prefer independent confirmation for material capacity, financing,
+  customer, schedule, and reliability claims.
+- Route each Crusoe story by its primary angle: company strategy, financing,
+  partnerships, market position, or capacity pipeline to `Competitors`; campuses,
+  construction, power, UPS, cooling, batteries, manufacturing, or commissioning to
+  `DC Infrastructure`; contracted capacity, GPU deployments, hyperscaler demand, or
+  AI-factory growth to `AI & Compute Demand`; Crusoe Cloud, inference, fine-tuning,
+  developer platforms, or managed services to `Backend / Cloud & Data`; and cluster
+  networking or edge connectivity to `Networking`.
+- Do not add a dedicated Crusoe section and do not repeat the same Crusoe story in
+  multiple sections.
+
 ## Design system (editorial newsletter)
 - **Layout:** single centered column, ~760px, newspaper masthead + dateline + numbered
   sections + "In Practice" callout boxes + footer. Responsive (phone-first reading).
