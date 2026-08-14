@@ -27,12 +27,18 @@ center ops engineer at Equinix moving into program/project management, targeting
   `Co-Authored-By` trailer.
 
 ## Content structure (each daily edition)
-Numbered sections, each = 1–2 news items (headline + 2–3 sentence summary + source link)
-**plus an "In Practice" learning bite**:
+The first nine numbered sections each contain 1–2 news items (headline + 2–3 sentence
+summary + source link) **plus an "In Practice" learning bite**:
 `Equinix · Google · Competitors · DC Infrastructure · AI & Compute Demand · New AI
 Models & Releases · Networking · Backend / Cloud & Data · Program & PM`.
 "In Practice" appears in every section every day (generated teaching content; vary the
 topic daily so it compounds). All source links open in a new tab.
+
+Every new edition also ends with Section 10, `PgPM Growth`. Use the project-local
+`$build-pgpm-growth` skill to create it. It teaches two connected topics that advance
+Robert's professional development as a PgPM at Equinix in the data-center industry,
+contains exactly six researched links (three per topic), and ends with one safe,
+time-boxed `Daily Action`. This section is a progressive curriculum, not a news category.
 
 ### Google section
 - Place `Google` directly after `Equinix` in every new edition, beginning July 29, 2026.
@@ -77,8 +83,9 @@ topic daily so it compounds). All source links open in a new tab.
 ## How it's generated
 The user starts the workflow in Codex by asking to run today's brief. `AGENTS.md` is the
 authoritative workflow source; this file remains for legacy compatibility. Codex reviews
-recent editions, researches the nine sections, writes a dated markdown brief to
-`briefs/`, renders and validates `index.html`, and commits/pushes the content-only
+recent editions, researches the nine news sections, invokes `$build-pgpm-growth` for
+Section 10, writes a dated markdown brief to `briefs/`, renders and validates
+`index.html`, and commits/pushes the content-only
 edition to `main`. Manual workflow or structure changes use a branch and PR.
 
 ## Roadmap / not yet
