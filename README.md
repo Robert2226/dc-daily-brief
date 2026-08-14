@@ -11,8 +11,8 @@ scanning a dozen sites, and learn something in every section.
 - A **no-backend static site** (`index.html`) styled as an editorial newsletter.
 - Regenerated when Robert asks Codex to run the day's brief; Codex searches the news,
   writes the edition, commits, and pushes — GitHub Pages redeploys.
-- Each edition has numbered sections, and every section ends with an **"In Practice"**
-  learning bite so the brief compounds into real knowledge over time.
+- Each edition has nine news sections with **"In Practice"** learning bites plus a
+  final progressive professional-development section.
 
 ## Sections
 Equinix · Google · Competitors · DC Infrastructure · AI & Compute Demand · New AI
@@ -20,6 +20,10 @@ Models & Releases · Networking · Backend / Cloud & Data · Program & PM — ea
 *In Practice* explainer. Google is always section 2 and covers Google Cloud/GCP, Google
 data centers, infrastructure, operations, partnerships, regions, and material platform
 news.
+
+`PgPM Growth` is always section 10. The project-local `$build-pgpm-growth` skill creates
+two connected lessons for Robert's PgPM development in the data-center industry, six
+supporting links, and a practical Daily Action.
 
 Crusoe is also monitored every day through its newsroom and general web searches.
 Crusoe stories are placed in the existing section that matches their main angle—such
@@ -39,10 +43,11 @@ README.md
 ## How it's produced
 Robert initiates the workflow in Codex by asking it to run today's brief. Codex follows
 the repository's `AGENTS.md` instructions and:
-1. gathers news across the nine sections,
-2. writes a dated markdown brief into `briefs/`,
-3. renders `index.html` from it,
-4. commits to `main` and pushes → GitHub Pages updates.
+1. gathers news across the nine news sections,
+2. invokes `$build-pgpm-growth` for section 10,
+3. writes a dated markdown brief into `briefs/`,
+4. renders `index.html` from it,
+5. commits to `main` and pushes → GitHub Pages updates.
 
 ## Local preview
 ```

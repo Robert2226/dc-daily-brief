@@ -1,0 +1,4 @@
+interface:
+  display_name: "Build PgPM Growth"
+  short_description: "Create progressive PgPM learning sections"
+  default_prompt: "Use $build-pgpm-growth to create the progressive PgPM Growth section for today’s Daily Brief."
