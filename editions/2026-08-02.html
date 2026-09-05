@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>DC Daily Brief — Sunday, August 2, 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,900&family=Newsreader:opsz,wght@6..72,400;6..72,500&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#F7F5EF; --panel:#FBFAF6; --ink:#1B1A17; --soft-ink:#3B3934;
+    --muted:#6B6862; --rule:#D8D3C7; --rule-strong:#B7B1A3;
+    --accent:#0F766E; --accent-ink:#0B534D; --accent-tint:#EAF1EF;
+    --serif:'Newsreader',Georgia,'Times New Roman',serif;
+    --display:'Fraunces',Georgia,serif;
+    --mono:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#14140F; --panel:#1A1A14; --ink:#ECE8DD; --soft-ink:#CFC9BB;
+      --muted:#948E80; --rule:#2E2D25; --rule-strong:#413F34;
+      --accent:#5FD3C4; --accent-ink:#8FE3D8; --accent-tint:#17241F;
+    }
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0}
+  body{
+    background:var(--bg); color:var(--ink);
+    font-family:var(--serif); font-size:18px; line-height:1.62;
+    -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+  }
+  .paper{max-width:760px; margin:0 auto; padding:40px 26px 72px;}
+
+  /* Masthead */
+  .masthead{text-align:center; padding-bottom:18px;}
+  .masthead .rule-top{border-top:3px solid var(--ink); margin-bottom:14px;}
+  .kicker-top{
+    font-family:var(--mono); font-size:11px; letter-spacing:.32em; text-transform:uppercase;
+    color:var(--muted); margin-bottom:12px;
+  }
+  .masthead h1{
+    font-family:var(--display); font-weight:900; font-size:clamp(38px,9vw,68px);
+    line-height:.94; letter-spacing:-.02em; margin:0 0 10px;
+  }
+  .masthead .tagline{
+    font-family:var(--serif); font-style:italic; color:var(--soft-ink);
+    font-size:16px; max-width:38ch; margin:0 auto 16px;
+  }
+  .dateline{
+    display:flex; justify-content:space-between; align-items:center; gap:12px;
+    border-top:1px solid var(--rule-strong); border-bottom:1px solid var(--rule-strong);
+    padding:8px 2px; font-family:var(--mono); font-size:11px; letter-spacing:.12em;
+    text-transform:uppercase; color:var(--muted);
+  }
+
+  /* Section */
+  .section{padding-top:30px;}
+  .section-head{
+    display:flex; align-items:baseline; gap:12px; margin-bottom:14px;
+    border-bottom:1px solid var(--rule); padding-bottom:8px;
+  }
+  .section-num{
+    font-family:var(--mono); font-weight:700; font-size:12px; color:var(--accent);
+    letter-spacing:.1em;
+  }
+  .section-title{
+    font-family:var(--mono); font-weight:700; font-size:12.5px; letter-spacing:.22em;
+    text-transform:uppercase; color:var(--ink);
+  }
+
+  .item{margin:0 0 20px;}
+  .item h3{
+    font-family:var(--display); font-weight:600; font-size:22px; line-height:1.2;
+    letter-spacing:-.01em; margin:0 0 6px;
+  }
+  .item p{margin:0 0 6px; color:var(--soft-ink);}
+  .item em, .practice em{font-style:italic; color:var(--ink);}
+  .source a{
+    font-family:var(--mono); font-size:11px; letter-spacing:.06em; text-transform:uppercase;
+    color:var(--accent); text-decoration:none; border-bottom:1px solid transparent;
+  }
+  .source a:hover{border-bottom-color:var(--accent);}
+  .source a::before{content:"↗ ";}
+
+  /* In Practice callout */
+  .practice{
+    background:var(--accent-tint); border-left:3px solid var(--accent);
+    padding:14px 18px; margin:6px 0 4px; border-radius:2px;
+  }
+  .practice .label{
+    display:block; font-family:var(--mono); font-size:10.5px; font-weight:700;
+    letter-spacing:.24em; text-transform:uppercase; color:var(--accent-ink); margin-bottom:6px;
+  }
+  .practice p{margin:0; font-size:16.5px; line-height:1.55; color:var(--soft-ink);}
+  .practice strong{color:var(--ink);}
+  .practice .source{margin-top:8px;}
+
+  /* Footer */
+  .foot{
+    margin-top:44px; padding-top:16px; border-top:3px solid var(--ink);
+    font-family:var(--mono); font-size:11px; letter-spacing:.08em; color:var(--muted);
+    text-align:center; line-height:1.8;
+  }
+  .foot .big{font-family:var(--display); font-size:13px; letter-spacing:.2em; text-transform:uppercase; color:var(--ink);}
+
+  a{color:var(--accent); text-underline-offset:3px; overflow-wrap:anywhere}
+  a:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-offset:4px}
+  .site-nav,.edition-nav{display:flex;justify-content:space-between;gap:16px;font-size:16px;margin:0 0 26px}
+  .edition-nav{margin-top:30px}
+  .skip-link{position:absolute;left:-10000px}
+  .skip-link:focus{position:static}
+  .section{scroll-margin-top:20px}
+  .section-head{margin-top:0}
+  .section-title{line-height:1.6;letter-spacing:.12em}
+  .section-nav{display:flex;flex-wrap:wrap;gap:8px 18px;border-bottom:1px solid var(--rule);padding:20px 0;font-size:16px}
+  .takeaways{padding:22px 0 0}
+  .takeaways h2{font-family:var(--display);font-size:26px}
+  .takeaways .item{margin-bottom:16px}
+  .takeaways .item h3{font-size:20px}
+  .takeaways .item p{font-size:17px}
+  .deep-dive{border-top:2px solid var(--accent);margin-top:28px;padding-top:18px}
+  .deep-dive h3{font-family:var(--display);font-size:28px;line-height:1.2;margin:8px 0 18px}
+  .deep-dive h4{font-family:var(--display);font-size:21px;margin:24px 0 8px}
+  .eyebrow{font:12px var(--mono);color:var(--accent);text-transform:uppercase;letter-spacing:.15em}
+  .recall{border:1px solid var(--rule);padding:14px 18px;margin:18px 0}
+  .recall summary{cursor:pointer;font-weight:600}
+  pre{white-space:pre-wrap;overflow-wrap:anywhere;background:var(--accent-tint);padding:16px;font:14px/1.7 var(--mono)}
+  .archive-list{list-style:none;padding:0}
+  .archive-list li{padding:15px 0;border-bottom:1px solid var(--rule)}
+  .archive-meta{display:block;color:var(--muted);font:12px/1.8 var(--mono)}
+  .practice .label{margin-top:0}
+  .source a{font-size:12px;line-height:1.8}
+  .source a[href^="#"]::before{content:"↓ "}
+  .coverage{font-size:14px;color:var(--muted);margin:12px 0 0}
+  hr{border:0;border-top:1px solid var(--rule);margin:22px 0}
+  @media(max-width:480px){.paper{padding:24px 18px 48px}.dateline{flex-wrap:wrap}.section-title{font-size:12px}.section-head{gap:8px}.deep-dive h3{font-size:25px}}
+</style>
+</head>
+<body>
+<div class="paper">
+<a class="skip-link" href="#content">Skip to content</a>
+<nav class="site-nav" aria-label="Main navigation"><a href="../index.html">Latest edition</a><a href="../archive.html">Archive</a></nav>
+
+  <header class="masthead">
+    <div class="rule-top"></div>
+    <div class="kicker-top">Aggregated Morning Brief · No. 020</div>
+    <h1>DC Daily Brief</h1>
+    <p class="tagline">Physical infrastructure, logical systems, and the decisions connecting them.</p>
+    <div class="dateline">
+      <span>Sunday · August 2, 2026</span>
+      <span>Curated for Robert</span>
+    </div>
+    <p class="coverage">Covers news through August 2, 2026.</p>
+  </header>
+
+<main id="content">
+<nav class="section-nav" aria-label="Edition sections"><a href="#equinix">Equinix</a><a href="#google">Google</a><a href="#competitors">Competitors</a><a href="#dc-infrastructure">DC Infrastructure</a><a href="#ai-compute-demand">AI &amp; Compute Demand</a><a href="#new-ai-models-releases">New AI Models &amp; Releases</a><a href="#networking">Networking</a><a href="#backend-cloud-data">Backend / Cloud &amp; Data</a><a href="#program-pm">Program &amp; PM</a></nav><section class="section" id="equinix"><h2 class="section-head"><span class="section-num">01</span><span class="section-title">Equinix</span></h2><article class="item"><h3>Equinix splits product leadership from global-market execution with two executive appointments</h3><p>Chris Audie will lead products and services across interconnection, infrastructure, network operations and ecosystem partnerships as Chief Product Officer, while 16-year Equinix veteran Bruce Owen will oversee the Americas, EMEA and Asia-Pacific as EVP, Global Markets. The structure creates a clear product-to-region interface: one organization defines and evolves the platform while regional teams turn it into consistent local execution.</p><div class="source"><a href="https://newsroom.equinix.com/2026-07-27-Equinix-Appoints-Two-Leaders-to-Executive-Team" target="_blank" rel="noopener noreferrer">Equinix Newsroom</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Map the handoff whenever leadership boundaries change</h3><p>Write a one-page responsibility map for product standards, regional exceptions, funding, launch readiness, operational acceptance and customer escalation. Name who decides, who supplies evidence and who owns the outcome at each gate. A new org chart clarifies reporting lines; an interface agreement prevents priorities from falling between them.</p></aside></section><section class="section" id="google"><h2 class="section-head"><span class="section-num">02</span><span class="section-title">Google</span></h2><article class="item"><h3>Google Cloud adds early AI-cost anomaly detection and enforceable service-level spend caps</h3><p>The billing console can now flag abnormal daily AI spend with a root-cause view of the top three contributing SKUs, while preview spend caps can stop new billable usage for a selected service and project within minutes of reaching a monthly limit. Fixed commitments continue billing, and a triggered cap remains until an authorized person manually lifts it, making financial control an operational dependency rather than a passive alert.</p><div class="source"><a href="https://cloud.google.com/blog/topics/cost-management/new-early-anomalies-and-spend-caps-on-google-cloud-budgets" target="_blank" rel="noopener noreferrer">Google Cloud</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Treat a spend cap like an automated protection trip</h3><p>Define where caps are safe, which production services must never stop automatically, who receives the warning thresholds, who may restore usage and what evidence is required first. Test the response in a nonproduction project and document the customer impact of a trigger. Cost control becomes dependable when its failure mode and recovery authority are designed before the limit is reached.</p></aside></section><section class="section" id="competitors"><h2 class="section-head"><span class="section-num">03</span><span class="section-title">Competitors</span></h2><article class="item"><h3>AWS posts its fastest growth since 2021 while Amazon raises 2026 cash capex to $220 billion</h3><p>AWS quarterly revenue reached $42.2 billion, up 36.7 percent year over year, as its AI business and chip business each exceeded a $25 billion annual revenue run rate. Amazon says higher memory costs added $20 billion to its capex forecast and that capacity will still fall short of demand, illustrating how component inflation and multi-year customer contracts shape the economics behind competitor expansion.</p><div class="source"><a href="https://www.datacenterdynamics.com/en/news/aws-reports-fastest-growth-since-2021-amazon-annual-capex-to-hit-220bn-on-ai-memory-costs/" target="_blank" rel="noopener noreferrer">Data Center Dynamics</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Separate facility commitments from technology commitments</h3><p>A building may operate for decades, while servers, memory and networking turn over in years and should be purchased closer to proven demand. Build the capital plan in layers with different approval evidence, lead times and exit options. That keeps long-lived power and space decisions aligned with shorter-lived hardware whose price and performance can change before delivery.</p></aside></section><section class="section" id="dc-infrastructure"><h2 class="section-head"><span class="section-num">04</span><span class="section-title">DC Infrastructure</span></h2><article class="item"><h3>Veolia will operate a 350MW behind-the-meter microgrid for an Ohio AI campus</h3><p>Gas engines and linear generators are intended to supply the campus without grid reliance, supported by a 430MWh battery system. Veolia joined before commercial operations to support commissioning, procedures and coordination across contractors and OEMs, recognizing that a private power plant becomes part of the data center&#x27;s mission-critical operating system rather than a separate utility project.</p><div class="source"><a href="https://www.datacenterdynamics.com/en/news/veolia-to-operate-350mw-gas-powered-microgrid-for-ohio-data-center-campus/" target="_blank" rel="noopener noreferrer">Data Center Dynamics</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Integrate the operator before startup, not after turnover</h3><p>Require operations participation in design reviews, alarm rationalization, maintainability checks, spares planning, training and commissioning scripts. Build joint procedures for generator dispatch, battery state of charge, black start, fuel interruption and maintenance overlap. Early operator involvement converts construction knowledge into repeatable operating capability before the first critical load arrives.</p></aside></section><section class="section" id="ai-compute-demand"><h2 class="section-head"><span class="section-num">05</span><span class="section-title">AI &amp; Compute Demand</span></h2><article class="item"><h3>DeepSeek reportedly plans a 1GW data center in Inner Mongolia</h3><p>The Ulanqab campus could begin partial operation in late 2027 or early 2028, and the company is also reported to be developing its own AI chip. The plan links model development, domestic silicon and China&#x27;s Eastern Data, Western Compute strategy, showing how an AI lab can move toward control of the full stack even when the delivered megawatts and hardware remain uncertain.</p><div class="source"><a href="https://www.datacenterdynamics.com/en/news/deepseek-planning-1gw-data-center-in-inner-mongolia-china-report/" target="_blank" rel="noopener noreferrer">Data Center Dynamics</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Track vertical integration as a dependency chain, not a slogan</h3><p>Separate the model roadmap, chip readiness, server qualification, facility power, cooling, network fabric and software deployment into evidence-based milestones. Identify the fallback if the custom chip or campus slips. Owning more of the stack can reduce vendor dependence, but it also concentrates schedule risk across components that must mature together.</p></aside></section><section class="section" id="new-ai-models-releases"><h2 class="section-head"><span class="section-num">06</span><span class="section-title">New AI Models &amp; Releases</span></h2><article class="item"><h3>Google Cloud previews CodeMender as an agent that scans, proves and patches software vulnerabilities</h3><p>CodeMender can analyze repositories, create proof-of-concept exploits in a customer-managed sandbox, generate tested fixes and deliver code differences for developer approval. It supports multiple models and CI/CD integration, but Google keeps humans responsible for reviewing and committing patches—an important distinction between automated remediation work and authority to change production code.</p><div class="source"><a href="https://cloud.google.com/blog/products/identity-security/find-and-fix-software-vulnerabilities-with-codemender" target="_blank" rel="noopener noreferrer">Google Cloud</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Give the agent permission to propose, not permission to silently promote</h3><p>Define sandbox boundaries, repository access, severity thresholds, test requirements and the human approver for each application tier. Record the finding, exploit evidence, generated change, test result and approval as one traceable package. Automation can compress detection-to-fix time without erasing change control.</p></aside></section><section class="section" id="networking"><h2 class="section-head"><span class="section-num">07</span><span class="section-title">Networking</span></h2><article class="item"><h3>Chiplet-interconnect developer Eliyan raises $145 million to scale next-generation AI connectivity</h3><p>The financing values Eliyan at $1 billion and supports development and manufacturing of its die-to-die and die-to-memory technologies. The company claims its approach can deliver up to four times the performance at half the power of alternatives, underscoring that AI networking constraints now extend inside the package between compute and memory—not only across racks and data halls.</p><div class="source"><a href="https://www.datacenterdynamics.com/en/news/chiplet-interconnect-startup-eliyan-valued-at-1bn-following-145m-series-c-funding-round/" target="_blank" rel="noopener noreferrer">Data Center Dynamics</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Follow the bottleneck across every interconnect layer</h3><p>Map the data path from memory and chiplets through accelerators, NICs, switches and optical links, then identify where bandwidth, latency, power or thermals constrain the workload. Require end-to-end job evidence rather than optimizing one layer in isolation. A faster component creates value only when the surrounding system can feed and cool it.</p></aside></section><section class="section" id="backend-cloud-data"><h2 class="section-head"><span class="section-num">08</span><span class="section-title">Backend / Cloud &amp; Data</span></h2><article class="item"><h3>Google says AlloyDB now performs HNSW vector searches up to four times faster</h3><p>The improvement targets pgvector workloads that retrieve semantically similar records for AI applications, where index construction, query latency, recall quality and database cost all affect the user experience. Faster search can expand feasible workloads, but teams still need workload-specific tests because vector dimensions, filters, index settings and data distribution shape real performance.</p><div class="source"><a href="https://cloud.google.com/blog/products/databases/supercharge-pgvector-4x-faster-hnsw-with-alloydb" target="_blank" rel="noopener noreferrer">Google Cloud</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Benchmark the retrieval service with quality and operations together</h3><p>Use representative data and queries to measure latency, throughput, recall, index-build time, storage growth and behavior during updates or failover. Set an acceptance range for answer quality before tuning solely for speed. The right index is the one that meets the service objective and remains maintainable as the dataset changes.</p></aside></section><section class="section" id="program-pm"><h2 class="section-head"><span class="section-num">09</span><span class="section-title">Program &amp; PM</span></h2><article class="item"><h3>PMI argues that judgment and execution are becoming more valuable as technical skills expire faster</h3><p>PMI says roughly half of today&#x27;s technical skills could become obsolete within five years, while professionals who manage complexity effectively are five times more likely to improve project success. Its refreshed PMP emphasis on business alignment, strategic decisions and real-world delivery reinforces that tool fluency matters most when paired with ownership, stakeholder alignment and measurable outcomes.</p><div class="source"><a href="https://www.pmi.org/about/press-media/2026/in-an-ai-economy-judgment-is-the-new-job-security" target="_blank" rel="noopener noreferrer">PMI</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Practice judgment by documenting the decision, not just the task</h3><p>For one operational issue this week, write the options, evidence, stakeholders, safety and customer consequences, recommendation and review date. After the outcome, compare what happened with the assumptions you made. Repeating that loop builds a portfolio of decision quality—the durable skill that turns technical experience into program leadership.</p></aside></section>
+</main>
+<nav class="edition-nav" aria-label="Adjacent editions"><a href="2026-07-31.html">← Previous edition</a> <a href="2026-08-03.html">Next edition →</a></nav>
+
+  <footer class="foot">
+    <div class="big">DC Daily Brief</div>
+    Covers news through August 2, 2026. · Researched and generated on demand<br>
+    News, context, and learning for Robert · Historical reporting may be superseded.
+  </footer>
+
+</div>
+</body>
+</html>

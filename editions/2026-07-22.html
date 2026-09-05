@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>DC Daily Brief — Wednesday, July 22, 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,900&family=Newsreader:opsz,wght@6..72,400;6..72,500&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#F7F5EF; --panel:#FBFAF6; --ink:#1B1A17; --soft-ink:#3B3934;
+    --muted:#6B6862; --rule:#D8D3C7; --rule-strong:#B7B1A3;
+    --accent:#0F766E; --accent-ink:#0B534D; --accent-tint:#EAF1EF;
+    --serif:'Newsreader',Georgia,'Times New Roman',serif;
+    --display:'Fraunces',Georgia,serif;
+    --mono:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#14140F; --panel:#1A1A14; --ink:#ECE8DD; --soft-ink:#CFC9BB;
+      --muted:#948E80; --rule:#2E2D25; --rule-strong:#413F34;
+      --accent:#5FD3C4; --accent-ink:#8FE3D8; --accent-tint:#17241F;
+    }
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0}
+  body{
+    background:var(--bg); color:var(--ink);
+    font-family:var(--serif); font-size:18px; line-height:1.62;
+    -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+  }
+  .paper{max-width:760px; margin:0 auto; padding:40px 26px 72px;}
+
+  /* Masthead */
+  .masthead{text-align:center; padding-bottom:18px;}
+  .masthead .rule-top{border-top:3px solid var(--ink); margin-bottom:14px;}
+  .kicker-top{
+    font-family:var(--mono); font-size:11px; letter-spacing:.32em; text-transform:uppercase;
+    color:var(--muted); margin-bottom:12px;
+  }
+  .masthead h1{
+    font-family:var(--display); font-weight:900; font-size:clamp(38px,9vw,68px);
+    line-height:.94; letter-spacing:-.02em; margin:0 0 10px;
+  }
+  .masthead .tagline{
+    font-family:var(--serif); font-style:italic; color:var(--soft-ink);
+    font-size:16px; max-width:38ch; margin:0 auto 16px;
+  }
+  .dateline{
+    display:flex; justify-content:space-between; align-items:center; gap:12px;
+    border-top:1px solid var(--rule-strong); border-bottom:1px solid var(--rule-strong);
+    padding:8px 2px; font-family:var(--mono); font-size:11px; letter-spacing:.12em;
+    text-transform:uppercase; color:var(--muted);
+  }
+
+  /* Section */
+  .section{padding-top:30px;}
+  .section-head{
+    display:flex; align-items:baseline; gap:12px; margin-bottom:14px;
+    border-bottom:1px solid var(--rule); padding-bottom:8px;
+  }
+  .section-num{
+    font-family:var(--mono); font-weight:700; font-size:12px; color:var(--accent);
+    letter-spacing:.1em;
+  }
+  .section-title{
+    font-family:var(--mono); font-weight:700; font-size:12.5px; letter-spacing:.22em;
+    text-transform:uppercase; color:var(--ink);
+  }
+
+  .item{margin:0 0 20px;}
+  .item h3{
+    font-family:var(--display); font-weight:600; font-size:22px; line-height:1.2;
+    letter-spacing:-.01em; margin:0 0 6px;
+  }
+  .item p{margin:0 0 6px; color:var(--soft-ink);}
+  .item em, .practice em{font-style:italic; color:var(--ink);}
+  .source a{
+    font-family:var(--mono); font-size:11px; letter-spacing:.06em; text-transform:uppercase;
+    color:var(--accent); text-decoration:none; border-bottom:1px solid transparent;
+  }
+  .source a:hover{border-bottom-color:var(--accent);}
+  .source a::before{content:"↗ ";}
+
+  /* In Practice callout */
+  .practice{
+    background:var(--accent-tint); border-left:3px solid var(--accent);
+    padding:14px 18px; margin:6px 0 4px; border-radius:2px;
+  }
+  .practice .label{
+    display:block; font-family:var(--mono); font-size:10.5px; font-weight:700;
+    letter-spacing:.24em; text-transform:uppercase; color:var(--accent-ink); margin-bottom:6px;
+  }
+  .practice p{margin:0; font-size:16.5px; line-height:1.55; color:var(--soft-ink);}
+  .practice strong{color:var(--ink);}
+  .practice .source{margin-top:8px;}
+
+  /* Footer */
+  .foot{
+    margin-top:44px; padding-top:16px; border-top:3px solid var(--ink);
+    font-family:var(--mono); font-size:11px; letter-spacing:.08em; color:var(--muted);
+    text-align:center; line-height:1.8;
+  }
+  .foot .big{font-family:var(--display); font-size:13px; letter-spacing:.2em; text-transform:uppercase; color:var(--ink);}
+
+  a{color:var(--accent); text-underline-offset:3px; overflow-wrap:anywhere}
+  a:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-offset:4px}
+  .site-nav,.edition-nav{display:flex;justify-content:space-between;gap:16px;font-size:16px;margin:0 0 26px}
+  .edition-nav{margin-top:30px}
+  .skip-link{position:absolute;left:-10000px}
+  .skip-link:focus{position:static}
+  .section{scroll-margin-top:20px}
+  .section-head{margin-top:0}
+  .section-title{line-height:1.6;letter-spacing:.12em}
+  .section-nav{display:flex;flex-wrap:wrap;gap:8px 18px;border-bottom:1px solid var(--rule);padding:20px 0;font-size:16px}
+  .takeaways{padding:22px 0 0}
+  .takeaways h2{font-family:var(--display);font-size:26px}
+  .takeaways .item{margin-bottom:16px}
+  .takeaways .item h3{font-size:20px}
+  .takeaways .item p{font-size:17px}
+  .deep-dive{border-top:2px solid var(--accent);margin-top:28px;padding-top:18px}
+  .deep-dive h3{font-family:var(--display);font-size:28px;line-height:1.2;margin:8px 0 18px}
+  .deep-dive h4{font-family:var(--display);font-size:21px;margin:24px 0 8px}
+  .eyebrow{font:12px var(--mono);color:var(--accent);text-transform:uppercase;letter-spacing:.15em}
+  .recall{border:1px solid var(--rule);padding:14px 18px;margin:18px 0}
+  .recall summary{cursor:pointer;font-weight:600}
+  pre{white-space:pre-wrap;overflow-wrap:anywhere;background:var(--accent-tint);padding:16px;font:14px/1.7 var(--mono)}
+  .archive-list{list-style:none;padding:0}
+  .archive-list li{padding:15px 0;border-bottom:1px solid var(--rule)}
+  .archive-meta{display:block;color:var(--muted);font:12px/1.8 var(--mono)}
+  .practice .label{margin-top:0}
+  .source a{font-size:12px;line-height:1.8}
+  .source a[href^="#"]::before{content:"↓ "}
+  .coverage{font-size:14px;color:var(--muted);margin:12px 0 0}
+  hr{border:0;border-top:1px solid var(--rule);margin:22px 0}
+  @media(max-width:480px){.paper{padding:24px 18px 48px}.dateline{flex-wrap:wrap}.section-title{font-size:12px}.section-head{gap:8px}.deep-dive h3{font-size:25px}}
+</style>
+</head>
+<body>
+<div class="paper">
+<a class="skip-link" href="#content">Skip to content</a>
+<nav class="site-nav" aria-label="Main navigation"><a href="../index.html">Latest edition</a><a href="../archive.html">Archive</a></nav>
+
+  <header class="masthead">
+    <div class="rule-top"></div>
+    <div class="kicker-top">Aggregated Morning Brief · No. 011</div>
+    <h1>DC Daily Brief</h1>
+    <p class="tagline">Physical infrastructure, logical systems, and the decisions connecting them.</p>
+    <div class="dateline">
+      <span>Wednesday · July 22, 2026</span>
+      <span>Curated for Robert</span>
+    </div>
+    <p class="coverage">Covers news through July 17–22, 2026.</p>
+  </header>
+
+<main id="content">
+<nav class="section-nav" aria-label="Edition sections"><a href="#equinix">Equinix</a><a href="#competitors">Competitors</a><a href="#dc-infrastructure">DC Infrastructure</a><a href="#ai-compute-demand">AI &amp; Compute Demand</a><a href="#new-ai-models-releases">New AI Models &amp; Releases</a><a href="#networking">Networking</a><a href="#backend-cloud-data">Backend / Cloud &amp; Data</a><a href="#program-pm">Program &amp; PM</a></nav><section class="section" id="equinix"><h2 class="section-head"><span class="section-num">01</span><span class="section-title">Equinix</span></h2><article class="item"><h3>Equinix pays $41.5M to settle accounting-malpractice lawsuit</h3><p>Equinix settled a shareholder class action alleging it misclassified routine maintenance expenses as capital expenditures to inflate Adjusted Funds From Operations (AFFO) — a manipulation the suit says padded executive bonuses by roughly $150M over five years. It closes out the last piece of legal overhang from a federal SEC/DOJ investigation that ended without charges in November 2025.</p><div class="source"><a href="https://www.datacenterdynamics.com/en/news/equinix-to-pay-415m-to-settle-lawsuit-over-alleged-accounting-malpractices/" target="_blank" rel="noopener noreferrer">Data Center Dynamics</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · What AFFO is, and why capex-vs-opex classification is where REIT numbers get gamed</h3><p>Adjusted Funds From Operations is the metric REITs use instead of net income, because standard GAAP earnings get distorted by real-estate depreciation that doesn&#x27;t reflect actual cash performance — AFFO adds depreciation back and subtracts recurring capital spending needed to maintain the properties. That subtraction is exactly the lever this suit alleges Equinix pulled backwards: classify a maintenance expense (which should reduce AFFO) as a capital expenditure (which doesn&#x27;t) and the &quot;cash available to shareholders&quot; number goes up on paper without any real change underneath it. When a REIT&#x27;s AFFO growth outpaces its reported maintenance capex growth for several quarters running, that gap is exactly what a forensic read of the filings should probe.</p></aside></section><section class="section" id="competitors"><h2 class="section-head"><span class="section-num">02</span><span class="section-title">Competitors</span></h2><article class="item"><h3>Galaxy Digital seeks $3.5B junk-bond sale for CoreWeave&#x27;s Helios campus</h3><p>Having completed phase one of the Helios data center campus for CoreWeave on July 6 (a 200MW capacity deal, previously covered), Galaxy Digital is now moving to finance the buildout: a debut high-yield bond sale to fund construction at the Dickens County, West Texas site and cover debt-service reserves.</p><div class="source"><a href="https://www.bloomberg.com/news/articles/2026-07-22/coreweave-backed-data-center-plans-3-5-billion-junk-bond-sale" target="_blank" rel="noopener noreferrer">Bloomberg</a></div></article>
+<article class="item"><h3>BlackRock-MGX consortium commits another $5B to Aligned Data Centers after closing its $40B buyout</h3><p>The GIP/MGX-led group finished acquiring Aligned — one of the largest data center operators globally — and immediately followed with $5B in fresh growth capital, on top of the acquisition price.</p><div class="source"><a href="https://money.usnews.com/investing/news/articles/2026-07-21/blackrock-backed-group-commits-5-billion-for-aligned-data-centers" target="_blank" rel="noopener noreferrer">U.S. News</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · A &quot;junk bond&quot; rating isn&#x27;t a moral judgment — it&#x27;s a specific claim about repayment risk</h3><p>High-yield (&quot;junk&quot;) simply means a credit rating agency has classified the bond below investment grade (BBB-/Baa3), because the issuer&#x27;s cash flows are seen as less certain or more leveraged relative to the debt — investors demand a higher interest rate to compensate. That Galaxy Digital&#x27;s Helios financing needs to go the high-yield route, while BlackRock&#x27;s Meta-backed El Paso bond (covered July 21) can likely price at investment-grade, tells you something about the underlying tenant: Meta&#x27;s lease payments are viewed as near-certain, while CoreWeave&#x27;s are viewed as riskier despite its scale. Same asset class, same &quot;data center bond&quot; headline — very different credit story underneath.</p></aside></section><section class="section" id="dc-infrastructure"><h2 class="section-head"><span class="section-num">03</span><span class="section-title">DC Infrastructure</span></h2><article class="item"><h3>Oracle sues Wisconsin regulators over $7B collateral demand for its data center power plant</h3><p>Oracle filed suit June 19 against the Wisconsin Public Service Commission, challenging a rule that requires large-load customers below an A-/A3 credit rating (Oracle sits at BBB) to post cash or letters of credit securing their power obligations — a requirement Oracle says could force it to post over $7B in collateral and cost $100M+ annually, tied to its Lighthouse campus in Port Washington.</p><div class="source"><a href="https://www.datacenterknowledge.com/regulations/oracle-lawsuit-tests-wisconsin-ai-data-center-credit-rules" target="_blank" rel="noopener noreferrer">Data Center Knowledge</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Why a utility cares about a tenant&#x27;s bond rating before it builds a power plant</h3><p>When a utility agrees to build bespoke generation for one customer&#x27;s data center, it&#x27;s taking on construction debt that only pays off if that customer keeps paying for decades — so regulators increasingly tie the deal&#x27;s financial security requirement to the customer&#x27;s own creditworthiness, not just a signed contract. A- and above is treated as reliable enough to skip collateral; below that, the utility (and ultimately other ratepayers) is exposed if the customer&#x27;s business changes. Oracle&#x27;s BBB rating is investment-grade and perfectly normal for a company its size — the dispute isn&#x27;t about Oracle&#x27;s solvency, it&#x27;s about who bears the tail risk if an AI-demand assumption a decade out doesn&#x27;t hold.</p></aside></section><section class="section" id="ai-compute-demand"><h2 class="section-head"><span class="section-num">04</span><span class="section-title">AI &amp; Compute Demand</span></h2><article class="item"><h3>Morgan Stanley: US data centers face a 44–49GW power shortfall through 2028 — up to 20% of projected demand</h3><p>Distinct from Goldman&#x27;s demand-growth curve (31→41→66GW), this is a supply-gap estimate: even accounting for planned grid buildout, Morgan Stanley sees a fifth of AI data center power demand going unmet by 2028 absent &quot;time-to-power&quot; workarounds that skip the standard multi-year interconnection queue.</p><div class="source"><a href="https://www.investing.com/news/stock-market-news/morgan-stanley-sees-up-to-20-shortage-of-us-power-for-data-centers-through-2028-4351251" target="_blank" rel="noopener noreferrer">Morgan Stanley via Investing.com</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · &quot;Demand&quot; and &quot;shortfall&quot; are two different forecasts, and conflating them hides the actual constraint</h3><p>A demand forecast (Goldman&#x27;s 66GW by 2027) answers &quot;how much power will data centers want to use.&quot; A shortfall forecast answers a harder question: of that demand, how much won&#x27;t get built in time, given real-world limits on transformers, transmission lines, and permitting. Morgan Stanley&#x27;s explicit hedge — that &quot;time-to-power&quot; solutions like the substation-sited micro data centers covered here July 21 could shrink the gap — is the tell that the shortfall number is a base case, not a hard ceiling. When you see competing power forecasts from different banks, check whether they&#x27;re modeling appetite or delivery; they answer different questions and aren&#x27;t in conflict just because the numbers differ.</p></aside></section><section class="section" id="new-ai-models-releases"><h2 class="section-head"><span class="section-num">05</span><span class="section-title">New AI Models &amp; Releases</span></h2><article class="item"><h3>Google ships three new Gemini models — still no 3.5 Pro</h3><p>Google released Gemini 3.6 Flash, 3.5 Flash-Lite, and Gemini 3.5 Flash Cyber (a security-tuned variant for vulnerability discovery and patching, limited to governments and trusted partners under the CodeMender program) on July 21. The flagship 3.5 Pro remains absent for a third straight missed date (last covered here July 20), while Google confirmed it has begun pretraining Gemini 4.</p><div class="source"><a href="https://techcrunch.com/2026/07/21/google-releases-three-new-gemini-models-but-no-3-5-pro/" target="_blank" rel="noopener noreferrer">TechCrunch</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Why a lab ships a &quot;Flash&quot; tier at all instead of just one best model</h3><p>Every major lab now maintains a family of models at different size/speed/cost points off the same base architecture — Flash/Flash-Lite versus Pro/Ultra — because most production use cases (classification, routing, high-volume agent calls) are latency- and cost-bound, not capability-bound; paying flagship-model prices for a task a smaller model handles fine is pure waste. Shipping the Flash tier while Pro is still gated behind quality review also lets Google keep revenue and developer mindshare moving without shipping a flagship that hasn&#x27;t cleared its own bar. When you evaluate &quot;which AI model to use&quot; for a task, the first question is almost never &quot;which is smartest&quot; — it&#x27;s which tier&#x27;s ceiling is high enough for the job at the lowest cost.</p></aside></section><section class="section" id="networking"><h2 class="section-head"><span class="section-num">06</span><span class="section-title">Networking</span></h2><article class="item"><h3>Zhongji Innolight upsizes Hong Kong IPO to $7B, set to be 2026&#x27;s largest HK listing</h3><p>China&#x27;s dominant optical-transceiver maker — over 50% of Nvidia&#x27;s optical module wallet share and a primary Google supplier — raised its fundraising target from ~$5B after strong roadshow demand, earmarking proceeds for 1.6T/3.2T optical module R&amp;D and manufacturing capacity as the global optical-interconnect market is projected to grow from $24.8B (2025) to $111B (2030).</p><div class="source"><a href="https://finance.biggo.com/news/9890cf93-e2c0-459a-b6d6-29423c08b793" target="_blank" rel="noopener noreferrer">BigGo Finance</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Supplier concentration is customer concentration&#x27;s mirror image, and just as easy to miss</h3><p>Earlier this week we covered how CoreWeave&#x27;s revenue concentration in a few hyperscaler customers is a risk-register line item (July 17, 19). The same logic runs the other way: if one company holds &quot;over 50% of Nvidia&#x27;s optical module wallet,&quot; Nvidia has a single point of failure on a component every AI cluster needs to move data between GPUs — a factory fire, export-control action, or quality failure at Zhongji doesn&#x27;t just hurt Zhongji, it can stall AI cluster buildouts industry-wide. When you&#x27;re mapping risk in any supply chain, draw the dependency graph in both directions — who depends on you, and who you depend on — because a concentration risk assessment that only looks at customers is only half the picture.</p></aside></section><section class="section" id="backend-cloud-data"><h2 class="section-head"><span class="section-num">07</span><span class="section-title">Backend / Cloud &amp; Data</span></h2><article class="item"><h3>Critical SharePoint RCE (CVSS 9.8) under active exploitation after public PoC leaks</h3><p>CVE-2026-50522 lets an unauthenticated attacker execute code on on-premises SharePoint servers via a malformed WS-Federation sign-in request; attackers are using it to steal SharePoint machine keys for long-term persistence. Microsoft patched it in July&#x27;s update, but researchers stress that patching alone doesn&#x27;t undo a prior compromise — exposed servers need machine-key rotation.</p><div class="source"><a href="https://thehackernews.com/2026/07/critical-sharepoint-rce-cve-2026-50522.html" target="_blank" rel="noopener noreferrer">The Hacker News</a></div></article>
+<article class="item"><h3>CNCF ships Dragonfly v2.5.0 with direct Hugging Face and ModelScope downloads</h3><p>The peer-to-peer file distribution project used to pull large container images and model weights efficiently across clusters added native support for pulling directly from the two dominant AI model registries, cutting a manual export/re-upload step out of ML platform pipelines.</p><div class="source"><a href="https://www.cncf.io/blog/" target="_blank" rel="noopener noreferrer">CNCF</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Why &quot;patch the CVE&quot; and &quot;the incident is over&quot; are two different milestones</h3><p>A patch closes the door the attacker used to get in — it does nothing about anything they took or planted before the door closed. SharePoint&#x27;s machine keys are used to sign and validate ViewState and authentication tokens; an attacker who stole them before patching can keep forging valid session tokens indefinitely, walking straight past a &quot;fixed&quot; system with credentials that still work. That&#x27;s why credible advisories for this class of bug always pair &quot;apply the patch&quot; with &quot;rotate the secrets&quot; — treating the vulnerability and the potential compromise as two separate problems requiring two separate fixes, on two different urgency clocks.</p></aside></section><section class="section" id="program-pm"><h2 class="section-head"><span class="section-num">08</span><span class="section-title">Program &amp; PM</span></h2><article class="item"><h3>HBR&#x27;s July/August cover story: &quot;The False Alignment Trap&quot;</h3><p>BCG consultants Julia Dhar, Kristy Ellmer, and Philip Jameson argue most transformation efforts fail not from poor execution but because senior leaders believe they agree on why, what, and how to change — without ever testing that belief — drawing on a Pandora case study; a Forbes rebuttal from Steve Denning argues the framework understates how agile/adaptive methods already solve this. <a href="https://hbr.org/2026/07/the-false-alignment-trap" target="_blank" rel="noopener noreferrer">HBR</a> (headline; paywalled) /</p><div class="source"><a href="https://www.forbes.com/sites/stevedenning/2026/07/09/why-the-management-thinking-in-the-false-alignment-trap-is-flawed/" target="_blank" rel="noopener noreferrer">Forbes rebuttal</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Surfacing false alignment is a facilitation technique, not a personality trait some leaders have and others don&#x27;t</h3><p>The trap forms because disagreeing in a room full of senior peers carries social cost, and &quot;sounds right, let&#x27;s move&quot; is the path of least resistance under time pressure — so alignment gets assumed rather than tested. The practical fix scales down to any project kickoff: instead of asking &quot;are we aligned?&quot; (which invites a reflexive yes), have each stakeholder independently answer the why/what/how questions in writing before the group discussion, then compare answers out loud. Divergence that would have stayed hidden in a verbal go-around becomes visible and addressable before it turns into a mid-project scope fight — the earlier the gap surfaces, the cheaper it is to close.</p></aside></section>
+</main>
+<nav class="edition-nav" aria-label="Adjacent editions"><a href="2026-07-21.html">← Previous edition</a> <a href="2026-07-23.html">Next edition →</a></nav>
+
+  <footer class="foot">
+    <div class="big">DC Daily Brief</div>
+    Covers news through July 17–22, 2026. · Researched and generated on demand<br>
+    News, context, and learning for Robert · Historical reporting may be superseded.
+  </footer>
+
+</div>
+</body>
+</html>

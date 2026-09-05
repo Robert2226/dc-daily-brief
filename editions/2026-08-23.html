@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>DC Daily Brief — Sunday, August 23, 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,900&family=Newsreader:opsz,wght@6..72,400;6..72,500&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#F7F5EF; --panel:#FBFAF6; --ink:#1B1A17; --soft-ink:#3B3934;
+    --muted:#6B6862; --rule:#D8D3C7; --rule-strong:#B7B1A3;
+    --accent:#0F766E; --accent-ink:#0B534D; --accent-tint:#EAF1EF;
+    --serif:'Newsreader',Georgia,'Times New Roman',serif;
+    --display:'Fraunces',Georgia,serif;
+    --mono:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#14140F; --panel:#1A1A14; --ink:#ECE8DD; --soft-ink:#CFC9BB;
+      --muted:#948E80; --rule:#2E2D25; --rule-strong:#413F34;
+      --accent:#5FD3C4; --accent-ink:#8FE3D8; --accent-tint:#17241F;
+    }
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0}
+  body{
+    background:var(--bg); color:var(--ink);
+    font-family:var(--serif); font-size:18px; line-height:1.62;
+    -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+  }
+  .paper{max-width:760px; margin:0 auto; padding:40px 26px 72px;}
+
+  /* Masthead */
+  .masthead{text-align:center; padding-bottom:18px;}
+  .masthead .rule-top{border-top:3px solid var(--ink); margin-bottom:14px;}
+  .kicker-top{
+    font-family:var(--mono); font-size:11px; letter-spacing:.32em; text-transform:uppercase;
+    color:var(--muted); margin-bottom:12px;
+  }
+  .masthead h1{
+    font-family:var(--display); font-weight:900; font-size:clamp(38px,9vw,68px);
+    line-height:.94; letter-spacing:-.02em; margin:0 0 10px;
+  }
+  .masthead .tagline{
+    font-family:var(--serif); font-style:italic; color:var(--soft-ink);
+    font-size:16px; max-width:38ch; margin:0 auto 16px;
+  }
+  .dateline{
+    display:flex; justify-content:space-between; align-items:center; gap:12px;
+    border-top:1px solid var(--rule-strong); border-bottom:1px solid var(--rule-strong);
+    padding:8px 2px; font-family:var(--mono); font-size:11px; letter-spacing:.12em;
+    text-transform:uppercase; color:var(--muted);
+  }
+
+  /* Section */
+  .section{padding-top:30px;}
+  .section-head{
+    display:flex; align-items:baseline; gap:12px; margin-bottom:14px;
+    border-bottom:1px solid var(--rule); padding-bottom:8px;
+  }
+  .section-num{
+    font-family:var(--mono); font-weight:700; font-size:12px; color:var(--accent);
+    letter-spacing:.1em;
+  }
+  .section-title{
+    font-family:var(--mono); font-weight:700; font-size:12.5px; letter-spacing:.22em;
+    text-transform:uppercase; color:var(--ink);
+  }
+
+  .item{margin:0 0 20px;}
+  .item h3{
+    font-family:var(--display); font-weight:600; font-size:22px; line-height:1.2;
+    letter-spacing:-.01em; margin:0 0 6px;
+  }
+  .item p{margin:0 0 6px; color:var(--soft-ink);}
+  .item em, .practice em{font-style:italic; color:var(--ink);}
+  .source a{
+    font-family:var(--mono); font-size:11px; letter-spacing:.06em; text-transform:uppercase;
+    color:var(--accent); text-decoration:none; border-bottom:1px solid transparent;
+  }
+  .source a:hover{border-bottom-color:var(--accent);}
+  .source a::before{content:"↗ ";}
+
+  /* In Practice callout */
+  .practice{
+    background:var(--accent-tint); border-left:3px solid var(--accent);
+    padding:14px 18px; margin:6px 0 4px; border-radius:2px;
+  }
+  .practice .label{
+    display:block; font-family:var(--mono); font-size:10.5px; font-weight:700;
+    letter-spacing:.24em; text-transform:uppercase; color:var(--accent-ink); margin-bottom:6px;
+  }
+  .practice p{margin:0; font-size:16.5px; line-height:1.55; color:var(--soft-ink);}
+  .practice strong{color:var(--ink);}
+  .practice .source{margin-top:8px;}
+
+  /* Footer */
+  .foot{
+    margin-top:44px; padding-top:16px; border-top:3px solid var(--ink);
+    font-family:var(--mono); font-size:11px; letter-spacing:.08em; color:var(--muted);
+    text-align:center; line-height:1.8;
+  }
+  .foot .big{font-family:var(--display); font-size:13px; letter-spacing:.2em; text-transform:uppercase; color:var(--ink);}
+
+  a{color:var(--accent); text-underline-offset:3px; overflow-wrap:anywhere}
+  a:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-offset:4px}
+  .site-nav,.edition-nav{display:flex;justify-content:space-between;gap:16px;font-size:16px;margin:0 0 26px}
+  .edition-nav{margin-top:30px}
+  .skip-link{position:absolute;left:-10000px}
+  .skip-link:focus{position:static}
+  .section{scroll-margin-top:20px}
+  .section-head{margin-top:0}
+  .section-title{line-height:1.6;letter-spacing:.12em}
+  .section-nav{display:flex;flex-wrap:wrap;gap:8px 18px;border-bottom:1px solid var(--rule);padding:20px 0;font-size:16px}
+  .takeaways{padding:22px 0 0}
+  .takeaways h2{font-family:var(--display);font-size:26px}
+  .takeaways .item{margin-bottom:16px}
+  .takeaways .item h3{font-size:20px}
+  .takeaways .item p{font-size:17px}
+  .deep-dive{border-top:2px solid var(--accent);margin-top:28px;padding-top:18px}
+  .deep-dive h3{font-family:var(--display);font-size:28px;line-height:1.2;margin:8px 0 18px}
+  .deep-dive h4{font-family:var(--display);font-size:21px;margin:24px 0 8px}
+  .eyebrow{font:12px var(--mono);color:var(--accent);text-transform:uppercase;letter-spacing:.15em}
+  .recall{border:1px solid var(--rule);padding:14px 18px;margin:18px 0}
+  .recall summary{cursor:pointer;font-weight:600}
+  pre{white-space:pre-wrap;overflow-wrap:anywhere;background:var(--accent-tint);padding:16px;font:14px/1.7 var(--mono)}
+  .archive-list{list-style:none;padding:0}
+  .archive-list li{padding:15px 0;border-bottom:1px solid var(--rule)}
+  .archive-meta{display:block;color:var(--muted);font:12px/1.8 var(--mono)}
+  .practice .label{margin-top:0}
+  .source a{font-size:12px;line-height:1.8}
+  .source a[href^="#"]::before{content:"↓ "}
+  .coverage{font-size:14px;color:var(--muted);margin:12px 0 0}
+  hr{border:0;border-top:1px solid var(--rule);margin:22px 0}
+  @media(max-width:480px){.paper{padding:24px 18px 48px}.dateline{flex-wrap:wrap}.section-title{font-size:12px}.section-head{gap:8px}.deep-dive h3{font-size:25px}}
+</style>
+</head>
+<body>
+<div class="paper">
+<a class="skip-link" href="#content">Skip to content</a>
+<nav class="site-nav" aria-label="Main navigation"><a href="../index.html">Latest edition</a><a href="../archive.html">Archive</a></nav>
+
+  <header class="masthead">
+    <div class="rule-top"></div>
+    <div class="kicker-top">Aggregated Morning Brief · No. 031</div>
+    <h1>DC Daily Brief</h1>
+    <p class="tagline">Physical infrastructure, logical systems, and the decisions connecting them.</p>
+    <div class="dateline">
+      <span>Sunday · August 23, 2026</span>
+      <span>Curated for Robert</span>
+    </div>
+    <p class="coverage">Covers news through August 23, 2026.</p>
+  </header>
+
+<main id="content">
+<nav class="section-nav" aria-label="Edition sections"><a href="#equinix">Equinix</a><a href="#google">Google</a><a href="#competitors">Competitors</a><a href="#dc-infrastructure">DC Infrastructure</a><a href="#ai-compute-demand">AI &amp; Compute Demand</a><a href="#new-ai-models-releases">New AI Models &amp; Releases</a><a href="#networking">Networking</a><a href="#backend-cloud-data">Backend / Cloud &amp; Data</a><a href="#program-pm">Program &amp; PM</a><a href="#pgpm-growth">PgPM Growth</a></nav><section class="section" id="equinix"><h2 class="section-head"><span class="section-num">01</span><span class="section-title">Equinix</span></h2><article class="item"><h3>Equinix wins another 50 MW allocation in Singapore—but the award comes with an operating model attached</h3><p>Singapore selected Equinix, Digital Realty, Keppel Data Centres and STT GDC for 50 MW each on Jurong Island under its second Data Center Call for Application. The capacity requires at least 50 percent low-carbon energy, liquid cooling and performance beyond minimum sustainability criteria, so Equinix has gained scarce growth rights rather than an unconditional block of usable megawatts.</p><div class="source"><a href="https://www.datacenterdynamics.com/en/news/singapore-govt-allocates-200mw-of-power-for-four-data-center-developers-on-jurong-island/" target="_blank" rel="noopener noreferrer">Data Center Dynamics</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Turn an allocation into a requirements-to-revenue chain</h3><p>Create one traceable line from the 50 MW award through land, energy source, liquid-cooling design, permits, utility milestones, commissioning, customer deployment and sellable capacity. For each gate, record the evidence, accountable owner, latest safe date and condition that could reduce the usable total. Report awarded, design, energized, commissioned and customer-ready MW separately. A PgPM protects credibility by showing exactly when a policy award becomes capacity the business can operate and sell.</p></aside></section><section class="section" id="google"><h2 class="section-head"><span class="section-num">02</span><span class="section-title">Google</span></h2><article class="item"><h3>A regional Google Cloud incident affected several managed data services in us-west1</h3><p>Google reported timeouts, degraded service, errors and elevated latency beginning August 20 across Cloud Filestore, Dataproc, Cloud SQL and another product in Oregon. Multiple services failing in one region is a reminder that choosing different products does not guarantee independent failure domains when they share location-level infrastructure.</p><div class="source"><a href="https://status.cloud.google.com/" target="_blank" rel="noopener noreferrer">Google Cloud Service Health</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Map shared fate before an incident exposes it</h3><p>For every critical workflow, identify region, zone, control plane, storage, identity, network and upstream data dependencies; then mark which components can fail together. Define the customer symptom, detection signal, failover trigger, recovery owner and data-consistency check for each shared-fate group. During review, ask “What single regional condition defeats more than one safeguard?” A service inventory describes components; a failure-domain map tells the program where resilience is still only assumed.</p></aside></section><section class="section" id="competitors"><h2 class="section-head"><span class="section-num">03</span><span class="section-title">Competitors</span></h2><article class="item"><h3>Itochu plans to re-enter data-center development with roughly ten Japanese facilities by 2030</h3><p>The diversified trading company is reportedly considering several hundred billion yen of investment, targeting sites around Tokyo, Osaka and Kyushu at about 50 MW each and planning to lease them to US technology companies. Annual openings and eventual asset sales suggest a repeatable develop-lease-exit model, but locations, tenants, funding and delivery dates remain reported intentions rather than committed capacity.</p><div class="source"><a href="https://www.datacenterdynamics.com/en/news/itochu-to-begin-data-center-development-plans-10-new-facilities-by-2030/" target="_blank" rel="noopener noreferrer">Data Center Dynamics</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Read a competitor announcement as a business model, not a capacity total</h3><p>Separate the value chain into site acquisition, entitlement, power, design, construction, tenant commitment, stabilization and asset sale; note where Itochu earns value and where it carries risk at each stage. Put every claimed facility on a maturity ladder with evidence and confidence. This helps a PgPM distinguish a credible delivery engine from a pipeline headline—and anticipate which partners, customers and constrained resources a new entrant may compete for.</p></aside></section><section class="section" id="dc-infrastructure"><h2 class="section-head"><span class="section-num">04</span><span class="section-title">DC Infrastructure</span></h2><article class="item"><h3>TVA makes incremental grid capacity an explicit data-center cost</h3><p>The utility approved a separate data-center rate expected to add roughly 10 percent to power charges and an upfront capacity commitment of about $1.5 million per megawatt for new developments, paid over three to five years. With TVA forecasting 11–32 GW of additional generation need, power availability is becoming a commercial commitment that must be secured and paid for well before a campus reaches full load.</p><div class="source"><a href="https://www.datacenterdynamics.com/en/news/us-utility-tva-imposes-new-rates-on-data-center-firms/" target="_blank" rel="noopener noreferrer">Data Center Dynamics</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Put utility economics inside the capacity plan</h3><p>Model each phase with requested MW, reservation charge, energy rate, minimum-payment obligation, energization date, ramp profile and downside case if customer demand arrives late. Link commercial approvals to utility study and construction gates so the team cannot commit a customer date without exposing the carrying cost of reserved power. Track cost per commissioned and occupied MW—not only cost per requested MW. Capacity is valuable when its timing, reliability and revenue justify the capital held for it.</p></aside></section><section class="section" id="ai-compute-demand"><h2 class="section-head"><span class="section-num">05</span><span class="section-title">AI &amp; Compute Demand</span></h2><article class="item"><h3>Nvidia backs powered-land developer Cloverleaf as AI demand moves further upstream</h3><p>Nvidia took a minority stake and will support Cloverleaf projects built around its DSX data-center reference design. Cloverleaf says it has sold sites representing more than 7 GW and holds a pipeline above 10 GW, but those company-reported figures should not be treated as operating capacity; the strategic signal is that an accelerator vendor now sees site, power and design readiness as constraints worth financing.</p><div class="source"><a href="https://www.datacenterdynamics.com/en/news/nvidia-backs-data-center-powered-land-company-cloverleaf/" target="_blank" rel="noopener noreferrer">Data Center Dynamics</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Manage the demand signal and the supply evidence separately</h3><p>Keep customer interest, vendor investment and market forecasts on the demand side; keep controlled land, interconnection status, permits, equipment allocation and commissioned MW on the supply side. Connect them only through a phase with a named customer need date and acceptance basis. This prevents strong ecosystem enthusiasm from masking a delivery gap. For a PgPM, the key question is not “How large is the pipeline?” but “Which capacity block has matching demand, power, capital and schedule confidence?”</p></aside></section><section class="section" id="new-ai-models-releases"><h2 class="section-head"><span class="section-num">06</span><span class="section-title">New AI Models &amp; Releases</span></h2><article class="item"><h3>Google’s SL2T model brings sign-language translation into consumer products</h3><p>The multilingual sign-language-to-text model was trained across more than 50 sign languages and now powers ASL-to-English input in Gboard and Live Transcribe on Pixel 11. Google says the system sends pose landmarks rather than raw camera video for translation and documents remaining errors, making the release a useful case study in combining model quality, privacy architecture, community participation and product acceptance.</p><div class="source"><a href="https://deepmind.google/blog/putting-sign-language-ai-into-users-hands/" target="_blank" rel="noopener noreferrer">Google DeepMind</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Define acceptance with the people affected, not just a benchmark</h3><p>Build a release scorecard that covers task success, error consequences, latency, accessibility, privacy data flow, language and user variation, fallback behavior and community feedback. Name which metric can block launch and who has authority to accept residual limitations. A high aggregate score can hide a poor experience for a smaller user group. The program-management lesson is to make technical performance one input to readiness—not the sole definition of value.</p></aside></section><section class="section" id="networking"><h2 class="section-head"><span class="section-num">07</span><span class="section-title">Networking</span></h2><article class="item"><h3>Meta files for a 497 Tbps transatlantic cable between New Jersey and Denmark</h3><p>The proposed Aurora system would span 7,268 km with 24 fiber pairs, use existing landing stations and target service in January 2028. The filing says initial lit capacity is not yet decided, illustrating the difference between designed fiber potential and capacity that is equipped, tested and commercially available on day one.</p><div class="source"><a href="https://www.datacenterdynamics.com/en/news/meta-files-for-subsea-cable-connecting-the-us-and-denmark/" target="_blank" rel="noopener noreferrer">Data Center Dynamics</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Maintain three baselines for network capacity</h3><p>Record design capacity, initially lit capacity and sellable service capacity separately, then connect each to licenses, marine survey, manufacture, landing readiness, terrestrial backhaul, terminal equipment and end-to-end acceptance. Add restoration diversity and shared landing dependencies before calling the route resilient. This lets a PgPM explain why a 497 Tbps design can still have a smaller operational contribution—and which decision unlocks the next increment.</p></aside></section><section class="section" id="backend-cloud-data"><h2 class="section-head"><span class="section-num">08</span><span class="section-title">Backend / Cloud &amp; Data</span></h2><article class="item"><h3>AWS adds a fourth Availability Zone in its London region and a Local Zone in Las Vegas</h3><p>The new eu-west-2 zone includes general compute plus Trn3 and P6 accelerated instances, while the Las Vegas Local Zone extends selected compute, storage, container and networking services closer to latency-sensitive users. An additional zone creates another placement option, but applications gain resilience only when data, quotas, deployment automation and failover behavior are deliberately designed and tested across it.</p><div class="source"><a href="https://www.datacenterdynamics.com/en/news/aws-launches-new-availability-zone-for-uk-cloud-region/" target="_blank" rel="noopener noreferrer">Data Center Dynamics</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Treat a new zone as an architectural option with an adoption backlog</h3><p>Inventory workloads that could benefit, then assess service availability, quotas, data replication, network paths, latency, cost, compliance and recovery objectives. For each candidate, define the change, test evidence, rollback and owner before counting the zone in resilience claims. Infrastructure presence does not automatically improve an application; the benefit appears only after teams deploy across the boundary and prove recovery under realistic failure.</p></aside></section><section class="section" id="program-pm"><h2 class="section-head"><span class="section-num">09</span><span class="section-title">Program &amp; PM</span></h2><article class="item"><h3>APM argues that cognitive security belongs in the project risk register</h3><p>The article focuses on manipulation that distorts how decision-makers interpret otherwise plausible information, especially when AI can amplify selective framing, urgency or false consensus. For PgPMs, the practical risk is not limited to incorrect data: a decision can be steered by missing context, weak provenance or a presentation that suppresses uncertainty.</p><div class="source"><a href="https://www.apm.org.uk/blog/cognitive-security-the-project-risk-no-one-is-registering/" target="_blank" rel="noopener noreferrer">Association for Project Management</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Add decision provenance to governance</h3><p>For a material recommendation, record source, date, owner, assumptions, excluded alternatives, uncertainty range, known dissent and the decision right. Ask an independent reviewer to state what evidence would reverse the recommendation and whether the briefing separates fact, interpretation and advocacy. Preserve the decision packet with the outcome so later reviews can reconstruct why the choice was reasonable at the time. Good governance protects the quality of judgment, not merely the accuracy of the spreadsheet.</p></aside></section><section class="section" id="pgpm-growth"><h2 class="section-head"><span class="section-num">10</span><span class="section-title">PgPM Growth</span></h2><article class="item"><h3>Foundation · Translate delivery outputs into business value</h3><p>Business acumen begins by connecting what the program produces to the outcome an investor, customer or operator values. A commissioned data hall is an output; usable capacity is an outcome; revenue, avoided constraint, customer retention or strategic market access is the benefit. Build a simple chain—objective → capability → operational behavior → measurable benefit → accountable owner—and challenge any link that depends on an unstated assumption.</p><div class="source"><a href="https://www.pmi.org/blog/pmi-talent-triangle-the-key-to-project-management-success" target="_blank" rel="noopener noreferrer">PMI · Talent Triangle and business acumen</a></div></article>
+<article class="item"><h3>Foundation · Plan capacity as a timed portfolio, not one megawatt number</h3><p>Separate nameplate, available, resilient, commissioned, customer-accepted, sellable and occupied capacity, because each answers a different business question. Forecast a base, upside and downside demand curve against supply blocks and their lead times; then show the cost of arriving early, the lost value of arriving late and the decision date that preserves an option. This turns capacity planning into business judgment instead of a facilities inventory.</p><div class="source"><a href="https://sre.google/sre-book/introduction/" target="_blank" rel="noopener noreferrer">Google SRE · Demand forecasting and capacity planning</a></div></article>
+<article class="item"><h3>Resource · Keep benefits alive after project close</h3><p>Use the lifecycle to assign measures and owners from definition through realization, especially when Operations receives the outcome after delivery.</p><div class="source"><a href="https://www.apm.org.uk/resources/what-is-project-management/what-is-benefits-management-and-project-success/" target="_blank" rel="noopener noreferrer">APM · Benefits management and project success</a></div></article>
+<article class="item"><h3>Resource · Compare options, not just one favored solution</h3><p>Use objectives, costs, benefits, risks, uncertainty and opportunity cost to make the recommendation traceable and proportional to the decision.</p><div class="source"><a href="https://www.gov.uk/government/publications/the-green-book-appraisal-and-evaluation-in-central-government/the-green-book-2026" target="_blank" rel="noopener noreferrer">HM Treasury · The Green Book 2026</a></div></article>
+<article class="item"><h3>Resource · Avoid guessing demand and supply</h3><p>Use measured usage, production-scale tests and elasticity principles to expose the assumptions behind a capacity requirement.</p><div class="source"><a href="https://docs.aws.amazon.com/wellarchitected/2024-06-27/framework/general-design-principles.html" target="_blank" rel="noopener noreferrer">AWS · Well-Architected design principles</a></div></article>
+<article class="item"><h3>Resource · Make the roadmap auditable</h3><p>Record workload priorities, estimates, success metrics, dependencies and update rules so the capacity forecast evolves with evidence rather than memory.</p><div class="source"><a href="https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/plan/document-cloud-adoption-plan" target="_blank" rel="noopener noreferrer">Microsoft · Document a cloud adoption plan</a></div></article>
+<aside class="practice"><h3 class="label">Daily Action · Build a capacity-to-value ladder</h3><p>Set a 30-minute timer and choose one hypothetical 10 MW data-center expansion. Create seven rows—awarded, designed, available, resilient, commissioned, customer-accepted and occupied—with MW, evidence, owner, earliest date, confidence, carrying cost and business benefit. Add base, upside and downside demand, then write the one decision due next and the value at risk if it slips. Keep the artifact local; do not send communications or modify an external system.</p></aside></section>
+</main>
+<nav class="edition-nav" aria-label="Adjacent editions"><a href="2026-08-21.html">← Previous edition</a> <a href="2026-08-25.html">Next edition →</a></nav>
+
+  <footer class="foot">
+    <div class="big">DC Daily Brief</div>
+    Covers news through August 23, 2026. · Researched and generated on demand<br>
+    News, context, and learning for Robert · Historical reporting may be superseded.
+  </footer>
+
+</div>
+</body>
+</html>

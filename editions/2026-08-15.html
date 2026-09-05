@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>DC Daily Brief — Saturday, August 15, 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,900&family=Newsreader:opsz,wght@6..72,400;6..72,500&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#F7F5EF; --panel:#FBFAF6; --ink:#1B1A17; --soft-ink:#3B3934;
+    --muted:#6B6862; --rule:#D8D3C7; --rule-strong:#B7B1A3;
+    --accent:#0F766E; --accent-ink:#0B534D; --accent-tint:#EAF1EF;
+    --serif:'Newsreader',Georgia,'Times New Roman',serif;
+    --display:'Fraunces',Georgia,serif;
+    --mono:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#14140F; --panel:#1A1A14; --ink:#ECE8DD; --soft-ink:#CFC9BB;
+      --muted:#948E80; --rule:#2E2D25; --rule-strong:#413F34;
+      --accent:#5FD3C4; --accent-ink:#8FE3D8; --accent-tint:#17241F;
+    }
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0}
+  body{
+    background:var(--bg); color:var(--ink);
+    font-family:var(--serif); font-size:18px; line-height:1.62;
+    -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+  }
+  .paper{max-width:760px; margin:0 auto; padding:40px 26px 72px;}
+
+  /* Masthead */
+  .masthead{text-align:center; padding-bottom:18px;}
+  .masthead .rule-top{border-top:3px solid var(--ink); margin-bottom:14px;}
+  .kicker-top{
+    font-family:var(--mono); font-size:11px; letter-spacing:.32em; text-transform:uppercase;
+    color:var(--muted); margin-bottom:12px;
+  }
+  .masthead h1{
+    font-family:var(--display); font-weight:900; font-size:clamp(38px,9vw,68px);
+    line-height:.94; letter-spacing:-.02em; margin:0 0 10px;
+  }
+  .masthead .tagline{
+    font-family:var(--serif); font-style:italic; color:var(--soft-ink);
+    font-size:16px; max-width:38ch; margin:0 auto 16px;
+  }
+  .dateline{
+    display:flex; justify-content:space-between; align-items:center; gap:12px;
+    border-top:1px solid var(--rule-strong); border-bottom:1px solid var(--rule-strong);
+    padding:8px 2px; font-family:var(--mono); font-size:11px; letter-spacing:.12em;
+    text-transform:uppercase; color:var(--muted);
+  }
+
+  /* Section */
+  .section{padding-top:30px;}
+  .section-head{
+    display:flex; align-items:baseline; gap:12px; margin-bottom:14px;
+    border-bottom:1px solid var(--rule); padding-bottom:8px;
+  }
+  .section-num{
+    font-family:var(--mono); font-weight:700; font-size:12px; color:var(--accent);
+    letter-spacing:.1em;
+  }
+  .section-title{
+    font-family:var(--mono); font-weight:700; font-size:12.5px; letter-spacing:.22em;
+    text-transform:uppercase; color:var(--ink);
+  }
+
+  .item{margin:0 0 20px;}
+  .item h3{
+    font-family:var(--display); font-weight:600; font-size:22px; line-height:1.2;
+    letter-spacing:-.01em; margin:0 0 6px;
+  }
+  .item p{margin:0 0 6px; color:var(--soft-ink);}
+  .item em, .practice em{font-style:italic; color:var(--ink);}
+  .source a{
+    font-family:var(--mono); font-size:11px; letter-spacing:.06em; text-transform:uppercase;
+    color:var(--accent); text-decoration:none; border-bottom:1px solid transparent;
+  }
+  .source a:hover{border-bottom-color:var(--accent);}
+  .source a::before{content:"↗ ";}
+
+  /* In Practice callout */
+  .practice{
+    background:var(--accent-tint); border-left:3px solid var(--accent);
+    padding:14px 18px; margin:6px 0 4px; border-radius:2px;
+  }
+  .practice .label{
+    display:block; font-family:var(--mono); font-size:10.5px; font-weight:700;
+    letter-spacing:.24em; text-transform:uppercase; color:var(--accent-ink); margin-bottom:6px;
+  }
+  .practice p{margin:0; font-size:16.5px; line-height:1.55; color:var(--soft-ink);}
+  .practice strong{color:var(--ink);}
+  .practice .source{margin-top:8px;}
+
+  /* Footer */
+  .foot{
+    margin-top:44px; padding-top:16px; border-top:3px solid var(--ink);
+    font-family:var(--mono); font-size:11px; letter-spacing:.08em; color:var(--muted);
+    text-align:center; line-height:1.8;
+  }
+  .foot .big{font-family:var(--display); font-size:13px; letter-spacing:.2em; text-transform:uppercase; color:var(--ink);}
+
+  a{color:var(--accent); text-underline-offset:3px; overflow-wrap:anywhere}
+  a:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-offset:4px}
+  .site-nav,.edition-nav{display:flex;justify-content:space-between;gap:16px;font-size:16px;margin:0 0 26px}
+  .edition-nav{margin-top:30px}
+  .skip-link{position:absolute;left:-10000px}
+  .skip-link:focus{position:static}
+  .section{scroll-margin-top:20px}
+  .section-head{margin-top:0}
+  .section-title{line-height:1.6;letter-spacing:.12em}
+  .section-nav{display:flex;flex-wrap:wrap;gap:8px 18px;border-bottom:1px solid var(--rule);padding:20px 0;font-size:16px}
+  .takeaways{padding:22px 0 0}
+  .takeaways h2{font-family:var(--display);font-size:26px}
+  .takeaways .item{margin-bottom:16px}
+  .takeaways .item h3{font-size:20px}
+  .takeaways .item p{font-size:17px}
+  .deep-dive{border-top:2px solid var(--accent);margin-top:28px;padding-top:18px}
+  .deep-dive h3{font-family:var(--display);font-size:28px;line-height:1.2;margin:8px 0 18px}
+  .deep-dive h4{font-family:var(--display);font-size:21px;margin:24px 0 8px}
+  .eyebrow{font:12px var(--mono);color:var(--accent);text-transform:uppercase;letter-spacing:.15em}
+  .recall{border:1px solid var(--rule);padding:14px 18px;margin:18px 0}
+  .recall summary{cursor:pointer;font-weight:600}
+  pre{white-space:pre-wrap;overflow-wrap:anywhere;background:var(--accent-tint);padding:16px;font:14px/1.7 var(--mono)}
+  .archive-list{list-style:none;padding:0}
+  .archive-list li{padding:15px 0;border-bottom:1px solid var(--rule)}
+  .archive-meta{display:block;color:var(--muted);font:12px/1.8 var(--mono)}
+  .practice .label{margin-top:0}
+  .source a{font-size:12px;line-height:1.8}
+  .source a[href^="#"]::before{content:"↓ "}
+  .coverage{font-size:14px;color:var(--muted);margin:12px 0 0}
+  hr{border:0;border-top:1px solid var(--rule);margin:22px 0}
+  @media(max-width:480px){.paper{padding:24px 18px 48px}.dateline{flex-wrap:wrap}.section-title{font-size:12px}.section-head{gap:8px}.deep-dive h3{font-size:25px}}
+</style>
+</head>
+<body>
+<div class="paper">
+<a class="skip-link" href="#content">Skip to content</a>
+<nav class="site-nav" aria-label="Main navigation"><a href="../index.html">Latest edition</a><a href="../archive.html">Archive</a></nav>
+
+  <header class="masthead">
+    <div class="rule-top"></div>
+    <div class="kicker-top">Aggregated Morning Brief · No. 027</div>
+    <h1>DC Daily Brief</h1>
+    <p class="tagline">Physical infrastructure, logical systems, and the decisions connecting them.</p>
+    <div class="dateline">
+      <span>Saturday · August 15, 2026</span>
+      <span>Curated for Robert</span>
+    </div>
+    <p class="coverage">Covers news through August 15, 2026.</p>
+  </header>
+
+<main id="content">
+<nav class="section-nav" aria-label="Edition sections"><a href="#equinix">Equinix</a><a href="#google">Google</a><a href="#competitors">Competitors</a><a href="#dc-infrastructure">DC Infrastructure</a><a href="#ai-compute-demand">AI &amp; Compute Demand</a><a href="#new-ai-models-releases">New AI Models &amp; Releases</a><a href="#networking">Networking</a><a href="#backend-cloud-data">Backend / Cloud &amp; Data</a><a href="#program-pm">Program &amp; PM</a><a href="#pgpm-growth">PgPM Growth</a></nav><section class="section" id="equinix"><h2 class="section-head"><span class="section-num">01</span><span class="section-title">Equinix</span></h2><article class="item"><h3>Equinix&#x27;s Munich expansion reaches topping-out, but the delivery risk now moves inside the shell</h3><p>MU4.3 has completed its structural milestone and is moving into internal fit-out as part of a phased expansion of the existing MU4 campus. Topping out is visible progress, yet the remaining systems integration, controls, testing and live-campus interfaces carry much of the risk that determines when the added capacity becomes operational.</p><div class="source"><a href="https://www.datacenterdynamics.com/en/news/equinix-tops-out-munich-data-center-in-germany/" target="_blank" rel="noopener noreferrer">Data Center Dynamics</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Rebaseline risk when the project changes phases</h3><p>At shell completion, retire structural risks that are truly closed and add fit-out risks for equipment delivery, controls integration, energization, testing access and work beside live systems. Reconfirm owners and contingency before the next gate. A milestone should change the risk picture, not merely the percent-complete number.</p></aside></section><section class="section" id="google"><h2 class="section-head"><span class="section-num">02</span><span class="section-title">Google</span></h2><article class="item"><h3>Google&#x27;s post-incident report shows how maintenance can temporarily erase designed redundancy</h3><p>A July Google Cloud disruption followed an upstream electrical fault while a redundant source was unavailable because of ongoing construction; a DRUPS failed to carry load, a chiller controller dropped offline and data-hall temperature eventually reached 44°C. The report makes the combined-risk lesson explicit: planned impairment, utility disturbance and component failures must be evaluated together rather than as independent events.</p><div class="source"><a href="https://status.cloud.google.com/incidents/3BvH3LVGcupoYqV6F4Nw" target="_blank" rel="noopener noreferrer">Google Cloud Service Health</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Govern maintenance by the temporary system state</h3><p>Before approving work that removes redundancy, redraw the active power and cooling paths, list coincident failures the site can no longer tolerate, lower escalation thresholds and define restoration triggers. Brief the control room on the temporary failure modes. Normal operating procedures are insufficient when maintenance has changed the topology.</p></aside></section><section class="section" id="competitors"><h2 class="section-head"><span class="section-num">03</span><span class="section-title">Competitors</span></h2><article class="item"><h3>Anthropic&#x27;s 20-year Kentucky lease gives TeraWulf a large contracted anchor before the campus is built</h3><p>TeraWulf says the lease could generate about $19 billion over its initial term for capacity at a phased campus planned to reach 401 MW, with initial delivery targeted for the second half of 2027. The contract strengthens financing and demand visibility, but it also concentrates execution around one major tenant, a long schedule and a facility that must still be completed.</p><div class="source"><a href="https://www.datacenterdynamics.com/en/news/anthropic-signs-19bn-20-year-lease-for-kentucky-data-center-with-terawulf/" target="_blank" rel="noopener noreferrer">Data Center Dynamics</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Turn the anchor contract into a mutual obligation map</h3><p>Separate provider milestones, customer prerequisites, acceptance tests, delay remedies, expansion options and change-control rights; show where one party&#x27;s missed input blocks the other. Track concentration exposure alongside contracted revenue. A long lease reduces demand uncertainty while increasing the importance of interface governance.</p></aside></section><section class="section" id="dc-infrastructure"><h2 class="section-head"><span class="section-num">04</span><span class="section-title">DC Infrastructure</span></h2><article class="item"><h3>Israel pauses large data-center grid applications after requests overwhelm realistic supply</h3><p>The Electricity Authority froze processing for new facilities of 8 MW or more for 140 days after receiving a reported 19 GW of requests in two months, allowing agencies to develop allocation rules and distinguish executable projects from speculative demand. The pause demonstrates how inflated pipelines can consume planning capacity and force regulators to replace first-come processing with evidence-based prioritization.</p><div class="source"><a href="https://www.datacenterdynamics.com/en/news/israeli-electrical-authority-freezes-grid-processing-of-new-data-centers-for-140-days/" target="_blank" rel="noopener noreferrer">Data Center Dynamics</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Make the interconnection request earn its place in the queue</h3><p>Maintain evidence for site control, customer demand, financing, load profile, design maturity and deposit readiness; update or withdraw requests when assumptions change. Score pipeline capacity by probability instead of summing every application. Credible evidence protects both the program forecast and the utility relationship.</p></aside></section><section class="section" id="ai-compute-demand"><h2 class="section-head"><span class="section-num">05</span><span class="section-title">AI &amp; Compute Demand</span></h2><article class="item"><h3>AMD and Anthropic tie up to 2 GW of accelerator demand to a specific rack-scale platform</h3><p>AMD plans to invest up to $5 billion in Anthropic while the AI company targets deployment of up to 2 GW of MI450-based Helios systems, beginning with a stated first gigawatt in the first half of 2027. The figures are forward commitments, but they show compute demand becoming a coordinated program across chips, CPUs, networking, rack integration, power and software optimization.</p><div class="source"><a href="https://www.datacenterdynamics.com/en/news/amd-to-invest-5bn-in-anthropic-with-ai-company-to-deploy-2gw-of-instinct-mi450-gpus/" target="_blank" rel="noopener noreferrer">Data Center Dynamics</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Track the deployment as a full-stack bill of readiness</h3><p>For each capacity block, align accelerator supply, rack certification, network fabric, firmware, cooling envelope, power delivery, site date and workload acceptance. Identify the component with the lowest schedule confidence. Gigawatts of demand become usable compute only when every layer arrives in a tested configuration.</p></aside></section><section class="section" id="new-ai-models-releases"><h2 class="section-head"><span class="section-num">06</span><span class="section-title">New AI Models &amp; Releases</span></h2><article class="item"><h3>Gemini 3.6 Flash reaches the global Gemini Enterprise region as the prior Flash version exits</h3><p>Google Cloud release notes say administrators can enable Gemini 3.6 Flash for Gemini Enterprise and Agent Designer workflows while Gemini 3.5 Flash is removed from the global region. A model transition inside an enterprise platform creates a governed migration window: teams must validate behavior, update controls and move dependent workflows before availability changes become an incident.</p><div class="source"><a href="https://docs.cloud.google.com/release-notes" target="_blank" rel="noopener noreferrer">Google Cloud</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Treat model retirement as a dependency deadline</h3><p>Inventory workflows, prompts, evaluations, guardrails and owners tied to the outgoing version; test the replacement against quality, latency, cost and tool behavior, then set an internal cutoff ahead of the provider date. Keep a rollback path where the platform permits it. Discovery is the first control in any model migration.</p></aside></section><section class="section" id="networking"><h2 class="section-head"><span class="section-num">07</span><span class="section-title">Networking</span></h2><article class="item"><h3>Prysmian and Relativity push hollow-core fiber toward denser data-center deployment</h3><p>The companies are pairing a high-fiber-count cable with hollow-core technology intended to reduce latency and improve pathway density for AI connectivity. Novel fiber may improve performance, but adoption also creates new requirements for termination, test equipment, bend limits, splicing, supplier support and field-repair competence.</p><div class="source"><a href="https://www.datacenterdynamics.com/en/news/prysmian-relativity-networks-pair-to-deploy-their-highest-density-hollow-core-fiber-cable-so-far/" target="_blank" rel="noopener noreferrer">Data Center Dynamics</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Qualify the installation ecosystem with the cable</h3><p>Build acceptance criteria for loss, latency, density and environmental limits, then prove technicians, tools, spares, cleaning, repair times and documentation can support the design. Run a representative repair exercise before production use. A better medium is operationally ready only when the team can maintain it.</p></aside></section><section class="section" id="backend-cloud-data"><h2 class="section-head"><span class="section-num">08</span><span class="section-title">Backend / Cloud &amp; Data</span></h2><article class="item"><h3>Cloudflare formalizes human handoff inside multi-step browser automation</h3><p>Browser Run can now pause an agent through structured commands, give a person a Live View to handle a blocked step and resume after completion. The feature turns human intervention from an improvised exception into an explicit workflow state, but teams still need rules for what can be handed off, what context is exposed and how completion is verified.</p><div class="source"><a href="https://developers.cloudflare.com/changelog/post/2026-07-28-human-in-the-loop/" target="_blank" rel="noopener noreferrer">Cloudflare</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Design the handoff as a controlled state transition</h3><p>Define allowed triggers, information shown, authorized human actions, timeout, cancellation, audit record and the condition that lets automation resume. Test abandoned and unsuccessful handoffs as well as success. Human-in-the-loop reliability depends on the protocol around the person, not simply their availability.</p></aside></section><section class="section" id="program-pm"><h2 class="section-head"><span class="section-num">09</span><span class="section-title">Program &amp; PM</span></h2><article class="item"><h3>Jira adds native approval steps that make decision governance part of the workflow record</h3><p>Atlassian&#x27;s July changes describe configurable approver roles, single- or multi-step chains, notifications and approval history for company-managed projects. Embedding approvals can improve accountability, but only when the organization defines which decisions need a gate, who has authority and what evidence an approval actually certifies.</p><div class="source"><a href="https://confluence.atlassian.com/cloud/blog/2026/07/atlassian-cloud-changes-jul-6-to-jul-13-2026" target="_blank" rel="noopener noreferrer">Atlassian</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Define the decision before automating its approval</h3><p>For each gate, state the decision, accountable approver, required evidence, response time, delegation rule and meaning of approve, reject or return. Remove gates that do not change risk or authorize action. Workflow tooling strengthens governance only when it captures real decision rights rather than ceremonial clicks.</p></aside></section><section class="section" id="pgpm-growth"><h2 class="section-head"><span class="section-num">10</span><span class="section-title">PgPM Growth</span></h2><article class="item"><h3>Map stakeholders by influence, impact and needed behavior—not title alone</h3><p>At the foundation level, identify everyone who can affect or is affected by a data-center program, then record what outcome they care about, what influence they hold and what action the program needs from them. This turns a contact list into an engagement tool and exposes overlooked groups before a decision or handoff stalls.</p><div class="source"><a href="https://www.apm.org.uk/resources/find-a-resource/stakeholder-engagement/" target="_blank" rel="noopener noreferrer">APM · Stakeholder engagement</a></div></article>
+<article class="item"><h3>Design communication around the decision the audience must make</h3><p>Connect the stakeholder map to a communication plan by tailoring detail, cadence, channel and explicit ask to each audience. An executive may need a recommendation and tradeoff; an Operations lead may need readiness evidence; a vendor may need a dated acceptance criterion. Effective PgPM communication moves work instead of merely reporting activity.</p><div class="source"><a href="https://www.pmi.org/learning/library/proactive-communication-project-managers-8228" target="_blank" rel="noopener noreferrer">PMI · Proactive communication</a></div></article>
+<article class="item"><h3>Resource · Stakeholder engagement as implementation risk control</h3><p>Use PMI&#x27;s guidance to connect early involvement and issue resolution to whether project outputs are actually adopted and used.</p><div class="source"><a href="https://www.pmi.org/learning/library/2019/04/07/15/34/managing-stakeholders-achieve-true-implementation-success-7406" target="_blank" rel="noopener noreferrer">PMI · Managing stakeholders</a></div></article>
+<article class="item"><h3>Resource · Reusable influence-and-interest map</h3><p>Use this template to capture stakeholder interests, influence and engagement strategy in a compact visual artifact.</p><div class="source"><a href="https://www.atlassian.com/software/confluence/templates/stakeholder-mapping" target="_blank" rel="noopener noreferrer">Atlassian · Stakeholder mapping template</a></div></article>
+<article class="item"><h3>Resource · Evidence for communication as a delivery capability</h3><p>Use PMI&#x27;s research summary to explain why communication quality affects project performance rather than treating updates as administrative overhead.</p><div class="source"><a href="https://www.pmi.org/-/media/pmi/documents/public/pdf/learning/thought-leadership/pulse/the-essential-role-of-communications.pdf?v=cf56ca61-a53e-4a14-b7fa-d17051cc3ddc" target="_blank" rel="noopener noreferrer">PMI · Essential role of communications</a></div></article>
+<article class="item"><h3>Resource · Short decision-oriented update pattern</h3><p>Use the executive update example to practice leading with status, the most important change, the principal risk and one specific ask.</p><div class="source"><a href="https://evolang.info/email-templates/client-communication/how-to-write-a-project-update-email" target="_blank" rel="noopener noreferrer">Evolang · Project update guide</a></div></article>
+<aside class="practice"><h3 class="label">Daily Action · Build a stakeholder-to-message matrix</h3><p>Set a 20-minute timer and choose one hypothetical data-center initiative. Create four rows with stakeholder, desired behavior, primary concern, information needed, channel/cadence and next decision; then draft a three-sentence status update for the highest-influence stakeholder. Keep the exercise local and do not send it.</p></aside></section>
+</main>
+<nav class="edition-nav" aria-label="Adjacent editions"><a href="2026-08-14.html">← Previous edition</a> <a href="2026-08-17.html">Next edition →</a></nav>
+
+  <footer class="foot">
+    <div class="big">DC Daily Brief</div>
+    Covers news through August 15, 2026. · Researched and generated on demand<br>
+    News, context, and learning for Robert · Historical reporting may be superseded.
+  </footer>
+
+</div>
+</body>
+</html>

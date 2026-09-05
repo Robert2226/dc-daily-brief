@@ -1,61 +1,40 @@
 # DC Daily Brief
 
-A personal, on-demand **morning newspaper** — one aggregated read covering the
-data center industry, AI/compute, networking, backend/cloud, and the craft of
-project management. Built so I read *one* well-designed brief each morning instead of
-scanning a dozen sites, and learn something in every section.
+[Read the latest edition](https://robert2226.github.io/dc-daily-brief/) ·
+[Browse the archive](https://robert2226.github.io/dc-daily-brief/archive.html)
 
-**Live site:** https://robert2226.github.io/dc-daily-brief/
+Robert's on-demand newspaper and learning companion: data-center facilities, logical
+systems, and the craft of technical program delivery. Researched when requested,
+usually every two days, with three takeaways, ten news categories, a rotating deep dive,
+and progressive PgPM learning. Quality and depth come before a fixed reading time.
 
-## What it is
-- A **no-backend static site** (`index.html`) styled as an editorial newsletter.
-- Regenerated when Robert asks Codex to run the day's brief; Codex searches the news,
-  writes the edition, commits, and pushes — GitHub Pages redeploys.
-- Each edition has nine news sections with **"In Practice"** learning bites plus a
-  final progressive professional-development section.
+The dedicated **DCOS, DCIM, BMS & Controls** section spans the vendor ecosystem, software,
+integrations, and relevant hardware. DCOS means Data Center Operating System; DCIM means
+Data Center Infrastructure Management. Broad category discovery and vendor research run
+each edition; AVEVA, FactoryTalk and Emerson are examples, not a closed list.
 
-## Sections
-Equinix · Google · Competitors · DC Infrastructure · AI & Compute Demand · New AI
-Models & Releases · Networking · Backend / Cloud & Data · Program & PM — each with an
-*In Practice* explainer. Google is always section 2 and covers Google Cloud/GCP, Google
-data centers, infrastructure, operations, partnerships, regions, and material platform
-news.
+## Reading and generation
+The site is static HTML/CSS with no backend, JavaScript requirement, or reader build step.
+External Google Fonts have local fallbacks. Recall answers use native HTML disclosure.
 
-`PgPM Growth` is always section 10. The project-local `$build-pgpm-growth` skill creates
-two connected lessons for Robert's PgPM development in the data-center industry, six
-supporting links, and a practical Daily Action.
+- `AGENTS.md`: authoritative project and publishing rules.
+- `EDITORIAL.md`: reader profile, editorial workflow and Markdown format.
+- `SOURCES.md`: expandable research starting points.
+- `briefs/`: original dated Markdown; `research/`: evidence and research-gap records.
+- `build.py` and `template.html`: dependency-free rendering and shared design.
+- `editions/`, `archive.html`, `index.html`, `latest.md`: generated reading surfaces.
+- `edition-manifest.json`: stable issue numbers and topics taught, not reader progress.
 
-Crusoe is also monitored every day through its newsroom and general web searches.
-Crusoe stories are placed in the existing section that matches their main angle—such
-as competitors, infrastructure, compute demand, cloud, or networking—and are checked
-against independent reporting for material claims. Crusoe does not add a tenth section.
-
-## Structure
-```
-index.html      # the published newsletter (latest edition)
-briefs/         # dated markdown archive of past editions (source of truth)
-AGENTS.md       # authoritative Codex workflow and project rules
-CLAUDE.md       # legacy-compatible copy of the project rules
-README.md
-.gitignore
-```
-
-## How it's produced
-Robert initiates the workflow in Codex by asking it to run today's brief. Codex follows
-the repository's `AGENTS.md` instructions and:
-1. gathers news across the nine news sections,
-2. invokes `$build-pgpm-growth` for section 10,
-3. writes a dated markdown brief into `briefs/`,
-4. renders `index.html` from it,
-5. commits to `main` and pushes → GitHub Pages updates.
-
-## Local preview
-```
+```sh
+python3 build.py briefs/YYYY-MM-DD.md
+python3 -m unittest discover -s tests
 python3 -m http.server 8091 --directory .
-# then open http://localhost:8091/index.html
 ```
 
-## Contributing (just me, but disciplined)
-See [AGENTS.md](AGENTS.md). The user-initiated daily content brief commits to `main`;
-every manual workflow, documentation, design, or feature change goes through a branch →
-PR → merge.
+The build renders every dated edition and always selects the newest date for the
+homepage. `--output-dir /tmp/brief-preview` isolates generated output for inspection.
+Historical editions retain their content and are not fact-checked again by rendering.
+
+Manual changes use branch → PR → review → merge. User-initiated content-only editions
+publish from main with `./publish.sh YYYY-MM-DD` (defaults to today's local date).
+Generation is not scheduled and publishing does not research or write the brief for you.

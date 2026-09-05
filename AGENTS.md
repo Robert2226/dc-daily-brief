@@ -3,9 +3,10 @@
 ## What this is
 A personal, no-backend **static newsletter** ("my morning newspaper") that aggregates
 data center, AI, networking, backend/cloud, and project-management news + daily learning
-into one well-designed page, regenerated on demand each morning and hosted on GitHub
-Pages. It serves double duty: stay current on my industry, and study/learn (I'm a data
-center ops engineer at Equinix moving into program/project management, targeting PMP).
+into one well-designed page, regenerated on demand and hosted on GitHub Pages.
+It serves double duty: stay current on my industry, and study/learn. I am an established
+technical PgPM at Equinix, working across physical facilities, logical systems, and
+program delivery.
 
 ## Golden rules (project hygiene)
 - **This repo lives at `~/repos/dc-daily-brief`, OUTSIDE iCloud/OneDrive.** Never move a
@@ -26,19 +27,39 @@ center ops engineer at Equinix moving into program/project management, targeting
 - Commit messages: imperative subject line; end AI-assisted commits with the standard
   `Co-Authored-By` trailer.
 
-## Content structure (each daily edition)
-The first nine numbered sections each contain 1–2 news items (headline + 2–3 sentence
-summary + source link) **plus an "In Practice" learning bite**:
-`Equinix · Google · Competitors · DC Infrastructure · AI & Compute Demand · New AI
-Models & Releases · Networking · Backend / Cloud & Data · Program & PM`.
-"In Practice" appears in every section every day (generated teaching content; vary the
-topic daily so it compounds). All source links open in a new tab.
+## Content structure (new editions)
+Follow [EDITORIAL.md](EDITORIAL.md) for research, Markdown, metadata and validation,
+and [SOURCES.md](SOURCES.md) for the expandable research watchlist. Generation is
+user-initiated, typically every two days; cover since the previous edition, not just
+calendar-day headlines. Quality and depth take precedence over reading-time targets.
 
-Every new edition also ends with Section 10, `PgPM Growth`. Use the project-local
-`$build-pgpm-growth` skill to create it. It teaches two connected topics that advance
-Robert's professional development as a PgPM at Equinix in the data-center industry,
-contains exactly six researched links (three per topic), and ends with one safe,
-time-boxed `Daily Action`. This section is a progressive curriculum, not a news category.
+Start with three linked takeaways. The ten numbered news sections, in order, are:
+`Equinix · Google · Competitors · DC Infrastructure · DCOS, DCIM, BMS & Controls ·
+AI & Compute Demand · New AI Models & Releases · Networking · Backend / Cloud & Data ·
+Program & PM`. Each has 1–2 worthwhile stories plus an In Practice learning bite. When
+research finds no material news, explicitly say so and still teach. Use multiple
+purposeful source links as needed; external links open in a new tab.
+
+Include one rotating 500–800-word deep dive within a news section. Every fourth expanded
+edition uses a synthesis deep dive. Track topics/cases in edition metadata, not inferred
+reader mastery. Vary mechanisms, examples, comparisons, failure scenarios and judgment.
+
+`PgPM Growth` is Section 11, immediately after Program & PM. Invoke the local
+`$build-pgpm-growth` skill for two connected lessons, exactly six researched sources
+(three per topic), a worked example and one short optional time-boxed Daily Action.
+Historical editions keep their original content and section counts.
+
+### DCOS, DCIM, BMS & Controls
+DCOS means Data Center Operating System; DCIM means Data Center Infrastructure
+Management. Cover their relationship to BMS, SCADA, electrical power monitoring,
+historians and local controls without conflating these responsibilities. AVEVA,
+Rockwell/FactoryTalk and Emerson are examples, not boundaries. Discover other vendors,
+integrators, software and hardware through broad category and vendor searches on every
+run. Cover releases, deployments, integration, lifecycle, acquisitions and relevant
+security developments. Teach architecture, protocols, alarms, data quality, redundancy,
+OT security, commissioning and handover; connect technology to delivery and lifecycle
+tradeoffs. Hardware gets lighter coverage unless a development warrants a deep dive.
+Do not invent Equinix-specific architecture, instructions or procedures.
 
 ### Google section
 - Place `Google` directly after `Equinix` in every new edition, beginning July 29, 2026.
@@ -86,15 +107,15 @@ time-boxed `Daily Action`. This section is a progressive curriculum, not a news 
 - Reuse the CSS variables already defined in `index.html`; don't hardcode new hex values.
 
 ## How it's generated
-The user starts the workflow in Codex by asking to run today's brief. Codex reads this
-file as the workflow source of truth, reviews recent editions to avoid repetition,
-researches the nine news sections, invokes `$build-pgpm-growth` for Section 10, writes
-a dated markdown brief to `briefs/`, renders `index.html`, validates it, and
-commits/pushes the content-only edition to `main`.
-Editing the look or structure remains a manual branch-and-PR change.
+The user asks Codex to run the brief. Read this file, EDITORIAL.md, SOURCES.md, recent
+editions and the manifest; research all ten categories including the mandatory Google
+and Crusoe checks. Record research evidence and access gaps in research/YYYY-MM-DD.md.
+Use `$build-pgpm-growth` for Section 11, write the dated Markdown with format-2 metadata,
+then run `python3 build.py briefs/YYYY-MM-DD.md` and the tests. The builder produces the
+latest homepage, dated HTML archive, latest.md and stable edition-manifest.json.
+Content-only daily runs commit/push directly to main using publish.sh; structure,
+styling, workflow, skill and documentation changes use the manual branch/PR process.
 
 ## Roadmap / not yet
-- Archive/back-issues index page linking dated editions.
-- Optional table of contents + per-section jump links.
-- Optional email delivery (Gmail) and/or GitHub Actions cloud publishing for a
-  guaranteed morning send independent of my Mac being awake.
+- Optional topic index beyond the dated archive.
+- Optional email delivery or scheduled generation only if explicitly requested later.

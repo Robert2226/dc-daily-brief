@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>DC Daily Brief — Monday, July 13, 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,900&family=Newsreader:opsz,wght@6..72,400;6..72,500&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#F7F5EF; --panel:#FBFAF6; --ink:#1B1A17; --soft-ink:#3B3934;
+    --muted:#6B6862; --rule:#D8D3C7; --rule-strong:#B7B1A3;
+    --accent:#0F766E; --accent-ink:#0B534D; --accent-tint:#EAF1EF;
+    --serif:'Newsreader',Georgia,'Times New Roman',serif;
+    --display:'Fraunces',Georgia,serif;
+    --mono:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#14140F; --panel:#1A1A14; --ink:#ECE8DD; --soft-ink:#CFC9BB;
+      --muted:#948E80; --rule:#2E2D25; --rule-strong:#413F34;
+      --accent:#5FD3C4; --accent-ink:#8FE3D8; --accent-tint:#17241F;
+    }
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0}
+  body{
+    background:var(--bg); color:var(--ink);
+    font-family:var(--serif); font-size:18px; line-height:1.62;
+    -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+  }
+  .paper{max-width:760px; margin:0 auto; padding:40px 26px 72px;}
+
+  /* Masthead */
+  .masthead{text-align:center; padding-bottom:18px;}
+  .masthead .rule-top{border-top:3px solid var(--ink); margin-bottom:14px;}
+  .kicker-top{
+    font-family:var(--mono); font-size:11px; letter-spacing:.32em; text-transform:uppercase;
+    color:var(--muted); margin-bottom:12px;
+  }
+  .masthead h1{
+    font-family:var(--display); font-weight:900; font-size:clamp(38px,9vw,68px);
+    line-height:.94; letter-spacing:-.02em; margin:0 0 10px;
+  }
+  .masthead .tagline{
+    font-family:var(--serif); font-style:italic; color:var(--soft-ink);
+    font-size:16px; max-width:38ch; margin:0 auto 16px;
+  }
+  .dateline{
+    display:flex; justify-content:space-between; align-items:center; gap:12px;
+    border-top:1px solid var(--rule-strong); border-bottom:1px solid var(--rule-strong);
+    padding:8px 2px; font-family:var(--mono); font-size:11px; letter-spacing:.12em;
+    text-transform:uppercase; color:var(--muted);
+  }
+
+  /* Section */
+  .section{padding-top:30px;}
+  .section-head{
+    display:flex; align-items:baseline; gap:12px; margin-bottom:14px;
+    border-bottom:1px solid var(--rule); padding-bottom:8px;
+  }
+  .section-num{
+    font-family:var(--mono); font-weight:700; font-size:12px; color:var(--accent);
+    letter-spacing:.1em;
+  }
+  .section-title{
+    font-family:var(--mono); font-weight:700; font-size:12.5px; letter-spacing:.22em;
+    text-transform:uppercase; color:var(--ink);
+  }
+
+  .item{margin:0 0 20px;}
+  .item h3{
+    font-family:var(--display); font-weight:600; font-size:22px; line-height:1.2;
+    letter-spacing:-.01em; margin:0 0 6px;
+  }
+  .item p{margin:0 0 6px; color:var(--soft-ink);}
+  .item em, .practice em{font-style:italic; color:var(--ink);}
+  .source a{
+    font-family:var(--mono); font-size:11px; letter-spacing:.06em; text-transform:uppercase;
+    color:var(--accent); text-decoration:none; border-bottom:1px solid transparent;
+  }
+  .source a:hover{border-bottom-color:var(--accent);}
+  .source a::before{content:"↗ ";}
+
+  /* In Practice callout */
+  .practice{
+    background:var(--accent-tint); border-left:3px solid var(--accent);
+    padding:14px 18px; margin:6px 0 4px; border-radius:2px;
+  }
+  .practice .label{
+    display:block; font-family:var(--mono); font-size:10.5px; font-weight:700;
+    letter-spacing:.24em; text-transform:uppercase; color:var(--accent-ink); margin-bottom:6px;
+  }
+  .practice p{margin:0; font-size:16.5px; line-height:1.55; color:var(--soft-ink);}
+  .practice strong{color:var(--ink);}
+  .practice .source{margin-top:8px;}
+
+  /* Footer */
+  .foot{
+    margin-top:44px; padding-top:16px; border-top:3px solid var(--ink);
+    font-family:var(--mono); font-size:11px; letter-spacing:.08em; color:var(--muted);
+    text-align:center; line-height:1.8;
+  }
+  .foot .big{font-family:var(--display); font-size:13px; letter-spacing:.2em; text-transform:uppercase; color:var(--ink);}
+
+  a{color:var(--accent); text-underline-offset:3px; overflow-wrap:anywhere}
+  a:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-offset:4px}
+  .site-nav,.edition-nav{display:flex;justify-content:space-between;gap:16px;font-size:16px;margin:0 0 26px}
+  .edition-nav{margin-top:30px}
+  .skip-link{position:absolute;left:-10000px}
+  .skip-link:focus{position:static}
+  .section{scroll-margin-top:20px}
+  .section-head{margin-top:0}
+  .section-title{line-height:1.6;letter-spacing:.12em}
+  .section-nav{display:flex;flex-wrap:wrap;gap:8px 18px;border-bottom:1px solid var(--rule);padding:20px 0;font-size:16px}
+  .takeaways{padding:22px 0 0}
+  .takeaways h2{font-family:var(--display);font-size:26px}
+  .takeaways .item{margin-bottom:16px}
+  .takeaways .item h3{font-size:20px}
+  .takeaways .item p{font-size:17px}
+  .deep-dive{border-top:2px solid var(--accent);margin-top:28px;padding-top:18px}
+  .deep-dive h3{font-family:var(--display);font-size:28px;line-height:1.2;margin:8px 0 18px}
+  .deep-dive h4{font-family:var(--display);font-size:21px;margin:24px 0 8px}
+  .eyebrow{font:12px var(--mono);color:var(--accent);text-transform:uppercase;letter-spacing:.15em}
+  .recall{border:1px solid var(--rule);padding:14px 18px;margin:18px 0}
+  .recall summary{cursor:pointer;font-weight:600}
+  pre{white-space:pre-wrap;overflow-wrap:anywhere;background:var(--accent-tint);padding:16px;font:14px/1.7 var(--mono)}
+  .archive-list{list-style:none;padding:0}
+  .archive-list li{padding:15px 0;border-bottom:1px solid var(--rule)}
+  .archive-meta{display:block;color:var(--muted);font:12px/1.8 var(--mono)}
+  .practice .label{margin-top:0}
+  .source a{font-size:12px;line-height:1.8}
+  .source a[href^="#"]::before{content:"↓ "}
+  .coverage{font-size:14px;color:var(--muted);margin:12px 0 0}
+  hr{border:0;border-top:1px solid var(--rule);margin:22px 0}
+  @media(max-width:480px){.paper{padding:24px 18px 48px}.dateline{flex-wrap:wrap}.section-title{font-size:12px}.section-head{gap:8px}.deep-dive h3{font-size:25px}}
+</style>
+</head>
+<body>
+<div class="paper">
+<a class="skip-link" href="#content">Skip to content</a>
+<nav class="site-nav" aria-label="Main navigation"><a href="../index.html">Latest edition</a><a href="../archive.html">Archive</a></nav>
+
+  <header class="masthead">
+    <div class="rule-top"></div>
+    <div class="kicker-top">Aggregated Morning Brief · No. 002</div>
+    <h1>DC Daily Brief</h1>
+    <p class="tagline">Physical infrastructure, logical systems, and the decisions connecting them.</p>
+    <div class="dateline">
+      <span>Monday · July 13, 2026</span>
+      <span>Curated for Robert</span>
+    </div>
+    <p class="coverage">Covers news through July 10–13, 2026. Now with Networking + Backend sections and an &quot;In Practice&quot; learning bite in every section.</p>
+  </header>
+
+<main id="content">
+<nav class="section-nav" aria-label="Edition sections"><a href="#equinix">Equinix</a><a href="#competitors">Competitors</a><a href="#dc-infrastructure">DC Infrastructure</a><a href="#ai-compute-demand">AI &amp; Compute Demand</a><a href="#new-ai-models-releases">New AI Models &amp; Releases</a><a href="#networking">Networking</a><a href="#backend-cloud-data">Backend / Cloud &amp; Data</a><a href="#program-pm">Program &amp; PM</a></nav><section class="section" id="equinix"><h2 class="section-head"><span class="section-num">01</span><span class="section-title">Equinix</span></h2><article class="item"><h3>Equinix, Cisco &amp; NVIDIA launch &quot;Secure AI Factories&quot; across the global footprint</h3><p>Announced July 1, the program packages pre-integrated, security-hardened AI infrastructure into Equinix colo, pushing the interconnect model deeper into enterprise AI. It reframes Equinix as core AI infrastructure rather than a cloud on-ramp — relevant context for xScale/SV12X capacity conversations.</p><div class="source"><a href="https://newsroom.equinix.com/" target="_blank" rel="noopener noreferrer">Equinix Newsroom</a></div></article>
+<article class="item"><h3>Equinix raises 2026 revenue outlook; new capacity coming online</h3><p>Strong AI/cloud demand drove an outlook raise, with new facilities landing this year including Paris PA12x (xScale), Madrid MD5, and Lagos LG3. Q2 earnings call is July 29 — watch for xScale build commentary.</p><div class="source"><a href="https://www.equinix.com/data-centers/expansions" target="_blank" rel="noopener noreferrer">Equinix Expansions</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Interconnection is the moat</h3><p>Equinix makes much of its margin not from space and power but from <em>cross-connects</em> — the physical/virtual links tenants buy to reach each other and the clouds. Every new tenant makes the campus more valuable to the next (a network effect), which is why &quot;interconnection revenue&quot; is the metric analysts watch, and why xScale sits <em>next to</em> the dense interconnect hubs rather than in isolation.</p></aside></section><section class="section" id="competitors"><h2 class="section-head"><span class="section-num">02</span><span class="section-title">Competitors</span></h2><article class="item"><h3>Digital Realty locks 1,440 acres in Kansas City + a 600MW power deal scaling to 2GW</h3><p>Utility power is contracted through early 2028, showing rivals racing to secure grid capacity years ahead of construction. Locking interconnect and power early is becoming the real competitive moat — a dynamic your ops/power background reads better than most.</p><div class="source"><a href="https://www.datacenterknowledge.com/data-center-construction/new-data-center-developments-july-2026" target="_blank" rel="noopener noreferrer">Data Center Knowledge</a></div></article>
+<article class="item"><h3>CoreWeave stacks AI leases — 250MW + another 150MW with Applied Digital in North Dakota</h3><p>The GPU-cloud operator keeps signing massive high-density capacity outside the legacy colo playbook. It signals how fast AI-native &quot;neoclouds&quot; are moving, and where pricing pressure on traditional colo comes from.</p><div class="source"><a href="https://ir.applieddigital.com/news-events/press-releases/detail/123/applied-digital-announces-250mw-ai-data-center-lease-with" target="_blank" rel="noopener noreferrer">Applied Digital</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Colo vs. hyperscale vs. neocloud</h3><p><em>Colo</em> (Equinix, Digital Realty) leases space/power and sells interconnection; <em>hyperscalers</em> (AWS/Azure/Google) build their own halls to run their own cloud; <em>neoclouds</em> (CoreWeave) are new GPU-only clouds that often <em>rent</em> capacity from others and resell it as AI compute. Knowing which model a player uses tells you how they compete — on network density, on scale, or on GPU availability.</p></aside></section><section class="section" id="dc-infrastructure"><h2 class="section-head"><span class="section-num">03</span><span class="section-title">DC Infrastructure</span></h2><article class="item"><h3>NVIDIA unveils liquid cooling that runs &quot;hotter than a hot tub,&quot; cutting water use up to 100%</h3><p>Warmer coolant lets data centers shed water-hungry chillers, a direct answer to AI&#x27;s mounting water/PUE scrutiny. Sustainability caveats remain, but it&#x27;s where direct-to-chip is heading — squarely your liquid-to-chip wheelhouse.</p><div class="source"><a href="https://www.tomshardware.com/tech-industry/data-centers/nvidia-announces-liquid-cooling-system-that-runs-hotter-than-a-hot-tub-promises-to-reduce-electricity-consumption-and-cut-water-use-by-up-to-100-percent-but-sustainability-challenges-remain" target="_blank" rel="noopener noreferrer">Tom&#x27;s Hardware</a></div></article>
+<article class="item"><h3>Liquid cooling on track to double air-cooled capacity by end of 2026</h3><p>Direct-to-chip is now default for high-density builds (Rittal showed a 1MW unit supporting ~250kW/rack), and skidded modular 2MW cooling units are becoming standard kit. Air cooling is now the exception for AI halls.</p><div class="source"><a href="https://www.techrepublic.com/article/news-ai-data-center-power-cooling-infrastructure-dcw/" target="_blank" rel="noopener noreferrer">TechRepublic</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · PUE, quickly</h3><p>Power Usage Effectiveness = total facility power ÷ IT power. A PUE of 1.5 means 50% overhead (cooling, losses) on top of the compute; 1.1 is elite. Liquid cooling wins partly because it slashes the cooling share of that overhead — so when a vendor touts water/energy savings, translate it to &quot;lower PUE&quot; to compare apples to apples.</p></aside></section><section class="section" id="ai-compute-demand"><h2 class="section-head"><span class="section-num">04</span><span class="section-title">AI &amp; Compute Demand</span></h2><article class="item"><h3>Power, not chips, is the binding constraint — US data center demand jumped from 23GW (2023) to 42GW (2026)</h3><p>The DOE projects data centers could hit ~12% of US electricity by 2028, and AI racks now pull 50–100kW vs 5–10kW for legacy. Natural gas is emerging as the near-term bridge while grid interconnects lag. Your critical-power depth is exactly the scarce skill this shortage rewards.</p><div class="source"><a href="https://www.techrepublic.com/article/news-ai-data-center-power-cooling-infrastructure-dcw/" target="_blank" rel="noopener noreferrer">TechRepublic</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Reading demand in megawatts</h3><p>The industry now measures AI capacity in MW of IT load, not square feet. Rough intuition: 1MW powers on the order of ~500–1,000 modern GPUs once you include cooling and overhead — so a &quot;250MW lease&quot; is a genuinely huge compute cluster. When you see deal sizes in MW, mentally convert to &quot;how many GPUs and how much grid&quot; to gauge scale.</p></aside></section><section class="section" id="new-ai-models-releases"><h2 class="section-head"><span class="section-num">05</span><span class="section-title">New AI Models &amp; Releases</span></h2><article class="item"><h3>OpenAI ships GPT-5.6 to general availability (default in ChatGPT since July 9)</h3><p>The GPT-5.6 family exited a two-week gated preview and is now the default. Faster reasoning and coding gains — relevant because these releases are what drive the compute demand filling your industry&#x27;s data halls.</p><div class="source"><a href="https://llm-stats.com/llm-updates" target="_blank" rel="noopener noreferrer">LLM Stats</a></div></article>
+<article class="item"><h3>Frontier race stays frantic: Anthropic&#x27;s Claude Fable 5 retakes the coding crown (80.3% SWE-Bench Pro); Grok 4.5 and Gemini 3.5 Pro land in July</h3><p>New frontier models now arrive roughly every three days. The cadence matters because each capable release pulls forward more GPU, power, and cooling demand across the buildout pipeline.</p><div class="source"><a href="https://llm-stats.com/ai-news" target="_blank" rel="noopener noreferrer">LLM Stats – AI News</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · What &quot;SWE-Bench&quot; measures</h3><p>SWE-Bench (and the harder SWE-Bench Pro) tests whether a model can resolve <em>real</em> GitHub issues in real codebases — not trivia. A score like 80.3% means it fixed ~4 of 5 tasks. It&#x27;s a better signal than generic &quot;IQ&quot; benchmarks for coding usefulness, so when labs quote it, they&#x27;re claiming practical software-engineering ability.</p></aside></section><section class="section" id="networking"><h2 class="section-head"><span class="section-num">06</span><span class="section-title">Networking</span></h2><article class="item"><h3>Cisco unveils 102.4Tbps N9100 (NVIDIA Spectrum-6) and 800G switches for AI fabrics</h3><p>Cisco&#x27;s new switches, co-engineered with NVIDIA, target ultra-low-latency AI training backends; 400G is now &quot;entry-level&quot; and 800G a mandatory requirement. CEO Chuck Robbins said AI will <em>triple</em> networking traffic within three years — a supercycle for data center networking.</p><div class="source"><a href="https://www.networkworld.com/article/4080722/cisco-nvidia-strengthen-ai-ties-with-new-data-center-switch-reference-architectures.html" target="_blank" rel="noopener noreferrer">Network World</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Spine-leaf (Clos) fabric</h3><p>AI clusters ditched the old three-tier network for a flat <em>spine-leaf</em> design: every &quot;leaf&quot; (rack) switch connects to every &quot;spine&quot; switch, so any server is a predictable two hops from any other — critical when thousands of GPUs must exchange gradients in lockstep. It&#x27;s why AI backends need lossless, high-radix 800G Ethernet: one slow or congested link stalls the whole training job.</p><div class="source"><a href="https://blogs.cisco.com/networking" target="_blank" rel="noopener noreferrer">Cisco Blogs</a></div></aside></section><section class="section" id="backend-cloud-data"><h2 class="section-head"><span class="section-num">07</span><span class="section-title">Backend / Cloud &amp; Data</span></h2><article class="item"><h3>Kubernetes plateaus at ~68% of production workloads as teams split to serverless</h3><p>Adoption dipped from its 2024 peak as workloads move to serverless container platforms (AWS Fargate, Google Cloud Run, Azure Container Apps); Amazon EKS now lets you <em>reverse</em> a cluster upgrade within 7 days. Meanwhile Red Hat found 45% of Kubernetes incidents stem from misconfiguration.</p><div class="source"><a href="https://www.cncf.io/blog/2026/07/03/how-data-sovereignty-is-changing-cloud-native-infrastructure-design/" target="_blank" rel="noopener noreferrer">CNCF</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · The shared responsibility model</h3><p>Gartner projects 99% of cloud security failures through 2026 are the <em>customer&#x27;s</em> fault — almost always misconfiguration. The cloud provider secures the infrastructure (&quot;security <em>of</em> the cloud&quot;); you secure what you put in it — IAM, network rules, data (&quot;security <em>in</em> the cloud&quot;). Most breaches aren&#x27;t clever hacks; they&#x27;re an exposed storage bucket or an over-permissive role.</p></aside></section><section class="section" id="program-pm"><h2 class="section-head"><span class="section-num">08</span><span class="section-title">Program &amp; PM</span></h2><article class="item"><h3>The updated PMP exam launches this month (July 2026): AI, sustainability, and stakeholder engagement become core content</h3><p>PMI refreshed the exam to reflect where the profession is heading, folding AI fluency and sustainability into the ECO. Good news for your prep: it confirms the domains your Study panel is built around are current.</p><div class="source"><a href="https://www.pmi.org/whats-next" target="_blank" rel="noopener noreferrer">PMI – What&#x27;s Next</a></div></article>
+<article class="item"><h3>PMI Agile 2026 runs July 26–28 — theme is &quot;enterprise agility in an AI-shaped world&quot;</h3><p>Sessions push past team-level agile toward enterprise agility, anchored by a new Manifesto for Enterprise Agility that centers human judgment as AI scales. A useful lens as you move from executing work to shaping how programs run.</p><div class="source"><a href="https://events.pmi.org/flow/pmi/pmiagile26/landing/page/home" target="_blank" rel="noopener noreferrer">PMI Agile 2026</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Risk vs. Issue</h3><p>A <em>risk</em> might happen (future, uncertain — manage with a mitigation/response plan); an <em>issue</em> is happening now (certain — manage with a corrective action and an owner). Sloppy PMs call everything a &quot;risk,&quot; hiding problems that need action today. In status updates, split them: &quot;Top risks (watching)&quot; vs. &quot;Open issues (acting)&quot; — it signals control and maps straight to the PMP&#x27;s Process and People domains.</p></aside>
+<hr>
+<p>_Want to go deeper on any item? Just ask Claude to expand it._</p></section>
+</main>
+<nav class="edition-nav" aria-label="Adjacent editions"><a href="2026-07-12.html">← Previous edition</a> <a href="2026-07-14.html">Next edition →</a></nav>
+
+  <footer class="foot">
+    <div class="big">DC Daily Brief</div>
+    Covers news through July 10–13, 2026. Now with Networking + Backend sections and an &quot;In Practice&quot; learning bite in every section. · Researched and generated on demand<br>
+    News, context, and learning for Robert · Historical reporting may be superseded.
+  </footer>
+
+</div>
+</body>
+</html>

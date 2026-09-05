@@ -19,3 +19,7 @@ node_modules/
 dist/
 
 # Never put this repo in iCloud/OneDrive — see CLAUDE.md
+
+# Python verification caches
+__pycache__/
+*.pyc

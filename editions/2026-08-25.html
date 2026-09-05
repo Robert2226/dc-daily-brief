@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>DC Daily Brief — Tuesday, August 25, 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,900&family=Newsreader:opsz,wght@6..72,400;6..72,500&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#F7F5EF; --panel:#FBFAF6; --ink:#1B1A17; --soft-ink:#3B3934;
+    --muted:#6B6862; --rule:#D8D3C7; --rule-strong:#B7B1A3;
+    --accent:#0F766E; --accent-ink:#0B534D; --accent-tint:#EAF1EF;
+    --serif:'Newsreader',Georgia,'Times New Roman',serif;
+    --display:'Fraunces',Georgia,serif;
+    --mono:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#14140F; --panel:#1A1A14; --ink:#ECE8DD; --soft-ink:#CFC9BB;
+      --muted:#948E80; --rule:#2E2D25; --rule-strong:#413F34;
+      --accent:#5FD3C4; --accent-ink:#8FE3D8; --accent-tint:#17241F;
+    }
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0}
+  body{
+    background:var(--bg); color:var(--ink);
+    font-family:var(--serif); font-size:18px; line-height:1.62;
+    -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+  }
+  .paper{max-width:760px; margin:0 auto; padding:40px 26px 72px;}
+
+  /* Masthead */
+  .masthead{text-align:center; padding-bottom:18px;}
+  .masthead .rule-top{border-top:3px solid var(--ink); margin-bottom:14px;}
+  .kicker-top{
+    font-family:var(--mono); font-size:11px; letter-spacing:.32em; text-transform:uppercase;
+    color:var(--muted); margin-bottom:12px;
+  }
+  .masthead h1{
+    font-family:var(--display); font-weight:900; font-size:clamp(38px,9vw,68px);
+    line-height:.94; letter-spacing:-.02em; margin:0 0 10px;
+  }
+  .masthead .tagline{
+    font-family:var(--serif); font-style:italic; color:var(--soft-ink);
+    font-size:16px; max-width:38ch; margin:0 auto 16px;
+  }
+  .dateline{
+    display:flex; justify-content:space-between; align-items:center; gap:12px;
+    border-top:1px solid var(--rule-strong); border-bottom:1px solid var(--rule-strong);
+    padding:8px 2px; font-family:var(--mono); font-size:11px; letter-spacing:.12em;
+    text-transform:uppercase; color:var(--muted);
+  }
+
+  /* Section */
+  .section{padding-top:30px;}
+  .section-head{
+    display:flex; align-items:baseline; gap:12px; margin-bottom:14px;
+    border-bottom:1px solid var(--rule); padding-bottom:8px;
+  }
+  .section-num{
+    font-family:var(--mono); font-weight:700; font-size:12px; color:var(--accent);
+    letter-spacing:.1em;
+  }
+  .section-title{
+    font-family:var(--mono); font-weight:700; font-size:12.5px; letter-spacing:.22em;
+    text-transform:uppercase; color:var(--ink);
+  }
+
+  .item{margin:0 0 20px;}
+  .item h3{
+    font-family:var(--display); font-weight:600; font-size:22px; line-height:1.2;
+    letter-spacing:-.01em; margin:0 0 6px;
+  }
+  .item p{margin:0 0 6px; color:var(--soft-ink);}
+  .item em, .practice em{font-style:italic; color:var(--ink);}
+  .source a{
+    font-family:var(--mono); font-size:11px; letter-spacing:.06em; text-transform:uppercase;
+    color:var(--accent); text-decoration:none; border-bottom:1px solid transparent;
+  }
+  .source a:hover{border-bottom-color:var(--accent);}
+  .source a::before{content:"↗ ";}
+
+  /* In Practice callout */
+  .practice{
+    background:var(--accent-tint); border-left:3px solid var(--accent);
+    padding:14px 18px; margin:6px 0 4px; border-radius:2px;
+  }
+  .practice .label{
+    display:block; font-family:var(--mono); font-size:10.5px; font-weight:700;
+    letter-spacing:.24em; text-transform:uppercase; color:var(--accent-ink); margin-bottom:6px;
+  }
+  .practice p{margin:0; font-size:16.5px; line-height:1.55; color:var(--soft-ink);}
+  .practice strong{color:var(--ink);}
+  .practice .source{margin-top:8px;}
+
+  /* Footer */
+  .foot{
+    margin-top:44px; padding-top:16px; border-top:3px solid var(--ink);
+    font-family:var(--mono); font-size:11px; letter-spacing:.08em; color:var(--muted);
+    text-align:center; line-height:1.8;
+  }
+  .foot .big{font-family:var(--display); font-size:13px; letter-spacing:.2em; text-transform:uppercase; color:var(--ink);}
+
+  a{color:var(--accent); text-underline-offset:3px; overflow-wrap:anywhere}
+  a:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-offset:4px}
+  .site-nav,.edition-nav{display:flex;justify-content:space-between;gap:16px;font-size:16px;margin:0 0 26px}
+  .edition-nav{margin-top:30px}
+  .skip-link{position:absolute;left:-10000px}
+  .skip-link:focus{position:static}
+  .section{scroll-margin-top:20px}
+  .section-head{margin-top:0}
+  .section-title{line-height:1.6;letter-spacing:.12em}
+  .section-nav{display:flex;flex-wrap:wrap;gap:8px 18px;border-bottom:1px solid var(--rule);padding:20px 0;font-size:16px}
+  .takeaways{padding:22px 0 0}
+  .takeaways h2{font-family:var(--display);font-size:26px}
+  .takeaways .item{margin-bottom:16px}
+  .takeaways .item h3{font-size:20px}
+  .takeaways .item p{font-size:17px}
+  .deep-dive{border-top:2px solid var(--accent);margin-top:28px;padding-top:18px}
+  .deep-dive h3{font-family:var(--display);font-size:28px;line-height:1.2;margin:8px 0 18px}
+  .deep-dive h4{font-family:var(--display);font-size:21px;margin:24px 0 8px}
+  .eyebrow{font:12px var(--mono);color:var(--accent);text-transform:uppercase;letter-spacing:.15em}
+  .recall{border:1px solid var(--rule);padding:14px 18px;margin:18px 0}
+  .recall summary{cursor:pointer;font-weight:600}
+  pre{white-space:pre-wrap;overflow-wrap:anywhere;background:var(--accent-tint);padding:16px;font:14px/1.7 var(--mono)}
+  .archive-list{list-style:none;padding:0}
+  .archive-list li{padding:15px 0;border-bottom:1px solid var(--rule)}
+  .archive-meta{display:block;color:var(--muted);font:12px/1.8 var(--mono)}
+  .practice .label{margin-top:0}
+  .source a{font-size:12px;line-height:1.8}
+  .source a[href^="#"]::before{content:"↓ "}
+  .coverage{font-size:14px;color:var(--muted);margin:12px 0 0}
+  hr{border:0;border-top:1px solid var(--rule);margin:22px 0}
+  @media(max-width:480px){.paper{padding:24px 18px 48px}.dateline{flex-wrap:wrap}.section-title{font-size:12px}.section-head{gap:8px}.deep-dive h3{font-size:25px}}
+</style>
+</head>
+<body>
+<div class="paper">
+<a class="skip-link" href="#content">Skip to content</a>
+<nav class="site-nav" aria-label="Main navigation"><a href="../index.html">Latest edition</a><a href="../archive.html">Archive</a></nav>
+
+  <header class="masthead">
+    <div class="rule-top"></div>
+    <div class="kicker-top">Aggregated Morning Brief · No. 032</div>
+    <h1>DC Daily Brief</h1>
+    <p class="tagline">Physical infrastructure, logical systems, and the decisions connecting them.</p>
+    <div class="dateline">
+      <span>Tuesday · August 25, 2026</span>
+      <span>Curated for Robert</span>
+    </div>
+    <p class="coverage">Covers news through August 25, 2026.</p>
+  </header>
+
+<main id="content">
+<nav class="section-nav" aria-label="Edition sections"><a href="#equinix">Equinix</a><a href="#google">Google</a><a href="#competitors">Competitors</a><a href="#dc-infrastructure">DC Infrastructure</a><a href="#ai-compute-demand">AI &amp; Compute Demand</a><a href="#new-ai-models-releases">New AI Models &amp; Releases</a><a href="#networking">Networking</a><a href="#backend-cloud-data">Backend / Cloud &amp; Data</a><a href="#program-pm">Program &amp; PM</a><a href="#pgpm-growth">PgPM Growth</a></nav><section class="section" id="equinix"><h2 class="section-head"><span class="section-num">01</span><span class="section-title">Equinix</span></h2><article class="item"><h3>Equinix commits another $28 million to double cabinet capacity at BG2 in Bogotá</h3><p>The second phase will add 550 cabinets to the 550 installed in the first phase, taking the site to 1,100 cabinets after an original $45 million investment announced in 2022. Equinix ties the expansion to cloud, AI and mission-critical demand in Colombia, but the release does not provide power, construction or ready-for-service milestones.</p><div class="source"><a href="https://newsroom.equinix.com/2026-08-20-Equinix-invierte-US-28-millones-para-ampliar-la-capacidad-de-su-centro-de-datos-BG2-en-Bogota" target="_blank" rel="noopener noreferrer">Equinix Newsroom</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Convert “double capacity” into an executable live-site phase plan</h3><p>Separate the 550-cabinet scope into construction boundary, power and cooling increments, network readiness, security changes, commissioning levels and customer-ready turnover. Give each dependency an owner, evidence requirement and latest safe date, and define how work is isolated from the operating first phase. Report cabinets installed, commissioned and sellable separately. A PgPM makes the headline credible by protecting current operations while proving when the next capacity block can carry customer load.</p></aside></section><section class="section" id="google"><h2 class="section-head"><span class="section-num">02</span><span class="section-title">Google</span></h2><article class="item"><h3>Google brings Antigravity’s agentic development tools under Gemini Enterprise controls</h3><p>Eligible Gemini Enterprise subscriptions can now provide Antigravity across IDE, desktop and CLI surfaces while administrators manage identity, licenses and pooled usage. Google highlights Workforce Identity Federation, audit logging, usage metrics and spend controls, shifting the operational question from whether developers can access an agent to how an enterprise governs that access at scale.</p><div class="source"><a href="https://cloud.google.com/blog/products/ai-machine-learning/expanding-google-antigravity-for-enterprise-customers" target="_blank" rel="noopener noreferrer">Google Cloud Blog</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Govern AI-agent consumption like shared infrastructure capacity</h3><p>Define eligible users, identity path, pooled quota, budget threshold, overage approval, audit owner and acceptable data boundary before rollout. Pair utilization with an outcome measure—cycle time, escaped defects or rework—so higher consumption is not mistaken for higher value. Add a review trigger for abnormal spend or tool behavior and a tested disable path. The PgPM’s job is to connect access, financial control and evidence of benefit in one operating model.</p></aside></section><section class="section" id="competitors"><h2 class="section-head"><span class="section-num">03</span><span class="section-title">Competitors</span></h2><article class="item"><h3>Nscale is reportedly targeting a US IPO that could raise up to $3 billion</h3><p>Bloomberg reporting summarized by DCD says the neocloud could list as early as September and has about $51 billion in contracted revenue, 831 MW of active and contracted power, and a 10 GW expansion ambition. Deliberations remain active and could change or slip, so the filing timetable, proceeds and capacity claims are not yet a completed financing or delivery outcome.</p><div class="source"><a href="https://www.datacenterdynamics.com/en/news/nscale-targets-3bn-raise-in-us-ipo-report/" target="_blank" rel="noopener noreferrer">Data Center Dynamics</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Build a capital-to-capacity bridge before comparing competitors</h3><p>Put financing status, customer obligations, controlled power, site maturity, equipment commitments, construction phase, liquidity timing and revenue start on one timeline. Label reported, contracted, funded, energized and commissioned figures distinctly, then identify which milestone consumes cash before it creates revenue. This prevents an IPO target or contracted-revenue total from being read as available capacity. Competitive intelligence becomes useful when it exposes the delivery engine and its timing risk.</p></aside></section><section class="section" id="dc-infrastructure"><h2 class="section-head"><span class="section-num">04</span><span class="section-title">DC Infrastructure</span></h2><article class="item"><h3>Ireland’s data-center power pressure has reopened discussion of nuclear generation</h3><p>Ireland’s government is reportedly open to evaluating nuclear power despite a long-standing legal prohibition, as data centers accounted for 23 percent of metered electricity consumption in 2025. Any nuclear path would require policy change and a long development cycle, so it is a strategic supply option rather than a near-term answer to grid constraints.</p><div class="source"><a href="https://www.datacenterdynamics.com/en/news/ireland-reconsidering-nuclear-in-response-to-surging-data-center-power-demands-report/" target="_blank" rel="noopener noreferrer">Data Center Dynamics</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Separate the bridge plan from the destination</h3><p>For a long-horizon energy option, create two synchronized roadmaps: one for legislation, technology selection, licensing, financing and generation; another for near-term interconnection, efficiency, storage, flexible load and phased customer commitments. State which demand assumptions each roadmap can actually serve and the decision dates that keep alternatives open. A strategic answer without a bridge leaves the delivery program exposed; a bridge without a destination can lock in costly temporary choices.</p></aside></section><section class="section" id="ai-compute-demand"><h2 class="section-head"><span class="section-num">05</span><span class="section-title">AI &amp; Compute Demand</span></h2><article class="item"><h3>DXN wins a binding AU$12.2 million contract for a 2 MW modular AI facility</h3><p>The Australian company will design, manufacture, deliver, install and commission containerized compute pods for an unnamed AI operator, while upgrading existing site infrastructure for an early-2027 operational target. DXN describes this as the first phase of a potentially larger deployment, making successful interface and acceptance management more important than the modular label alone.</p><div class="source"><a href="https://www.datacenterdynamics.com/en/news/dxn-secures-au122m-contract-to-deliver-containerized-data-center-to-hpc-customer/" target="_blank" rel="noopener noreferrer">Data Center Dynamics</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Make factory-built and site-built work meet at controlled interfaces</h3><p>Create an interface register for structural, electrical, cooling, fire, network, controls and operational requirements; assign one accountable owner to each handoff. Link factory acceptance, transport release, site readiness, installation, integrated systems testing and customer acceptance with explicit entry and exit evidence. Modular construction moves work off-site—it does not remove integration risk. The PgPM protects the schedule by preventing a finished pod from arriving at an unfinished operating environment.</p></aside></section><section class="section" id="new-ai-models-releases"><h2 class="section-head"><span class="section-num">06</span><span class="section-title">New AI Models &amp; Releases</span></h2><article class="item"><h3>Thomson Reuters launches its first proprietary language model for professional work</h3><p>Thomson was adapted from an open-source foundation with a company-reported $40 million investment and is intended for legal and tax workflows grounded in proprietary content and subject-matter expertise. The company has begun external academic evaluation, plans a smaller noncommercial open-weight release, and will first deploy the model in CoCounsel’s Tabular Analysis; its cost and frontier-performance statements remain vendor claims requiring independent evidence.</p><div class="source"><a href="https://www.thomsonreuters.com/en/press-releases/2026/august/thomson-reuters-leverages-its-world-class-data-assets-to-launch-its-own-frontier-model" target="_blank" rel="noopener noreferrer">Thomson Reuters</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Evaluate a specialist model against the decision risk of its domain</h3><p>Define representative tasks, authoritative source sets, citation accuracy, abstention behavior, privacy boundaries, expert-review effort, latency and total cost before comparing it with a general model. Separate vendor benchmarks from independently reproduced results and make deployment contingent on a named acceptance threshold. In regulated or high-consequence work, the question is not only whether the model answers correctly—it is whether users can verify, govern and safely challenge the answer.</p></aside></section><section class="section" id="networking"><h2 class="section-head"><span class="section-num">07</span><span class="section-title">Networking</span></h2><article class="item"><h3>Colombia cancels procurement for a 1,600 km Amazon fiber network after technical and financial risks surface</h3><p>The project aimed to connect about 100,000 households and create a resilient corridor toward Brazil using terrestrial, sub-river and cross-border infrastructure, backed by a planned 10.5-year financing term. The government’s withdrawal does not eliminate the connectivity need; it shows that strategic value cannot compensate for an unworkable delivery and operating model.</p><div class="source"><a href="https://www.datacenterdynamics.com/en/news/colombia-puts-the-brakes-on-a-1600-km-fiber-optic-network-in-the-amazon/" target="_blank" rel="noopener noreferrer">Data Center Dynamics</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Gate a difficult network before the procurement locks in optimism</h3><p>Require route survey, environmental and community constraints, construction method, cross-border approvals, landing and backbone interfaces, maintainability, spares, restoration time, demand, financing and lifecycle cost before release. Use reference segments or pilots to validate the riskiest assumptions, then set a stop, redesign or proceed decision with evidence thresholds. Canceling a weak procurement can preserve value; the failure is discovering basic feasibility after the delivery model is already committed.</p></aside></section><section class="section" id="backend-cloud-data"><h2 class="section-head"><span class="section-num">08</span><span class="section-title">Backend / Cloud &amp; Data</span></h2><article class="item"><h3>Kubeflow graduates at CNCF as a production-ready cloud-native AI platform</h3><p>CNCF says Kubeflow completed a third-party security audit, formalized governance and demonstrated broad adoption across model development, training, fine-tuning and serving on Kubernetes. Graduation is a maturity signal for the open-source project, not proof that any individual implementation will be reliable, supportable or economical in a specific enterprise environment.</p><div class="source"><a href="https://www.cncf.io/announcements/2026/08/17/cncf-announces-kubeflows-graduation-solidifying-the-standard-for-cloud-native-ai-operations/" target="_blank" rel="noopener noreferrer">Cloud Native Computing Foundation</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Turn platform maturity into an adoption evidence plan</h3><p>Map required workflows to supported components, then test tenancy, identity, data movement, observability, upgrades, rollback, disaster recovery, support ownership and cost at representative scale. Record where the enterprise distribution differs from upstream and who owns each layer when an incident crosses boundaries. A foundation’s maturity reduces ecosystem risk, but the PgPM must still prove the complete operating stack and handoff model in the environment that will carry production work.</p></aside></section><section class="section" id="program-pm"><h2 class="section-head"><span class="section-num">09</span><span class="section-title">Program &amp; PM</span></h2><article class="item"><h3>APM explains why project reality often reaches governance too late</h3><p>The article connects delayed escalation to optimism bias, loss aversion, groupthink, professional identity and the normalization of small deviations. Its central lesson is that a RAID log and escalation route are insufficient when people experience early uncertainty as a threat to credibility rather than useful delivery information.</p><div class="source"><a href="https://www.apm.org.uk/blog/the-psychology-of-project-escalation-why-reality-travels-so-slowly/" target="_blank" rel="noopener noreferrer">Association for Project Management</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Lower the evidence threshold for a conversation, not the threshold for a formal status change</h3><p>Add an “emerging signal” field beside formal risks and ask teams to record the observation, trend, possible consequence, next evidence date and owner without first proving the diagnosis. In governance reviews, ask what has become harder, which recovery assumption weakened and what would make the team escalate sooner. Leaders should respond first with curiosity and options. Early visibility preserves choices; forced certainty lets recovery time disappear while the dashboard remains green.</p></aside></section><section class="section" id="pgpm-growth"><h2 class="section-head"><span class="section-num">10</span><span class="section-title">PgPM Growth</span></h2><article class="item"><h3>Foundation · Speak with executive presence by making the decision easy to hear</h3><p>Executive presence is not volume, polish or pretending to know everything; it is disciplined judgment delivered with calm clarity. Open with the outcome or recommendation, translate technical detail into business impact, name the material tradeoff and end with the specific decision or support required. Keep evidence ready behind the headline so an interruption does not break the logic.</p><div class="source"><a href="https://www.pmi.org/learning/library/speak-loud-proud-effective-communication-strategies-6047" target="_blank" rel="noopener noreferrer">PMI · Effective communication and senior voice</a></div></article>
+<article class="item"><h3>Foundation · Design decision governance before the meeting</h3><p>A clear briefing still stalls when nobody knows who can decide, what evidence is sufficient or which conditions require escalation. For every material choice, define the accountable decision owner, contributors, boundaries of delegated authority, decision deadline, options, criteria and record of outcome. Good governance gives teams room to act while preserving traceability and an escalation route when the choice exceeds their authority.</p><div class="source"><a href="https://www.apm.org.uk/resources/what-is-project-management/what-is-governance/" target="_blank" rel="noopener noreferrer">APM · What is governance?</a></div></article>
+<article class="item"><h3>Resource · Use a four-part leadership ask</h3><p>Define the issue and why it matters, provide workable options, recommend one path and request a specific action.</p><div class="source"><a href="https://digital.gov/2024/05/20/a-five-step-plan-for-communicating-with-leadership/" target="_blank" rel="noopener noreferrer">Digital.gov · Five-step plan for communicating with leadership</a></div></article>
+<article class="item"><h3>Resource · Make the first sentence survive interruption</h3><p>Lead with what changed and the help or decision needed, then hold supporting detail for follow-up questions.</p><div class="source"><a href="https://work.coach/playbooks/concise-status-update-to-leadership" target="_blank" rel="noopener noreferrer">Work Coach · Concise status updates to leadership</a></div></article>
+<article class="item"><h3>Resource · Put decisions at the right level</h3><p>Give teams explicit authority boundaries, escalate only beyond them and use evidence tied to user and delivery outcomes.</p><div class="source"><a href="https://www.gov.uk/service-manual/agile-delivery/governance-principles-for-agile-service-delivery" target="_blank" rel="noopener noreferrer">GOV.UK · Governance principles for agile service delivery</a></div></article>
+<article class="item"><h3>Resource · Test readiness at the decision point</h3><p>Confirm sponsorship, roles, stakeholder input, delivery strategy, milestones and recorded decisions before authorizing the next stage.</p><div class="source"><a href="https://www.gov.uk/government/publications/gate-review-2-delivery-strategy/gate-2-review-delivery-strategy" target="_blank" rel="noopener noreferrer">GOV.UK · Gate 2 Review: Delivery Strategy</a></div></article>
+<aside class="practice"><h3 class="label">Daily Action · Rehearse one decision-ready two-minute briefing</h3><p>Set a 25-minute timer and choose a hypothetical data-center issue such as late switchgear acceptance. Spend 12 minutes writing six lines: recommendation, business impact, two viable options, key tradeoff, evidence and exact ask. Spend five minutes adding the decider, consulted roles, authority boundary and decision deadline. Use the final eight minutes to deliver it aloud twice, trimming any detail that does not change the decision. Keep the artifact local; do not send communications or modify an external system.</p></aside></section>
+</main>
+<nav class="edition-nav" aria-label="Adjacent editions"><a href="2026-08-23.html">← Previous edition</a> <a href="2026-08-27.html">Next edition →</a></nav>
+
+  <footer class="foot">
+    <div class="big">DC Daily Brief</div>
+    Covers news through August 25, 2026. · Researched and generated on demand<br>
+    News, context, and learning for Robert · Historical reporting may be superseded.
+  </footer>
+
+</div>
+</body>
+</html>

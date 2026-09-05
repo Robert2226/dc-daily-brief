@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>DC Daily Brief — Tuesday, July 21, 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,900&family=Newsreader:opsz,wght@6..72,400;6..72,500&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#F7F5EF; --panel:#FBFAF6; --ink:#1B1A17; --soft-ink:#3B3934;
+    --muted:#6B6862; --rule:#D8D3C7; --rule-strong:#B7B1A3;
+    --accent:#0F766E; --accent-ink:#0B534D; --accent-tint:#EAF1EF;
+    --serif:'Newsreader',Georgia,'Times New Roman',serif;
+    --display:'Fraunces',Georgia,serif;
+    --mono:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#14140F; --panel:#1A1A14; --ink:#ECE8DD; --soft-ink:#CFC9BB;
+      --muted:#948E80; --rule:#2E2D25; --rule-strong:#413F34;
+      --accent:#5FD3C4; --accent-ink:#8FE3D8; --accent-tint:#17241F;
+    }
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0}
+  body{
+    background:var(--bg); color:var(--ink);
+    font-family:var(--serif); font-size:18px; line-height:1.62;
+    -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+  }
+  .paper{max-width:760px; margin:0 auto; padding:40px 26px 72px;}
+
+  /* Masthead */
+  .masthead{text-align:center; padding-bottom:18px;}
+  .masthead .rule-top{border-top:3px solid var(--ink); margin-bottom:14px;}
+  .kicker-top{
+    font-family:var(--mono); font-size:11px; letter-spacing:.32em; text-transform:uppercase;
+    color:var(--muted); margin-bottom:12px;
+  }
+  .masthead h1{
+    font-family:var(--display); font-weight:900; font-size:clamp(38px,9vw,68px);
+    line-height:.94; letter-spacing:-.02em; margin:0 0 10px;
+  }
+  .masthead .tagline{
+    font-family:var(--serif); font-style:italic; color:var(--soft-ink);
+    font-size:16px; max-width:38ch; margin:0 auto 16px;
+  }
+  .dateline{
+    display:flex; justify-content:space-between; align-items:center; gap:12px;
+    border-top:1px solid var(--rule-strong); border-bottom:1px solid var(--rule-strong);
+    padding:8px 2px; font-family:var(--mono); font-size:11px; letter-spacing:.12em;
+    text-transform:uppercase; color:var(--muted);
+  }
+
+  /* Section */
+  .section{padding-top:30px;}
+  .section-head{
+    display:flex; align-items:baseline; gap:12px; margin-bottom:14px;
+    border-bottom:1px solid var(--rule); padding-bottom:8px;
+  }
+  .section-num{
+    font-family:var(--mono); font-weight:700; font-size:12px; color:var(--accent);
+    letter-spacing:.1em;
+  }
+  .section-title{
+    font-family:var(--mono); font-weight:700; font-size:12.5px; letter-spacing:.22em;
+    text-transform:uppercase; color:var(--ink);
+  }
+
+  .item{margin:0 0 20px;}
+  .item h3{
+    font-family:var(--display); font-weight:600; font-size:22px; line-height:1.2;
+    letter-spacing:-.01em; margin:0 0 6px;
+  }
+  .item p{margin:0 0 6px; color:var(--soft-ink);}
+  .item em, .practice em{font-style:italic; color:var(--ink);}
+  .source a{
+    font-family:var(--mono); font-size:11px; letter-spacing:.06em; text-transform:uppercase;
+    color:var(--accent); text-decoration:none; border-bottom:1px solid transparent;
+  }
+  .source a:hover{border-bottom-color:var(--accent);}
+  .source a::before{content:"↗ ";}
+
+  /* In Practice callout */
+  .practice{
+    background:var(--accent-tint); border-left:3px solid var(--accent);
+    padding:14px 18px; margin:6px 0 4px; border-radius:2px;
+  }
+  .practice .label{
+    display:block; font-family:var(--mono); font-size:10.5px; font-weight:700;
+    letter-spacing:.24em; text-transform:uppercase; color:var(--accent-ink); margin-bottom:6px;
+  }
+  .practice p{margin:0; font-size:16.5px; line-height:1.55; color:var(--soft-ink);}
+  .practice strong{color:var(--ink);}
+  .practice .source{margin-top:8px;}
+
+  /* Footer */
+  .foot{
+    margin-top:44px; padding-top:16px; border-top:3px solid var(--ink);
+    font-family:var(--mono); font-size:11px; letter-spacing:.08em; color:var(--muted);
+    text-align:center; line-height:1.8;
+  }
+  .foot .big{font-family:var(--display); font-size:13px; letter-spacing:.2em; text-transform:uppercase; color:var(--ink);}
+
+  a{color:var(--accent); text-underline-offset:3px; overflow-wrap:anywhere}
+  a:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-offset:4px}
+  .site-nav,.edition-nav{display:flex;justify-content:space-between;gap:16px;font-size:16px;margin:0 0 26px}
+  .edition-nav{margin-top:30px}
+  .skip-link{position:absolute;left:-10000px}
+  .skip-link:focus{position:static}
+  .section{scroll-margin-top:20px}
+  .section-head{margin-top:0}
+  .section-title{line-height:1.6;letter-spacing:.12em}
+  .section-nav{display:flex;flex-wrap:wrap;gap:8px 18px;border-bottom:1px solid var(--rule);padding:20px 0;font-size:16px}
+  .takeaways{padding:22px 0 0}
+  .takeaways h2{font-family:var(--display);font-size:26px}
+  .takeaways .item{margin-bottom:16px}
+  .takeaways .item h3{font-size:20px}
+  .takeaways .item p{font-size:17px}
+  .deep-dive{border-top:2px solid var(--accent);margin-top:28px;padding-top:18px}
+  .deep-dive h3{font-family:var(--display);font-size:28px;line-height:1.2;margin:8px 0 18px}
+  .deep-dive h4{font-family:var(--display);font-size:21px;margin:24px 0 8px}
+  .eyebrow{font:12px var(--mono);color:var(--accent);text-transform:uppercase;letter-spacing:.15em}
+  .recall{border:1px solid var(--rule);padding:14px 18px;margin:18px 0}
+  .recall summary{cursor:pointer;font-weight:600}
+  pre{white-space:pre-wrap;overflow-wrap:anywhere;background:var(--accent-tint);padding:16px;font:14px/1.7 var(--mono)}
+  .archive-list{list-style:none;padding:0}
+  .archive-list li{padding:15px 0;border-bottom:1px solid var(--rule)}
+  .archive-meta{display:block;color:var(--muted);font:12px/1.8 var(--mono)}
+  .practice .label{margin-top:0}
+  .source a{font-size:12px;line-height:1.8}
+  .source a[href^="#"]::before{content:"↓ "}
+  .coverage{font-size:14px;color:var(--muted);margin:12px 0 0}
+  hr{border:0;border-top:1px solid var(--rule);margin:22px 0}
+  @media(max-width:480px){.paper{padding:24px 18px 48px}.dateline{flex-wrap:wrap}.section-title{font-size:12px}.section-head{gap:8px}.deep-dive h3{font-size:25px}}
+</style>
+</head>
+<body>
+<div class="paper">
+<a class="skip-link" href="#content">Skip to content</a>
+<nav class="site-nav" aria-label="Main navigation"><a href="../index.html">Latest edition</a><a href="../archive.html">Archive</a></nav>
+
+  <header class="masthead">
+    <div class="rule-top"></div>
+    <div class="kicker-top">Aggregated Morning Brief · No. 010</div>
+    <h1>DC Daily Brief</h1>
+    <p class="tagline">Physical infrastructure, logical systems, and the decisions connecting them.</p>
+    <div class="dateline">
+      <span>Tuesday · July 21, 2026</span>
+      <span>Curated for Robert</span>
+    </div>
+    <p class="coverage">Covers news through July 18–21, 2026.</p>
+  </header>
+
+<main id="content">
+<nav class="section-nav" aria-label="Edition sections"><a href="#equinix">Equinix</a><a href="#competitors">Competitors</a><a href="#dc-infrastructure">DC Infrastructure</a><a href="#ai-compute-demand">AI &amp; Compute Demand</a><a href="#new-ai-models-releases">New AI Models &amp; Releases</a><a href="#networking">Networking</a><a href="#backend-cloud-data">Backend / Cloud &amp; Data</a><a href="#program-pm">Program &amp; PM</a></nav><section class="section" id="equinix"><h2 class="section-head"><span class="section-num">01</span><span class="section-title">Equinix</span></h2><article class="item"><h3>CEO Fox-Martin&#x27;s first-year retrospective: Equinix plans to add more capacity in the next five years than in its previous 27</h3><p>In a Fortune interview timed to her first anniversary as CEO, Adaire Fox-Martin laid out a five-pillar strategy (&quot;build bolder, solve smarter, serve better, run simpler, grow together&quot;) and framed Equinix as an &quot;airport authority&quot; for the internet — 95% of global internet traffic touches its 273 data centers across 36 countries. She named 2028–2032 as the window when on-site generation and small modular reactors need to come online to clear the power crunch she says defines the next two years.</p><div class="source"><a href="https://fortune.com/article/equinix-adaire-fox-martin-data-center-boom/" target="_blank" rel="noopener noreferrer">Fortune</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · An &quot;airport authority&quot; analogy tells you what business model a company thinks it&#x27;s in</h3><p>Fox-Martin&#x27;s choice of metaphor is a positioning statement, not just color: an airport doesn&#x27;t fly planes, it operates the runway, gates, and connections that let many different carriers reach many different destinations — which is exactly Equinix&#x27;s pitch against hyperscalers who own their own &quot;planes&quot; end to end. Compare that to Digital Realty&#x27;s or CoreWeave&#x27;s language (leaning more &quot;developer&quot; and &quot;operator&quot;) and you can map three different theories of where the durable value sits in AI infrastructure: the connectivity layer, the real estate, or the compute itself. When a CEO reaches for an analogy in a retrospective interview, treat it as the closest thing you&#x27;ll get to their actual mental model of the business.</p></aside></section><section class="section" id="competitors"><h2 class="section-head"><span class="section-num">02</span><span class="section-title">Competitors</span></h2><article class="item"><h3>BlackRock seeks $12B+ in bonds to finance Meta&#x27;s El Paso, Texas AI campus</h3><p>The debt sale, arranged by JPMorgan and Morgan Stanley with pricing expected early next week, funds a ~1GW campus (Project Sopaipilla) that&#x27;s 80% BlackRock-owned and 20% Meta-owned, targeting 2028 online and 300+ onsite jobs. It&#x27;s the third leg of Larry Fink&#x27;s infrastructure push, stacking investors from BlackRock&#x27;s $12.5B GIP and $12B HPS acquisitions onto a single data center bond.</p><div class="source"><a href="https://www.bloomberg.com/news/articles/2026-07-20/blackrock-eyes-more-than-12-billion-debt-for-data-center" target="_blank" rel="noopener noreferrer">Bloomberg</a></div></article>
+<article class="item"><h3>BofA calls the CoreWeave/Meta &quot;competitor&quot; fear overblown, flags power ramp as the real story</h3><p>A July 20 note reaffirms BofA&#x27;s Buy rating and raises its 2026 capex estimate to $34B, arguing CoreWeave&#x27;s active power (1GW today, targeting 1.7GW by year-end) — not Meta&#x27;s in-house cloud ambitions — is what will drive revenue growth from 108% YoY in Q2 to 186% in Q4, alongside margin expansion from 1.0% to 14.6%. <a href="https://www.marketscreener.com/news/coreweave-s-active-power-ramp-to-boost-revenue-growth-margin-expansion-bofa-says-ce7f51dbda81f127" target="_blank" rel="noopener noreferrer">MarketScreener</a> /</p><div class="source"><a href="https://coincentral.com/coreweave-crwv-stock-bounces-after-bofa-calls-competition-fears-overblown/" target="_blank" rel="noopener noreferrer">CoinCentral</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Debt financing a data center is a different signal than equity investing in one</h3><p>When BlackRock raises equity (its GIP fund) it&#x27;s buying ownership and future upside; when it sells bonds against a data center, it&#x27;s packaging the asset&#x27;s contracted cash flows (Meta&#x27;s lease payments) into a fixed-income product for institutional buyers like pension funds and insurers who want yield, not equity risk. That a AAA-adjacent asset manager can bundle &quot;AI data center&quot; into a bond investors will buy is itself a maturity signal — it means the sector&#x27;s cash flows are now predictable enough to underwrite like infrastructure debt, not venture risk.</p></aside></section><section class="section" id="dc-infrastructure"><h2 class="section-head"><span class="section-num">03</span><span class="section-title">DC Infrastructure</span></h2><article class="item"><h3>NTT/ThoughtLab global outlook: AI data center demand will grow 23–30% a year, but power and equipment supply chains can&#x27;t keep pace</h3><p>The July 2 report, developed with NTT Global Data Centers, models three demand scenarios through 2030 and flags power availability and grid interconnection delays — not capital or chip availability — as the binding constraint in the US and Europe specifically. NTT&#x27;s recommended fix: earlier utility coordination and supply-chain diversification rather than just building faster.</p><div class="source"><a href="https://services.global.ntt/en-us/newsroom/ntt-global-data-centers-report-reveals-what-it-will-take-to-power-the-next-wave-of-ai" target="_blank" rel="noopener noreferrer">NTT</a></div></article>
+<article class="item"><h3>EPRI, Nvidia, and Prologis pilot 5–20MW &quot;distributed inference&quot; data centers built directly at grid substations</h3><p>The collaboration aims to break ground on at least five pilot sites across the US by year-end, betting that micro data centers sited on underused substation capacity can absorb inference workloads without waiting in the interconnection queue that&#x27;s stalling gigawatt-scale campuses. Nvidia and EPRI estimate workloads would need to migrate to a different substation only about 0.1% of the time.</p><div class="source"><a href="https://spectrum.ieee.org/distributed-inference-data-centers" target="_blank" rel="noopener noreferrer">IEEE Spectrum</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Distributed inference is a queue-jumping strategy, not just a smaller building</h3><p>The multi-year wait for grid interconnection studies applies to <em>new</em> large-load connections — a substation already has capacity sitting there, just not enough for a 500MW campus. By right-sizing the data center (5–20MW) to fit what a substation can already deliver, this approach sidesteps the interconnection queue instead of trying to speed it up. It&#x27;s the same logic as edge computing a decade ago (move compute closer to where it&#x27;s needed instead of centralizing it) but the constraint driving it has flipped — before it was latency, now it&#x27;s grid queue position.</p></aside></section><section class="section" id="ai-compute-demand"><h2 class="section-head"><span class="section-num">04</span><span class="section-title">AI &amp; Compute Demand</span></h2><article class="item"><h3>SemiAnalysis: memory will eat 30% of hyperscaler 2026 capex, up from 8% in 2023–24 — a bottleneck no amount of GPU supply fixes</h3><p>DRAM prices are set to more than double this year as Samsung, SK hynix, and Micron divert fab capacity to HBM and enterprise DRAM, starving conventional DDR5/LPDDR5 supply; new HBM capacity from Micron&#x27;s Hiroshima fab and SK hynix&#x27;s expansions won&#x27;t ship meaningful volume until 2027–28. Separately, N3 process node utilization is expected to exceed 100% in H2 2026 as every major AI accelerator family (Nvidia, AMD) crowds onto it.</p><div class="source"><a href="https://www.tomshardware.com/tech-industry/memory-will-consume-30-percent-of-hyperscaler-spending-this-year" target="_blank" rel="noopener noreferrer">Tom&#x27;s Hardware</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · &quot;Chip shortage&quot; and &quot;memory shortage&quot; are now two different bottlenecks with different timelines</h3><p>GPU/logic supply (N3/N2 wafer capacity) and memory supply (DRAM/HBM fab output) are produced on different production lines by different subsets of the same companies, and they&#x27;re constrained for different reasons — logic by advanced-node capacity, memory by manufacturers choosing to allocate wafers to HBM over commodity DRAM. A hyperscaler can secure enough GPUs and still be capacity-constrained if it can&#x27;t get enough HBM to pair with them, which is exactly the &quot;scratching their heads&quot; dynamic reporting describes. When you read a capex or supply forecast, check whether it&#x27;s modeling the logic constraint, the memory constraint, or both — they don&#x27;t resolve on the same schedule.</p></aside></section><section class="section" id="new-ai-models-releases"><h2 class="section-head"><span class="section-num">05</span><span class="section-title">New AI Models &amp; Releases</span></h2><article class="item"><h3>xAI&#x27;s next model — 2 trillion parameters, roughly 33% bigger than Grok 4.5 — finishes initial training this month, targeting an August launch</h3><p>Musk says the model should exceed Moonshot&#x27;s Kimi K3 (&quot;hedged language,&quot; per reporting) while keeping token efficiency close to Grok 4.5&#x27;s, meaning a bigger model without a proportional cost or latency hit. Grok 4.5 remains xAI&#x27;s production model while the 2T system goes through safety evaluation and infrastructure rollout.</p><div class="source"><a href="https://www.basenor.com/blogs/news/xais-2t-model-what-musk-just-revealed-about-groks-successor" target="_blank" rel="noopener noreferrer">basenor.com</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · &quot;Token efficiency holding steady while parameters grow&quot; is the tell for a Mixture-of-Experts architecture, not a dense model</h3><p>In a dense model, more total parameters means more compute activated per token, near-linearly increasing cost and latency — you can&#x27;t grow the model without paying for it on every request. Holding efficiency flat while adding a third more parameters only works if most of that growth goes into additional <em>experts</em> that a router mostly leaves dormant for any given token, so the active-parameter count barely moves even as the total does. When a lab claims a bigger successor model at roughly the same serving cost, MoE is almost always the mechanism making that possible, whether or not the announcement says so explicitly.</p></aside></section><section class="section" id="networking"><h2 class="section-head"><span class="section-num">06</span><span class="section-title">Networking</span></h2><article class="item"><h3>Arista answers Nvidia&#x27;s Ethernet push with its own 1.6Tbps switch, already running in Meta, Microsoft, and Oracle racks</h3><p>The 7060XE7 launch on July 8 sent Arista shares up 7% and drew price-target raises to $200 from KeyBanc and BofA and $190 from Morgan Stanley — a direct rebuttal, one week after last week&#x27;s Spectrum-X coverage, to the idea that Nvidia&#x27;s entry into Ethernet switching threatens incumbents&#x27; core business before they&#x27;ve had a chance to respond.</p><div class="source"><a href="https://www.tradingkey.com/analysis/stocks/us-stocks/262020828-arista-networks-anet-stock-forecast-july-2026-7060xe7-200-target-tradingkey" target="_blank" rel="noopener noreferrer">TradingKey</a></div></article>
+<article class="item"><h3>Co-packaged optics move from lab curiosity to deployed AI data center infrastructure</h3><p>IEEE Spectrum&#x27;s July issue covers data centers replacing copper links with optical ones inside the rack, integrating the electrical-to-optical conversion directly onto the switch chip (co-packaged optics) rather than in a separate pluggable module — NTT&#x27;s photonic-electronic convergence device is cited as cutting the power needed to move terabits of traffic.</p><div class="source"><a href="https://spectrum.ieee.org/ai-data-centers-dwdm-optics" target="_blank" rel="noopener noreferrer">IEEE Spectrum</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Why &quot;co-packaged&quot; is the meaningful word, not just &quot;optical.&quot;</h3><p>Data centers have used optical transceivers for years — but as separate pluggable modules bolted onto the switch faceplate, with a short copper trace still carrying the signal from chip to module. Co-packaged optics moves the electrical-to-optical conversion onto the same substrate as the switch silicon itself, eliminating that copper trace&#x27;s power loss and distance limit. It&#x27;s a straightforward tradeoff: lower power and higher density, in exchange for a component that&#x27;s no longer field-replaceable if it fails — a serviceability cost data centers are increasingly willing to pay as port speeds outrun what copper can carry at all.</p></aside></section><section class="section" id="backend-cloud-data"><h2 class="section-head"><span class="section-num">07</span><span class="section-title">Backend / Cloud &amp; Data</span></h2><article class="item"><h3>SonicWall SMA zero-days chained for root-level compromise within three days of disclosure</h3><p>CVE-2026-60137 and CVE-2026-63030, affecting SonicWall&#x27;s SMA mobile access appliances, are being actively exploited in combination to gain root access — one of the largest attack surfaces on the internet, per Dark Reading, given how widely SMA appliances are deployed for remote access.</p><div class="source"><a href="https://www.darkreading.com/vulnerabilities-threats" target="_blank" rel="noopener noreferrer">Dark Reading</a></div></article>
+<article class="item"><h3>Google Cloud ships automated cross-region failover for Cloud Run, cutting a manual DR step to two clicks</h3><p>The new Service Health feature detects a regional outage and reroutes traffic to a healthy region automatically, targeting a common gap where failover logic existed on paper in a runbook but wasn&#x27;t actually wired up to trigger without a human noticing the outage first.</p><div class="source"><a href="https://cloud.google.com/blog/topics/inside-google-cloud/whats-new-google-cloud" target="_blank" rel="noopener noreferrer">Google Cloud Blog</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · A &quot;zero-day chain&quot; means two individually-modest bugs combining into something worse than either</h3><p>Neither CVE-2026-60137 nor CVE-2026-63030 alone may reach root compromise — chaining usually means one flaw gets an attacker past authentication or into a restricted context, and the second escalates from there to full control. This is why patching only the more &quot;severe&quot;-looking CVE in a pair and deferring the other is a common and costly mistake: attackers actively look for exactly this kind of complementary pairing, and a three-day time-to-exploitation after disclosure means the patch window for chained SMA bugs is measured in hours, not the usual weeks.</p></aside></section><section class="section" id="program-pm"><h2 class="section-head"><span class="section-num">08</span><span class="section-title">Program &amp; PM</span></h2><article class="item"><h3>PMI puts hands and feet on its AI standard: a July 16 webinar operationalizes it into 8 principles and 5 performance domains</h3><p>Following last month&#x27;s publication of the Standard for AI in Portfolio, Program, and Project Management, PMI&#x27;s &quot;Making the AI Standard Real&quot; session translated the standard&#x27;s abstractions into concrete guidance — stakeholder expectations, AI scope definition, AI architecture, execution of strategic AI goals, and AI risk management — aimed at moving practitioners from ad hoc AI use toward structured, accountable practice.</p><div class="source"><a href="https://www.projectmanagement.com/webinars/1198486/making-the-ai-standard-real--practical-guidance-for-project-professionals" target="_blank" rel="noopener noreferrer">ProjectManagement.com</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Five performance domains map cleanly onto a standard project risk register — that&#x27;s the point</h3><p>&quot;AI scope definition&quot; and &quot;AI risk management&quot; as named domains exist because teams were treating AI adoption as a tooling decision instead of a project with its own scope, stakeholders, and risks that need the same rigor as any other initiative. The practical test for whether your organization&#x27;s AI rollout is following this kind of framework: can you name who owns the &quot;AI architecture&quot; domain the way you&#x27;d name a workstream lead? If nobody can answer that, the AI initiative is still being run as a series of individual tool purchases, not a governed program — exactly the gap PMI&#x27;s standard is trying to close.</p></aside></section>
+</main>
+<nav class="edition-nav" aria-label="Adjacent editions"><a href="2026-07-20.html">← Previous edition</a> <a href="2026-07-22.html">Next edition →</a></nav>
+
+  <footer class="foot">
+    <div class="big">DC Daily Brief</div>
+    Covers news through July 18–21, 2026. · Researched and generated on demand<br>
+    News, context, and learning for Robert · Historical reporting may be superseded.
+  </footer>
+
+</div>
+</body>
+</html>

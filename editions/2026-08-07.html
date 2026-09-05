@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>DC Daily Brief — Friday, August 7, 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,900&family=Newsreader:opsz,wght@6..72,400;6..72,500&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#F7F5EF; --panel:#FBFAF6; --ink:#1B1A17; --soft-ink:#3B3934;
+    --muted:#6B6862; --rule:#D8D3C7; --rule-strong:#B7B1A3;
+    --accent:#0F766E; --accent-ink:#0B534D; --accent-tint:#EAF1EF;
+    --serif:'Newsreader',Georgia,'Times New Roman',serif;
+    --display:'Fraunces',Georgia,serif;
+    --mono:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#14140F; --panel:#1A1A14; --ink:#ECE8DD; --soft-ink:#CFC9BB;
+      --muted:#948E80; --rule:#2E2D25; --rule-strong:#413F34;
+      --accent:#5FD3C4; --accent-ink:#8FE3D8; --accent-tint:#17241F;
+    }
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0}
+  body{
+    background:var(--bg); color:var(--ink);
+    font-family:var(--serif); font-size:18px; line-height:1.62;
+    -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+  }
+  .paper{max-width:760px; margin:0 auto; padding:40px 26px 72px;}
+
+  /* Masthead */
+  .masthead{text-align:center; padding-bottom:18px;}
+  .masthead .rule-top{border-top:3px solid var(--ink); margin-bottom:14px;}
+  .kicker-top{
+    font-family:var(--mono); font-size:11px; letter-spacing:.32em; text-transform:uppercase;
+    color:var(--muted); margin-bottom:12px;
+  }
+  .masthead h1{
+    font-family:var(--display); font-weight:900; font-size:clamp(38px,9vw,68px);
+    line-height:.94; letter-spacing:-.02em; margin:0 0 10px;
+  }
+  .masthead .tagline{
+    font-family:var(--serif); font-style:italic; color:var(--soft-ink);
+    font-size:16px; max-width:38ch; margin:0 auto 16px;
+  }
+  .dateline{
+    display:flex; justify-content:space-between; align-items:center; gap:12px;
+    border-top:1px solid var(--rule-strong); border-bottom:1px solid var(--rule-strong);
+    padding:8px 2px; font-family:var(--mono); font-size:11px; letter-spacing:.12em;
+    text-transform:uppercase; color:var(--muted);
+  }
+
+  /* Section */
+  .section{padding-top:30px;}
+  .section-head{
+    display:flex; align-items:baseline; gap:12px; margin-bottom:14px;
+    border-bottom:1px solid var(--rule); padding-bottom:8px;
+  }
+  .section-num{
+    font-family:var(--mono); font-weight:700; font-size:12px; color:var(--accent);
+    letter-spacing:.1em;
+  }
+  .section-title{
+    font-family:var(--mono); font-weight:700; font-size:12.5px; letter-spacing:.22em;
+    text-transform:uppercase; color:var(--ink);
+  }
+
+  .item{margin:0 0 20px;}
+  .item h3{
+    font-family:var(--display); font-weight:600; font-size:22px; line-height:1.2;
+    letter-spacing:-.01em; margin:0 0 6px;
+  }
+  .item p{margin:0 0 6px; color:var(--soft-ink);}
+  .item em, .practice em{font-style:italic; color:var(--ink);}
+  .source a{
+    font-family:var(--mono); font-size:11px; letter-spacing:.06em; text-transform:uppercase;
+    color:var(--accent); text-decoration:none; border-bottom:1px solid transparent;
+  }
+  .source a:hover{border-bottom-color:var(--accent);}
+  .source a::before{content:"↗ ";}
+
+  /* In Practice callout */
+  .practice{
+    background:var(--accent-tint); border-left:3px solid var(--accent);
+    padding:14px 18px; margin:6px 0 4px; border-radius:2px;
+  }
+  .practice .label{
+    display:block; font-family:var(--mono); font-size:10.5px; font-weight:700;
+    letter-spacing:.24em; text-transform:uppercase; color:var(--accent-ink); margin-bottom:6px;
+  }
+  .practice p{margin:0; font-size:16.5px; line-height:1.55; color:var(--soft-ink);}
+  .practice strong{color:var(--ink);}
+  .practice .source{margin-top:8px;}
+
+  /* Footer */
+  .foot{
+    margin-top:44px; padding-top:16px; border-top:3px solid var(--ink);
+    font-family:var(--mono); font-size:11px; letter-spacing:.08em; color:var(--muted);
+    text-align:center; line-height:1.8;
+  }
+  .foot .big{font-family:var(--display); font-size:13px; letter-spacing:.2em; text-transform:uppercase; color:var(--ink);}
+
+  a{color:var(--accent); text-underline-offset:3px; overflow-wrap:anywhere}
+  a:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-offset:4px}
+  .site-nav,.edition-nav{display:flex;justify-content:space-between;gap:16px;font-size:16px;margin:0 0 26px}
+  .edition-nav{margin-top:30px}
+  .skip-link{position:absolute;left:-10000px}
+  .skip-link:focus{position:static}
+  .section{scroll-margin-top:20px}
+  .section-head{margin-top:0}
+  .section-title{line-height:1.6;letter-spacing:.12em}
+  .section-nav{display:flex;flex-wrap:wrap;gap:8px 18px;border-bottom:1px solid var(--rule);padding:20px 0;font-size:16px}
+  .takeaways{padding:22px 0 0}
+  .takeaways h2{font-family:var(--display);font-size:26px}
+  .takeaways .item{margin-bottom:16px}
+  .takeaways .item h3{font-size:20px}
+  .takeaways .item p{font-size:17px}
+  .deep-dive{border-top:2px solid var(--accent);margin-top:28px;padding-top:18px}
+  .deep-dive h3{font-family:var(--display);font-size:28px;line-height:1.2;margin:8px 0 18px}
+  .deep-dive h4{font-family:var(--display);font-size:21px;margin:24px 0 8px}
+  .eyebrow{font:12px var(--mono);color:var(--accent);text-transform:uppercase;letter-spacing:.15em}
+  .recall{border:1px solid var(--rule);padding:14px 18px;margin:18px 0}
+  .recall summary{cursor:pointer;font-weight:600}
+  pre{white-space:pre-wrap;overflow-wrap:anywhere;background:var(--accent-tint);padding:16px;font:14px/1.7 var(--mono)}
+  .archive-list{list-style:none;padding:0}
+  .archive-list li{padding:15px 0;border-bottom:1px solid var(--rule)}
+  .archive-meta{display:block;color:var(--muted);font:12px/1.8 var(--mono)}
+  .practice .label{margin-top:0}
+  .source a{font-size:12px;line-height:1.8}
+  .source a[href^="#"]::before{content:"↓ "}
+  .coverage{font-size:14px;color:var(--muted);margin:12px 0 0}
+  hr{border:0;border-top:1px solid var(--rule);margin:22px 0}
+  @media(max-width:480px){.paper{padding:24px 18px 48px}.dateline{flex-wrap:wrap}.section-title{font-size:12px}.section-head{gap:8px}.deep-dive h3{font-size:25px}}
+</style>
+</head>
+<body>
+<div class="paper">
+<a class="skip-link" href="#content">Skip to content</a>
+<nav class="site-nav" aria-label="Main navigation"><a href="../index.html">Latest edition</a><a href="../archive.html">Archive</a></nav>
+
+  <header class="masthead">
+    <div class="rule-top"></div>
+    <div class="kicker-top">Aggregated Morning Brief · No. 022</div>
+    <h1>DC Daily Brief</h1>
+    <p class="tagline">Physical infrastructure, logical systems, and the decisions connecting them.</p>
+    <div class="dateline">
+      <span>Friday · August 7, 2026</span>
+      <span>Curated for Robert</span>
+    </div>
+    <p class="coverage">Covers news through August 7, 2026.</p>
+  </header>
+
+<main id="content">
+<nav class="section-nav" aria-label="Edition sections"><a href="#equinix">Equinix</a><a href="#google">Google</a><a href="#competitors">Competitors</a><a href="#dc-infrastructure">DC Infrastructure</a><a href="#ai-compute-demand">AI &amp; Compute Demand</a><a href="#new-ai-models-releases">New AI Models &amp; Releases</a><a href="#networking">Networking</a><a href="#backend-cloud-data">Backend / Cloud &amp; Data</a><a href="#program-pm">Program &amp; PM</a></nav><section class="section" id="equinix"><h2 class="section-head"><span class="section-num">01</span><span class="section-title">Equinix</span></h2><article class="item"><h3>Equinix&#x27;s published expansion timeline puts the next operating handoffs in Istanbul, São Paulo and Silicon Valley</h3><p>IL3 is scheduled for Q3 2026, followed by SP7 and SV18 in Q4, with Osaka, Singapore, London and Paris additions extending into 2027. A portfolio view matters because simultaneous openings compete for commissioning specialists, training capacity, spares, vendor attention and the experienced operators needed to stabilize each site after construction ends.</p><div class="source"><a href="https://www.equinix.com/data-centers/expansions" target="_blank" rel="noopener noreferrer">Equinix</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Build a portfolio-level readiness heat map</h3><p>For every upcoming site, track power-on, integrated systems testing, staffing, training, procedures, spares, customer acceptance and operational handover using the same definitions. Highlight shared people and vendors across overlapping milestones. A single-site plan can look green while the portfolio is overcommitted; the heat map exposes that resource collision early.</p></aside></section><section class="section" id="google"><h2 class="section-head"><span class="section-num">02</span><span class="section-title">Google</span></h2><article class="item"><h3>Google&#x27;s Netherlands outage follow-up turns a 14-hour service interruption into joint operating changes</h3><p>After an upstream electrical fault and cooling failure affected Google Cloud VMware Engine, Bare Metal Solution and NetApp Volumes in europe-west4-a, the corrective plan calls for the cloud and data-center teams to review incident SLAs and runbooks, create mitigation playbooks and conduct monthly joint emergency drills. The response shows that recovery performance depends as much on cross-team interfaces as on redundant equipment.</p><div class="source"><a href="https://status.cloud.google.com/incidents/3BvH3LVGcupoYqV6F4Nw" target="_blank" rel="noopener noreferrer">Google Cloud Service Health</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Convert every corrective action into a testable control</h3><p>Replace “improve coordination” with an owner, due date, trigger, expected response and evidence—for example, a monthly drill that proves escalation and recovery within target time. Track effectiveness at the next exercise or incident, not just task completion. Closing an action means demonstrating reduced risk, not merely updating the ticket.</p></aside></section><section class="section" id="competitors"><h2 class="section-head"><span class="section-num">03</span><span class="section-title">Competitors</span></h2><article class="item"><h3>AMD&#x27;s data-center revenue more than doubles as it forecasts another server surge</h3><p>AMD reported 107 percent data-center revenue growth and expects server revenue to rise roughly 80 percent in the second half of 2026, with hyperscalers expanding Epyc deployments across internal and public-cloud infrastructure. For operators, a broader CPU and accelerator mix means more qualification work around rack power, cooling envelopes, firmware, telemetry, spares and vendor escalation paths.</p><div class="source"><a href="https://www.itpro.com/hardware/amd-ceo-lisa-su-hails-excellent-quarter-as-data-center-sales-underpin-record-revenue-and-profitability" target="_blank" rel="noopener noreferrer">ITPro</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Treat hardware diversity as an operating-change program</h3><p>Before accepting a new platform, compare power profiles, thermal behavior, firmware lifecycle, monitoring fields, service tooling, spare strategy and technician training against the installed base. Assign exceptions and acceptance evidence. Supplier competition helps capacity and price only when operations can support the additional variation safely.</p></aside></section><section class="section" id="dc-infrastructure"><h2 class="section-head"><span class="section-num">04</span><span class="section-title">DC Infrastructure</span></h2><article class="item"><h3>AI data-center construction is outpacing the physical-security practices needed to protect it</h3><p>Rapid builds and multi-tenant infrastructure increase exposure across construction access, shared spaces, firmware, supply chains and high-value accelerator clusters. Security specialists argue that site protection must be specified alongside power and cooling rather than added after the shell is complete, when layouts and control boundaries are expensive to change.</p><div class="source"><a href="https://www.techradar.com/pro/were-building-the-most-critical-infrastructure-of-our-lifetimes-were-leaving-the-front-door-unlocked" target="_blank" rel="noopener noreferrer">TechRadar Pro</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Add security hold points to the construction schedule</h3><p>Require approved zones, access paths, camera coverage, delivery controls, tamper evidence, asset custody and commissioning credentials before walls close or equipment arrives. Make security acceptance a predecessor to energization and customer handover. A late security review finds defects; an early hold point prevents them from being built in.</p></aside></section><section class="section" id="ai-compute-demand"><h2 class="section-head"><span class="section-num">05</span><span class="section-title">AI &amp; Compute Demand</span></h2><article class="item"><h3>LinkedIn is holding GPU investment flat instead of joining the biggest AI-capacity race</h3><p>The company plans to keep its compute and storage footprint roughly steady while relying on its Microsoft relationship and Azure migration rather than spending aggressively on owned AI hardware. The choice is a reminder that credible capacity strategy can include reuse, cloud consumption and measured demand—not only announcing larger clusters.</p><div class="source"><a href="https://www.techradar.com/pro/linkedin-says-it-wont-be-spending-big-on-ai-hardware-this-year-but-it-has-a-good-reason-why" target="_blank" rel="noopener noreferrer">TechRadar Pro</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Make “do not build yet” an evidence-based option</h3><p>Compare owned capacity, colocation, cloud and optimization using demand confidence, utilization, lead time, unit cost, data constraints and reversibility. Set the metric and date that would trigger expansion. Good program leadership protects the organization from premature commitment as deliberately as it prevents a capacity shortfall.</p></aside></section><section class="section" id="new-ai-models-releases"><h2 class="section-head"><span class="section-num">06</span><span class="section-title">New AI Models &amp; Releases</span></h2><article class="item"><h3>Claude Opus 5 reaches Google Cloud&#x27;s Agent Platform with zero-data-retention compatibility</h3><p>Google says Anthropic&#x27;s model improves on Opus 4.8 for coding, long-running agents and knowledge work while giving enterprise customers another governed deployment option. Model availability through a platform does not make upgrades automatic: behavior, cost, latency, retention settings and tool permissions still need workload-specific acceptance.</p><div class="source"><a href="https://cloud.google.com/blog/topics/inside-google-cloud/whats-new-google-cloud?hl=en" target="_blank" rel="noopener noreferrer">Google Cloud</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Run model changes through a controlled promotion ladder</h3><p>Freeze a representative evaluation set, define quality, latency, cost and safety thresholds, then test in sandbox, shadow and limited-production stages. Record configuration and rollback criteria with the result. A newer model is a change candidate until your evidence proves it improves the service you actually operate.</p></aside></section><section class="section" id="networking"><h2 class="section-head"><span class="section-num">07</span><span class="section-title">Networking</span></h2><article class="item"><h3>Cisco is making post-quantum cryptography generally available for SD-WAN this month</h3><p>The capability extends Cisco&#x27;s existing post-quantum work across secure boot, MACsec, IPsec and management traffic, preparing network links for future cryptographic threats. Enabling a stronger algorithm is still an operational change: device support, performance, interoperability, certificate processes and rollback all need validation before broad rollout.</p><div class="source"><a href="https://blogs.cisco.com/news/the-agentic-workplace-runs-on-cisco" target="_blank" rel="noopener noreferrer">Cisco</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Inventory crypto dependencies before scheduling the upgrade</h3><p>Map every endpoint, tunnel, controller, certificate authority, monitoring tool and third-party peer on the path; record supported algorithms and firmware. Pilot the oldest or least-controlled boundary first and measure handshake time, CPU and failover. Cryptographic modernization succeeds when the entire path can negotiate and recover—not when one device supports the feature.</p></aside></section><section class="section" id="backend-cloud-data"><h2 class="section-head"><span class="section-num">08</span><span class="section-title">Backend / Cloud &amp; Data</span></h2><article class="item"><h3>Cloudflare Workflows begins charging for execution steps and persisted state on paid plans August 10</h3><p>Paid accounts include 500,000 monthly steps and 1GB-month of storage before usage charges apply, while analytics expose stepCount for each workflow instance. Durable orchestration makes retries and waits easier, but the billing model means inefficient polling, excessive step boundaries or abandoned state can become a recurring production cost.</p><div class="source"><a href="https://developers.cloudflare.com/changelog/2/" target="_blank" rel="noopener noreferrer">Cloudflare</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Add unit economics to workflow observability</h3><p>For each critical workflow, track successful runs, steps per run, retry rate, stored state, duration and cost per completed business outcome. Alert on deviation from the tested baseline, not only outright failure. A workflow that remains technically healthy can still become financially unhealthy as volume or retry behavior changes.</p></aside></section><section class="section" id="program-pm"><h2 class="section-head"><span class="section-num">09</span><span class="section-title">Program &amp; PM</span></h2><article class="item"><h3>PMI says complexity is now normal—and process compliance alone is not enough</h3><p>Its 2026 research found 97 percent of project professionals managed at least one complex project in the prior year and more than half of projects qualified as complex. PMI&#x27;s response emphasizes systems thinking: understanding feedback loops, competing stakeholder incentives and interactions between technical, organizational and external conditions rather than managing each workstream in isolation.</p><div class="source"><a href="https://www.pmi.org/about/press-media/2026/pulse-why-complex-projects-fail-best-practices-are-not-enough-system-thinking" target="_blank" rel="noopener noreferrer">Project Management Institute</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Draw a causal map before treating a recurring problem</h3><p>Put the outcome in the center, then connect workload, staffing, maintenance backlog, vendor lead time, change volume, alarms and customer pressure with arrows showing how each affects another. Choose an intervention and predict its second-order effects. This trains the program-manager habit of improving the system instead of repeatedly fixing its most visible symptom.</p></aside></section>
+</main>
+<nav class="edition-nav" aria-label="Adjacent editions"><a href="2026-08-03.html">← Previous edition</a> <a href="2026-08-09.html">Next edition →</a></nav>
+
+  <footer class="foot">
+    <div class="big">DC Daily Brief</div>
+    Covers news through August 7, 2026. · Researched and generated on demand<br>
+    News, context, and learning for Robert · Historical reporting may be superseded.
+  </footer>
+
+</div>
+</body>
+</html>

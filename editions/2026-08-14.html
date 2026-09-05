@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>DC Daily Brief — Friday, August 14, 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,900&family=Newsreader:opsz,wght@6..72,400;6..72,500&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#F7F5EF; --panel:#FBFAF6; --ink:#1B1A17; --soft-ink:#3B3934;
+    --muted:#6B6862; --rule:#D8D3C7; --rule-strong:#B7B1A3;
+    --accent:#0F766E; --accent-ink:#0B534D; --accent-tint:#EAF1EF;
+    --serif:'Newsreader',Georgia,'Times New Roman',serif;
+    --display:'Fraunces',Georgia,serif;
+    --mono:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#14140F; --panel:#1A1A14; --ink:#ECE8DD; --soft-ink:#CFC9BB;
+      --muted:#948E80; --rule:#2E2D25; --rule-strong:#413F34;
+      --accent:#5FD3C4; --accent-ink:#8FE3D8; --accent-tint:#17241F;
+    }
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0}
+  body{
+    background:var(--bg); color:var(--ink);
+    font-family:var(--serif); font-size:18px; line-height:1.62;
+    -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+  }
+  .paper{max-width:760px; margin:0 auto; padding:40px 26px 72px;}
+
+  /* Masthead */
+  .masthead{text-align:center; padding-bottom:18px;}
+  .masthead .rule-top{border-top:3px solid var(--ink); margin-bottom:14px;}
+  .kicker-top{
+    font-family:var(--mono); font-size:11px; letter-spacing:.32em; text-transform:uppercase;
+    color:var(--muted); margin-bottom:12px;
+  }
+  .masthead h1{
+    font-family:var(--display); font-weight:900; font-size:clamp(38px,9vw,68px);
+    line-height:.94; letter-spacing:-.02em; margin:0 0 10px;
+  }
+  .masthead .tagline{
+    font-family:var(--serif); font-style:italic; color:var(--soft-ink);
+    font-size:16px; max-width:38ch; margin:0 auto 16px;
+  }
+  .dateline{
+    display:flex; justify-content:space-between; align-items:center; gap:12px;
+    border-top:1px solid var(--rule-strong); border-bottom:1px solid var(--rule-strong);
+    padding:8px 2px; font-family:var(--mono); font-size:11px; letter-spacing:.12em;
+    text-transform:uppercase; color:var(--muted);
+  }
+
+  /* Section */
+  .section{padding-top:30px;}
+  .section-head{
+    display:flex; align-items:baseline; gap:12px; margin-bottom:14px;
+    border-bottom:1px solid var(--rule); padding-bottom:8px;
+  }
+  .section-num{
+    font-family:var(--mono); font-weight:700; font-size:12px; color:var(--accent);
+    letter-spacing:.1em;
+  }
+  .section-title{
+    font-family:var(--mono); font-weight:700; font-size:12.5px; letter-spacing:.22em;
+    text-transform:uppercase; color:var(--ink);
+  }
+
+  .item{margin:0 0 20px;}
+  .item h3{
+    font-family:var(--display); font-weight:600; font-size:22px; line-height:1.2;
+    letter-spacing:-.01em; margin:0 0 6px;
+  }
+  .item p{margin:0 0 6px; color:var(--soft-ink);}
+  .item em, .practice em{font-style:italic; color:var(--ink);}
+  .source a{
+    font-family:var(--mono); font-size:11px; letter-spacing:.06em; text-transform:uppercase;
+    color:var(--accent); text-decoration:none; border-bottom:1px solid transparent;
+  }
+  .source a:hover{border-bottom-color:var(--accent);}
+  .source a::before{content:"↗ ";}
+
+  /* In Practice callout */
+  .practice{
+    background:var(--accent-tint); border-left:3px solid var(--accent);
+    padding:14px 18px; margin:6px 0 4px; border-radius:2px;
+  }
+  .practice .label{
+    display:block; font-family:var(--mono); font-size:10.5px; font-weight:700;
+    letter-spacing:.24em; text-transform:uppercase; color:var(--accent-ink); margin-bottom:6px;
+  }
+  .practice p{margin:0; font-size:16.5px; line-height:1.55; color:var(--soft-ink);}
+  .practice strong{color:var(--ink);}
+  .practice .source{margin-top:8px;}
+
+  /* Footer */
+  .foot{
+    margin-top:44px; padding-top:16px; border-top:3px solid var(--ink);
+    font-family:var(--mono); font-size:11px; letter-spacing:.08em; color:var(--muted);
+    text-align:center; line-height:1.8;
+  }
+  .foot .big{font-family:var(--display); font-size:13px; letter-spacing:.2em; text-transform:uppercase; color:var(--ink);}
+
+  a{color:var(--accent); text-underline-offset:3px; overflow-wrap:anywhere}
+  a:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-offset:4px}
+  .site-nav,.edition-nav{display:flex;justify-content:space-between;gap:16px;font-size:16px;margin:0 0 26px}
+  .edition-nav{margin-top:30px}
+  .skip-link{position:absolute;left:-10000px}
+  .skip-link:focus{position:static}
+  .section{scroll-margin-top:20px}
+  .section-head{margin-top:0}
+  .section-title{line-height:1.6;letter-spacing:.12em}
+  .section-nav{display:flex;flex-wrap:wrap;gap:8px 18px;border-bottom:1px solid var(--rule);padding:20px 0;font-size:16px}
+  .takeaways{padding:22px 0 0}
+  .takeaways h2{font-family:var(--display);font-size:26px}
+  .takeaways .item{margin-bottom:16px}
+  .takeaways .item h3{font-size:20px}
+  .takeaways .item p{font-size:17px}
+  .deep-dive{border-top:2px solid var(--accent);margin-top:28px;padding-top:18px}
+  .deep-dive h3{font-family:var(--display);font-size:28px;line-height:1.2;margin:8px 0 18px}
+  .deep-dive h4{font-family:var(--display);font-size:21px;margin:24px 0 8px}
+  .eyebrow{font:12px var(--mono);color:var(--accent);text-transform:uppercase;letter-spacing:.15em}
+  .recall{border:1px solid var(--rule);padding:14px 18px;margin:18px 0}
+  .recall summary{cursor:pointer;font-weight:600}
+  pre{white-space:pre-wrap;overflow-wrap:anywhere;background:var(--accent-tint);padding:16px;font:14px/1.7 var(--mono)}
+  .archive-list{list-style:none;padding:0}
+  .archive-list li{padding:15px 0;border-bottom:1px solid var(--rule)}
+  .archive-meta{display:block;color:var(--muted);font:12px/1.8 var(--mono)}
+  .practice .label{margin-top:0}
+  .source a{font-size:12px;line-height:1.8}
+  .source a[href^="#"]::before{content:"↓ "}
+  .coverage{font-size:14px;color:var(--muted);margin:12px 0 0}
+  hr{border:0;border-top:1px solid var(--rule);margin:22px 0}
+  @media(max-width:480px){.paper{padding:24px 18px 48px}.dateline{flex-wrap:wrap}.section-title{font-size:12px}.section-head{gap:8px}.deep-dive h3{font-size:25px}}
+</style>
+</head>
+<body>
+<div class="paper">
+<a class="skip-link" href="#content">Skip to content</a>
+<nav class="site-nav" aria-label="Main navigation"><a href="../index.html">Latest edition</a><a href="../archive.html">Archive</a></nav>
+
+  <header class="masthead">
+    <div class="rule-top"></div>
+    <div class="kicker-top">Aggregated Morning Brief · No. 026</div>
+    <h1>DC Daily Brief</h1>
+    <p class="tagline">Physical infrastructure, logical systems, and the decisions connecting them.</p>
+    <div class="dateline">
+      <span>Friday · August 14, 2026</span>
+      <span>Curated for Robert</span>
+    </div>
+    <p class="coverage">Covers news through August 14, 2026.</p>
+  </header>
+
+<main id="content">
+<nav class="section-nav" aria-label="Edition sections"><a href="#equinix">Equinix</a><a href="#google">Google</a><a href="#competitors">Competitors</a><a href="#dc-infrastructure">DC Infrastructure</a><a href="#ai-compute-demand">AI &amp; Compute Demand</a><a href="#new-ai-models-releases">New AI Models &amp; Releases</a><a href="#networking">Networking</a><a href="#backend-cloud-data">Backend / Cloud &amp; Data</a><a href="#program-pm">Program &amp; PM</a><a href="#pgpm-growth">PgPM Growth</a></nav><section class="section" id="equinix"><h2 class="section-head"><span class="section-num">01</span><span class="section-title">Equinix</span></h2><article class="item"><h3>Equinix&#x27;s expansion timeline turns a global growth plan into a sequence of operational handoffs</h3><p>Equinix lists Istanbul and São Paulo openings for the second half of 2026, followed by new capacity in Osaka, Singapore, Johor, London, Mexico City and Paris through mid-2027. The timeline matters beyond construction: every market adds local staffing, vendor, compliance, network and customer-readiness dependencies that must converge before capacity is truly usable.</p><div class="source"><a href="https://www.equinix.com/data-centers/expansions" target="_blank" rel="noopener noreferrer">Equinix</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Manage the portfolio by readiness, not ribbon-cutting dates</h3><p>For each site, track power available, commissioning complete, Operations accepted, network paths live, permits closed and customer service ready as separate milestones. Roll them into one exception view that shows the limiting dependency and accountable owner. A building can be open while sellable, supportable capacity is still constrained.</p></aside></section><section class="section" id="google"><h2 class="section-head"><span class="section-num">02</span><span class="section-title">Google</span></h2><article class="item"><h3>Google breaks ground on a Swedish data center while pairing the build with local energy commitments</h3><p>Google&#x27;s latest data-center updates include the start of construction in Horndal, Sweden, alongside investments intended to support clean energy and the surrounding community. A new campus therefore carries parallel delivery streams—facility, grid, workforce and community commitments—that need one integrated schedule even when different organizations own them.</p><div class="source"><a href="https://www.datacenters.google/discover-more/latest-news/" target="_blank" rel="noopener noreferrer">Google Data Centers</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Put external commitments on the master dependency map</h3><p>Record the promised outcome, stakeholder, evidence, due date and consequence for every utility, community and workforce commitment that can affect energization or operating approval. Review them beside construction milestones, not in a separate communications plan. Commitments outside the fence can still sit on the critical path.</p></aside></section><section class="section" id="competitors"><h2 class="section-head"><span class="section-num">03</span><span class="section-title">Competitors</span></h2><article class="item"><h3>Crusoe and Aalo Atomics propose a nuclear-powered AI factory</h3><p>Crusoe says its July 30 strategic partnership with Aalo aims to pair modular nuclear generation with an AI data-center deployment, extending the company&#x27;s energy-first strategy into a new technology and regulatory domain. This is a partnership goal, not evidence of a permitted or operating plant; the near-term competitive signal is Crusoe&#x27;s attempt to integrate generation strategy with its capacity pipeline.</p><div class="source"><a href="https://www.crusoe.ai/resources/newsroom" target="_blank" rel="noopener noreferrer">Crusoe</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Separate strategic option value from committed capacity</h3><p>Track concept, site control, licensing path, interconnection, financing, equipment design, construction and commercial operation as distinct evidence gates. Assign a confidence range to capacity only after each gate is supported. This keeps an ambitious partnership visible without allowing announced gigawatts to enter a delivery forecast prematurely.</p></aside></section><section class="section" id="dc-infrastructure"><h2 class="section-head"><span class="section-num">04</span><span class="section-title">DC Infrastructure</span></h2><article class="item"><h3>A sudden data-center load drop exposes a grid risk on the other side of rapid demand growth</h3><p>Reporting on a PJM voltage disturbance describes how a large block of data-center load disconnecting at once can destabilize a system designed around both generation and demand staying within operating bounds. Resilience planning must therefore cover coordinated load rejection and restoration, not only the familiar case of utility supply disappearing from the facility.</p><div class="source"><a href="https://www.datacenterdynamics.com/en/news/pjm-grid-hit-by-voltage-disturbance-after-data-center-load-abruptly-drops-offline-report/" target="_blank" rel="noopener noreferrer">Data Center Dynamics</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Treat load restoration as a controlled operating sequence</h3><p>Define trip thresholds, minimum stable state, utility notification, staged reload blocks, hold times and abort criteria; test who has authority to proceed at each step. Model several facilities recovering together, not only one site in isolation. A technically successful transfer can still create grid risk if every campus returns at once.</p></aside></section><section class="section" id="ai-compute-demand"><h2 class="section-head"><span class="section-num">05</span><span class="section-title">AI &amp; Compute Demand</span></h2><article class="item"><h3>xAI&#x27;s 10 GW target shows how far announced demand can run ahead of executable capacity</h3><p>Elon Musk told employees that xAI aims to increase data-center power capacity roughly sevenfold to 10 GW by late 2027, according to reporting on the internal remarks. The scale and associated revenue forecast are management ambitions rather than delivered results, making the claim most useful as a test of land, generation, equipment, capital and customer-demand assumptions.</p><div class="source"><a href="https://www.tomshardware.com/tech-industry/artificial-intelligence/elon-musk-says-xai-will-increase-data-center-capacity-7x-by-2027-targeting-10-gigawatts-of-compute-up-to-usd500-billion-in-revenue-by-the-end-of-next-year" target="_blank" rel="noopener noreferrer">Tom&#x27;s Hardware</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Convert a headline target into a capacity bridge</h3><p>Start with operating megawatts, then add only blocks with named sites, power paths, delivery dates, funding and equipment allocation; show the remainder as an uncommitted gap. Attach confidence and next evidence to every block. The bridge turns a bold target into a reviewable program hypothesis.</p></aside></section><section class="section" id="new-ai-models-releases"><h2 class="section-head"><span class="section-num">06</span><span class="section-title">New AI Models &amp; Releases</span></h2><article class="item"><h3>GPT-5.6 introduces three capability tiers and an ultra setting for coordinated agent work</h3><p>OpenAI&#x27;s GPT-5.6 family separates flagship Sol, balanced Terra and cost-focused Luna models, while its highest setting coordinates multiple agents for demanding work. The tiering gives teams more deployment choices, but also multiplies the combinations of quality, latency, cost and control behavior that must be accepted for each workflow.</p><div class="source"><a href="https://openai.com/index/gpt-5-6/" target="_blank" rel="noopener noreferrer">OpenAI</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Approve model tiers against task classes</h3><p>Define representative low-, medium- and high-consequence workflows; set minimum completion quality, maximum cost and latency, required review and permitted tools for each. Test every candidate tier against those same gates. A cheaper default is valuable only when escalation rules reliably catch work that needs more capability.</p></aside></section><section class="section" id="networking"><h2 class="section-head"><span class="section-num">07</span><span class="section-title">Networking</span></h2><article class="item"><h3>Verizon&#x27;s reported $1 billion fiber agreement with Google makes the inter-campus path part of AI capacity delivery</h3><p>The agreement is intended to connect Google&#x27;s data centers with additional fiber infrastructure as distributed AI systems require more traffic between facilities. Capacity planning now has to treat route diversity, optical readiness and carrier delivery as first-class dependencies alongside racks, power and cooling.</p><div class="source"><a href="https://www.datacenterdynamics.com/en/news/verizon-signs-1bn-fiber-deal-with-google-to-connect-hyperscalers-data-centers/" target="_blank" rel="noopener noreferrer">Data Center Dynamics</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Commission the route, not just the circuit</h3><p>Verify physical diversity, shared ducts and buildings, optical budget, latency, protection behavior, monitoring ownership, spare optics and repair escalation. Run a failover while production-like traffic is present and measure application impact. Two logical circuits do not provide resilience when they share the same physical failure domain.</p></aside></section><section class="section" id="backend-cloud-data"><h2 class="section-head"><span class="section-num">08</span><span class="section-title">Backend / Cloud &amp; Data</span></h2><article class="item"><h3>AlloyDB adds stable write endpoints and previews automated cross-region failover</h3><p>Google Cloud&#x27;s July release notes describe DNS-based write endpoints that follow the primary instance and an optional cross-region failover flow that preserves the replication topology. The features can reduce manual recovery steps, but applications still need tested connection refresh, retry and data-consistency behavior when the primary location changes.</p><div class="source"><a href="https://docs.cloud.google.com/release-notes" target="_blank" rel="noopener noreferrer">Google Cloud</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Test the client after the control plane succeeds</h3><p>Trigger a nonproduction switchover and measure endpoint update time, DNS caching, connection-pool recovery, retry safety, write availability and replication loss. Confirm alarms and ownership at each stage. A database can be healthy in its new region while stale clients remain unable—or unsafe—to write.</p></aside></section><section class="section" id="program-pm"><h2 class="section-head"><span class="section-num">09</span><span class="section-title">Program &amp; PM</span></h2><article class="item"><h3>Updated program-management guidance emphasizes outcomes across connected projects</h3><p>A 2026 overview of program management frames the role around coordinating related projects, resources, risks and benefits rather than simply supervising a larger task list. That distinction is especially relevant in data-center expansion, where facility, network, customer and operational-readiness projects must combine into usable capacity and business value.</p><div class="source"><a href="https://asana.com/resources/what-is-program-management" target="_blank" rel="noopener noreferrer">Asana</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Give every workstream an outcome dependency</h3><p>For each project, state the deliverable, the program outcome it enables, the downstream consumer and the evidence that proves the handoff worked. Review orphan deliverables that do not support an outcome and outcomes with no accountable workstream. Program control begins where individual project plans meet.</p></aside></section><section class="section" id="pgpm-growth"><h2 class="section-head"><span class="section-num">10</span><span class="section-title">PgPM Growth</span></h2><article class="item"><h3>Treat commissioning as a delivery thread, not a finish-line event</h3><p>At the foundation level, map a data-center program from feasibility through design, build, test, deployment and close, then place commissioning evidence at every phase boundary. This helps a PgPM expose missing requirements and late integration risks before they become turnover blockers.</p><div class="source"><a href="https://www.pmi.org/about/what-is-a-project" target="_blank" rel="noopener noreferrer">PMI · Project lifecycle</a></div></article>
+<article class="item"><h3>Define operational handoff as proven readiness, not document transfer</h3><p>Connect the lifecycle to Operations by setting explicit readiness criteria for procedures, staffing, training, systems information, open deficiencies and retesting ownership. A hypothetical site should pass only when the receiving team can explain, operate and recover the integrated systems—not merely when manuals arrive.</p><div class="source"><a href="https://www.energy.gov/cmei/femp/commissioning-process-federal-facilities" target="_blank" rel="noopener noreferrer">DOE · Commissioning process</a></div></article>
+<article class="item"><h3>Resource · Mission-critical commissioning lifecycle</h3><p>Use Uptime Institute&#x27;s guidance to relate commissioning activities and stakeholder responsibilities to each phase of a data-center project.</p><div class="source"><a href="https://journal.uptimeinstitute.com/improve-project-success-through-mission-critical-commissioning/" target="_blank" rel="noopener noreferrer">Uptime Institute</a></div></article>
+<article class="item"><h3>Resource · Phase-by-phase commissioning map</h3><p>Use this overview to trace requirements, design intent, functional testing, issue closure, training and final reporting from predesign through occupancy.</p><div class="source"><a href="https://stg.wbdg.org/building-commissioning" target="_blank" rel="noopener noreferrer">WBDG · Commissioning process</a></div></article>
+<article class="item"><h3>Resource · Handoff evidence checklist</h3><p>Use the document matrix to identify who prepares, reviews, approves and receives training plans, test procedures, issue logs and the systems manual.</p><div class="source"><a href="https://legacy.wbdg.org/building-commissioning/commissioning-documents" target="_blank" rel="noopener noreferrer">WBDG · Commissioning documents</a></div></article>
+<article class="item"><h3>Resource · Readiness that persists after turnover</h3><p>Use ongoing-commissioning guidance to add performance tracking, anomaly correction, periodic review and refresher training to the operational-readiness plan.</p><div class="source"><a href="https://legacy.wbdg.org/building-commissioning/ongoing-commissioning" target="_blank" rel="noopener noreferrer">WBDG · Ongoing commissioning</a></div></article>
+<aside class="practice"><h3 class="label">Daily Action · Draft a lifecycle-to-readiness bridge</h3><p>Set a 20-minute timer and create a five-row table for one hypothetical data-center system with columns for delivery phase, required commissioning evidence, Operations owner, readiness criterion and unresolved-risk trigger. Keep the draft local; do not send it or modify an external system.</p></aside></section>
+</main>
+<nav class="edition-nav" aria-label="Adjacent editions"><a href="2026-08-12.html">← Previous edition</a> <a href="2026-08-15.html">Next edition →</a></nav>
+
+  <footer class="foot">
+    <div class="big">DC Daily Brief</div>
+    Covers news through August 14, 2026. · Researched and generated on demand<br>
+    News, context, and learning for Robert · Historical reporting may be superseded.
+  </footer>
+
+</div>
+</body>
+</html>

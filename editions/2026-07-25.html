@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>DC Daily Brief — Saturday, July 25, 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,900&family=Newsreader:opsz,wght@6..72,400;6..72,500&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#F7F5EF; --panel:#FBFAF6; --ink:#1B1A17; --soft-ink:#3B3934;
+    --muted:#6B6862; --rule:#D8D3C7; --rule-strong:#B7B1A3;
+    --accent:#0F766E; --accent-ink:#0B534D; --accent-tint:#EAF1EF;
+    --serif:'Newsreader',Georgia,'Times New Roman',serif;
+    --display:'Fraunces',Georgia,serif;
+    --mono:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#14140F; --panel:#1A1A14; --ink:#ECE8DD; --soft-ink:#CFC9BB;
+      --muted:#948E80; --rule:#2E2D25; --rule-strong:#413F34;
+      --accent:#5FD3C4; --accent-ink:#8FE3D8; --accent-tint:#17241F;
+    }
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0}
+  body{
+    background:var(--bg); color:var(--ink);
+    font-family:var(--serif); font-size:18px; line-height:1.62;
+    -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+  }
+  .paper{max-width:760px; margin:0 auto; padding:40px 26px 72px;}
+
+  /* Masthead */
+  .masthead{text-align:center; padding-bottom:18px;}
+  .masthead .rule-top{border-top:3px solid var(--ink); margin-bottom:14px;}
+  .kicker-top{
+    font-family:var(--mono); font-size:11px; letter-spacing:.32em; text-transform:uppercase;
+    color:var(--muted); margin-bottom:12px;
+  }
+  .masthead h1{
+    font-family:var(--display); font-weight:900; font-size:clamp(38px,9vw,68px);
+    line-height:.94; letter-spacing:-.02em; margin:0 0 10px;
+  }
+  .masthead .tagline{
+    font-family:var(--serif); font-style:italic; color:var(--soft-ink);
+    font-size:16px; max-width:38ch; margin:0 auto 16px;
+  }
+  .dateline{
+    display:flex; justify-content:space-between; align-items:center; gap:12px;
+    border-top:1px solid var(--rule-strong); border-bottom:1px solid var(--rule-strong);
+    padding:8px 2px; font-family:var(--mono); font-size:11px; letter-spacing:.12em;
+    text-transform:uppercase; color:var(--muted);
+  }
+
+  /* Section */
+  .section{padding-top:30px;}
+  .section-head{
+    display:flex; align-items:baseline; gap:12px; margin-bottom:14px;
+    border-bottom:1px solid var(--rule); padding-bottom:8px;
+  }
+  .section-num{
+    font-family:var(--mono); font-weight:700; font-size:12px; color:var(--accent);
+    letter-spacing:.1em;
+  }
+  .section-title{
+    font-family:var(--mono); font-weight:700; font-size:12.5px; letter-spacing:.22em;
+    text-transform:uppercase; color:var(--ink);
+  }
+
+  .item{margin:0 0 20px;}
+  .item h3{
+    font-family:var(--display); font-weight:600; font-size:22px; line-height:1.2;
+    letter-spacing:-.01em; margin:0 0 6px;
+  }
+  .item p{margin:0 0 6px; color:var(--soft-ink);}
+  .item em, .practice em{font-style:italic; color:var(--ink);}
+  .source a{
+    font-family:var(--mono); font-size:11px; letter-spacing:.06em; text-transform:uppercase;
+    color:var(--accent); text-decoration:none; border-bottom:1px solid transparent;
+  }
+  .source a:hover{border-bottom-color:var(--accent);}
+  .source a::before{content:"↗ ";}
+
+  /* In Practice callout */
+  .practice{
+    background:var(--accent-tint); border-left:3px solid var(--accent);
+    padding:14px 18px; margin:6px 0 4px; border-radius:2px;
+  }
+  .practice .label{
+    display:block; font-family:var(--mono); font-size:10.5px; font-weight:700;
+    letter-spacing:.24em; text-transform:uppercase; color:var(--accent-ink); margin-bottom:6px;
+  }
+  .practice p{margin:0; font-size:16.5px; line-height:1.55; color:var(--soft-ink);}
+  .practice strong{color:var(--ink);}
+  .practice .source{margin-top:8px;}
+
+  /* Footer */
+  .foot{
+    margin-top:44px; padding-top:16px; border-top:3px solid var(--ink);
+    font-family:var(--mono); font-size:11px; letter-spacing:.08em; color:var(--muted);
+    text-align:center; line-height:1.8;
+  }
+  .foot .big{font-family:var(--display); font-size:13px; letter-spacing:.2em; text-transform:uppercase; color:var(--ink);}
+
+  a{color:var(--accent); text-underline-offset:3px; overflow-wrap:anywhere}
+  a:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-offset:4px}
+  .site-nav,.edition-nav{display:flex;justify-content:space-between;gap:16px;font-size:16px;margin:0 0 26px}
+  .edition-nav{margin-top:30px}
+  .skip-link{position:absolute;left:-10000px}
+  .skip-link:focus{position:static}
+  .section{scroll-margin-top:20px}
+  .section-head{margin-top:0}
+  .section-title{line-height:1.6;letter-spacing:.12em}
+  .section-nav{display:flex;flex-wrap:wrap;gap:8px 18px;border-bottom:1px solid var(--rule);padding:20px 0;font-size:16px}
+  .takeaways{padding:22px 0 0}
+  .takeaways h2{font-family:var(--display);font-size:26px}
+  .takeaways .item{margin-bottom:16px}
+  .takeaways .item h3{font-size:20px}
+  .takeaways .item p{font-size:17px}
+  .deep-dive{border-top:2px solid var(--accent);margin-top:28px;padding-top:18px}
+  .deep-dive h3{font-family:var(--display);font-size:28px;line-height:1.2;margin:8px 0 18px}
+  .deep-dive h4{font-family:var(--display);font-size:21px;margin:24px 0 8px}
+  .eyebrow{font:12px var(--mono);color:var(--accent);text-transform:uppercase;letter-spacing:.15em}
+  .recall{border:1px solid var(--rule);padding:14px 18px;margin:18px 0}
+  .recall summary{cursor:pointer;font-weight:600}
+  pre{white-space:pre-wrap;overflow-wrap:anywhere;background:var(--accent-tint);padding:16px;font:14px/1.7 var(--mono)}
+  .archive-list{list-style:none;padding:0}
+  .archive-list li{padding:15px 0;border-bottom:1px solid var(--rule)}
+  .archive-meta{display:block;color:var(--muted);font:12px/1.8 var(--mono)}
+  .practice .label{margin-top:0}
+  .source a{font-size:12px;line-height:1.8}
+  .source a[href^="#"]::before{content:"↓ "}
+  .coverage{font-size:14px;color:var(--muted);margin:12px 0 0}
+  hr{border:0;border-top:1px solid var(--rule);margin:22px 0}
+  @media(max-width:480px){.paper{padding:24px 18px 48px}.dateline{flex-wrap:wrap}.section-title{font-size:12px}.section-head{gap:8px}.deep-dive h3{font-size:25px}}
+</style>
+</head>
+<body>
+<div class="paper">
+<a class="skip-link" href="#content">Skip to content</a>
+<nav class="site-nav" aria-label="Main navigation"><a href="../index.html">Latest edition</a><a href="../archive.html">Archive</a></nav>
+
+  <header class="masthead">
+    <div class="rule-top"></div>
+    <div class="kicker-top">Aggregated Morning Brief · No. 013</div>
+    <h1>DC Daily Brief</h1>
+    <p class="tagline">Physical infrastructure, logical systems, and the decisions connecting them.</p>
+    <div class="dateline">
+      <span>Saturday · July 25, 2026</span>
+      <span>Curated for Robert</span>
+    </div>
+    <p class="coverage">Covers news through July 23–25, 2026.</p>
+  </header>
+
+<main id="content">
+<nav class="section-nav" aria-label="Edition sections"><a href="#equinix">Equinix</a><a href="#competitors">Competitors</a><a href="#dc-infrastructure">DC Infrastructure</a><a href="#ai-compute-demand">AI &amp; Compute Demand</a><a href="#new-ai-models-releases">New AI Models &amp; Releases</a><a href="#networking">Networking</a><a href="#backend-cloud-data">Backend / Cloud &amp; Data</a><a href="#program-pm">Program &amp; PM</a></nav><section class="section" id="equinix"><h2 class="section-head"><span class="section-num">01</span><span class="section-title">Equinix</span></h2><article class="item"><h3>Equinix signs the expanded White House pledge that data center growth should not raise household power bills</h3><p>Equinix joined Digital Realty, Prologis and roughly 200 utilities in the voluntary Ratepayer Protection Pledge, broadening an earlier group of hyperscalers that promised to cover the grid costs their facilities trigger. The commitment puts Equinix&#x27;s name behind the principle, but the harder work will happen inside state utility proceedings where tariffs, infrastructure contributions and stranded-asset protections become enforceable rather than voluntary.</p><div class="source"><a href="https://apnews.com/article/trump-ai-data-centers-pledge-490ea7e4c7227d5e550b00a0056c33c9" target="_blank" rel="noopener noreferrer">Associated Press</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Treat a public pledge as a requirement that still needs acceptance criteria</h3><p>“Do not raise residential bills” sounds clear until a utility must decide which transformer, substation, transmission and generation costs were caused by a new campus and which were already needed for the wider grid. If you support an expansion, translate the promise into a traceable cost-responsibility matrix: each upgrade, the party funding it, the demand assumption behind it, and who pays if the customer ramps late or exits early. That is how an operations or program leader turns corporate positioning into controls that finance, regulators and community stakeholders can audit.</p></aside></section><section class="section" id="competitors"><h2 class="section-head"><span class="section-num">02</span><span class="section-title">Competitors</span></h2><article class="item"><h3>Digital Realty&#x27;s Q2 results show pricing power extending from hyperscale into smaller deployments</h3><p>The company reported $1.9B in quarterly revenue, up 29% year over year, cash renewal-rate increases of 25.4%, and a record $1.9B annualized-rent backlog at 100% share. It also recorded a quarterly high of $108M in bookings across interconnection and deployments from zero to one megawatt, evidence that tight supply is benefiting the retail and enterprise side of the platform—not only giant AI campuses.</p><div class="source"><a href="https://investor.digitalrealty.com/news-releases/news-release-details/digital-realty-reports-second-quarter-2026-results" target="_blank" rel="noopener noreferrer">Digital Realty</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Backlog is sold demand, not operating capacity</h3><p>A signed lease enters backlog before the space is delivered and billing begins, so a record backlog is both commercial strength and an execution obligation. When reading a competitor&#x27;s result, ask what must happen between signature and revenue: utility energization, construction completion, commissioning, customer installation and cross-connect readiness. In your own work, those handoffs belong on one integrated milestone plan; sales can call the deal won, but operations owns the distance between contracted megawatts and reliable, billable service.</p></aside></section><section class="section" id="dc-infrastructure"><h2 class="section-head"><span class="section-num">03</span><span class="section-title">DC Infrastructure</span></h2><article class="item"><h3>Virginia&#x27;s groundwater study says large evaporatively cooled facilities may be unable to secure a sustainable supply in the state&#x27;s eastern region</h3><p>The long-delayed state analysis projects renewed declines in a critical aquifer and recommends stronger permitting authority, alternative-source reviews and better withdrawal data. It does not assign the decline to data centers, but concludes that under current conditions a new facility using evaporative cooling would be unlikely to find a reliable, sufficient groundwater source anywhere in the region.</p><div class="source"><a href="https://apnews.com/article/data-centers-virginia-groundwater-gov-spanberger-study-564e5d3c2520190bbfa5c7dbd0c6409f" target="_blank" rel="noopener noreferrer">Associated Press</a></div></article>
+<article class="item"><h3>Nvidia&#x27;s Rubin-era reference design pushes 45°C facility water to make chillerless, closed-loop cooling practical</h3><p>Coolant can enter at roughly 45°C and leave near 55°C, warm enough for outdoor dry coolers to reject heat without conventional chillers or evaporative towers in favorable climates. Nvidia estimates a 50MW facility could save more than $4M annually in cooling energy and water costs, although the result depends heavily on climate, approach temperature and facility design.</p><div class="source"><a href="https://www.techradar.com/pro/nvidias-latest-trick-for-cooling-its-data-center-hardware-is-hot-water-hot-liquid-cooling-is-warmer-than-a-hot-tub-but-apparently-does-the-job-pretty-well" target="_blank" rel="noopener noreferrer">TechRadar Pro</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Water strategy is now an early design gate, not a late mechanical selection</h3><p>The Virginia finding and Nvidia design connect at the basis-of-design stage: if groundwater or evaporative permits are uncertain, the team must test higher supply-water temperatures, dry-cooler performance on local design days, redundancy modes and water-quality requirements before the electrical and mechanical topology is locked. As an operator moving toward program leadership, push for a decision record that states the assumed climate data, allowable hours outside design conditions, fallback mode and owner of each assumption. A sustainability claim becomes operationally credible only when it survives the worst credible day and a component outage.</p></aside></section><section class="section" id="ai-compute-demand"><h2 class="section-head"><span class="section-num">04</span><span class="section-title">AI &amp; Compute Demand</span></h2><article class="item"><h3>Intel&#x27;s data center business reaches $6.3B as AI demand pulls more than GPUs through the supply chain</h3><p>Intel&#x27;s second-quarter Data Center and AI revenue rose about 59% year over year, while the company introduced Xeon 6+, its first server CPU built on Intel 18A. Management also signaled increased investment in equipment, clean-room capacity and substrates as demand strains supply—another indication that inference growth needs host CPUs, memory and packaging alongside accelerators.</p><div class="source"><a href="https://newsroom.intel.cn/%E8%8B%B1%E7%89%B9%E5%B0%94%E5%8F%91%E5%B8%832026%E5%B9%B4%E7%AC%AC%E4%BA%8C%E5%AD%A3%E5%BA%A6%E8%B4%A2%E6%8A%A5/" target="_blank" rel="noopener noreferrer">Intel Newsroom</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Never size an AI deployment from GPU nameplate power alone</h3><p>The accelerator is the headline load, but the usable service includes host CPUs, memory, storage, NICs, DPUs, top-of-rack switches and the conversion losses between utility feed and silicon. Build capacity views in three layers: IT nameplate, expected diversified load, and facility input after PUE—then document which number every stakeholder is quoting. That discipline prevents a sales estimate, an electrical design value and an operations alarm threshold from all being called “the megawatts” even though they answer different questions.</p></aside></section><section class="section" id="new-ai-models-releases"><h2 class="section-head"><span class="section-num">05</span><span class="section-title">New AI Models &amp; Releases</span></h2><article class="item"><h3>Anthropic releases Claude Opus 5 with near-flagship capability and a user-controlled effort setting</h3><p>Opus 5 is positioned between the company&#x27;s everyday models and Fable 5 for the longest autonomous tasks, priced at $5 per million input tokens and $25 per million output tokens. Its effort control lets users trade compute and cost against task difficulty, while mid-task model switching makes model selection an operating decision rather than a choice fixed at the start of a workflow.</p><div class="source"><a href="https://www.axios.com/2026/07/24/anthropic-releases-new-model-opus-5" target="_blank" rel="noopener noreferrer">Axios</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · “Use the best model” is not a responsible operating policy</h3><p>For a work task, first classify the consequence of error and the value of deeper reasoning: summarizing shift notes may justify a lower-cost setting, while reviewing a switching procedure, risk response or executive recommendation deserves more effort and mandatory human verification. Create a simple routing rule based on risk, reversibility and confidentiality, then record where human approval remains required. That is the project-leadership skill behind AI adoption: matching controls to consequences instead of treating every prompt as equally important.</p></aside></section><section class="section" id="networking"><h2 class="section-head"><span class="section-num">06</span><span class="section-title">Networking</span></h2><article class="item"><h3>Verizon lands a Google dark-fiber agreement worth more than $1B and says more AI-connectivity deals are coming</h3><p>Verizon will provide unlit fiber for Google&#x27;s data centers, leaving Google to supply and operate the optical equipment while buying long-term control of the physical path. CEO Dan Schulman said additional deals expected by year-end could be worth several billion dollars, showing that AI infrastructure spending is expanding beyond campus switching into dedicated metro and long-haul routes.</p><div class="source"><a href="https://www.investing.com/news/stock-market-news/verizon-signs-deal-with-google-worth-over-1-billion-4811816" target="_blank" rel="noopener noreferrer">Reuters via Investing.com</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Dark fiber transfers equipment control, not physical-route risk</h3><p>The customer controls wavelengths, optics and upgrades, but a backhoe, shared conduit, bridge crossing or common building entrance can still take out two supposedly diverse circuits at once. When reviewing resilience, do not stop at two carrier names or two circuit IDs: request route maps, verify conduit and entrance diversity, identify regeneration sites, and test whether the failover path has enough capacity under peak load. Logical redundancy is only as strong as the physical dependency map beneath it.</p></aside></section><section class="section" id="backend-cloud-data"><h2 class="section-head"><span class="section-num">07</span><span class="section-title">Backend / Cloud &amp; Data</span></h2><article class="item"><h3>A Kubernetes training job looked healthy while network policy left 60% of its GPUs idle</h3><p>In a CNCF case study, Kubeflow pods were running with no crashes or out-of-memory events, yet distributed training never began because Cilium network-policy boundaries separated the coordinator from workers. The case exposes a costly observability gap: scheduler and pod health can stay green even when the application-level collective communication required to use the accelerators is broken.</p><div class="source"><a href="https://www.cncf.io/blog/2026/07/23/when-kubeflow-meets-cilium-debugging-60-idle-gpus-in-kubernetes/" target="_blank" rel="noopener noreferrer">CNCF</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Availability and useful work need separate indicators</h3><p>“Pods running” is a component-health measure; completed training steps, GPU utilization and collective-communication progress are service-outcome measures. The same distinction applies inside a data center: a UPS can be online while redundancy is degraded, or a cross-connect can show light while the customer&#x27;s application cannot pass traffic. Build dashboards and incident updates in layers—component state, redundancy state and customer outcome—so a green lower-layer signal never closes an incident before useful service is restored.</p></aside></section><section class="section" id="program-pm"><h2 class="section-head"><span class="section-num">08</span><span class="section-title">Program &amp; PM</span></h2><article class="item"><h3>PMI&#x27;s 2026 Pulse argues that complex projects require systems thinking beyond standard process compliance</h3><p>PMI says professionals applying its M.O.R.E. behaviors—managing perceptions, owning success, relentlessly reassessing and expanding perspective—are three times more likely to deliver successful outcomes. The report&#x27;s central distinction is that complexity emerges from interacting technical, organizational and stakeholder conditions, so following each local best practice can still produce a poor system-level result.</p><div class="source"><a href="https://www.pmi.org/about/press-media/2026/pulse-why-complex-projects-fail-best-practices-are-not-enough-system-thinking" target="_blank" rel="noopener noreferrer">PMI</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Upgrade the RAID log into a dependency conversation</h3><p>A standard register lists risks, assumptions, issues and decisions one row at a time, but a complex delivery fails through interactions: a late utility date compresses commissioning, which increases staffing risk, which pressures a customer migration window. In your weekly review, choose the top change and ask each workstream lead, “What does this alter downstream, and what assumption are you now relying on?” Capture the resulting links, not just new rows. That habit builds the systems judgment PMI is rewarding—and it is how an operations expert becomes the program leader who sees trouble crossing boundaries before anyone else does.</p></aside></section>
+</main>
+<nav class="edition-nav" aria-label="Adjacent editions"><a href="2026-07-23.html">← Previous edition</a> <a href="2026-07-26.html">Next edition →</a></nav>
+
+  <footer class="foot">
+    <div class="big">DC Daily Brief</div>
+    Covers news through July 23–25, 2026. · Researched and generated on demand<br>
+    News, context, and learning for Robert · Historical reporting may be superseded.
+  </footer>
+
+</div>
+</body>
+</html>

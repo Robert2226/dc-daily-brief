@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>DC Daily Brief — Friday, July 17, 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,900&family=Newsreader:opsz,wght@6..72,400;6..72,500&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#F7F5EF; --panel:#FBFAF6; --ink:#1B1A17; --soft-ink:#3B3934;
+    --muted:#6B6862; --rule:#D8D3C7; --rule-strong:#B7B1A3;
+    --accent:#0F766E; --accent-ink:#0B534D; --accent-tint:#EAF1EF;
+    --serif:'Newsreader',Georgia,'Times New Roman',serif;
+    --display:'Fraunces',Georgia,serif;
+    --mono:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#14140F; --panel:#1A1A14; --ink:#ECE8DD; --soft-ink:#CFC9BB;
+      --muted:#948E80; --rule:#2E2D25; --rule-strong:#413F34;
+      --accent:#5FD3C4; --accent-ink:#8FE3D8; --accent-tint:#17241F;
+    }
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0}
+  body{
+    background:var(--bg); color:var(--ink);
+    font-family:var(--serif); font-size:18px; line-height:1.62;
+    -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+  }
+  .paper{max-width:760px; margin:0 auto; padding:40px 26px 72px;}
+
+  /* Masthead */
+  .masthead{text-align:center; padding-bottom:18px;}
+  .masthead .rule-top{border-top:3px solid var(--ink); margin-bottom:14px;}
+  .kicker-top{
+    font-family:var(--mono); font-size:11px; letter-spacing:.32em; text-transform:uppercase;
+    color:var(--muted); margin-bottom:12px;
+  }
+  .masthead h1{
+    font-family:var(--display); font-weight:900; font-size:clamp(38px,9vw,68px);
+    line-height:.94; letter-spacing:-.02em; margin:0 0 10px;
+  }
+  .masthead .tagline{
+    font-family:var(--serif); font-style:italic; color:var(--soft-ink);
+    font-size:16px; max-width:38ch; margin:0 auto 16px;
+  }
+  .dateline{
+    display:flex; justify-content:space-between; align-items:center; gap:12px;
+    border-top:1px solid var(--rule-strong); border-bottom:1px solid var(--rule-strong);
+    padding:8px 2px; font-family:var(--mono); font-size:11px; letter-spacing:.12em;
+    text-transform:uppercase; color:var(--muted);
+  }
+
+  /* Section */
+  .section{padding-top:30px;}
+  .section-head{
+    display:flex; align-items:baseline; gap:12px; margin-bottom:14px;
+    border-bottom:1px solid var(--rule); padding-bottom:8px;
+  }
+  .section-num{
+    font-family:var(--mono); font-weight:700; font-size:12px; color:var(--accent);
+    letter-spacing:.1em;
+  }
+  .section-title{
+    font-family:var(--mono); font-weight:700; font-size:12.5px; letter-spacing:.22em;
+    text-transform:uppercase; color:var(--ink);
+  }
+
+  .item{margin:0 0 20px;}
+  .item h3{
+    font-family:var(--display); font-weight:600; font-size:22px; line-height:1.2;
+    letter-spacing:-.01em; margin:0 0 6px;
+  }
+  .item p{margin:0 0 6px; color:var(--soft-ink);}
+  .item em, .practice em{font-style:italic; color:var(--ink);}
+  .source a{
+    font-family:var(--mono); font-size:11px; letter-spacing:.06em; text-transform:uppercase;
+    color:var(--accent); text-decoration:none; border-bottom:1px solid transparent;
+  }
+  .source a:hover{border-bottom-color:var(--accent);}
+  .source a::before{content:"↗ ";}
+
+  /* In Practice callout */
+  .practice{
+    background:var(--accent-tint); border-left:3px solid var(--accent);
+    padding:14px 18px; margin:6px 0 4px; border-radius:2px;
+  }
+  .practice .label{
+    display:block; font-family:var(--mono); font-size:10.5px; font-weight:700;
+    letter-spacing:.24em; text-transform:uppercase; color:var(--accent-ink); margin-bottom:6px;
+  }
+  .practice p{margin:0; font-size:16.5px; line-height:1.55; color:var(--soft-ink);}
+  .practice strong{color:var(--ink);}
+  .practice .source{margin-top:8px;}
+
+  /* Footer */
+  .foot{
+    margin-top:44px; padding-top:16px; border-top:3px solid var(--ink);
+    font-family:var(--mono); font-size:11px; letter-spacing:.08em; color:var(--muted);
+    text-align:center; line-height:1.8;
+  }
+  .foot .big{font-family:var(--display); font-size:13px; letter-spacing:.2em; text-transform:uppercase; color:var(--ink);}
+
+  a{color:var(--accent); text-underline-offset:3px; overflow-wrap:anywhere}
+  a:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-offset:4px}
+  .site-nav,.edition-nav{display:flex;justify-content:space-between;gap:16px;font-size:16px;margin:0 0 26px}
+  .edition-nav{margin-top:30px}
+  .skip-link{position:absolute;left:-10000px}
+  .skip-link:focus{position:static}
+  .section{scroll-margin-top:20px}
+  .section-head{margin-top:0}
+  .section-title{line-height:1.6;letter-spacing:.12em}
+  .section-nav{display:flex;flex-wrap:wrap;gap:8px 18px;border-bottom:1px solid var(--rule);padding:20px 0;font-size:16px}
+  .takeaways{padding:22px 0 0}
+  .takeaways h2{font-family:var(--display);font-size:26px}
+  .takeaways .item{margin-bottom:16px}
+  .takeaways .item h3{font-size:20px}
+  .takeaways .item p{font-size:17px}
+  .deep-dive{border-top:2px solid var(--accent);margin-top:28px;padding-top:18px}
+  .deep-dive h3{font-family:var(--display);font-size:28px;line-height:1.2;margin:8px 0 18px}
+  .deep-dive h4{font-family:var(--display);font-size:21px;margin:24px 0 8px}
+  .eyebrow{font:12px var(--mono);color:var(--accent);text-transform:uppercase;letter-spacing:.15em}
+  .recall{border:1px solid var(--rule);padding:14px 18px;margin:18px 0}
+  .recall summary{cursor:pointer;font-weight:600}
+  pre{white-space:pre-wrap;overflow-wrap:anywhere;background:var(--accent-tint);padding:16px;font:14px/1.7 var(--mono)}
+  .archive-list{list-style:none;padding:0}
+  .archive-list li{padding:15px 0;border-bottom:1px solid var(--rule)}
+  .archive-meta{display:block;color:var(--muted);font:12px/1.8 var(--mono)}
+  .practice .label{margin-top:0}
+  .source a{font-size:12px;line-height:1.8}
+  .source a[href^="#"]::before{content:"↓ "}
+  .coverage{font-size:14px;color:var(--muted);margin:12px 0 0}
+  hr{border:0;border-top:1px solid var(--rule);margin:22px 0}
+  @media(max-width:480px){.paper{padding:24px 18px 48px}.dateline{flex-wrap:wrap}.section-title{font-size:12px}.section-head{gap:8px}.deep-dive h3{font-size:25px}}
+</style>
+</head>
+<body>
+<div class="paper">
+<a class="skip-link" href="#content">Skip to content</a>
+<nav class="site-nav" aria-label="Main navigation"><a href="../index.html">Latest edition</a><a href="../archive.html">Archive</a></nav>
+
+  <header class="masthead">
+    <div class="rule-top"></div>
+    <div class="kicker-top">Aggregated Morning Brief · No. 006</div>
+    <h1>DC Daily Brief</h1>
+    <p class="tagline">Physical infrastructure, logical systems, and the decisions connecting them.</p>
+    <div class="dateline">
+      <span>Friday · July 17, 2026</span>
+      <span>Curated for Robert</span>
+    </div>
+    <p class="coverage">Covers news through July 15–17, 2026.</p>
+  </header>
+
+<main id="content">
+<nav class="section-nav" aria-label="Edition sections"><a href="#equinix">Equinix</a><a href="#competitors">Competitors</a><a href="#dc-infrastructure">DC Infrastructure</a><a href="#ai-compute-demand">AI &amp; Compute Demand</a><a href="#new-ai-models-releases">New AI Models &amp; Releases</a><a href="#networking">Networking</a><a href="#backend-cloud-data">Backend / Cloud &amp; Data</a><a href="#program-pm">Program &amp; PM</a></nav><section class="section" id="equinix"><h2 class="section-head"><span class="section-num">01</span><span class="section-title">Equinix</span></h2><article class="item"><h3>Leadership reshuffle: CBO Jon Lin departs July 18, new CPO coming</h3><p>Equinix confirmed Chief Business Officer Jon Lin will exit July 18 under the company&#x27;s Executive Severance Plan; rather than naming an immediate replacement, Equinix is redistributing his responsibilities across the existing senior leadership team while it finalizes a new Chief Product Officer.</p><div class="source"><a href="https://www.streetinsider.com/Corporate+News/Equinix+Chief+Business+Officer+to+depart+in+July+2026/26768661.html" target="_blank" rel="noopener noreferrer">StreetInsider</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Interim continuity beats a rushed hire</h3><p>When a senior leader exits, the instinct is to backfill the seat immediately — but spreading their responsibilities across incumbents for a defined interim period (rather than promoting under time pressure) preserves decision quality while the org actually vets a successor. The tell that a company is doing this well: specific named owners for each transferred responsibility, not a vague &quot;the team will absorb it.&quot; If you&#x27;re ever handed a project mid-transition, your first question should be who owns what <em>today</em>, not who the eventual replacement will be.</p></aside></section><section class="section" id="competitors"><h2 class="section-head"><span class="section-num">02</span><span class="section-title">Competitors</span></h2><article class="item"><h3>CoreWeave&#x27;s biggest risk isn&#x27;t demand — it&#x27;s who&#x27;s asking</h3><p>CoreWeave shares are down roughly 23% since June 18 after a Bloomberg report that Meta plans to build out its own cloud infrastructure, threatening a customer relationship CoreWeave&#x27;s backlog leans on heavily. Cathie Wood&#x27;s ARK funds bought the dip anyway — $811,600 on July 8, on top of $2M (July 7) and $6.5M (June 29) in prior purchases.</p><div class="source"><a href="https://www.fool.com/coverage/stock-market-today/2026/07/01/stock-market-today-july-1-coreweave-stock-tumbles-as-meta-cloud-report-raises-customer-concerns/" target="_blank" rel="noopener noreferrer">Motley Fool</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Customer concentration is a risk-register line item, not a footnote</h3><p>A ~$100B contracted backlog looks like security until you realize a handful of hyperscaler customers can become competitors overnight — Meta doesn&#x27;t need to churn its CoreWeave contract to hurt CoreWeave, it just needs to stop being a <em>future</em> customer. When you&#x27;re assessing vendor or partner stability on a project, ask what share of their revenue sits with your closest peers — concentrated revenue and concentrated risk are the same number.</p></aside></section><section class="section" id="dc-infrastructure"><h2 class="section-head"><span class="section-num">03</span><span class="section-title">DC Infrastructure</span></h2><article class="item"><h3>Boulder City, NV appeals BLM&#x27;s approval of a data center on federal land</h3><p>The city council voted unanimously to appeal the Bureau of Land Management&#x27;s June 26 approval of the Townsite Data Center on 81 acres of BLM land in Eldorado Valley, arguing BLM swept aside required local consultation and public-input process.</p><div class="source"><a href="https://www.ktnv.com/news/boulder-city-council-unanimously-appeals-blm-approval-of-data-center-planned-for-eldorado-valley" target="_blank" rel="noopener noreferrer">KTNV</a></div></article>
+<article class="item"><h3>Samsung Heavy Industries targets 2028 for floating AI data centers</h3><p>Samsung is developing a standardized 50MW offshore data center platform — server halls, power, cooling, and onboard LNG generation on a single floating structure — aimed at sites where land, power, or permitting are the constraint. MOUs are in place with Capital (Greek shipbuilder), Lloyd&#x27;s Register, and Dallas-based developer Mousterian.</p><div class="source"><a href="https://www.techradar.com/pro/samsung-says-it-will-launch-a-floating-data-center-by-2028-as-it-looks-to-jump-on-a-major-new-opportunity" target="_blank" rel="noopener noreferrer">TechRadar</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Federal land review doesn&#x27;t erase local review — it stacks on top of it</h3><p>BLM approving a project on federal land under NEPA satisfies <em>federal</em> environmental and use requirements, but it doesn&#x27;t automatically override a municipality&#x27;s own consultation rights when the project still needs local utilities, roads, and emergency services. Boulder City&#x27;s appeal is a reminder that &quot;who owns the land&quot; and &quot;who has to sign off&quot; are different questions — a smart site-selection or approvals timeline maps every jurisdiction with standing, not just the one issuing the primary permit.</p></aside></section><section class="section" id="ai-compute-demand"><h2 class="section-head"><span class="section-num">04</span><span class="section-title">AI &amp; Compute Demand</span></h2><article class="item"><h3>US data center power demand set to double by 2027</h3><p>Goldman Sachs projects US data center electricity demand climbing from 31 GW in 2025 to 41 GW in 2026 and 66 GW in 2027, driven almost entirely by AI training and inference buildout rather than general enterprise IT growth.</p><div class="source"><a href="https://www.goldmansachs.com/insights/articles/us-data-center-power-demand-projected-to-double-by-2027" target="_blank" rel="noopener noreferrer">Goldman Sachs</a></div></article>
+<article class="item"><h3>Rack density is outrunning facility design</h3><p>Current-generation AI sites now demand 100–750 MW per campus, with a single NVIDIA GB200 NVL72 rack drawing 120–140 kW — roughly 10x a traditional enterprise rack — forcing power distribution and liquid cooling retrofits mid-build rather than at initial design.</p><div class="source"><a href="https://techplustrends.com/ai-data-center-power-requirements-2026-guide/" target="_blank" rel="noopener noreferrer">TechPlusTrends</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Forecasting exponential demand with linear infrastructure</h3><p>Power grids, transformers, and permitting timelines scale roughly linearly — you can only build so much substation capacity per year. AI compute demand is scaling exponentially. Any plan that assumes next year looks like a straight-line extension of this year will underbuild; the Goldman Sachs 31→41→66 GW curve isn&#x27;t a trend line, it&#x27;s closer to a doubling period, and doubling periods need capacity ordered against the <em>future</em> curve, not the current one.</p></aside></section><section class="section" id="new-ai-models-releases"><h2 class="section-head"><span class="section-num">05</span><span class="section-title">New AI Models &amp; Releases</span></h2><article class="item"><h3>Moonshot AI ships Kimi K3, the largest open-weight model yet</h3><p>China&#x27;s Moonshot AI released Kimi K3, a 2.8-trillion-parameter Mixture-of-Experts model with a 1M-token context window, native visual understanding, and two new architecture components (Kimi Delta Attention, Attention Residuals) built for long-horizon coding and agent workloads. It still trails Claude and GPT-5.6 on raw benchmarks but undercuts them sharply on price ($0.30/$3/$15 per million cached/input/output tokens); full weights land July 27.</p><div class="source"><a href="https://venturebeat.com/technology/chinas-moonshot-ai-releases-kimi-k3-the-largest-open-source-model-ever-rivaling-top-u-s-systems" target="_blank" rel="noopener noreferrer">VentureBeat</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · A &quot;2.8 trillion parameter&quot; model doesn&#x27;t run 2.8 trillion parameters per request</h3><p>Kimi K3 is a Mixture-of-Experts (MoE) design: the full parameter count is split into many specialized &quot;expert&quot; sub-networks, and a router activates only a handful of them per token — so inference cost tracks the much smaller <em>active</em> parameter count, not the total. That&#x27;s why a model this size can be priced competitively at all. When you see a huge parameter count in a model announcement, the number that actually predicts cost and latency is active parameters, not total parameters.</p></aside></section><section class="section" id="networking"><h2 class="section-head"><span class="section-num">06</span><span class="section-title">Networking</span></h2><article class="item"><h3>Cisco Cloud Control goes global, anchoring the AgenticOps push</h3><p>Cisco&#x27;s unified platform for operating and defending IT infrastructure — built to let human teams and AI agents share one login and one control plane — moves from US-only controlled availability to global availability this month, forming the operational backbone of Cisco&#x27;s new AgenticOps model.</p><div class="source"><a href="https://www.itp.net/ai-automation/cisco-unveils-cloud-control-as-enterprises-enter-the-agentic-ai-era" target="_blank" rel="noopener noreferrer">ITP.net</a></div></article>
+<article class="item"><h3>Cisco moves to a twice-monthly, risk-based patch schedule — first advisories land ISE and RoomOS fixes</h3><p>Cisco&#x27;s July 15 disclosures covered Identity Services Engine and RoomOS vulnerabilities under its new predictable release cadence, alongside separately-disclosed ClamAV flaws that can crash Secure Endpoint&#x27;s Windows connector.</p><div class="source"><a href="https://sec.cloudapps.cisco.com/security/center/content/CiscoSecurityAdvisory/cisco-sa-notice-ILh3ZrP5" target="_blank" rel="noopener noreferrer">Cisco PSIRT</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Supervised autonomy is the actual design goal, not full autonomy</h3><p>AgenticOps-style platforms aren&#x27;t trying to remove humans from infrastructure operations — they&#x27;re trying to let an AI agent execute routine, well-defined actions (restart a service, roll back a config) while a human retains approval authority over anything higher-risk. The engineering problem is drawing that line correctly: too conservative and you&#x27;ve built an expensive dashboard, too permissive and an agent&#x27;s bad decision propagates at machine speed. Any agentic-ops rollout plan should specify, action by action, which side of that line each task falls on before go-live.</p></aside></section><section class="section" id="backend-cloud-data"><h2 class="section-head"><span class="section-num">07</span><span class="section-title">Backend / Cloud &amp; Data</span></h2><article class="item"><h3>Critical Zoom flaw (CVSS 9.8) allows unauthenticated account takeover</h3><p>CVE-2026-53412 affects Zoom Workplace and VDI clients for Windows: no credentials, phishing, or physical access required — just network reachability to an unpatched client. Zoom shipped fixes in Workplace 7.0.0 and VDI Client 7.0.10/6.6.15/6.5.18; no active exploitation reported as of publication.</p><div class="source"><a href="https://thehackernews.com/2026/07/zoom-patches-critical-windows-flaw-that.html" target="_blank" rel="noopener noreferrer">The Hacker News</a></div></article>
+<article class="item"><h3>Dynamic Resource Allocation reaches GA in Kubernetes 1.35</h3><p>DRA graduates to general availability, giving clusters a standardized way to request, share, and reclaim specialized hardware like GPUs — replacing ad hoc device-plugin hacks that many AI/ML platform teams had been running in production.</p><div class="source"><a href="https://www.fairwinds.com/blog/2026-kubernetes-playbook-ai-self-healing-clusters-growth" target="_blank" rel="noopener noreferrer">Fairwinds</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Reading a CVSS score like an ops engineer, not a checklist</h3><p>A 9.8 isn&#x27;t just &quot;very bad&quot; — it&#x27;s the composite of attack vector (network-reachable), complexity (low), privileges required (none), and impact (high across confidentiality/integrity/availability). The Zoom flaw scores near-maximum precisely because every one of those sub-scores is worst-case: no foothold needed, no user interaction, full compromise. When triaging patches under time pressure, decompose the score instead of just comparing numbers — a 7.5 that needs local access patches on a normal cycle; a 9.8 that&#x27;s network-reachable with no auth patches today.</p></aside></section><section class="section" id="program-pm"><h2 class="section-head"><span class="section-num">08</span><span class="section-title">Program &amp; PM</span></h2><article class="item"><h3>APM: build resilience into the plan, not just the response</h3><p>In a July 7 piece for the Association for Project Management, Isaac John Bamfield argues for applying systems thinking — treating a project as an interconnected set of feedback loops rather than a linear task chain — to build resilience in ahead of disruption instead of reacting to it after the fact.</p><div class="source"><a href="https://www.apm.org.uk/blog/connecting-intelligence-systems-thinking-and-lessons-from-the-sea/" target="_blank" rel="noopener noreferrer">APM</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Feedback loops and leverage points, in plain terms</h3><p>Systems thinking asks two questions a linear Gantt chart doesn&#x27;t: where does an output loop back and become an input (a delay in permitting delays procurement, which delays a schedule review, which delays the next permitting decision), and where&#x27;s the leverage point where a small change produces an outsized effect (fixing the approval bottleneck matters more than optimizing twenty downstream tasks that are all waiting on it). Before adding tasks to a recovery plan, trace one full loop through your project and find where it&#x27;s actually stuck — that&#x27;s usually a higher-leverage fix than adding parallel workstreams.</p></aside></section>
+</main>
+<nav class="edition-nav" aria-label="Adjacent editions"><a href="2026-07-16.html">← Previous edition</a> <a href="2026-07-18.html">Next edition →</a></nav>
+
+  <footer class="foot">
+    <div class="big">DC Daily Brief</div>
+    Covers news through July 15–17, 2026. · Researched and generated on demand<br>
+    News, context, and learning for Robert · Historical reporting may be superseded.
+  </footer>
+
+</div>
+</body>
+</html>

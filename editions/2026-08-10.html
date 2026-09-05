@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>DC Daily Brief — Monday, August 10, 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,900&family=Newsreader:opsz,wght@6..72,400;6..72,500&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#F7F5EF; --panel:#FBFAF6; --ink:#1B1A17; --soft-ink:#3B3934;
+    --muted:#6B6862; --rule:#D8D3C7; --rule-strong:#B7B1A3;
+    --accent:#0F766E; --accent-ink:#0B534D; --accent-tint:#EAF1EF;
+    --serif:'Newsreader',Georgia,'Times New Roman',serif;
+    --display:'Fraunces',Georgia,serif;
+    --mono:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#14140F; --panel:#1A1A14; --ink:#ECE8DD; --soft-ink:#CFC9BB;
+      --muted:#948E80; --rule:#2E2D25; --rule-strong:#413F34;
+      --accent:#5FD3C4; --accent-ink:#8FE3D8; --accent-tint:#17241F;
+    }
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0}
+  body{
+    background:var(--bg); color:var(--ink);
+    font-family:var(--serif); font-size:18px; line-height:1.62;
+    -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+  }
+  .paper{max-width:760px; margin:0 auto; padding:40px 26px 72px;}
+
+  /* Masthead */
+  .masthead{text-align:center; padding-bottom:18px;}
+  .masthead .rule-top{border-top:3px solid var(--ink); margin-bottom:14px;}
+  .kicker-top{
+    font-family:var(--mono); font-size:11px; letter-spacing:.32em; text-transform:uppercase;
+    color:var(--muted); margin-bottom:12px;
+  }
+  .masthead h1{
+    font-family:var(--display); font-weight:900; font-size:clamp(38px,9vw,68px);
+    line-height:.94; letter-spacing:-.02em; margin:0 0 10px;
+  }
+  .masthead .tagline{
+    font-family:var(--serif); font-style:italic; color:var(--soft-ink);
+    font-size:16px; max-width:38ch; margin:0 auto 16px;
+  }
+  .dateline{
+    display:flex; justify-content:space-between; align-items:center; gap:12px;
+    border-top:1px solid var(--rule-strong); border-bottom:1px solid var(--rule-strong);
+    padding:8px 2px; font-family:var(--mono); font-size:11px; letter-spacing:.12em;
+    text-transform:uppercase; color:var(--muted);
+  }
+
+  /* Section */
+  .section{padding-top:30px;}
+  .section-head{
+    display:flex; align-items:baseline; gap:12px; margin-bottom:14px;
+    border-bottom:1px solid var(--rule); padding-bottom:8px;
+  }
+  .section-num{
+    font-family:var(--mono); font-weight:700; font-size:12px; color:var(--accent);
+    letter-spacing:.1em;
+  }
+  .section-title{
+    font-family:var(--mono); font-weight:700; font-size:12.5px; letter-spacing:.22em;
+    text-transform:uppercase; color:var(--ink);
+  }
+
+  .item{margin:0 0 20px;}
+  .item h3{
+    font-family:var(--display); font-weight:600; font-size:22px; line-height:1.2;
+    letter-spacing:-.01em; margin:0 0 6px;
+  }
+  .item p{margin:0 0 6px; color:var(--soft-ink);}
+  .item em, .practice em{font-style:italic; color:var(--ink);}
+  .source a{
+    font-family:var(--mono); font-size:11px; letter-spacing:.06em; text-transform:uppercase;
+    color:var(--accent); text-decoration:none; border-bottom:1px solid transparent;
+  }
+  .source a:hover{border-bottom-color:var(--accent);}
+  .source a::before{content:"↗ ";}
+
+  /* In Practice callout */
+  .practice{
+    background:var(--accent-tint); border-left:3px solid var(--accent);
+    padding:14px 18px; margin:6px 0 4px; border-radius:2px;
+  }
+  .practice .label{
+    display:block; font-family:var(--mono); font-size:10.5px; font-weight:700;
+    letter-spacing:.24em; text-transform:uppercase; color:var(--accent-ink); margin-bottom:6px;
+  }
+  .practice p{margin:0; font-size:16.5px; line-height:1.55; color:var(--soft-ink);}
+  .practice strong{color:var(--ink);}
+  .practice .source{margin-top:8px;}
+
+  /* Footer */
+  .foot{
+    margin-top:44px; padding-top:16px; border-top:3px solid var(--ink);
+    font-family:var(--mono); font-size:11px; letter-spacing:.08em; color:var(--muted);
+    text-align:center; line-height:1.8;
+  }
+  .foot .big{font-family:var(--display); font-size:13px; letter-spacing:.2em; text-transform:uppercase; color:var(--ink);}
+
+  a{color:var(--accent); text-underline-offset:3px; overflow-wrap:anywhere}
+  a:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-offset:4px}
+  .site-nav,.edition-nav{display:flex;justify-content:space-between;gap:16px;font-size:16px;margin:0 0 26px}
+  .edition-nav{margin-top:30px}
+  .skip-link{position:absolute;left:-10000px}
+  .skip-link:focus{position:static}
+  .section{scroll-margin-top:20px}
+  .section-head{margin-top:0}
+  .section-title{line-height:1.6;letter-spacing:.12em}
+  .section-nav{display:flex;flex-wrap:wrap;gap:8px 18px;border-bottom:1px solid var(--rule);padding:20px 0;font-size:16px}
+  .takeaways{padding:22px 0 0}
+  .takeaways h2{font-family:var(--display);font-size:26px}
+  .takeaways .item{margin-bottom:16px}
+  .takeaways .item h3{font-size:20px}
+  .takeaways .item p{font-size:17px}
+  .deep-dive{border-top:2px solid var(--accent);margin-top:28px;padding-top:18px}
+  .deep-dive h3{font-family:var(--display);font-size:28px;line-height:1.2;margin:8px 0 18px}
+  .deep-dive h4{font-family:var(--display);font-size:21px;margin:24px 0 8px}
+  .eyebrow{font:12px var(--mono);color:var(--accent);text-transform:uppercase;letter-spacing:.15em}
+  .recall{border:1px solid var(--rule);padding:14px 18px;margin:18px 0}
+  .recall summary{cursor:pointer;font-weight:600}
+  pre{white-space:pre-wrap;overflow-wrap:anywhere;background:var(--accent-tint);padding:16px;font:14px/1.7 var(--mono)}
+  .archive-list{list-style:none;padding:0}
+  .archive-list li{padding:15px 0;border-bottom:1px solid var(--rule)}
+  .archive-meta{display:block;color:var(--muted);font:12px/1.8 var(--mono)}
+  .practice .label{margin-top:0}
+  .source a{font-size:12px;line-height:1.8}
+  .source a[href^="#"]::before{content:"↓ "}
+  .coverage{font-size:14px;color:var(--muted);margin:12px 0 0}
+  hr{border:0;border-top:1px solid var(--rule);margin:22px 0}
+  @media(max-width:480px){.paper{padding:24px 18px 48px}.dateline{flex-wrap:wrap}.section-title{font-size:12px}.section-head{gap:8px}.deep-dive h3{font-size:25px}}
+</style>
+</head>
+<body>
+<div class="paper">
+<a class="skip-link" href="#content">Skip to content</a>
+<nav class="site-nav" aria-label="Main navigation"><a href="../index.html">Latest edition</a><a href="../archive.html">Archive</a></nav>
+
+  <header class="masthead">
+    <div class="rule-top"></div>
+    <div class="kicker-top">Aggregated Morning Brief · No. 024</div>
+    <h1>DC Daily Brief</h1>
+    <p class="tagline">Physical infrastructure, logical systems, and the decisions connecting them.</p>
+    <div class="dateline">
+      <span>Monday · August 10, 2026</span>
+      <span>Curated for Robert</span>
+    </div>
+    <p class="coverage">Covers news through August 10, 2026.</p>
+  </header>
+
+<main id="content">
+<nav class="section-nav" aria-label="Edition sections"><a href="#equinix">Equinix</a><a href="#google">Google</a><a href="#competitors">Competitors</a><a href="#dc-infrastructure">DC Infrastructure</a><a href="#ai-compute-demand">AI &amp; Compute Demand</a><a href="#new-ai-models-releases">New AI Models &amp; Releases</a><a href="#networking">Networking</a><a href="#backend-cloud-data">Backend / Cloud &amp; Data</a><a href="#program-pm">Program &amp; PM</a></nav><section class="section" id="equinix"><h2 class="section-head"><span class="section-num">01</span><span class="section-title">Equinix</span></h2><article class="item"><h3>Equinix&#x27;s next Amsterdam campus is approved for only a quarter of its intended first build because the grid is constrained</h3><p>Draft approval covers AM9 and AM10 in Amsterdam-Zuidoost, but Equinix says the initial deployment will be capped at roughly 25 percent of the permitted development, with power consumption limited until 2036. The case shows why a construction permit, an 80 MW campus plan and usable electrical capacity are three different milestones that cannot be treated as interchangeable.</p><div class="source"><a href="https://www.datacenterdynamics.com/en/news/equinix-to-develop-10th-and-11th-data-centers-in-amsterdam/" target="_blank" rel="noopener noreferrer">Data Center Dynamics</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Separate entitlement, utility and customer-ready dates</h3><p>Build the master schedule with distinct gates for land-use approval, utility allocation, substation delivery, energization, integrated testing and sellable capacity. Give each gate its own evidence and forecast confidence. This prevents an approved building from appearing as available capacity months or years before operations can support customers.</p></aside></section><section class="section" id="google"><h2 class="section-head"><span class="section-num">02</span><span class="section-title">Google</span></h2><article class="item"><h3>A new systems paper traces how Google&#x27;s TPU supercomputers scaled while keeping a stable operating architecture</h3><p>Google&#x27;s review of TPU v2 through Ironwood describes a 3,600-fold increase in supercomputer performance across five generations, supported by repeatable topology, resilience and power-efficiency principles rather than a completely new operating model for every chip. For data-center teams, the useful pattern is controlled evolution: preserve interfaces and recovery concepts while upgrading the components behind them.</p><div class="source"><a href="https://arxiv.org/abs/2606.15870" target="_blank" rel="noopener noreferrer">arXiv</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Design the operating model to survive technology generations</h3><p>Keep alarms, failure domains, isolation steps, capacity units and acceptance evidence consistent where possible, then version the hardware-specific thresholds beneath them. Train operators on what changed and what stayed stable. A durable abstraction reduces retraining without hiding new technical risk.</p></aside></section><section class="section" id="competitors"><h2 class="section-head"><span class="section-num">03</span><span class="section-title">Competitors</span></h2><article class="item"><h3>CoreWeave is leasing EdgeConneX capacity in Texas instead of waiting for every facility to be self-developed</h3><p>The Cedar Creek agreement covers capacity at a planned four-building campus, giving CoreWeave another path to expand its AI cloud through a partner&#x27;s real estate and infrastructure. The move highlights a competitive advantage that is easy to overlook: orchestration across owned, leased and partner-operated sites can bring capacity online faster, but it also multiplies operational interfaces.</p><div class="source"><a href="https://www.datacenterdynamics.com/en/news/coreweave-to-lease-capacity-from-edgeconnex-at-data-center-campus-in-cedar-creek-texas/" target="_blank" rel="noopener noreferrer">Data Center Dynamics</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Make partner capacity pass the same readiness standard as owned capacity</h3><p>Define a responsibility matrix for design approval, commissioning, monitoring, maintenance, incident command, spares and customer communication. Require equivalent evidence even when different teams produce it. Customers experience one service, so internal ownership boundaries cannot become gaps in response.</p></aside></section><section class="section" id="dc-infrastructure"><h2 class="section-head"><span class="section-num">04</span><span class="section-title">DC Infrastructure</span></h2><article class="item"><h3>Virginia is shifting dedicated grid-upgrade costs toward large data-center customers</h3><p>State regulators approved a structure intended to make high-demand customers fund the upstream transmission and electrical infrastructure required specifically for their loads rather than spreading those costs broadly across ratepayers. The operational consequence is that utility interconnection is becoming a governed project scope with financial exposure, not simply a service request made after site selection.</p><div class="source"><a href="https://www.tomshardware.com/tech-industry/data-centers/after-severe-76-percent-electricity-price-hikes-due-to-ai-data-centers-virginia-requires-firms-to-pay-for-all-dedicated-upstream-electrical-infrastructure-state-regulators-crack-down-governor-says-move-will-save-civilians-hundreds-of-millions-of-dollars" target="_blank" rel="noopener noreferrer">Tom&#x27;s Hardware</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Put utility scope in the project cost and risk baseline</h3><p>Track transmission studies, upgrade ownership, deposits, security requirements, long-lead equipment, energization dependencies and cost-allocation decisions alongside the facility schedule. Model the effect of a utility delay or revised contribution. A power agreement is not complete until scope, money, schedule and operating responsibility all align.</p></aside></section><section class="section" id="ai-compute-demand"><h2 class="section-head"><span class="section-num">05</span><span class="section-title">AI &amp; Compute Demand</span></h2><article class="item"><h3>Amazon&#x27;s planned gas-backed data-center expansion tests whether AI demand can outrun climate commitments</h3><p>Reporting on a proposed large private generation project says its emissions could place it among the country&#x27;s largest sources if fully developed. Whatever the final design, the proposal illustrates a growing constraint: compute demand can secure generation faster than grids can add cleaner capacity, transferring schedule pressure into environmental, regulatory and community risk.</p><div class="source"><a href="https://techcrunch.com/2026/08/08/planned-amazon-data-center-could-become-the-biggest-climate-polluter-in-the-u-s/" target="_blank" rel="noopener noreferrer">TechCrunch</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Add external-impact constraints to demand planning</h3><p>For each capacity option, score grid carbon, air permits, water, community exposure, fuel dependency and future compliance cost beside dollars and ready date. Identify which assumption makes the preferred option unacceptable. A fast capacity plan is not viable if its external impacts later stop permitting or undermine stakeholder support.</p></aside></section><section class="section" id="new-ai-models-releases"><h2 class="section-head"><span class="section-num">06</span><span class="section-title">New AI Models &amp; Releases</span></h2><article class="item"><h3>OpenAI adds self-hosted safeguard models that reason over an organization&#x27;s own safety policy</h3><p>The gpt-oss-safeguard research preview includes 120B and 20B open-weight variants for classification and trust-and-safety workflows, with structured verdicts and configurable reasoning effort. Because teams run the models on infrastructure they control, adoption shifts responsibility for capacity, policy versioning, evaluation, monitoring and model updates to the operator.</p><div class="source"><a href="https://help.openai.com/en/articles/11870455" target="_blank" rel="noopener noreferrer">OpenAI</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Treat policy and model as one controlled release</h3><p>Version the written policy, prompt format, model weights, thresholds and representative evaluation set together. Record false-positive and false-negative tolerances, then shadow-test changes before enforcement. A safety result is auditable only when you can reconstruct both the rule and the system that interpreted it.</p></aside></section><section class="section" id="networking"><h2 class="section-head"><span class="section-num">07</span><span class="section-title">Networking</span></h2><article class="item"><h3>An open 800 GbE AI cluster shows vendor-neutral Ethernet can support top-tier HPC scale</h3><p>The SAKURAONE system uses SONiC and an open Ethernet stack while ranking among the top 100 systems, with published observations of real LLM workload behavior. Its relevance is operational: open components can reduce lock-in, but they place more integration, telemetry consistency and fault-isolation responsibility on the team running the fabric.</p><div class="source"><a href="https://arxiv.org/abs/2604.13600" target="_blank" rel="noopener noreferrer">arXiv</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Price openness with its integration workload included</h3><p>Before choosing an open fabric, list validated combinations, automation ownership, telemetry coverage, upgrade testing, vendor escalation and the skills needed on call. Run link-failure and congestion tests using production-shaped traffic. Avoided license cost is real only if the support model remains reliable and sustainable.</p></aside></section><section class="section" id="backend-cloud-data"><h2 class="section-head"><span class="section-num">08</span><span class="section-title">Backend / Cloud &amp; Data</span></h2><article class="item"><h3>Cloudflare now requires new Durable Object namespaces to use its SQLite storage backend</h3><p>SQLite-backed objects retain the familiar key-value API while adding SQL queries and point-in-time recovery for up to 30 days. The platform default simplifies new development, but it also creates a migration decision for existing namespaces and makes restore testing, schema discipline and storage behavior part of service reliability.</p><div class="source"><a href="https://developers.cloudflare.com/changelog/post/2026-07-09-restrict-new-kv-backed-namespaces/" target="_blank" rel="noopener noreferrer">Cloudflare</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Test recovery as a user-visible outcome</h3><p>Create a disposable production-shaped object, introduce a known bad write, restore to a selected point and verify the application—not just the database—returns to the expected state. Record recovery time, lost transactions and reconciliation steps. A backup feature becomes a control only after the team proves it can restore the service.</p></aside></section><section class="section" id="program-pm"><h2 class="section-head"><span class="section-num">09</span><span class="section-title">Program &amp; PM</span></h2><article class="item"><h3>The updated PMP exam puts more weight on business context, stakeholder alignment and judgment</h3><p>PMI&#x27;s July 2026 change broadens the test beyond process knowledge toward the decisions project leaders make when value, people and delivery approaches conflict. That aligns with the job Robert is targeting: a program manager must translate operational facts into tradeoffs executives can act on, not only maintain a schedule.</p><div class="source"><a href="https://www.pmi.org/blog/pmp-exam-change" target="_blank" rel="noopener noreferrer">Project Management Institute</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Answer scenarios in three layers</h3><p>First identify the business outcome and affected stakeholders; next diagnose the underlying constraint before acting; then choose the response that protects value, collaboration and governance. After each practice question, explain why the tempting alternative fails. That reflection develops judgment faster than memorizing the correct option.</p></aside></section>
+</main>
+<nav class="edition-nav" aria-label="Adjacent editions"><a href="2026-08-09.html">← Previous edition</a> <a href="2026-08-12.html">Next edition →</a></nav>
+
+  <footer class="foot">
+    <div class="big">DC Daily Brief</div>
+    Covers news through August 10, 2026. · Researched and generated on demand<br>
+    News, context, and learning for Robert · Historical reporting may be superseded.
+  </footer>
+
+</div>
+</body>
+</html>

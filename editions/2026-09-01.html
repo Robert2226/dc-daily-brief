@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>DC Daily Brief — Tuesday, September 1, 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,900&family=Newsreader:opsz,wght@6..72,400;6..72,500&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#F7F5EF; --panel:#FBFAF6; --ink:#1B1A17; --soft-ink:#3B3934;
+    --muted:#6B6862; --rule:#D8D3C7; --rule-strong:#B7B1A3;
+    --accent:#0F766E; --accent-ink:#0B534D; --accent-tint:#EAF1EF;
+    --serif:'Newsreader',Georgia,'Times New Roman',serif;
+    --display:'Fraunces',Georgia,serif;
+    --mono:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#14140F; --panel:#1A1A14; --ink:#ECE8DD; --soft-ink:#CFC9BB;
+      --muted:#948E80; --rule:#2E2D25; --rule-strong:#413F34;
+      --accent:#5FD3C4; --accent-ink:#8FE3D8; --accent-tint:#17241F;
+    }
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0}
+  body{
+    background:var(--bg); color:var(--ink);
+    font-family:var(--serif); font-size:18px; line-height:1.62;
+    -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+  }
+  .paper{max-width:760px; margin:0 auto; padding:40px 26px 72px;}
+
+  /* Masthead */
+  .masthead{text-align:center; padding-bottom:18px;}
+  .masthead .rule-top{border-top:3px solid var(--ink); margin-bottom:14px;}
+  .kicker-top{
+    font-family:var(--mono); font-size:11px; letter-spacing:.32em; text-transform:uppercase;
+    color:var(--muted); margin-bottom:12px;
+  }
+  .masthead h1{
+    font-family:var(--display); font-weight:900; font-size:clamp(38px,9vw,68px);
+    line-height:.94; letter-spacing:-.02em; margin:0 0 10px;
+  }
+  .masthead .tagline{
+    font-family:var(--serif); font-style:italic; color:var(--soft-ink);
+    font-size:16px; max-width:38ch; margin:0 auto 16px;
+  }
+  .dateline{
+    display:flex; justify-content:space-between; align-items:center; gap:12px;
+    border-top:1px solid var(--rule-strong); border-bottom:1px solid var(--rule-strong);
+    padding:8px 2px; font-family:var(--mono); font-size:11px; letter-spacing:.12em;
+    text-transform:uppercase; color:var(--muted);
+  }
+
+  /* Section */
+  .section{padding-top:30px;}
+  .section-head{
+    display:flex; align-items:baseline; gap:12px; margin-bottom:14px;
+    border-bottom:1px solid var(--rule); padding-bottom:8px;
+  }
+  .section-num{
+    font-family:var(--mono); font-weight:700; font-size:12px; color:var(--accent);
+    letter-spacing:.1em;
+  }
+  .section-title{
+    font-family:var(--mono); font-weight:700; font-size:12.5px; letter-spacing:.22em;
+    text-transform:uppercase; color:var(--ink);
+  }
+
+  .item{margin:0 0 20px;}
+  .item h3{
+    font-family:var(--display); font-weight:600; font-size:22px; line-height:1.2;
+    letter-spacing:-.01em; margin:0 0 6px;
+  }
+  .item p{margin:0 0 6px; color:var(--soft-ink);}
+  .item em, .practice em{font-style:italic; color:var(--ink);}
+  .source a{
+    font-family:var(--mono); font-size:11px; letter-spacing:.06em; text-transform:uppercase;
+    color:var(--accent); text-decoration:none; border-bottom:1px solid transparent;
+  }
+  .source a:hover{border-bottom-color:var(--accent);}
+  .source a::before{content:"↗ ";}
+
+  /* In Practice callout */
+  .practice{
+    background:var(--accent-tint); border-left:3px solid var(--accent);
+    padding:14px 18px; margin:6px 0 4px; border-radius:2px;
+  }
+  .practice .label{
+    display:block; font-family:var(--mono); font-size:10.5px; font-weight:700;
+    letter-spacing:.24em; text-transform:uppercase; color:var(--accent-ink); margin-bottom:6px;
+  }
+  .practice p{margin:0; font-size:16.5px; line-height:1.55; color:var(--soft-ink);}
+  .practice strong{color:var(--ink);}
+  .practice .source{margin-top:8px;}
+
+  /* Footer */
+  .foot{
+    margin-top:44px; padding-top:16px; border-top:3px solid var(--ink);
+    font-family:var(--mono); font-size:11px; letter-spacing:.08em; color:var(--muted);
+    text-align:center; line-height:1.8;
+  }
+  .foot .big{font-family:var(--display); font-size:13px; letter-spacing:.2em; text-transform:uppercase; color:var(--ink);}
+
+  a{color:var(--accent); text-underline-offset:3px; overflow-wrap:anywhere}
+  a:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-offset:4px}
+  .site-nav,.edition-nav{display:flex;justify-content:space-between;gap:16px;font-size:16px;margin:0 0 26px}
+  .edition-nav{margin-top:30px}
+  .skip-link{position:absolute;left:-10000px}
+  .skip-link:focus{position:static}
+  .section{scroll-margin-top:20px}
+  .section-head{margin-top:0}
+  .section-title{line-height:1.6;letter-spacing:.12em}
+  .section-nav{display:flex;flex-wrap:wrap;gap:8px 18px;border-bottom:1px solid var(--rule);padding:20px 0;font-size:16px}
+  .takeaways{padding:22px 0 0}
+  .takeaways h2{font-family:var(--display);font-size:26px}
+  .takeaways .item{margin-bottom:16px}
+  .takeaways .item h3{font-size:20px}
+  .takeaways .item p{font-size:17px}
+  .deep-dive{border-top:2px solid var(--accent);margin-top:28px;padding-top:18px}
+  .deep-dive h3{font-family:var(--display);font-size:28px;line-height:1.2;margin:8px 0 18px}
+  .deep-dive h4{font-family:var(--display);font-size:21px;margin:24px 0 8px}
+  .eyebrow{font:12px var(--mono);color:var(--accent);text-transform:uppercase;letter-spacing:.15em}
+  .recall{border:1px solid var(--rule);padding:14px 18px;margin:18px 0}
+  .recall summary{cursor:pointer;font-weight:600}
+  pre{white-space:pre-wrap;overflow-wrap:anywhere;background:var(--accent-tint);padding:16px;font:14px/1.7 var(--mono)}
+  .archive-list{list-style:none;padding:0}
+  .archive-list li{padding:15px 0;border-bottom:1px solid var(--rule)}
+  .archive-meta{display:block;color:var(--muted);font:12px/1.8 var(--mono)}
+  .practice .label{margin-top:0}
+  .source a{font-size:12px;line-height:1.8}
+  .source a[href^="#"]::before{content:"↓ "}
+  .coverage{font-size:14px;color:var(--muted);margin:12px 0 0}
+  hr{border:0;border-top:1px solid var(--rule);margin:22px 0}
+  @media(max-width:480px){.paper{padding:24px 18px 48px}.dateline{flex-wrap:wrap}.section-title{font-size:12px}.section-head{gap:8px}.deep-dive h3{font-size:25px}}
+</style>
+</head>
+<body>
+<div class="paper">
+<a class="skip-link" href="#content">Skip to content</a>
+<nav class="site-nav" aria-label="Main navigation"><a href="../index.html">Latest edition</a><a href="../archive.html">Archive</a></nav>
+
+  <header class="masthead">
+    <div class="rule-top"></div>
+    <div class="kicker-top">Aggregated Morning Brief · No. 035</div>
+    <h1>DC Daily Brief</h1>
+    <p class="tagline">Physical infrastructure, logical systems, and the decisions connecting them.</p>
+    <div class="dateline">
+      <span>Tuesday · September 1, 2026</span>
+      <span>Curated for Robert</span>
+    </div>
+    <p class="coverage">Covers news through September 1, 2026.</p>
+  </header>
+
+<main id="content">
+<nav class="section-nav" aria-label="Edition sections"><a href="#equinix">Equinix</a><a href="#google">Google</a><a href="#competitors">Competitors</a><a href="#dc-infrastructure">DC Infrastructure</a><a href="#ai-compute-demand">AI &amp; Compute Demand</a><a href="#new-ai-models-releases">New AI Models &amp; Releases</a><a href="#networking">Networking</a><a href="#backend-cloud-data">Backend / Cloud &amp; Data</a><a href="#program-pm">Program &amp; PM</a><a href="#pgpm-growth">PgPM Growth</a></nav><section class="section" id="equinix"><h2 class="section-head"><span class="section-num">01</span><span class="section-title">Equinix</span></h2><article class="item"><h3>Diraq will put a rack-scale silicon quantum computer inside an Equinix Sydney facility</h3><p>Diraq and Equinix plan to install an eight-qubit silicon spin system in October, with cryogenic cooling and controls contained in a footprint that draws less than 20 kW. The live-facility trial is meant to test remote operation, secure integration with classical compute and a chip-swap path to higher qubit counts—not to claim immediate utility-scale quantum performance.</p><div class="source"><a href="https://newsroom.equinix.com/2026-09-01-Diraq-and-Equinix-to-Deploy-Australias-First-Quantum-Computer-Inside-a-Data-Centre" target="_blank" rel="noopener noreferrer">Equinix Newsroom</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Treat novel equipment as an interface-management program</h3><p>Before installation, map every handoff the unfamiliar rack introduces: power quality, heat rejection, physical security, network isolation, remote monitoring, maintenance access and emergency response. Give each interface an owner, acceptance evidence and escalation path; “fits in a standard rack” describes form factor, not operational readiness.</p></aside></section><section class="section" id="google"><h2 class="section-head"><span class="section-num">02</span><span class="section-title">Google</span></h2><article class="item"><h3>Google Cloud’s August infrastructure rollup moves Filestore’s AI storage path onto Colossus</h3><p>Google’s company-curated monthly update says Filestore now uses a backend built directly on Colossus, its distributed storage foundation, to better support AI and agentic workloads. The roundup also collects orchestration guidance and infrastructure research, making the operational signal less about one launch than about tightening the compute-network-storage stack around production AI.</p><div class="source"><a href="https://cloud.google.com/blog/topics/ai-infrastructure/whats-new-in-ai-infrastructure-this-month" target="_blank" rel="noopener noreferrer">Google Cloud Blog</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Convert platform announcements into workload acceptance questions</h3><p>For any storage-layer change, ask which workloads qualify, what migration or rollback exists, how throughput and tail latency will be measured, and who owns incident triage across storage, network and application teams. A product benefit becomes useful only after the operating team can prove it under the workload’s real failure and recovery conditions.</p></aside></section><section class="section" id="competitors"><h2 class="section-head"><span class="section-num">03</span><span class="section-title">Competitors</span></h2><article class="item"><h3>ChronoScale extends its planned 50 MW Microsoft AI deployment to a three-year term</h3><p>An SEC filing says ChronoScale and Microsoft extended their previously disclosed strategic partnership from two years to three for a planned 50 MW AI compute deployment. The filing confirms the agreement change, but the capacity remains forward-looking, so energization, hardware delivery and customer-acceptance milestones still matter more than the headline megawatts.</p><div class="source"><a href="https://www.sec.gov/Archives/edgar/data/1549084/000149315226040398/form8-k.htm" target="_blank" rel="noopener noreferrer">U.S. SEC filing</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Separate commercial duration from delivery certainty</h3><p>Track contract term, reserved megawatts, utility availability, facility readiness, compute installation and accepted service as different milestones. In an executive update, show the next evidence that converts each committed tranche into billable capacity and name the assumption most likely to break that conversion.</p></aside></section><section class="section" id="dc-infrastructure"><h2 class="section-head"><span class="section-num">04</span><span class="section-title">DC Infrastructure</span></h2><article class="item"><h3>Singapore publishes the first liquid-cooling standard designed for tropical data centers</h3><p>SS 726:2026 covers planning, design, deployment, management, maintenance, sustainability tracking and risk for direct liquid-cooled systems in tropical climates. It excludes rear-door and two-phase approaches, which is a useful reminder that a standard’s boundary is as important as its requirements.</p><div class="source"><a href="https://www.enterprisesg.gov.sg/resources/media-centre/media-releases/2026/august/mr03826_singapore-launches-worlds-first-liquid-cooling-standard-for-data-centres-in-tropical-climates" target="_blank" rel="noopener noreferrer">Enterprise Singapore</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Build a standards applicability matrix before design review</h3><p>List each cooling topology, climate condition, owner requirement and governing standard, then mark what is covered, excluded or awaiting interpretation. This prevents a team from treating general compliance as proof that every CDU, fluid loop, leak-detection scheme and maintenance boundary has been engineered and tested.</p></aside></section><section class="section" id="ai-compute-demand"><h2 class="section-head"><span class="section-num">05</span><span class="section-title">AI &amp; Compute Demand</span></h2><article class="item"><h3>AWS and NVIDIA plan two million additional GPUs across 2027–2028</h3><p>The companies say the expansion will span Blackwell Ultra, Rubin and Rubin Ultra systems across AWS global infrastructure, including AI factories, after demand exceeded an earlier million-GPU plan. It is a supplier announcement and a forward plan, but its scale signals that capacity programs must synchronize silicon, high-bandwidth networking, power, cooling and commissioning years before customer workloads arrive.</p><div class="source"><a href="https://press.aboutamazon.com/aws/2026/8/aws-and-nvidia-to-deliver-2-million-additional-gpus-and-next-generation-infrastructure-for-agentic-and-physical-ai" target="_blank" rel="noopener noreferrer">Amazon Press Center</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Plan the factory, not the GPU count</h3><p>Translate accelerator volume into site-by-site requirements for rack density, network fabric, utility and backup power, cooling capacity, spares, burn-in and trained operations coverage. Use gated waves so every tranche advances only when the facility, hardware and service teams can produce matched readiness evidence.</p></aside></section><section class="section" id="new-ai-models-releases"><h2 class="section-head"><span class="section-num">06</span><span class="section-title">New AI Models &amp; Releases</span></h2><article class="item"><h3>Google Research releases TimesFM-3 for zero-shot multivariate forecasting</h3><p>The 330-million-parameter foundation model jointly forecasts multiple related time series and can incorporate historical and known-future covariates without task-specific fine-tuning. Google reports state-of-the-art benchmark results, but operational adoption still requires testing on local seasonality, missing data, drift and the asymmetric cost of forecast errors.</p><div class="source"><a href="https://www.research.google/blog/timesfm-3-a-zero-shot-foundation-model-for-multivariate-forecasting/" target="_blank" rel="noopener noreferrer">Google Research</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Evaluate forecasts against the decision they drive</h3><p>Choose a safe historical use case such as capacity, alarm volume or maintenance demand; define the error metric and decision threshold before running the model. Compare it with the current baseline and document where a false high or false low creates the larger operational consequence.</p></aside></section><section class="section" id="networking"><h2 class="section-head"><span class="section-num">07</span><span class="section-title">Networking</span></h2><article class="item"><h3>Tailscale expands identity-based connectivity with privileged-access controls</h3><p>Tailscale PAM enters beta with policy-driven access to SSH, databases, RDP, HTTPS, Kubernetes and S3, plus credential injection, logs and session recording. The platform direction brings private connectivity and privileged-session governance closer together, increasing the importance of clear ownership for identity policy, connectors, recordings and emergency access.</p><div class="source"><a href="https://tailscale.com/changelog" target="_blank" rel="noopener noreferrer">Tailscale changelog</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Treat privileged connectivity as a service with a control owner</h3><p>Define who approves access, which sessions require recording, where evidence is retained, how connector health is monitored and what break-glass path exists. Test revocation and emergency access before onboarding production systems; a reachable service is not yet a governed service.</p></aside></section><section class="section" id="backend-cloud-data"><h2 class="section-head"><span class="section-num">08</span><span class="section-title">Backend / Cloud &amp; Data</span></h2><article class="item"><h3>Broadcom introduces VMware Private AI Cloud and an AI Factory operating layer</h3><p>Broadcom says the platform combines private-cloud infrastructure, model services, agent governance, observability and Day 2 operations, with more than 150 validated commercial and open models planned for on-premises use. Its token monitoring and heterogeneous accelerator support frame AI operations as a combined infrastructure, data-governance and cost-control problem rather than a standalone model deployment.</p><div class="source"><a href="https://investors.broadcom.com/news-releases/news-release-details/broadcom-introduces-vmware-private-ai-cloud-enabling-enterprises" target="_blank" rel="noopener noreferrer">Broadcom</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Define the Day 2 service before approving the platform</h3><p>Require an operating model for patching, model onboarding, capacity allocation, token-cost ownership, data boundaries, observability and incident response. Assign measures and escalation thresholds to each layer so “private AI” does not create a new stack whose failures fall between infrastructure, security and application teams.</p></aside></section><section class="section" id="program-pm"><h2 class="section-head"><span class="section-num">09</span><span class="section-title">Program &amp; PM</span></h2><article class="item"><h3>PMI UK spotlights delivery under pressure when authority is limited</h3><p>A September 24 session centers on stakeholder buy-in, trust, constructive disagreement and sustaining momentum when project leaders cannot rely on formal authority. The premise is directly relevant to matrixed infrastructure programs: relational friction can stop delivery even when the schedule and technical plan look sound.</p><div class="source"><a href="https://pmi.org.uk/event-listing/pmi-uk-webinar-delivery-under-pressure-how-project-leaders-build-stakeholder-buy-in-trust-and-momentum-when-authority-is-limited-24th-september-2026/" target="_blank" rel="noopener noreferrer">PMI United Kingdom Chapter</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Diagnose stalled work as a commitment problem before escalating it</h3><p>Write the needed outcome, the person whose commitment is missing, their likely constraint and the smallest clear decision or action that restores flow. Then choose the right forum and messenger; escalation should expose a decision boundary, not simply increase the volume of the same request.</p></aside></section><section class="section" id="pgpm-growth"><h2 class="section-head"><span class="section-num">10</span><span class="section-title">PgPM Growth</span></h2><article class="item"><h3>Applied practice · Build one weekly control rhythm that turns scattered updates into decisions</h3><p>Create a repeatable sequence: collect evidence asynchronously, reconcile exceptions, hold a short cross-workstream review for decisions and interfaces, then publish owners and due dates from one record. Increase cadence near energization or handover, but preserve the same inputs and decision rules so urgency does not create a second operating system.</p><div class="source"><a href="https://www.pmi.org/learning/library/program-management-new-model-era-3159" target="_blank" rel="noopener noreferrer">PMI · Program management review cadence</a></div></article>
+<article class="item"><h3>Applied practice · Manage dependencies as two-sided agreements, not arrows on a schedule</h3><p>For every critical handoff, record the provider, receiver, deliverable, acceptance condition, need-by date, current evidence and escalation trigger. Confirm both sides agree to the interface; then review exceptions by downstream consequence, because an apparently small delay in controls, network, utility or vendor data can block integrated testing far beyond its own work package.</p><div class="source"><a href="https://www.nasa.gov/reference/6-3-interface-management/" target="_blank" rel="noopener noreferrer">NASA · Interface management process</a></div></article>
+<article class="item"><h3>Resource · Match reporting frequency to delivery risk</h3><p>Use the initiation guidance to set governance, escalation and communication cadence deliberately, then tighten it around critical milestones.</p><div class="source"><a href="https://www.pmi.org/learning/library/program-management-initiation-10176" target="_blank" rel="noopener noreferrer">PMI · Program management initiation</a></div></article>
+<article class="item"><h3>Resource · Reserve synchronous time for exceptions and choices</h3><p>Use a concise weekly async update for priorities, progress and blockers so the live review can focus on cross-functional decisions.</p><div class="source"><a href="https://www.atlassian.com/team-playbook/plays/weekly-team-updates" target="_blank" rel="noopener noreferrer">Atlassian · Weekly team updates</a></div></article>
+<article class="item"><h3>Resource · Score the dependencies that deserve leadership attention</h3><p>Adapt the multi-vendor dependency matrix to rate relationship strength and how vital the input is to the receiving deliverable.</p><div class="source"><a href="https://www.pmi.org/learning/library/ensuring-program-success-global-multi-vendor-7243" target="_blank" rel="noopener noreferrer">PMI · Multi-vendor program delivery</a></div></article>
+<article class="item"><h3>Resource · Keep the register alive through impact assessment</h3><p>Use the dependency-management checklist to identify, own, monitor and reassess cross-program links when plans change.</p><div class="source"><a href="https://www.local.gov.uk/our-support/transformation/transformation-capability-framework/governance-dependencies" target="_blank" rel="noopener noreferrer">Local Government Association · Manage dependencies</a></div></article>
+<aside class="practice"><h3 class="label">Daily Action · Build a one-page Monday control board</h3><p>Set a 35-minute timer and choose one hypothetical three-workstream data-center program. Spend 10 minutes defining the weekly sequence—evidence cutoff, exception review, decision forum and action publication. Spend 20 minutes creating five dependency rows with provider, receiver, deliverable, acceptance condition, need-by date, evidence, consequence and escalation trigger. Use the final five minutes to circle the two dependencies that belong in the next leadership review and state the decision or help needed for each. Keep the artifact local; do not send communications or modify an external system.</p></aside></section>
+</main>
+<nav class="edition-nav" aria-label="Adjacent editions"><a href="2026-08-29.html">← Previous edition</a> <a href="2026-09-03.html">Next edition →</a></nav>
+
+  <footer class="foot">
+    <div class="big">DC Daily Brief</div>
+    Covers news through September 1, 2026. · Researched and generated on demand<br>
+    News, context, and learning for Robert · Historical reporting may be superseded.
+  </footer>
+
+</div>
+</body>
+</html>

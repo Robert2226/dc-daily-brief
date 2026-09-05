@@ -1,0 +1,167 @@
+{
+  "2026-07-12": {
+    "issue": 1,
+    "title": "Sunday, July 12, 2026"
+  },
+  "2026-07-13": {
+    "issue": 2,
+    "title": "Monday, July 13, 2026"
+  },
+  "2026-07-14": {
+    "issue": 3,
+    "title": "Tuesday, July 14, 2026"
+  },
+  "2026-07-15": {
+    "issue": 4,
+    "title": "Wednesday, July 15, 2026"
+  },
+  "2026-07-16": {
+    "issue": 5,
+    "title": "Thursday, July 16, 2026"
+  },
+  "2026-07-17": {
+    "issue": 6,
+    "title": "Friday, July 17, 2026"
+  },
+  "2026-07-18": {
+    "issue": 7,
+    "title": "Saturday, July 18, 2026"
+  },
+  "2026-07-19": {
+    "issue": 8,
+    "title": "Sunday, July 19, 2026"
+  },
+  "2026-07-20": {
+    "issue": 9,
+    "title": "Monday, July 20, 2026"
+  },
+  "2026-07-21": {
+    "issue": 10,
+    "title": "Tuesday, July 21, 2026"
+  },
+  "2026-07-22": {
+    "issue": 11,
+    "title": "Wednesday, July 22, 2026"
+  },
+  "2026-07-23": {
+    "issue": 12,
+    "title": "Thursday, July 23, 2026"
+  },
+  "2026-07-25": {
+    "issue": 13,
+    "title": "Saturday, July 25, 2026"
+  },
+  "2026-07-26": {
+    "issue": 14,
+    "title": "Sunday, July 26, 2026"
+  },
+  "2026-07-27": {
+    "issue": 15,
+    "title": "Monday, July 27, 2026"
+  },
+  "2026-07-28": {
+    "issue": 16,
+    "title": "Tuesday, July 28, 2026"
+  },
+  "2026-07-29": {
+    "issue": 17,
+    "title": "Wednesday, July 29, 2026"
+  },
+  "2026-07-30": {
+    "issue": 18,
+    "title": "Thursday, July 30, 2026"
+  },
+  "2026-07-31": {
+    "issue": 19,
+    "title": "Friday, July 31, 2026"
+  },
+  "2026-08-02": {
+    "issue": 20,
+    "title": "Sunday, August 2, 2026"
+  },
+  "2026-08-03": {
+    "issue": 21,
+    "title": "Monday, August 3, 2026"
+  },
+  "2026-08-07": {
+    "issue": 22,
+    "title": "Friday, August 7, 2026"
+  },
+  "2026-08-09": {
+    "issue": 23,
+    "title": "Sunday, August 9, 2026"
+  },
+  "2026-08-10": {
+    "issue": 24,
+    "title": "Monday, August 10, 2026"
+  },
+  "2026-08-12": {
+    "issue": 25,
+    "title": "Wednesday, August 12, 2026"
+  },
+  "2026-08-14": {
+    "issue": 26,
+    "title": "Friday, August 14, 2026"
+  },
+  "2026-08-15": {
+    "issue": 27,
+    "title": "Saturday, August 15, 2026"
+  },
+  "2026-08-17": {
+    "issue": 28,
+    "title": "Monday, August 17, 2026"
+  },
+  "2026-08-19": {
+    "issue": 29,
+    "title": "Wednesday, August 19, 2026"
+  },
+  "2026-08-21": {
+    "issue": 30,
+    "title": "Friday, August 21, 2026"
+  },
+  "2026-08-23": {
+    "issue": 31,
+    "title": "Sunday, August 23, 2026"
+  },
+  "2026-08-25": {
+    "issue": 32,
+    "title": "Tuesday, August 25, 2026"
+  },
+  "2026-08-27": {
+    "issue": 33,
+    "title": "Thursday, August 27, 2026"
+  },
+  "2026-08-29": {
+    "issue": 34,
+    "title": "Saturday, August 29, 2026"
+  },
+  "2026-09-01": {
+    "issue": 35,
+    "title": "Tuesday, September 1, 2026"
+  },
+  "2026-09-03": {
+    "issue": 36,
+    "title": "Thursday, September 3, 2026"
+  },
+  "2026-09-05": {
+    "issue": 37,
+    "title": "Saturday, September 5, 2026",
+    "format": 2,
+    "coverage_start": "2026-09-03",
+    "coverage_end": "2026-09-05",
+    "deep_dive_track": "controls",
+    "topics": [
+      "Sensor-to-operator alarm path",
+      "Local versus supervisory control",
+      "DCOS and DCIM responsibilities",
+      "Stale telemetry",
+      "Cloud pricing as configuration"
+    ],
+    "pgpm_topics": [
+      "Configuration baselines — applied practice",
+      "Verification versus operational validation — cross-functional leadership"
+    ],
+    "case": "Hypothetical Hall A cooling controls migration",
+    "research_log": "research/2026-09-05.md"
+  }
+}

@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>DC Daily Brief — Wednesday, July 15, 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,900&family=Newsreader:opsz,wght@6..72,400;6..72,500&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#F7F5EF; --panel:#FBFAF6; --ink:#1B1A17; --soft-ink:#3B3934;
+    --muted:#6B6862; --rule:#D8D3C7; --rule-strong:#B7B1A3;
+    --accent:#0F766E; --accent-ink:#0B534D; --accent-tint:#EAF1EF;
+    --serif:'Newsreader',Georgia,'Times New Roman',serif;
+    --display:'Fraunces',Georgia,serif;
+    --mono:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#14140F; --panel:#1A1A14; --ink:#ECE8DD; --soft-ink:#CFC9BB;
+      --muted:#948E80; --rule:#2E2D25; --rule-strong:#413F34;
+      --accent:#5FD3C4; --accent-ink:#8FE3D8; --accent-tint:#17241F;
+    }
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0}
+  body{
+    background:var(--bg); color:var(--ink);
+    font-family:var(--serif); font-size:18px; line-height:1.62;
+    -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+  }
+  .paper{max-width:760px; margin:0 auto; padding:40px 26px 72px;}
+
+  /* Masthead */
+  .masthead{text-align:center; padding-bottom:18px;}
+  .masthead .rule-top{border-top:3px solid var(--ink); margin-bottom:14px;}
+  .kicker-top{
+    font-family:var(--mono); font-size:11px; letter-spacing:.32em; text-transform:uppercase;
+    color:var(--muted); margin-bottom:12px;
+  }
+  .masthead h1{
+    font-family:var(--display); font-weight:900; font-size:clamp(38px,9vw,68px);
+    line-height:.94; letter-spacing:-.02em; margin:0 0 10px;
+  }
+  .masthead .tagline{
+    font-family:var(--serif); font-style:italic; color:var(--soft-ink);
+    font-size:16px; max-width:38ch; margin:0 auto 16px;
+  }
+  .dateline{
+    display:flex; justify-content:space-between; align-items:center; gap:12px;
+    border-top:1px solid var(--rule-strong); border-bottom:1px solid var(--rule-strong);
+    padding:8px 2px; font-family:var(--mono); font-size:11px; letter-spacing:.12em;
+    text-transform:uppercase; color:var(--muted);
+  }
+
+  /* Section */
+  .section{padding-top:30px;}
+  .section-head{
+    display:flex; align-items:baseline; gap:12px; margin-bottom:14px;
+    border-bottom:1px solid var(--rule); padding-bottom:8px;
+  }
+  .section-num{
+    font-family:var(--mono); font-weight:700; font-size:12px; color:var(--accent);
+    letter-spacing:.1em;
+  }
+  .section-title{
+    font-family:var(--mono); font-weight:700; font-size:12.5px; letter-spacing:.22em;
+    text-transform:uppercase; color:var(--ink);
+  }
+
+  .item{margin:0 0 20px;}
+  .item h3{
+    font-family:var(--display); font-weight:600; font-size:22px; line-height:1.2;
+    letter-spacing:-.01em; margin:0 0 6px;
+  }
+  .item p{margin:0 0 6px; color:var(--soft-ink);}
+  .item em, .practice em{font-style:italic; color:var(--ink);}
+  .source a{
+    font-family:var(--mono); font-size:11px; letter-spacing:.06em; text-transform:uppercase;
+    color:var(--accent); text-decoration:none; border-bottom:1px solid transparent;
+  }
+  .source a:hover{border-bottom-color:var(--accent);}
+  .source a::before{content:"↗ ";}
+
+  /* In Practice callout */
+  .practice{
+    background:var(--accent-tint); border-left:3px solid var(--accent);
+    padding:14px 18px; margin:6px 0 4px; border-radius:2px;
+  }
+  .practice .label{
+    display:block; font-family:var(--mono); font-size:10.5px; font-weight:700;
+    letter-spacing:.24em; text-transform:uppercase; color:var(--accent-ink); margin-bottom:6px;
+  }
+  .practice p{margin:0; font-size:16.5px; line-height:1.55; color:var(--soft-ink);}
+  .practice strong{color:var(--ink);}
+  .practice .source{margin-top:8px;}
+
+  /* Footer */
+  .foot{
+    margin-top:44px; padding-top:16px; border-top:3px solid var(--ink);
+    font-family:var(--mono); font-size:11px; letter-spacing:.08em; color:var(--muted);
+    text-align:center; line-height:1.8;
+  }
+  .foot .big{font-family:var(--display); font-size:13px; letter-spacing:.2em; text-transform:uppercase; color:var(--ink);}
+
+  a{color:var(--accent); text-underline-offset:3px; overflow-wrap:anywhere}
+  a:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-offset:4px}
+  .site-nav,.edition-nav{display:flex;justify-content:space-between;gap:16px;font-size:16px;margin:0 0 26px}
+  .edition-nav{margin-top:30px}
+  .skip-link{position:absolute;left:-10000px}
+  .skip-link:focus{position:static}
+  .section{scroll-margin-top:20px}
+  .section-head{margin-top:0}
+  .section-title{line-height:1.6;letter-spacing:.12em}
+  .section-nav{display:flex;flex-wrap:wrap;gap:8px 18px;border-bottom:1px solid var(--rule);padding:20px 0;font-size:16px}
+  .takeaways{padding:22px 0 0}
+  .takeaways h2{font-family:var(--display);font-size:26px}
+  .takeaways .item{margin-bottom:16px}
+  .takeaways .item h3{font-size:20px}
+  .takeaways .item p{font-size:17px}
+  .deep-dive{border-top:2px solid var(--accent);margin-top:28px;padding-top:18px}
+  .deep-dive h3{font-family:var(--display);font-size:28px;line-height:1.2;margin:8px 0 18px}
+  .deep-dive h4{font-family:var(--display);font-size:21px;margin:24px 0 8px}
+  .eyebrow{font:12px var(--mono);color:var(--accent);text-transform:uppercase;letter-spacing:.15em}
+  .recall{border:1px solid var(--rule);padding:14px 18px;margin:18px 0}
+  .recall summary{cursor:pointer;font-weight:600}
+  pre{white-space:pre-wrap;overflow-wrap:anywhere;background:var(--accent-tint);padding:16px;font:14px/1.7 var(--mono)}
+  .archive-list{list-style:none;padding:0}
+  .archive-list li{padding:15px 0;border-bottom:1px solid var(--rule)}
+  .archive-meta{display:block;color:var(--muted);font:12px/1.8 var(--mono)}
+  .practice .label{margin-top:0}
+  .source a{font-size:12px;line-height:1.8}
+  .source a[href^="#"]::before{content:"↓ "}
+  .coverage{font-size:14px;color:var(--muted);margin:12px 0 0}
+  hr{border:0;border-top:1px solid var(--rule);margin:22px 0}
+  @media(max-width:480px){.paper{padding:24px 18px 48px}.dateline{flex-wrap:wrap}.section-title{font-size:12px}.section-head{gap:8px}.deep-dive h3{font-size:25px}}
+</style>
+</head>
+<body>
+<div class="paper">
+<a class="skip-link" href="#content">Skip to content</a>
+<nav class="site-nav" aria-label="Main navigation"><a href="../index.html">Latest edition</a><a href="../archive.html">Archive</a></nav>
+
+  <header class="masthead">
+    <div class="rule-top"></div>
+    <div class="kicker-top">Aggregated Morning Brief · No. 004</div>
+    <h1>DC Daily Brief</h1>
+    <p class="tagline">Physical infrastructure, logical systems, and the decisions connecting them.</p>
+    <div class="dateline">
+      <span>Wednesday · July 15, 2026</span>
+      <span>Curated for Robert</span>
+    </div>
+    <p class="coverage">Covers news through July 15, 2026.</p>
+  </header>
+
+<main id="content">
+<nav class="section-nav" aria-label="Edition sections"><a href="#equinix">Equinix</a><a href="#competitors">Competitors</a><a href="#dc-infrastructure">DC Infrastructure</a><a href="#ai-compute-demand">AI &amp; Compute Demand</a><a href="#new-ai-models-releases">New AI Models &amp; Releases</a><a href="#networking">Networking</a><a href="#backend-cloud-data">Backend / Cloud &amp; Data</a><a href="#program-pm">Program &amp; PM</a></nav><section class="section" id="equinix"><h2 class="section-head"><span class="section-num">01</span><span class="section-title">Equinix</span></h2><article class="item"><h3>Chief Business Officer Jon Lin to depart July 18</h3><p>Equinix announced Lin, who ran the company&#x27;s data center business unit, is separating as CBO effective July 18. His responsibilities are being distributed across the existing senior leadership team as a transition measure, and Equinix says it will announce a new Chief Product Officer soon. Lin gets severance under the company&#x27;s standard executive plan.</p><div class="source"><a href="https://www.streetinsider.com/Corporate+News/Equinix+Chief+Business+Officer+to+depart+in+July+2026/26768661.html" target="_blank" rel="noopener noreferrer">StreetInsider</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Key-person risk and succession planning</h3><p>A CBO exit two weeks before a Q2 earnings call (July 29) is exactly the kind of event a mature PMO tracks as an organizational risk, not just an HR headline: it can stall vendor negotiations, sales pipeline continuity, and strategic initiatives tied to that role. The tell of good succession planning is speed and specificity — &quot;responsibilities distributed across senior leadership, new hire announcement coming&quot; is a company saying it planned for this, versus scrambling. Watch for whether the July 29 call gets asked about it.</p></aside></section><section class="section" id="competitors"><h2 class="section-head"><span class="section-num">02</span><span class="section-title">Competitors</span></h2><article class="item"><h3>CoreWeave plans 5GW more capacity by 2030, doubles 2026 capex to $30–35B</h3><p>CEO Michael Intrator said CoreWeave is expanding contracted data center capacity by an additional 5GW through 2030, on top of already doubling active power capacity toward 1.7GW by year-end. The build-out is funded by a backlog that&#x27;s grown nearly 300% year-over-year to $99.4B, with per-megawatt build costs now running $15–25M.</p><div class="source"><a href="https://www.datacenterdynamics.com/en/news/coreweave-aims-to-add-5gw-more-data-center-capacity-by-2030-anticipates-capex-in-2026-to-double/" target="_blank" rel="noopener noreferrer">DCD</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Backlog isn&#x27;t revenue</h3><p>A &quot;$99.4B backlog&quot; is contracted future revenue, not cash in hand — it depends on customers actually drawing down capacity as data centers come online, and on CoreWeave successfully financing $30B+ of annual capex against it (mostly debt, since a neocloud has none of a REIT&#x27;s dividend-funded balance sheet). When you see backlog and capex numbers side by side like this, the real question for any project/business case is the same: is the funding secured, or is it a projection built on the backlog materializing?</p></aside></section><section class="section" id="dc-infrastructure"><h2 class="section-head"><span class="section-num">03</span><span class="section-title">DC Infrastructure</span></h2><article class="item"><h3>Microsoft&#x27;s $3.3B Mount Pleasant, Wisconsin campus comes fully online</h3><p>The facility is Microsoft&#x27;s first data center at the site and is now serving production workloads, part of a broader wave of mega-projects: Amazon is putting $10B into a new Montgomery County campus and Google $15B into a separate US build, alongside a new Google data center in Horndal, Sweden.</p><div class="source"><a href="https://www.datacenterknowledge.com/data-center-construction/new-data-center-developments-july-2026" target="_blank" rel="noopener noreferrer">Data Center Knowledge</a></div></article>
+<article class="item"><h3>Virginia regulators weigh forcing data centers to pay for their own transmission lines</h3><p>Two weeks after Virginia&#x27;s new $0.011/kWh data center electricity tax took effect, the State Corporation Commission is now considering a Dominion Energy rate case proposal — backed by consumer advocates and Gov. Spanberger&#x27;s administration — that would make large &quot;high-load&quot; customers like data centers bear the cost of the dedicated high-voltage lines built solely to serve them.</p><div class="source"><a href="https://virginiamercury.com/2026/07/15/scc-considers-making-data-centers-shoulder-more-of-the-cost-of-transmission-lines/" target="_blank" rel="noopener noreferrer">Virginia Mercury</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Direct-assignment vs. rolled-in cost allocation</h3><p>Utility rate cases split infrastructure costs one of two ways: &quot;rolled-in,&quot; where a new line&#x27;s cost is spread across all ratepayers, or &quot;direct-assigned,&quot; where the customer that triggered the build pays for it alone. Virginia&#x27;s proposal is a push toward direct assignment for data centers specifically — the regulatory equivalent of a project sponsor being told to fund their own scope-driven infrastructure instead of it coming out of a shared budget. It&#x27;s the same cost-ownership logic you&#x27;d apply on a program with one stakeholder driving disproportionate spend.</p></aside></section><section class="section" id="ai-compute-demand"><h2 class="section-head"><span class="section-num">04</span><span class="section-title">AI &amp; Compute Demand</span></h2><article class="item"><h3>PJM data center demand tagged as primary driver of $23B in customer price hikes through 2028</h3><p>A PJM market report found data center load is a &quot;primary reason&quot; for $23B in higher electricity costs that will hit ratepayers across PJM&#x27;s 14-state footprint through at least 2028. Part of the problem: some data centers can shift consumption to dodge peak-demand periods used to allocate costs, while residential customers have no comparable advocate at the rate-setting table.</p><div class="source"><a href="https://fortune.com/2026/07/14/data-centers-23-billion-electricity-bills/" target="_blank" rel="noopener noreferrer">Fortune</a></div></article>
+<article class="item"><h3>PJM misses its own power supply procurement goal amid AI-driven surge</h3><p>The largest U.S. grid operator, serving 13 states plus D.C., recorded a $16.4B procurement bill for power supply — a new record, up over 60% — with data centers responsible for roughly $6.3B of that.</p><div class="source"><a href="https://www.bloomberg.com/news/articles/2026-07-14/largest-us-grid-misses-power-supply-goal-amid-rampant-ai-surge" target="_blank" rel="noopener noreferrer">Bloomberg</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · How a capacity auction actually works</h3><p>PJM doesn&#x27;t just react to demand — it runs a forward capacity auction where generators bid to guarantee power years ahead, and the clearing price sets what everyone gets paid (and what customers get billed). When demand forecasts jump — as they have with AI load — the auction clears at a much higher price for <em>all</em> capacity, not just the new increment. That&#x27;s the mechanism behind headlines like &quot;$16.4B record&quot; and &quot;$23B in price hikes&quot;: it&#x27;s not a direct pass-through of data center power bills, it&#x27;s a market-wide price shift caused by tighter projected reserve margins.</p></aside></section><section class="section" id="new-ai-models-releases"><h2 class="section-head"><span class="section-num">05</span><span class="section-title">New AI Models &amp; Releases</span></h2><article class="item"><h3>Claude Sonnet 5 becomes the default model across Claude.ai</h3><p>Anthropic&#x27;s Claude Sonnet 5 launched June 30 and immediately replaced the prior default for Free and Pro users; Fable 5 (a specialized variant with tighter safety classifiers and stricter export-use conditions) returned across the Claude platform July 1.</p><div class="source"><a href="https://llm-stats.com/llm-updates" target="_blank" rel="noopener noreferrer">llm-stats</a></div></article>
+<article class="item"><h3>Open-weight models cluster around the same week: GLM-5.2, DeepSeek V4, Qwen 3.6</h3><p>All three shipped in the same window as the GPT-5.6/Grok 4.5/Sonnet 5 frontier releases, continuing the pattern of open-weight labs releasing in near-lockstep with closed frontier labs rather than trailing by months.</p><div class="source"><a href="https://aireleasetracker.com/latest" target="_blank" rel="noopener noreferrer">AI Release Tracker</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Frontier vs. open-weight — the real tradeoff</h3><p>A frontier API model (Claude, GPT, Grok) is billed per token with no infrastructure to manage — you trade cost-per-call for zero ops burden. An open-weight model (GLM, DeepSeek, Qwen) can be self-hosted, which means fixed infrastructure cost (GPUs, power, cooling — all things you already understand from the DC side) instead of variable per-token cost, plus full control over data residency. The breakeven point is usage volume: low/unpredictable volume favors API billing, sustained high volume favors owning the hardware — the same build-vs-buy math that shows up in any capital equipment decision.</p></aside></section><section class="section" id="networking"><h2 class="section-head"><span class="section-num">06</span><span class="section-title">Networking</span></h2><article class="item"><h3>Cisco/Foundry: AI will triple enterprise network traffic within three years, most networks aren&#x27;t ready</h3><p>A new joint report finds AI agents generate 450% more network traffic than human users, 73% of organizations expect to hit campus/branch capacity limits within 24 months, and only 15% currently have networks flexible enough to support AI at scale — a gap Cisco frames as now rivaling compute as the bottleneck to enterprise AI success.</p><div class="source"><a href="https://dataconomy.com/2026/07/15/cisco-ai-surge-to-triple-enterprise-network-traffic-by-2026/" target="_blank" rel="noopener noreferrer">Dataconomy</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Agent traffic doesn&#x27;t look like human traffic</h3><p>A human clicking through an app generates bursty, session-based traffic with long idle gaps. An AI agent chains multiple API/tool calls per task, often in tight loops with retries — steady, high-frequency, machine-paced load that legacy campus networks (sized around human usage patterns) weren&#x27;t built for. This is the campus/branch version of the same lesson the AI training fabric world already learned: when the traffic pattern changes, capacity planning has to be redone from the pattern up, not just scaled from historical averages.</p></aside></section><section class="section" id="backend-cloud-data"><h2 class="section-head"><span class="section-num">07</span><span class="section-title">Backend / Cloud &amp; Data</span></h2><article class="item"><h3>Kubernetes Dynamic Resource Allocation (DRA) reaches general availability in v1.35</h3><p>DRA lets pods request specialized hardware — GPUs, and other accelerators — with the same structured, driver-based model Kubernetes already uses for storage, replacing the older device-plugin approach that couldn&#x27;t express fine-grained sharing or topology constraints.</p><div class="source"><a href="https://kubernetes.io/blog/" target="_blank" rel="noopener noreferrer">Kubernetes Blog</a></div></article>
+<article class="item"><h3>Microsoft ships record 570-flaw Patch Tuesday, including two exploited zero-days</h3><p>July&#x27;s Patch Tuesday is Microsoft&#x27;s largest on record by flaw count, with two vulnerabilities already under active exploitation and one more publicly disclosed before a patch existed.</p><div class="source"><a href="https://sharkstriker.com/blog/july-2026-data-breaches/" target="_blank" rel="noopener noreferrer">SharkStriker</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Why DRA matters if you&#x27;ve touched GPU scheduling</h3><p>Before DRA, getting a pod the right GPU meant vendor-specific device plugins with no way to express &quot;give me 2 GPUs on the same NVLink island&quot; or partition a GPU between workloads. DRA makes hardware requests structured and queryable the way persistent volume claims already are, so a scheduler can reason about topology and sharing instead of treating accelerators as opaque, indivisible resources. It&#x27;s the same underlying idea as PDU/rack power capacity planning — you don&#x27;t just count units, you have to know how they&#x27;re physically wired together.</p></aside></section><section class="section" id="program-pm"><h2 class="section-head"><span class="section-num">08</span><span class="section-title">Program &amp; PM</span></h2><article class="item"><h3>PMI launches the overhauled PMP exam and PMBOK 8th edition, effective July 9</h3><p>This is the most significant PMP revision since the 2021 agile/hybrid overhaul. Domain weighting shifts to People 33% / Process 41% / Business Environment 26% (up sharply from 8%), new content areas cover AI, sustainability, and value delivery, and agile/hybrid approaches get more emphasis relative to predictive methods. PMI also widened the experience-eligibility window from 8 years to 10 years of qualifying project work.</p><div class="source"><a href="https://www.pmi.org/certifications/project-management-pmp/new-exam" target="_blank" rel="noopener noreferrer">PMI</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · &quot;Value delivery&quot; over scope/schedule/cost — what that actually changes</h3><p>The old PMP mental model measured project success primarily against the iron triangle: did it hit scope, schedule, and cost targets? The July 2026 ECO reframes success around whether the project delivered the business value it was chartered to create — which can mean a project that ran over budget but unlocked the intended outcome is judged a success, and a project that hit every target but the outcome never mattered is not. For exam prep, that means practicing questions from &quot;what benefit does this action realize&quot; rather than &quot;which constraint does this protect&quot; — a real shift in how PMI wants candidates to reason, not just new vocabulary.</p></aside>
+<hr>
+<p>_Want to go deeper on any item? Just ask Claude to expand it._</p></section>
+</main>
+<nav class="edition-nav" aria-label="Adjacent editions"><a href="2026-07-14.html">← Previous edition</a> <a href="2026-07-16.html">Next edition →</a></nav>
+
+  <footer class="foot">
+    <div class="big">DC Daily Brief</div>
+    Covers news through July 15, 2026. · Researched and generated on demand<br>
+    News, context, and learning for Robert · Historical reporting may be superseded.
+  </footer>
+
+</div>
+</body>
+</html>

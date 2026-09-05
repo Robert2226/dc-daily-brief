@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>DC Daily Brief — Thursday, September 3, 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,900&family=Newsreader:opsz,wght@6..72,400;6..72,500&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#F7F5EF; --panel:#FBFAF6; --ink:#1B1A17; --soft-ink:#3B3934;
+    --muted:#6B6862; --rule:#D8D3C7; --rule-strong:#B7B1A3;
+    --accent:#0F766E; --accent-ink:#0B534D; --accent-tint:#EAF1EF;
+    --serif:'Newsreader',Georgia,'Times New Roman',serif;
+    --display:'Fraunces',Georgia,serif;
+    --mono:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#14140F; --panel:#1A1A14; --ink:#ECE8DD; --soft-ink:#CFC9BB;
+      --muted:#948E80; --rule:#2E2D25; --rule-strong:#413F34;
+      --accent:#5FD3C4; --accent-ink:#8FE3D8; --accent-tint:#17241F;
+    }
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0}
+  body{
+    background:var(--bg); color:var(--ink);
+    font-family:var(--serif); font-size:18px; line-height:1.62;
+    -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+  }
+  .paper{max-width:760px; margin:0 auto; padding:40px 26px 72px;}
+
+  /* Masthead */
+  .masthead{text-align:center; padding-bottom:18px;}
+  .masthead .rule-top{border-top:3px solid var(--ink); margin-bottom:14px;}
+  .kicker-top{
+    font-family:var(--mono); font-size:11px; letter-spacing:.32em; text-transform:uppercase;
+    color:var(--muted); margin-bottom:12px;
+  }
+  .masthead h1{
+    font-family:var(--display); font-weight:900; font-size:clamp(38px,9vw,68px);
+    line-height:.94; letter-spacing:-.02em; margin:0 0 10px;
+  }
+  .masthead .tagline{
+    font-family:var(--serif); font-style:italic; color:var(--soft-ink);
+    font-size:16px; max-width:38ch; margin:0 auto 16px;
+  }
+  .dateline{
+    display:flex; justify-content:space-between; align-items:center; gap:12px;
+    border-top:1px solid var(--rule-strong); border-bottom:1px solid var(--rule-strong);
+    padding:8px 2px; font-family:var(--mono); font-size:11px; letter-spacing:.12em;
+    text-transform:uppercase; color:var(--muted);
+  }
+
+  /* Section */
+  .section{padding-top:30px;}
+  .section-head{
+    display:flex; align-items:baseline; gap:12px; margin-bottom:14px;
+    border-bottom:1px solid var(--rule); padding-bottom:8px;
+  }
+  .section-num{
+    font-family:var(--mono); font-weight:700; font-size:12px; color:var(--accent);
+    letter-spacing:.1em;
+  }
+  .section-title{
+    font-family:var(--mono); font-weight:700; font-size:12.5px; letter-spacing:.22em;
+    text-transform:uppercase; color:var(--ink);
+  }
+
+  .item{margin:0 0 20px;}
+  .item h3{
+    font-family:var(--display); font-weight:600; font-size:22px; line-height:1.2;
+    letter-spacing:-.01em; margin:0 0 6px;
+  }
+  .item p{margin:0 0 6px; color:var(--soft-ink);}
+  .item em, .practice em{font-style:italic; color:var(--ink);}
+  .source a{
+    font-family:var(--mono); font-size:11px; letter-spacing:.06em; text-transform:uppercase;
+    color:var(--accent); text-decoration:none; border-bottom:1px solid transparent;
+  }
+  .source a:hover{border-bottom-color:var(--accent);}
+  .source a::before{content:"↗ ";}
+
+  /* In Practice callout */
+  .practice{
+    background:var(--accent-tint); border-left:3px solid var(--accent);
+    padding:14px 18px; margin:6px 0 4px; border-radius:2px;
+  }
+  .practice .label{
+    display:block; font-family:var(--mono); font-size:10.5px; font-weight:700;
+    letter-spacing:.24em; text-transform:uppercase; color:var(--accent-ink); margin-bottom:6px;
+  }
+  .practice p{margin:0; font-size:16.5px; line-height:1.55; color:var(--soft-ink);}
+  .practice strong{color:var(--ink);}
+  .practice .source{margin-top:8px;}
+
+  /* Footer */
+  .foot{
+    margin-top:44px; padding-top:16px; border-top:3px solid var(--ink);
+    font-family:var(--mono); font-size:11px; letter-spacing:.08em; color:var(--muted);
+    text-align:center; line-height:1.8;
+  }
+  .foot .big{font-family:var(--display); font-size:13px; letter-spacing:.2em; text-transform:uppercase; color:var(--ink);}
+
+  a{color:var(--accent); text-underline-offset:3px; overflow-wrap:anywhere}
+  a:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-offset:4px}
+  .site-nav,.edition-nav{display:flex;justify-content:space-between;gap:16px;font-size:16px;margin:0 0 26px}
+  .edition-nav{margin-top:30px}
+  .skip-link{position:absolute;left:-10000px}
+  .skip-link:focus{position:static}
+  .section{scroll-margin-top:20px}
+  .section-head{margin-top:0}
+  .section-title{line-height:1.6;letter-spacing:.12em}
+  .section-nav{display:flex;flex-wrap:wrap;gap:8px 18px;border-bottom:1px solid var(--rule);padding:20px 0;font-size:16px}
+  .takeaways{padding:22px 0 0}
+  .takeaways h2{font-family:var(--display);font-size:26px}
+  .takeaways .item{margin-bottom:16px}
+  .takeaways .item h3{font-size:20px}
+  .takeaways .item p{font-size:17px}
+  .deep-dive{border-top:2px solid var(--accent);margin-top:28px;padding-top:18px}
+  .deep-dive h3{font-family:var(--display);font-size:28px;line-height:1.2;margin:8px 0 18px}
+  .deep-dive h4{font-family:var(--display);font-size:21px;margin:24px 0 8px}
+  .eyebrow{font:12px var(--mono);color:var(--accent);text-transform:uppercase;letter-spacing:.15em}
+  .recall{border:1px solid var(--rule);padding:14px 18px;margin:18px 0}
+  .recall summary{cursor:pointer;font-weight:600}
+  pre{white-space:pre-wrap;overflow-wrap:anywhere;background:var(--accent-tint);padding:16px;font:14px/1.7 var(--mono)}
+  .archive-list{list-style:none;padding:0}
+  .archive-list li{padding:15px 0;border-bottom:1px solid var(--rule)}
+  .archive-meta{display:block;color:var(--muted);font:12px/1.8 var(--mono)}
+  .practice .label{margin-top:0}
+  .source a{font-size:12px;line-height:1.8}
+  .source a[href^="#"]::before{content:"↓ "}
+  .coverage{font-size:14px;color:var(--muted);margin:12px 0 0}
+  hr{border:0;border-top:1px solid var(--rule);margin:22px 0}
+  @media(max-width:480px){.paper{padding:24px 18px 48px}.dateline{flex-wrap:wrap}.section-title{font-size:12px}.section-head{gap:8px}.deep-dive h3{font-size:25px}}
+</style>
+</head>
+<body>
+<div class="paper">
+<a class="skip-link" href="#content">Skip to content</a>
+<nav class="site-nav" aria-label="Main navigation"><a href="../index.html">Latest edition</a><a href="../archive.html">Archive</a></nav>
+
+  <header class="masthead">
+    <div class="rule-top"></div>
+    <div class="kicker-top">Aggregated Morning Brief · No. 036</div>
+    <h1>DC Daily Brief</h1>
+    <p class="tagline">Physical infrastructure, logical systems, and the decisions connecting them.</p>
+    <div class="dateline">
+      <span>Thursday · September 3, 2026</span>
+      <span>Curated for Robert</span>
+    </div>
+    <p class="coverage">Covers news through September 3, 2026.</p>
+  </header>
+
+<main id="content">
+<nav class="section-nav" aria-label="Edition sections"><a href="#equinix">Equinix</a><a href="#google">Google</a><a href="#competitors">Competitors</a><a href="#dc-infrastructure">DC Infrastructure</a><a href="#ai-compute-demand">AI &amp; Compute Demand</a><a href="#new-ai-models-releases">New AI Models &amp; Releases</a><a href="#networking">Networking</a><a href="#backend-cloud-data">Backend / Cloud &amp; Data</a><a href="#program-pm">Program &amp; PM</a><a href="#pgpm-growth">PgPM Growth</a></nav><section class="section" id="equinix"><h2 class="section-head"><span class="section-num">01</span><span class="section-title">Equinix</span></h2><article class="item"><h3>Equinix launches a distributed inference program with NVIDIA and Together AI</h3><p>Equinix Inference Exchange combines NVIDIA reference architectures, Together AI’s platform for more than 200 open-source models and Equinix facilities and Fabric connectivity. The company positions it as a path from experimentation to multitenant or dedicated inference near enterprise data and users; actual value will depend on market availability, workload fit and the operating boundaries between the three providers.</p><div class="source"><a href="https://equinix.mediaroom.com/2026-09-02-Equinix-Accelerates-AI-Inference-for-Enterprises-with-NVIDIA-and-Together-AI" target="_blank" rel="noopener noreferrer">Equinix Newsroom</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Turn a three-party solution into one service map</h3><p>Trace the customer journey from capacity request through model deployment, network connection, monitoring, incident response and change. At every handoff, name the accountable provider, evidence, service target and escalation path so the customer experiences one controlled service rather than three adjacent products.</p></aside></section><section class="section" id="google"><h2 class="section-head"><span class="section-num">02</span><span class="section-title">Google</span></h2><article class="item"><h3>Disclosed documents put Google’s Arkansas data-center power contribution at $716 million</h3><p>Reporting based on records obtained from the Arkansas Public Service Commission says Google will pay Entergy Arkansas $526 million toward the Cypress Solar project and $190 million for transmission upgrades serving its West Memphis facility. The disclosure adds concrete cost-allocation detail to a previously opaque arrangement while a separate utility rate case keeps ratepayer protection and transparency in focus.</p><div class="source"><a href="https://www.axios.com/local/nw-arkansas/2026/09/01/google-pay-716-million-data-center-power" target="_blank" rel="noopener noreferrer">Axios NW Arkansas</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Make cost allocation legible before stakeholder trust is tested</h3><p>For a hypothetical utility-backed expansion, separate customer-funded assets, shared-grid upgrades, recurring rates, contingencies and protections for other customers. Put the assumptions, approval authority and public evidence beside each amount; transparency is strongest when it is designed into the commercial model, not reconstructed after questions begin.</p></aside></section><section class="section" id="competitors"><h2 class="section-head"><span class="section-num">03</span><span class="section-title">Competitors</span></h2><article class="item"><h3>KKR and Singtel complete their acquisition of ST Telemedia Global Data Centres</h3><p>The KKR-led consortium says STTGDC will retain its leadership and strategy while gaining long-term capital and financial flexibility for expansion. The announcement also points to a selected 50 MW tranche of sustainable, AI-ready capacity in Singapore, but delivery timing and acceptance evidence remain the operational proof behind the new ownership story.</p><div class="source"><a href="https://www.sttgdc.com/kr-en/newsroom/kkr-singtel-consortium-completes-acquisition-of-sttgdc-company-launches-refreshed-global-brand-for-next-phase-of-growth" target="_blank" rel="noopener noreferrer">STTGDC</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Treat acquisition close as the start of an integration program</h3><p>Establish Day 1 controls for decision rights, customer continuity, capital approvals, vendor commitments, safety and operating standards, then define which processes must remain stable and which will converge. Track capacity promises separately from integration milestones so growth pressure does not hide control gaps.</p></aside></section><section class="section" id="dc-infrastructure"><h2 class="section-head"><span class="section-num">04</span><span class="section-title">DC Infrastructure</span></h2><article class="item"><h3>Crusoe explains why it selected medium-voltage battery UPS systems for five gigawatts of campuses</h3><p>Crusoe says ON.energy’s campus-level design will smooth rapid AI load swings, support low-voltage ride-through and avoid energy-wasting dummy compute, with commissioning planned across 2026 and 2027. These are company claims tied to the previously announced deployment; the useful engineering signal is that grid behavior, facility continuity and workload efficiency are being treated as one control problem.</p><div class="source"><a href="https://www.crusoe.ai/resources/blog/why-crusoe-chose-on-energys-medium-voltage-ai-ups-solution" target="_blank" rel="noopener noreferrer">Crusoe Blog</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Commission both sides of a grid-supporting battery</h3><p>Build test scenarios for normal load swings, voltage sags, loss of a compute block, peak shaving, transition limits and restoration. Require separate acceptance evidence from the utility-facing meter and the IT load so grid compliance cannot mask a facility interruption—or facility continuity mask harmful grid behavior.</p></aside></section><section class="section" id="ai-compute-demand"><h2 class="section-head"><span class="section-num">05</span><span class="section-title">AI &amp; Compute Demand</span></h2><article class="item"><h3>Cerebras starts the first phase of a planned 165 MW Finland AI data center</h3><p>Cerebras and Compute Nordic Finland say construction is underway on an initial 50 MW phase in Mikkeli under service orders carrying seven-year terms. The remaining scale, regional investment and jobs are forward-looking, but contracted IT capacity paired with active construction gives the announcement more delivery substance than an undated capacity aspiration.</p><div class="source"><a href="https://cerebras.gcs-web.com/news-releases/news-release-details/cerebras-and-compute-nordic-finland-announce-new-165-mw-ai-data" target="_blank" rel="noopener noreferrer">Cerebras</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Govern expansion by repeatable tranche evidence</h3><p>Define what Phase 1 must prove—power quality, thermal performance, compute burn-in, network throughput, staffing and customer acceptance—before later megawatts receive authorization. Reuse the evidence model across phases while updating assumptions that changed; scaling a weak process only multiplies defects.</p></aside></section><section class="section" id="new-ai-models-releases"><h2 class="section-head"><span class="section-num">06</span><span class="section-title">New AI Models &amp; Releases</span></h2><article class="item"><h3>Anthropic releases Claude Fable 5.1 for long-running coding and knowledge work</h3><p>Anthropic says Fable 5.1 is available through its platform and major cloud marketplaces at $10 per million input tokens and $50 per million output tokens, with lower cache-read pricing than Fable 5. The model is designed for hours-long agentic work, while its required safeguards, default retention and workload-routing behavior make governance and evaluation part of the adoption decision.</p><div class="source"><a href="https://www.anthropic.com/claude/fable" target="_blank" rel="noopener noreferrer">Anthropic</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Evaluate long-running agents on control quality, not only task completion</h3><p>Test whether the model preserves scope, reports meaningful checkpoints, recovers safely, records evidence and stops at approval boundaries. Score cost and elapsed time beside human review effort; autonomy creates value only when the review burden and failure exposure fall with it.</p></aside></section><section class="section" id="networking"><h2 class="section-head"><span class="section-num">07</span><span class="section-title">Networking</span></h2><article class="item"><h3>HPE and Oracle expand Juniper networking across OCI’s AI data centers</h3><p>The companies plan a multi-year global deployment spanning routing, switching, support and financing as Oracle scales AI superclusters and regional connectivity. The announcement highlights bandwidth and latency, but congestion control, fault recovery, power, space and lifecycle support are the operational interfaces that determine whether a fabric performs at cluster scale.</p><div class="source"><a href="https://www.hpe.com/us/en/newsroom/press-release/2026/09/hpe-and-oracle-deepen-networking-collaboration-to-accelerate-gigawatt-scale-ai-infrastructure.html" target="_blank" rel="noopener noreferrer">HPE Newsroom</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Accept the network against degraded-state behavior</h3><p>Test link and device failures, congestion, route convergence, telemetry gaps and maintenance transitions at representative load—not just clean-path throughput. Tie every failure scenario to an owner, detection target, recovery objective and evidence package before declaring the cluster network ready.</p></aside></section><section class="section" id="backend-cloud-data"><h2 class="section-head"><span class="section-num">08</span><span class="section-title">Backend / Cloud &amp; Data</span></h2><article class="item"><h3>Genesys widens its cloud orchestration ecosystem across agents, data and business workflows</h3><p>Genesys announced integrations and collaborations with Adobe, AWS, Deepgram, ElevenLabs, Meta, Salesforce, ServiceNow and Sierra around its agentic customer-experience platform. Its use of APIs, MCP and A2A illustrates the backend challenge: more interoperable components increase choice, but also multiply identity, data, versioning and incident boundaries.</p><div class="source"><a href="https://www.genesys.com/company/newsroom/announcements/genesys-expands-ecosystem-for-trusted-enterprise-agentic-experience-orchestration" target="_blank" rel="noopener noreferrer">Genesys</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Maintain an integration contract for every agent-to-system path</h3><p>Record authentication, allowed data, tool permissions, schemas, version owner, rate limits, logging, fallback and revocation. Review contracts as a connected chain; a safe component can still participate in an unsafe workflow when trust or data crosses an undocumented boundary.</p></aside></section><section class="section" id="program-pm"><h2 class="section-head"><span class="section-num">09</span><span class="section-title">Program &amp; PM</span></h2><article class="item"><h3>A proposed EPA rule could remove a federal public-comment requirement for data-center air permits</h3><p>The Associated Press reports that states could still seek public input, but would no longer be federally required to notify and invite comment before issuing relevant permits. Regardless of the proposal’s final form, reducing a mandatory step does not remove stakeholder risk; community legitimacy, schedule resilience and legal exposure still depend on credible engagement.</p><div class="source"><a href="https://apnews.com/article/947eb927ae81162ad4cc3e828915c804" target="_blank" rel="noopener noreferrer">Associated Press</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Distinguish regulatory minimums from the engagement the program needs</h3><p>Map who is affected, what evidence they can reasonably expect, when feedback can still change a decision and how responses will be documented. Treat voluntary transparency as schedule risk control: late opposition is costlier when stakeholders first encounter a project after the design has hardened.</p></aside></section><section class="section" id="pgpm-growth"><h2 class="section-head"><span class="section-num">10</span><span class="section-title">PgPM Growth</span></h2><article class="item"><h3>Foundation · Lead the system of outcomes, not a collection of project schedules</h3><p>Program leadership starts by stating the beneficial change, then coordinating projects and business-as-usual teams whose combined outputs make that change usable. For a hypothetical capacity program, align land, utility, design, construction, network, commercial and Operations work to a shared outcome and intervene where their local priorities optimize against it.</p><div class="source"><a href="https://www.apm.org.uk/resources/what-is-project-management/what-is-programme-management/" target="_blank" rel="noopener noreferrer">APM · What is programme management?</a></div></article>
+<article class="item"><h3>Applied practice · Give every promised benefit an owner, measure and review path</h3><p>Convert broad claims such as faster capacity delivery, higher resilience or lower operating cost into a benefit profile with baseline, target, measurement method, realization date, accountable business owner and assumptions. Review evidence after capability handover and adapt or stop work when the benefit case weakens; completing every project is not success if the operating outcome never appears.</p><div class="source"><a href="https://www.gov.uk/government/publications/assurance-of-benefits-realisation-in-major-projects" target="_blank" rel="noopener noreferrer">GOV.UK · Assurance of benefits realisation</a></div></article>
+<article class="item"><h3>Resource · Lead adaptively while preserving outcome accountability</h3><p>Use the operating framework to connect evidence, stakeholder feedback, risk appetite and periodic decisions to continue, reshape or close work.</p><div class="source"><a href="https://www.gov.uk/government/publications/fcdo-programme-operating-framework/fcdo-programme-operating-framework-overview" target="_blank" rel="noopener noreferrer">GOV.UK · FCDO Programme Operating Framework</a></div></article>
+<article class="item"><h3>Resource · Keep the program level focused on strategic coordination</h3><p>Use the practical comparison to separate project delivery detail from shared resources, cross-project risks and business objectives.</p><div class="source"><a href="https://www.atlassian.com/agile/project-management/program-management" target="_blank" rel="noopener noreferrer">Atlassian · What is program management?</a></div></article>
+<article class="item"><h3>Resource · Trace benefits from strategy through delivery and measurement</h3><p>Use the practice-guide overview to structure a lifecycle rather than adding benefits as a closing-report paragraph.</p><div class="source"><a href="https://www.pmi.org/standards/benefits-realization" target="_blank" rel="noopener noreferrer">PMI · Benefits Realization Management</a></div></article>
+<article class="item"><h3>Resource · Start with a reusable benefit profile</h3><p>Use the public templates to document ownership, measurement, timing, dependencies and reporting consistently across a program.</p><div class="source"><a href="https://www.finance-ni.gov.uk/articles/templates-benefits-management-programmes-or-projects" target="_blank" rel="noopener noreferrer">Northern Ireland Department of Finance · Benefits templates</a></div></article>
+<aside class="practice"><h3 class="label">Daily Action · Build an outcome-and-benefit spine</h3><p>Set a 35-minute timer and choose one hypothetical multi-site capacity program. Spend 10 minutes writing one outcome statement and mapping four component workstreams plus the business-as-usual team that must adopt their outputs. Spend 20 minutes creating three benefit profiles with baseline, target, measure, owner, realization date, dependency and disconfirming trigger. Use the final five minutes to name one project-level success that could still fail the program outcome and state the leadership intervention it would require. Keep the artifact local; do not send communications or modify an external system.</p></aside></section>
+</main>
+<nav class="edition-nav" aria-label="Adjacent editions"><a href="2026-09-01.html">← Previous edition</a> <a href="2026-09-05.html">Next edition →</a></nav>
+
+  <footer class="foot">
+    <div class="big">DC Daily Brief</div>
+    Covers news through September 3, 2026. · Researched and generated on demand<br>
+    News, context, and learning for Robert · Historical reporting may be superseded.
+  </footer>
+
+</div>
+</body>
+</html>

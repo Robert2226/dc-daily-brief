@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>DC Daily Brief — Thursday, July 23, 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,900&family=Newsreader:opsz,wght@6..72,400;6..72,500&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#F7F5EF; --panel:#FBFAF6; --ink:#1B1A17; --soft-ink:#3B3934;
+    --muted:#6B6862; --rule:#D8D3C7; --rule-strong:#B7B1A3;
+    --accent:#0F766E; --accent-ink:#0B534D; --accent-tint:#EAF1EF;
+    --serif:'Newsreader',Georgia,'Times New Roman',serif;
+    --display:'Fraunces',Georgia,serif;
+    --mono:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#14140F; --panel:#1A1A14; --ink:#ECE8DD; --soft-ink:#CFC9BB;
+      --muted:#948E80; --rule:#2E2D25; --rule-strong:#413F34;
+      --accent:#5FD3C4; --accent-ink:#8FE3D8; --accent-tint:#17241F;
+    }
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0}
+  body{
+    background:var(--bg); color:var(--ink);
+    font-family:var(--serif); font-size:18px; line-height:1.62;
+    -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+  }
+  .paper{max-width:760px; margin:0 auto; padding:40px 26px 72px;}
+
+  /* Masthead */
+  .masthead{text-align:center; padding-bottom:18px;}
+  .masthead .rule-top{border-top:3px solid var(--ink); margin-bottom:14px;}
+  .kicker-top{
+    font-family:var(--mono); font-size:11px; letter-spacing:.32em; text-transform:uppercase;
+    color:var(--muted); margin-bottom:12px;
+  }
+  .masthead h1{
+    font-family:var(--display); font-weight:900; font-size:clamp(38px,9vw,68px);
+    line-height:.94; letter-spacing:-.02em; margin:0 0 10px;
+  }
+  .masthead .tagline{
+    font-family:var(--serif); font-style:italic; color:var(--soft-ink);
+    font-size:16px; max-width:38ch; margin:0 auto 16px;
+  }
+  .dateline{
+    display:flex; justify-content:space-between; align-items:center; gap:12px;
+    border-top:1px solid var(--rule-strong); border-bottom:1px solid var(--rule-strong);
+    padding:8px 2px; font-family:var(--mono); font-size:11px; letter-spacing:.12em;
+    text-transform:uppercase; color:var(--muted);
+  }
+
+  /* Section */
+  .section{padding-top:30px;}
+  .section-head{
+    display:flex; align-items:baseline; gap:12px; margin-bottom:14px;
+    border-bottom:1px solid var(--rule); padding-bottom:8px;
+  }
+  .section-num{
+    font-family:var(--mono); font-weight:700; font-size:12px; color:var(--accent);
+    letter-spacing:.1em;
+  }
+  .section-title{
+    font-family:var(--mono); font-weight:700; font-size:12.5px; letter-spacing:.22em;
+    text-transform:uppercase; color:var(--ink);
+  }
+
+  .item{margin:0 0 20px;}
+  .item h3{
+    font-family:var(--display); font-weight:600; font-size:22px; line-height:1.2;
+    letter-spacing:-.01em; margin:0 0 6px;
+  }
+  .item p{margin:0 0 6px; color:var(--soft-ink);}
+  .item em, .practice em{font-style:italic; color:var(--ink);}
+  .source a{
+    font-family:var(--mono); font-size:11px; letter-spacing:.06em; text-transform:uppercase;
+    color:var(--accent); text-decoration:none; border-bottom:1px solid transparent;
+  }
+  .source a:hover{border-bottom-color:var(--accent);}
+  .source a::before{content:"↗ ";}
+
+  /* In Practice callout */
+  .practice{
+    background:var(--accent-tint); border-left:3px solid var(--accent);
+    padding:14px 18px; margin:6px 0 4px; border-radius:2px;
+  }
+  .practice .label{
+    display:block; font-family:var(--mono); font-size:10.5px; font-weight:700;
+    letter-spacing:.24em; text-transform:uppercase; color:var(--accent-ink); margin-bottom:6px;
+  }
+  .practice p{margin:0; font-size:16.5px; line-height:1.55; color:var(--soft-ink);}
+  .practice strong{color:var(--ink);}
+  .practice .source{margin-top:8px;}
+
+  /* Footer */
+  .foot{
+    margin-top:44px; padding-top:16px; border-top:3px solid var(--ink);
+    font-family:var(--mono); font-size:11px; letter-spacing:.08em; color:var(--muted);
+    text-align:center; line-height:1.8;
+  }
+  .foot .big{font-family:var(--display); font-size:13px; letter-spacing:.2em; text-transform:uppercase; color:var(--ink);}
+
+  a{color:var(--accent); text-underline-offset:3px; overflow-wrap:anywhere}
+  a:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-offset:4px}
+  .site-nav,.edition-nav{display:flex;justify-content:space-between;gap:16px;font-size:16px;margin:0 0 26px}
+  .edition-nav{margin-top:30px}
+  .skip-link{position:absolute;left:-10000px}
+  .skip-link:focus{position:static}
+  .section{scroll-margin-top:20px}
+  .section-head{margin-top:0}
+  .section-title{line-height:1.6;letter-spacing:.12em}
+  .section-nav{display:flex;flex-wrap:wrap;gap:8px 18px;border-bottom:1px solid var(--rule);padding:20px 0;font-size:16px}
+  .takeaways{padding:22px 0 0}
+  .takeaways h2{font-family:var(--display);font-size:26px}
+  .takeaways .item{margin-bottom:16px}
+  .takeaways .item h3{font-size:20px}
+  .takeaways .item p{font-size:17px}
+  .deep-dive{border-top:2px solid var(--accent);margin-top:28px;padding-top:18px}
+  .deep-dive h3{font-family:var(--display);font-size:28px;line-height:1.2;margin:8px 0 18px}
+  .deep-dive h4{font-family:var(--display);font-size:21px;margin:24px 0 8px}
+  .eyebrow{font:12px var(--mono);color:var(--accent);text-transform:uppercase;letter-spacing:.15em}
+  .recall{border:1px solid var(--rule);padding:14px 18px;margin:18px 0}
+  .recall summary{cursor:pointer;font-weight:600}
+  pre{white-space:pre-wrap;overflow-wrap:anywhere;background:var(--accent-tint);padding:16px;font:14px/1.7 var(--mono)}
+  .archive-list{list-style:none;padding:0}
+  .archive-list li{padding:15px 0;border-bottom:1px solid var(--rule)}
+  .archive-meta{display:block;color:var(--muted);font:12px/1.8 var(--mono)}
+  .practice .label{margin-top:0}
+  .source a{font-size:12px;line-height:1.8}
+  .source a[href^="#"]::before{content:"↓ "}
+  .coverage{font-size:14px;color:var(--muted);margin:12px 0 0}
+  hr{border:0;border-top:1px solid var(--rule);margin:22px 0}
+  @media(max-width:480px){.paper{padding:24px 18px 48px}.dateline{flex-wrap:wrap}.section-title{font-size:12px}.section-head{gap:8px}.deep-dive h3{font-size:25px}}
+</style>
+</head>
+<body>
+<div class="paper">
+<a class="skip-link" href="#content">Skip to content</a>
+<nav class="site-nav" aria-label="Main navigation"><a href="../index.html">Latest edition</a><a href="../archive.html">Archive</a></nav>
+
+  <header class="masthead">
+    <div class="rule-top"></div>
+    <div class="kicker-top">Aggregated Morning Brief · No. 012</div>
+    <h1>DC Daily Brief</h1>
+    <p class="tagline">Physical infrastructure, logical systems, and the decisions connecting them.</p>
+    <div class="dateline">
+      <span>Thursday · July 23, 2026</span>
+      <span>Curated for Robert</span>
+    </div>
+    <p class="coverage">Covers news through July 20–23, 2026.</p>
+  </header>
+
+<main id="content">
+<nav class="section-nav" aria-label="Edition sections"><a href="#equinix">Equinix</a><a href="#competitors">Competitors</a><a href="#dc-infrastructure">DC Infrastructure</a><a href="#ai-compute-demand">AI &amp; Compute Demand</a><a href="#new-ai-models-releases">New AI Models &amp; Releases</a><a href="#networking">Networking</a><a href="#backend-cloud-data">Backend / Cloud &amp; Data</a><a href="#program-pm">Program &amp; PM</a></nav><section class="section" id="equinix"><h2 class="section-head"><span class="section-num">01</span><span class="section-title">Equinix</span></h2><article class="item"><h3>CBO Jon Lin&#x27;s exit, telegraphed back in February, lands July 18 — and Equinix uses it to restructure toward a product-led model</h3><p>Lin, who joined Equinix in 2009 and helped build what became Equinix Fabric, departs under the company&#x27;s Executive Severance Plan; his responsibilities are being redistributed across existing senior leaders rather than replaced one-for-one, and Equinix says it will name a new Chief Product Officer &quot;in the near future&quot; — a structural shift toward product strategy and governance that lines up with CEO Fox-Martin&#x27;s &quot;Build Bolder&quot; five-pillar plan (covered here July 21). <a href="https://www.tipranks.com/news/company-announcements/equinix-restructures-leadership-following-chief-business-officer-exit" target="_blank" rel="noopener noreferrer">TipRanks</a> /</p><div class="source"><a href="https://simplywall.st/stocks/us/real-estate/nasdaq-eqix/equinix/news/how-equinixs-eqix-c-suite-realignment-and-new-product-focus" target="_blank" rel="noopener noreferrer">Simply Wall St</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · A five-month gap between the SEC filing and the departure date is itself informative</h3><p>Equinix disclosed Lin&#x27;s planned exit via Form 8-K — the document public companies are legally required to file within four business days of a &quot;material event,&quot; which explicitly includes the departure of a named executive officer. Filing that 8-K in February for a July 18 exit (rather than announcing the same week someone walks out) signals a negotiated, planned transition with time to redistribute duties — very different from the abrupt-resignation 8-Ks that tend to spook a stock the day they hit. When you see an executive-departure headline, the gap between filing date and effective date is a quick read on how orderly the exit actually was.</p></aside></section><section class="section" id="competitors"><h2 class="section-head"><span class="section-num">02</span><span class="section-title">Competitors</span></h2><article class="item"><h3>BlackRock and ACS launch Coravel, a new data center platform, with a 140MW hyperscaler deal already signed</h3><p>The 50/50 joint venture between BlackRock&#x27;s Global Infrastructure Partners and Spanish construction giant ACS Group went public July 15 under CEO Howard Boville, immediately naming an undisclosed hyperscaler as an anchor tenant across three purpose-built facilities at a Dallas-Fort Worth campus, plus rights to roughly 100MW of further expansion — with ACS subsidiary Turner handling phased construction through 2028. <a href="https://www.datacenterdynamics.com/en/news/blackrocks-gip-and-acs-name-data-center-joint-venture-coravel-sign-customer-in-texas/" target="_blank" rel="noopener noreferrer">DCD</a> /</p><div class="source"><a href="https://www.techtimes.com/articles/320903/20260718/blackrock-acs-launch-coravel-140mw-hyperscaler-deal-already-signed.htm" target="_blank" rel="noopener noreferrer">Tech Times</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Coravel is a platform company, not a landlord — and that distinction is why it launched with a signed deal instead of an empty building</h3><p>A traditional colo REIT builds speculative or build-to-suit capacity and leases it; a platform like Coravel bundles power strategy, site sourcing, design, construction, and capital under one accountable operator specifically so a hyperscaler can outsource the entire delivery risk, not just rent finished space. That it launched already holding a signed anchor tenant — rather than breaking ground and hoping to fill it — is the model working as designed: capital (GIP) and construction (ACS) partnering <em>before</em> announcing publicly, with the customer locked in as the third leg of the stool from day one.</p></aside></section><section class="section" id="dc-infrastructure"><h2 class="section-head"><span class="section-num">03</span><span class="section-title">DC Infrastructure</span></h2><article class="item"><h3>Texas PUC approves &quot;ride-through&quot; rules forcing data centers to survive grid disturbances instead of tripping offline</h3><p>With ERCOT facing a 438GW queue of pending large-load interconnection requests, the new rules require frequency- and voltage-ride-through capability so a data center absorbs grid disturbances rather than disconnecting en masse and worsening them; non-compliant facilities get 90 days to investigate root cause, 90 more to file a corrective plan, and 180 to implement it — or ERCOT can order them to stay offline. Data center operators estimate compliance at $500,000–$1M per megawatt.</p><div class="source"><a href="https://www.utilitydive.com/news/texas-puc-approves-ride-through-rules-data-centers/825051/" target="_blank" rel="noopener noreferrer">Utility Dive</a></div></article>
+<article class="item"><h3>Nvidia pushes 800-volt DC power for AI racks by 2027 — but Texas&#x27;s own grid operator says it isn&#x27;t ready for it</h3><p>800VDC promises less heat loss and lighter cabling than today&#x27;s AC-to-DC conversion, but AI training&#x27;s extreme load swings — racks going from near-idle to hundreds of megawatts and back several times a second — are exactly the instability the new ride-through rules target; ERCOT&#x27;s Large Load Working Group is evaluating the standard while startups like Dimaag pitch battery buffering to smooth the swings in the meantime.</p><div class="source"><a href="https://spectrum.ieee.org/800-vdc-for-data-centers" target="_blank" rel="noopener noreferrer">IEEE Spectrum</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · &quot;Ride-through&quot; is a specific electrical-engineering requirement, not a vague resiliency mandate</h3><p>It means equipment must keep operating through a defined dip or spike in grid frequency/voltage for a defined duration, rather than tripping its protective relays and disconnecting — the same concept utilities have long required of wind and solar farms, now extended to data centers because a gigawatt-scale AI training job&#x27;s power draw swings like a discrete, correlated load in a way a building full of ordinary servers never did. Texas mandating this by rule, in the same month Nvidia is pushing a power-delivery architecture (800VDC) that makes those swings sharper, not softer, is the regulatory and technical stories colliding — one side is trying to make load swings survivable, the other is trying to make them bigger and faster.</p></aside></section><section class="section" id="ai-compute-demand"><h2 class="section-head"><span class="section-num">04</span><span class="section-title">AI &amp; Compute Demand</span></h2><article class="item"><h3>Gartner: AI platforms and models spending will grow 63% in 2026 to $64B — a different number than the $1T+ hyperscalers are pouring into data center capex</h3><p>Gartner&#x27;s forecast covers what enterprises pay for AI software, APIs, and platforms; separately, Dell&#x27;Oro projects global data center capex (the physical buildout — buildings, power, chips, cooling) will surpass $1 trillion in 2026, growing more than 50% year-over-year. Both numbers get casually cited as &quot;the AI market,&quot; but they measure entirely different layers of spend. <a href="https://www.gartner.com/en/newsroom/press-releases/2026-07-20-gartner-forecasts-worldwide-ai-platforms-and-models-market-to-grow-63-percent-in-2026" target="_blank" rel="noopener noreferrer">Gartner</a> /</p><div class="source"><a href="https://www.delloro.com/news/data-center-capex-surges-57-percent-in-2025-as-ai-deployments-accelerate/" target="_blank" rel="noopener noreferrer">Dell&#x27;Oro</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Always ask which layer of the stack a big AI spending number is describing</h3><p>&quot;$64B AI platforms and models&quot; is enterprises buying access to intelligence — API calls, licensed platforms, model subscriptions. &quot;$1T+ data center capex&quot; is the infrastructure layer underneath all of that — the buildings, chips, and power that make the API calls possible in the first place, funded almost entirely by hyperscalers and neoclouds, not the enterprises consuming the APIs. The two numbers aren&#x27;t in tension and don&#x27;t need reconciling; they&#x27;re measuring different points in the same supply chain, and conflating them (as headlines chasing &quot;the AI market size&quot; often do) makes both look either too big or too small relative to what they actually represent.</p></aside></section><section class="section" id="new-ai-models-releases"><h2 class="section-head"><span class="section-num">05</span><span class="section-title">New AI Models &amp; Releases</span></h2><article class="item"><h3>Meta ships Muse Spark 1.1, its first paid AI model, priced at $1.25/$4.25 per million tokens</h3><p>Released July 9, the multimodal reasoning model carries a self-managed 1-million-token context window, native agent/subagent orchestration, and MCP and custom-skill support — putting Meta in the same paid-API business as OpenAI, Anthropic, Google, and xAI for the first time, after years of Llama being free-to-use open weights.</p><div class="source"><a href="https://thursdai.news/releases/2026-07" target="_blank" rel="noopener noreferrer">thursdAI</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Charging for a model at all is a distinct milestone from releasing a good one</h3><p>A free or open-weight release optimizes for adoption, research goodwill, and ecosystem lock-in; a metered, priced API is a bet that the model&#x27;s quality and reliability clear the bar where a business will pay per-token rather than self-host a free alternative or use a competitor&#x27;s paid tier. Meta moving Muse Spark to a paid tier — after building its AI reputation on Llama&#x27;s free weights — signals it now believes it has something enterprises will pay for specifically, not just something researchers will cite; watch whether pricing holds or gets discounted within a quarter, since that&#x27;s the tell for whether real demand showed up at the $1.25/$4.25 rate card.</p></aside></section><section class="section" id="networking"><h2 class="section-head"><span class="section-num">06</span><span class="section-title">Networking</span></h2><article class="item"><h3>Nvidia&#x27;s Spectrum-6 switch — 102.4Tbps, liquid-cooled, built for the Vera Rubin platform — starts shipping into CoreWeave, Microsoft, Nebius, SpaceX, and Tesla clusters this week</h3><p>Spectrum-6 is Nvidia&#x27;s next-generation Ethernet switch, doubling the bandwidth of the prior generation and sold as one piece of a fully co-designed six-component stack — Vera CPU, Rubin GPU, NVLink 6, ConnectX-9 SuperNICs, BlueField-4 DPUs, and now Spectrum-6 switches — rather than a standalone part customers mix with other vendors&#x27; gear. <a href="https://blogs.nvidia.com/blog/nvidia-spectrum-six-arrives-in-gigascale-ai-factories/" target="_blank" rel="noopener noreferrer">NVIDIA Newsroom</a> /</p><div class="source"><a href="https://www.networkworld.com/article/4200086/nvidia-unveils-spectrum-x-networking-platform-designed-to-connect-millions-of-gpus.html" target="_blank" rel="noopener noreferrer">Network World</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · A &quot;co-designed platform&quot; is a vertical-integration bet, and it cuts against the mix-and-match model networking has run on for decades</h3><p>Historically, a data center operator bought GPUs from one vendor and networking gear from whichever of Cisco, Arista, or Juniper had the best switch that generation — the two layers were designed independently and interoperated through open standards. Nvidia bundling CPU, GPU, NVLink, NICs, DPUs, and now switches into one named platform (Vera Rubin) is a bet that co-designing all six layers together — so the switch&#x27;s buffering and the GPU&#x27;s traffic patterns are tuned to each other from the start — beats whatever efficiency a customer would get from best-of-breed shopping. It&#x27;s the same bet Apple makes bundling its own chips with its own OS; the tradeoff is the same too, less vendor flexibility in exchange for tighter integration.</p></aside></section><section class="section" id="backend-cloud-data"><h2 class="section-head"><span class="section-num">07</span><span class="section-title">Backend / Cloud &amp; Data</span></h2><article class="item"><h3>CNCF promotes Confidential Containers to incubating status, formalizing hardware-encrypted &quot;data in use&quot; for Kubernetes workloads</h3><p>Accepted by the Technical Oversight Committee on July 22, the project — started in 2021 by Red Hat, Intel, IBM, and others — uses hardware-based Trusted Execution Environments so an infrastructure operator can run a customer&#x27;s containerized workload without being able to see the data inside it while it&#x27;s actively processing.</p><div class="source"><a href="https://www.cncf.io/blog/2026/07/22/confidential-containers-becomes-a-cncf-incubating-project/" target="_blank" rel="noopener noreferrer">CNCF</a></div></article>
+<article class="item"><h3>A critical Check Point SmartConsole flaw (CVSS 9.1) is being exploited to seize full firewall-management control</h3><p>CVE-2026-16232 lets an unauthenticated remote attacker steal an application login token and authenticate to a Security Management Server with full admin rights, letting them rewrite security policy outright; Check Point confirmed active exploitation against &quot;a small number of customers&quot; and shipped hotfixes, but recommends auditing admin and API activity even after patching.</p><div class="source"><a href="https://thehackernews.com/2026/07/check-point-patches-exploited.html" target="_blank" rel="noopener noreferrer">The Hacker News</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · &quot;Data in use&quot; is the encryption gap the other two states don&#x27;t cover, and it&#x27;s why Confidential Containers exists at all</h3><p>Standard practice already encrypts data at rest (on disk) and in transit (over the network) — but the moment a process loads that data into memory to actually compute on it, it&#x27;s traditionally been plaintext, visible to anyone with sufficient access to the host, hypervisor, or cloud operator&#x27;s infrastructure. A Trusted Execution Environment closes that gap by encrypting memory itself and attesting cryptographically that the code running inside hasn&#x27;t been tampered with, so even the cloud provider&#x27;s own admins can&#x27;t inspect a customer&#x27;s live computation. That&#x27;s the specific capability regulated industries (finance, healthcare, government) need before they&#x27;ll run sensitive workloads on shared infrastructure at all — it&#x27;s the last leg of the encryption stool, not a redundant one.</p></aside></section><section class="section" id="program-pm"><h2 class="section-head"><span class="section-num">08</span><span class="section-title">Program &amp; PM</span></h2><article class="item"><h3>Microsoft&#x27;s Planner Agent — formerly &quot;Project Manager Agent&quot; — expands to basic (non-premium) plans, automating status reports and task execution across ~44 languages</h3><p>Renamed in March and now broadly rolled out, the agent builds task plans from stated goals, executes assigned tasks, and generates status reports directly from live plan data, without requiring a premium Microsoft 365 Copilot tier — bringing agentic PM tooling to a much larger base of everyday project teams, not just enterprise pilots.</p><div class="source"><a href="https://techcommunity.microsoft.com/blog/plannerblog/unleashing-the-power-of-agents-in-microsoft-planner/4304794" target="_blank" rel="noopener noreferrer">Microsoft Community Hub</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Status-report automation is the easy 80%, and that&#x27;s exactly why it shipped first</h3><p>Generating a status report from live plan data is a summarization task — the agent already has the ground truth (task states, due dates, assignees) and just needs to narrate it, which is precisely the kind of mechanical coordination work this brief has tracked shrinking all month (the PMP exam&#x27;s reweighting toward Business Environment, the &quot;agentic PMO&quot; coordination-overhead stats). What Planner Agent doesn&#x27;t do yet — decide whether a slipping task should trigger a scope conversation, or judge whether a stakeholder&#x27;s pushback is worth escalating — is the harder 20% that&#x27;s judgment, not summarization. Rolling agentic tooling out to basic-tier users before solving that harder part is a reasonable sequencing choice, but it&#x27;s worth tracking whether &quot;automated status reports&quot; quietly becomes &quot;nobody reads the status report critically anymore&quot; on teams that adopt it uncritically.</p></aside></section>
+</main>
+<nav class="edition-nav" aria-label="Adjacent editions"><a href="2026-07-22.html">← Previous edition</a> <a href="2026-07-25.html">Next edition →</a></nav>
+
+  <footer class="foot">
+    <div class="big">DC Daily Brief</div>
+    Covers news through July 20–23, 2026. · Researched and generated on demand<br>
+    News, context, and learning for Robert · Historical reporting may be superseded.
+  </footer>
+
+</div>
+</body>
+</html>

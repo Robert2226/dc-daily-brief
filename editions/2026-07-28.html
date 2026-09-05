@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>DC Daily Brief — Tuesday, July 28, 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,900&family=Newsreader:opsz,wght@6..72,400;6..72,500&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#F7F5EF; --panel:#FBFAF6; --ink:#1B1A17; --soft-ink:#3B3934;
+    --muted:#6B6862; --rule:#D8D3C7; --rule-strong:#B7B1A3;
+    --accent:#0F766E; --accent-ink:#0B534D; --accent-tint:#EAF1EF;
+    --serif:'Newsreader',Georgia,'Times New Roman',serif;
+    --display:'Fraunces',Georgia,serif;
+    --mono:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#14140F; --panel:#1A1A14; --ink:#ECE8DD; --soft-ink:#CFC9BB;
+      --muted:#948E80; --rule:#2E2D25; --rule-strong:#413F34;
+      --accent:#5FD3C4; --accent-ink:#8FE3D8; --accent-tint:#17241F;
+    }
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0}
+  body{
+    background:var(--bg); color:var(--ink);
+    font-family:var(--serif); font-size:18px; line-height:1.62;
+    -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+  }
+  .paper{max-width:760px; margin:0 auto; padding:40px 26px 72px;}
+
+  /* Masthead */
+  .masthead{text-align:center; padding-bottom:18px;}
+  .masthead .rule-top{border-top:3px solid var(--ink); margin-bottom:14px;}
+  .kicker-top{
+    font-family:var(--mono); font-size:11px; letter-spacing:.32em; text-transform:uppercase;
+    color:var(--muted); margin-bottom:12px;
+  }
+  .masthead h1{
+    font-family:var(--display); font-weight:900; font-size:clamp(38px,9vw,68px);
+    line-height:.94; letter-spacing:-.02em; margin:0 0 10px;
+  }
+  .masthead .tagline{
+    font-family:var(--serif); font-style:italic; color:var(--soft-ink);
+    font-size:16px; max-width:38ch; margin:0 auto 16px;
+  }
+  .dateline{
+    display:flex; justify-content:space-between; align-items:center; gap:12px;
+    border-top:1px solid var(--rule-strong); border-bottom:1px solid var(--rule-strong);
+    padding:8px 2px; font-family:var(--mono); font-size:11px; letter-spacing:.12em;
+    text-transform:uppercase; color:var(--muted);
+  }
+
+  /* Section */
+  .section{padding-top:30px;}
+  .section-head{
+    display:flex; align-items:baseline; gap:12px; margin-bottom:14px;
+    border-bottom:1px solid var(--rule); padding-bottom:8px;
+  }
+  .section-num{
+    font-family:var(--mono); font-weight:700; font-size:12px; color:var(--accent);
+    letter-spacing:.1em;
+  }
+  .section-title{
+    font-family:var(--mono); font-weight:700; font-size:12.5px; letter-spacing:.22em;
+    text-transform:uppercase; color:var(--ink);
+  }
+
+  .item{margin:0 0 20px;}
+  .item h3{
+    font-family:var(--display); font-weight:600; font-size:22px; line-height:1.2;
+    letter-spacing:-.01em; margin:0 0 6px;
+  }
+  .item p{margin:0 0 6px; color:var(--soft-ink);}
+  .item em, .practice em{font-style:italic; color:var(--ink);}
+  .source a{
+    font-family:var(--mono); font-size:11px; letter-spacing:.06em; text-transform:uppercase;
+    color:var(--accent); text-decoration:none; border-bottom:1px solid transparent;
+  }
+  .source a:hover{border-bottom-color:var(--accent);}
+  .source a::before{content:"↗ ";}
+
+  /* In Practice callout */
+  .practice{
+    background:var(--accent-tint); border-left:3px solid var(--accent);
+    padding:14px 18px; margin:6px 0 4px; border-radius:2px;
+  }
+  .practice .label{
+    display:block; font-family:var(--mono); font-size:10.5px; font-weight:700;
+    letter-spacing:.24em; text-transform:uppercase; color:var(--accent-ink); margin-bottom:6px;
+  }
+  .practice p{margin:0; font-size:16.5px; line-height:1.55; color:var(--soft-ink);}
+  .practice strong{color:var(--ink);}
+  .practice .source{margin-top:8px;}
+
+  /* Footer */
+  .foot{
+    margin-top:44px; padding-top:16px; border-top:3px solid var(--ink);
+    font-family:var(--mono); font-size:11px; letter-spacing:.08em; color:var(--muted);
+    text-align:center; line-height:1.8;
+  }
+  .foot .big{font-family:var(--display); font-size:13px; letter-spacing:.2em; text-transform:uppercase; color:var(--ink);}
+
+  a{color:var(--accent); text-underline-offset:3px; overflow-wrap:anywhere}
+  a:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-offset:4px}
+  .site-nav,.edition-nav{display:flex;justify-content:space-between;gap:16px;font-size:16px;margin:0 0 26px}
+  .edition-nav{margin-top:30px}
+  .skip-link{position:absolute;left:-10000px}
+  .skip-link:focus{position:static}
+  .section{scroll-margin-top:20px}
+  .section-head{margin-top:0}
+  .section-title{line-height:1.6;letter-spacing:.12em}
+  .section-nav{display:flex;flex-wrap:wrap;gap:8px 18px;border-bottom:1px solid var(--rule);padding:20px 0;font-size:16px}
+  .takeaways{padding:22px 0 0}
+  .takeaways h2{font-family:var(--display);font-size:26px}
+  .takeaways .item{margin-bottom:16px}
+  .takeaways .item h3{font-size:20px}
+  .takeaways .item p{font-size:17px}
+  .deep-dive{border-top:2px solid var(--accent);margin-top:28px;padding-top:18px}
+  .deep-dive h3{font-family:var(--display);font-size:28px;line-height:1.2;margin:8px 0 18px}
+  .deep-dive h4{font-family:var(--display);font-size:21px;margin:24px 0 8px}
+  .eyebrow{font:12px var(--mono);color:var(--accent);text-transform:uppercase;letter-spacing:.15em}
+  .recall{border:1px solid var(--rule);padding:14px 18px;margin:18px 0}
+  .recall summary{cursor:pointer;font-weight:600}
+  pre{white-space:pre-wrap;overflow-wrap:anywhere;background:var(--accent-tint);padding:16px;font:14px/1.7 var(--mono)}
+  .archive-list{list-style:none;padding:0}
+  .archive-list li{padding:15px 0;border-bottom:1px solid var(--rule)}
+  .archive-meta{display:block;color:var(--muted);font:12px/1.8 var(--mono)}
+  .practice .label{margin-top:0}
+  .source a{font-size:12px;line-height:1.8}
+  .source a[href^="#"]::before{content:"↓ "}
+  .coverage{font-size:14px;color:var(--muted);margin:12px 0 0}
+  hr{border:0;border-top:1px solid var(--rule);margin:22px 0}
+  @media(max-width:480px){.paper{padding:24px 18px 48px}.dateline{flex-wrap:wrap}.section-title{font-size:12px}.section-head{gap:8px}.deep-dive h3{font-size:25px}}
+</style>
+</head>
+<body>
+<div class="paper">
+<a class="skip-link" href="#content">Skip to content</a>
+<nav class="site-nav" aria-label="Main navigation"><a href="../index.html">Latest edition</a><a href="../archive.html">Archive</a></nav>
+
+  <header class="masthead">
+    <div class="rule-top"></div>
+    <div class="kicker-top">Aggregated Morning Brief · No. 016</div>
+    <h1>DC Daily Brief</h1>
+    <p class="tagline">Physical infrastructure, logical systems, and the decisions connecting them.</p>
+    <div class="dateline">
+      <span>Tuesday · July 28, 2026</span>
+      <span>Curated for Robert</span>
+    </div>
+    <p class="coverage">Covers news through July 28, 2026.</p>
+  </header>
+
+<main id="content">
+<nav class="section-nav" aria-label="Edition sections"><a href="#equinix">Equinix</a><a href="#competitors">Competitors</a><a href="#dc-infrastructure">DC Infrastructure</a><a href="#ai-compute-demand">AI &amp; Compute Demand</a><a href="#new-ai-models-releases">New AI Models &amp; Releases</a><a href="#networking">Networking</a><a href="#backend-cloud-data">Backend / Cloud &amp; Data</a><a href="#program-pm">Program &amp; PM</a></nav><section class="section" id="equinix"><h2 class="section-head"><span class="section-num">01</span><span class="section-title">Equinix</span></h2><article class="item"><h3>Equinix appoints new leaders over global products and global markets</h3><p>Chris Audie will join as Chief Product Officer across interconnection, infrastructure, network operations and ecosystem partnerships, while 16-year Equinix veteran Bruce Owen becomes Executive Vice President, Global Markets with oversight of every region. The structure places product integration and regional execution under two clear enterprise-wide leaders as Equinix works to turn its physical footprint into a more unified platform.</p><div class="source"><a href="https://newsroom.equinix.com/2026-07-27-Equinix-Appoints-Two-Leaders-to-Executive-Team" target="_blank" rel="noopener noreferrer">Equinix Newsroom</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Reorganizations change interfaces before they change outcomes</h3><p>Map what your team sends to and receives from Product, Network Operations and regional leadership: decisions, standards, escalations, telemetry and customer feedback. Watch for unclear ownership at the seams while roles settle, and confirm the decision path instead of relying on an old org chart. A future program manager becomes valuable during transitions by preserving operating continuity while making new accountabilities visible.</p></aside></section><section class="section" id="competitors"><h2 class="section-head"><span class="section-num">02</span><span class="section-title">Competitors</span></h2><article class="item"><h3>Flexential acquires 110 acres near Dallas for a three-building, 108MW campus</h3><p>The first 36MW phase is designed for wholesale and multi-tenant colocation at densities up to 150kW per rack, using closed-loop cooling, with construction planned for early 2027 and launch in late 2028. Flexential already operates 28.4MW across three Dallas-area facilities, so the project would materially change both its local scale and the technical profile of its portfolio.</p><div class="source"><a href="https://www.datacenterdynamics.com/en/news/flexential-acquires-110-acres-outside-dallas-texas-for-108mw-data-center-campus/" target="_blank" rel="noopener noreferrer">Data Center Dynamics</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · High-density capability is a full-path claim</h3><p>To validate 150kW per rack, trace the design from utility and generator capacity through switchgear, UPS, busway, rack distribution, cooling distribution and heat rejection under both normal and failure conditions. Then confirm that maintenance bypasses and redundant paths preserve the promised density. A program dashboard should show the weakest link in that chain, because the lowest constrained component—not the marketing number—sets usable capacity.</p></aside></section><section class="section" id="dc-infrastructure"><h2 class="section-head"><span class="section-num">03</span><span class="section-title">DC Infrastructure</span></h2><article class="item"><h3>Environmental groups ask the EPA to reject fast-track approval of a PFAS fluid proposed for two-phase data center cooling</h3><p>A 17-group coalition led by Earthjustice argues that Chemours&#x27; Opteon 2P50 needs deeper toxicity and climate review; Chemours emphasizes that the refrigerant operates in a closed loop, while opponents point to leakage and end-of-life exposure risk. The dispute shows that a fluid can solve thermal constraints yet create regulatory, environmental and handling obligations over the system&#x27;s full lifecycle.</p><div class="source"><a href="https://www.datacenterdynamics.com/en/news/earthjustice-led-coalition-urges-epa-to-reject-chemours-pfas-for-data-center-cooling/" target="_blank" rel="noopener noreferrer">Data Center Dynamics</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Add fluid stewardship to the cooling design review</h3><p>Ask for the safety data sheet, total fluid inventory, leak-detection threshold, containment volume, technician PPE and training, recovery procedure, disposal route and regulatory owner. Include a credible leak scenario in commissioning and emergency-response exercises. “Closed loop” describes normal operation; operational readiness is demonstrated by how the team detects, contains, reports and recovers from the abnormal case.</p></aside></section><section class="section" id="ai-compute-demand"><h2 class="section-head"><span class="section-num">04</span><span class="section-title">AI &amp; Compute Demand</span></h2><article class="item"><h3>AMD signs 15-year agreements for roughly 530MW across five Core Scientific sites, with options that could take the relationship to 2.5GW</h3><p>Initial delivery begins in 2027 and is targeted for completion by the end of 2028, representing more than $14 billion in potential base contracted revenue for Core Scientific. The partners will jointly work on physical infrastructure for Instinct GPUs, Epyc CPUs and ROCm software, making the deal both a capacity commitment and a multi-site technology rollout.</p><div class="source"><a href="https://www.datacenterdynamics.com/en/news/core-scientific-secures-amd-as-customer-at-five-sites/" target="_blank" rel="noopener noreferrer">Data Center Dynamics</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Treat a multi-site deal as a program with repeatable gates, not five separate projects</h3><p>Define one reference design and a common readiness checklist for power, cooling, network, firmware, software and operations, then record approved site-specific deviations. Commission the first locations as learning sites and feed defects into later builds before equipment is locked. Standardization creates speed only when lessons cross site boundaries faster than construction does.</p></aside></section><section class="section" id="new-ai-models-releases"><h2 class="section-head"><span class="section-num">05</span><span class="section-title">New AI Models &amp; Releases</span></h2><article class="item"><h3>OpenAI reports that coding agents are shifting scientific software work from implementation toward verification and orchestration</h3><p>Eight projects used Codex alone or alongside Claude Code for work ranging from packaging updates to language migrations and GPU-native redesigns. Teams reported substantial acceleration, but the recurring constraint moved to human validation, clear quality measures and long-term stewardship of the generated software.</p><div class="source"><a href="https://openai.com/index/scientific-computing-agentic-ai/" target="_blank" rel="noopener noreferrer">OpenAI</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Faster production raises the value of acceptance criteria</h3><p>Before asking an agent to modernize a script or automate an operations workflow, write the invariants first: required inputs, expected outputs, tolerances, failure behavior, audit trail and rollback method. Have a subject-matter expert own the final validation and future maintenance. The transferable PM skill is defining “correct and supportable” before velocity makes a weak assumption expensive.</p></aside></section><section class="section" id="networking"><h2 class="section-head"><span class="section-num">06</span><span class="section-title">Networking</span></h2><article class="item"><h3>T-Mobile restores service after an outage generated more than 61,000 user reports across multiple states</h3><p>The carrier acknowledged the disruption Monday evening and said service was fully restored before midnight, but had not disclosed a cause by Tuesday morning and some users continued reporting SOS-only devices. Restoration, root-cause analysis and customer confirmation are separate milestones; closing one does not automatically close the others.</p><div class="source"><a href="https://www.datacenterdynamics.com/en/news/t-mobile-restores-network-following-monday-evening-outage/" target="_blank" rel="noopener noreferrer">Data Center Dynamics</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Use three clocks during an incident</h3><p>Track time to technical restoration, time to validated customer recovery and time to a defensible root cause with corrective actions. Communicate each independently so “service restored” is not mistaken for “incident closed.” After recovery, sample real user paths and dependent services rather than trusting only green infrastructure alarms; the customer&#x27;s endpoint is the final monitor.</p></aside></section><section class="section" id="backend-cloud-data"><h2 class="section-head"><span class="section-num">07</span><span class="section-title">Backend / Cloud &amp; Data</span></h2><article class="item"><h3>GitHub Models will shut down completely on July 30, including its playground, catalog, inference API and bring-your-own-key endpoints</h3><p>The retirement applies even to active customers, with GitHub directing model-access projects toward Microsoft Foundry and GitHub-native workflows toward Copilot. The two-day deadline is a reminder that preview and platform services can disappear faster than the applications built on top of them.</p><div class="source"><a href="https://github.blog/changelog/2026-07-01-github-models-is-being-fully-retired-on-july-30-2026/" target="_blank" rel="noopener noreferrer">GitHub Changelog</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Every external service needs an exit test before it needs an exit</h3><p>Inventory endpoints, credentials, model names, quotas, data-retention assumptions and downstream consumers; name a replacement and a date to test it. Put model access behind a small internal interface so applications do not depend directly on one provider&#x27;s request format. A migration runbook is technical debt prevention: it turns a vendor deadline from an emergency into a controlled change.</p></aside></section><section class="section" id="program-pm"><h2 class="section-head"><span class="section-num">08</span><span class="section-title">Program &amp; PM</span></h2><article class="item"><h3>PMI&#x27;s post-conference training turns today toward agile beyond IT, strategic PMOs and high-performing teams</h3><p>Courses beginning July 28 include “Agile Beyond IT: Scaling for Enterprise Success,” “PMI PMO Training for Strategic Impact” and “Developing High Performing Agile Teams.” The combination reinforces that agility is not a software ceremony; it is a way to test assumptions, shorten feedback loops and connect governance to measurable business value across operational work.</p><div class="source"><a href="https://www.pmi.org/-/media/pmi/documents/public/pdf/events/march-2026-full-schedule-with-price-chart.pdf?rev=81145a6980864d4c9288cdede985f41c" target="_blank" rel="noopener noreferrer">PMI Training Schedule</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Run one operational improvement as a measured agile pilot</h3><p>Choose a recurring pain point such as alarm handoff quality or maintenance-window readiness, define a baseline and a two-week outcome, then test one small process change with the technicians who perform the work. Review evidence weekly and either adapt, scale or stop. Keep safety, change authority and rollback controls fixed; make the solution—not the guardrails—the part that evolves.</p></aside></section>
+</main>
+<nav class="edition-nav" aria-label="Adjacent editions"><a href="2026-07-27.html">← Previous edition</a> <a href="2026-07-29.html">Next edition →</a></nav>
+
+  <footer class="foot">
+    <div class="big">DC Daily Brief</div>
+    Covers news through July 28, 2026. · Researched and generated on demand<br>
+    News, context, and learning for Robert · Historical reporting may be superseded.
+  </footer>
+
+</div>
+</body>
+</html>
