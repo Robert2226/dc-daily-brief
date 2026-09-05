@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>DC Daily Brief — Monday, August 3, 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,900&family=Newsreader:opsz,wght@6..72,400;6..72,500&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#F7F5EF; --panel:#FBFAF6; --ink:#1B1A17; --soft-ink:#3B3934;
+    --muted:#6B6862; --rule:#D8D3C7; --rule-strong:#B7B1A3;
+    --accent:#0F766E; --accent-ink:#0B534D; --accent-tint:#EAF1EF;
+    --serif:'Newsreader',Georgia,'Times New Roman',serif;
+    --display:'Fraunces',Georgia,serif;
+    --mono:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#14140F; --panel:#1A1A14; --ink:#ECE8DD; --soft-ink:#CFC9BB;
+      --muted:#948E80; --rule:#2E2D25; --rule-strong:#413F34;
+      --accent:#5FD3C4; --accent-ink:#8FE3D8; --accent-tint:#17241F;
+    }
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0}
+  body{
+    background:var(--bg); color:var(--ink);
+    font-family:var(--serif); font-size:18px; line-height:1.62;
+    -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+  }
+  .paper{max-width:760px; margin:0 auto; padding:40px 26px 72px;}
+
+  /* Masthead */
+  .masthead{text-align:center; padding-bottom:18px;}
+  .masthead .rule-top{border-top:3px solid var(--ink); margin-bottom:14px;}
+  .kicker-top{
+    font-family:var(--mono); font-size:11px; letter-spacing:.32em; text-transform:uppercase;
+    color:var(--muted); margin-bottom:12px;
+  }
+  .masthead h1{
+    font-family:var(--display); font-weight:900; font-size:clamp(38px,9vw,68px);
+    line-height:.94; letter-spacing:-.02em; margin:0 0 10px;
+  }
+  .masthead .tagline{
+    font-family:var(--serif); font-style:italic; color:var(--soft-ink);
+    font-size:16px; max-width:38ch; margin:0 auto 16px;
+  }
+  .dateline{
+    display:flex; justify-content:space-between; align-items:center; gap:12px;
+    border-top:1px solid var(--rule-strong); border-bottom:1px solid var(--rule-strong);
+    padding:8px 2px; font-family:var(--mono); font-size:11px; letter-spacing:.12em;
+    text-transform:uppercase; color:var(--muted);
+  }
+
+  /* Section */
+  .section{padding-top:30px;}
+  .section-head{
+    display:flex; align-items:baseline; gap:12px; margin-bottom:14px;
+    border-bottom:1px solid var(--rule); padding-bottom:8px;
+  }
+  .section-num{
+    font-family:var(--mono); font-weight:700; font-size:12px; color:var(--accent);
+    letter-spacing:.1em;
+  }
+  .section-title{
+    font-family:var(--mono); font-weight:700; font-size:12.5px; letter-spacing:.22em;
+    text-transform:uppercase; color:var(--ink);
+  }
+
+  .item{margin:0 0 20px;}
+  .item h3{
+    font-family:var(--display); font-weight:600; font-size:22px; line-height:1.2;
+    letter-spacing:-.01em; margin:0 0 6px;
+  }
+  .item p{margin:0 0 6px; color:var(--soft-ink);}
+  .item em, .practice em{font-style:italic; color:var(--ink);}
+  .source a{
+    font-family:var(--mono); font-size:11px; letter-spacing:.06em; text-transform:uppercase;
+    color:var(--accent); text-decoration:none; border-bottom:1px solid transparent;
+  }
+  .source a:hover{border-bottom-color:var(--accent);}
+  .source a::before{content:"↗ ";}
+
+  /* In Practice callout */
+  .practice{
+    background:var(--accent-tint); border-left:3px solid var(--accent);
+    padding:14px 18px; margin:6px 0 4px; border-radius:2px;
+  }
+  .practice .label{
+    display:block; font-family:var(--mono); font-size:10.5px; font-weight:700;
+    letter-spacing:.24em; text-transform:uppercase; color:var(--accent-ink); margin-bottom:6px;
+  }
+  .practice p{margin:0; font-size:16.5px; line-height:1.55; color:var(--soft-ink);}
+  .practice strong{color:var(--ink);}
+  .practice .source{margin-top:8px;}
+
+  /* Footer */
+  .foot{
+    margin-top:44px; padding-top:16px; border-top:3px solid var(--ink);
+    font-family:var(--mono); font-size:11px; letter-spacing:.08em; color:var(--muted);
+    text-align:center; line-height:1.8;
+  }
+  .foot .big{font-family:var(--display); font-size:13px; letter-spacing:.2em; text-transform:uppercase; color:var(--ink);}
+
+  a{color:var(--accent); text-underline-offset:3px; overflow-wrap:anywhere}
+  a:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-offset:4px}
+  .site-nav,.edition-nav{display:flex;justify-content:space-between;gap:16px;font-size:16px;margin:0 0 26px}
+  .edition-nav{margin-top:30px}
+  .skip-link{position:absolute;left:-10000px}
+  .skip-link:focus{position:static}
+  .section{scroll-margin-top:20px}
+  .section-head{margin-top:0}
+  .section-title{line-height:1.6;letter-spacing:.12em}
+  .section-nav{display:flex;flex-wrap:wrap;gap:8px 18px;border-bottom:1px solid var(--rule);padding:20px 0;font-size:16px}
+  .takeaways{padding:22px 0 0}
+  .takeaways h2{font-family:var(--display);font-size:26px}
+  .takeaways .item{margin-bottom:16px}
+  .takeaways .item h3{font-size:20px}
+  .takeaways .item p{font-size:17px}
+  .deep-dive{border-top:2px solid var(--accent);margin-top:28px;padding-top:18px}
+  .deep-dive h3{font-family:var(--display);font-size:28px;line-height:1.2;margin:8px 0 18px}
+  .deep-dive h4{font-family:var(--display);font-size:21px;margin:24px 0 8px}
+  .eyebrow{font:12px var(--mono);color:var(--accent);text-transform:uppercase;letter-spacing:.15em}
+  .recall{border:1px solid var(--rule);padding:14px 18px;margin:18px 0}
+  .recall summary{cursor:pointer;font-weight:600}
+  pre{white-space:pre-wrap;overflow-wrap:anywhere;background:var(--accent-tint);padding:16px;font:14px/1.7 var(--mono)}
+  .archive-list{list-style:none;padding:0}
+  .archive-list li{padding:15px 0;border-bottom:1px solid var(--rule)}
+  .archive-meta{display:block;color:var(--muted);font:12px/1.8 var(--mono)}
+  .practice .label{margin-top:0}
+  .source a{font-size:12px;line-height:1.8}
+  .source a[href^="#"]::before{content:"↓ "}
+  .coverage{font-size:14px;color:var(--muted);margin:12px 0 0}
+  hr{border:0;border-top:1px solid var(--rule);margin:22px 0}
+  @media(max-width:480px){.paper{padding:24px 18px 48px}.dateline{flex-wrap:wrap}.section-title{font-size:12px}.section-head{gap:8px}.deep-dive h3{font-size:25px}}
+</style>
+</head>
+<body>
+<div class="paper">
+<a class="skip-link" href="#content">Skip to content</a>
+<nav class="site-nav" aria-label="Main navigation"><a href="../index.html">Latest edition</a><a href="../archive.html">Archive</a></nav>
+
+  <header class="masthead">
+    <div class="rule-top"></div>
+    <div class="kicker-top">Aggregated Morning Brief · No. 021</div>
+    <h1>DC Daily Brief</h1>
+    <p class="tagline">Physical infrastructure, logical systems, and the decisions connecting them.</p>
+    <div class="dateline">
+      <span>Monday · August 3, 2026</span>
+      <span>Curated for Robert</span>
+    </div>
+    <p class="coverage">Covers news through August 3, 2026.</p>
+  </header>
+
+<main id="content">
+<nav class="section-nav" aria-label="Edition sections"><a href="#equinix">Equinix</a><a href="#google">Google</a><a href="#competitors">Competitors</a><a href="#dc-infrastructure">DC Infrastructure</a><a href="#ai-compute-demand">AI &amp; Compute Demand</a><a href="#new-ai-models-releases">New AI Models &amp; Releases</a><a href="#networking">Networking</a><a href="#backend-cloud-data">Backend / Cloud &amp; Data</a><a href="#program-pm">Program &amp; PM</a></nav><section class="section" id="equinix"><h2 class="section-head"><span class="section-num">01</span><span class="section-title">Equinix</span></h2><article class="item"><h3>Equinix&#x27;s second-quarter review becomes a checkpoint on whether AI demand is converting into operating results</h3><p>The company entered the quarter expecting $2.571–$2.611 billion in revenue after reporting double-digit recurring-revenue growth in Q1 and raising its full-year outlook. Beyond the headline number, the useful operator signals are interconnection adds, cabinet and xScale capacity, power availability, churn and recurring-capex guidance—evidence of whether demand is becoming durable deployed load.</p><div class="source"><a href="https://investor.equinix.com/news-events" target="_blank" rel="noopener noreferrer">Equinix Investor Relations</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Translate earnings language into an operating scorecard</h3><p>For each claim—growth, capacity, reliability or efficiency—identify the facility metric that could confirm it: installed versus commissioned MW, sellable cabinets, cross-connect completions, backlog aging, incident minutes or recurring capex per cabinet. Connecting executive language to measurable work helps you explain how daily execution supports the business outcome.</p></aside></section><section class="section" id="google"><h2 class="section-head"><span class="section-num">02</span><span class="section-title">Google</span></h2><article class="item"><h3>Google Cloud makes multi-region Cloud Run deployment easier to operate</h3><p>A new workflow reduces the manual work needed to place a service across regions and route traffic for higher availability. The feature does not eliminate regional dependencies: teams still must choose failure boundaries, validate data-layer behavior and prove that traffic shifts preserve service objectives during a real regional impairment.</p><div class="source"><a href="https://cloud.google.com/blog/" target="_blank" rel="noopener noreferrer">Google Cloud</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Draw the complete failure boundary before calling a service multi-region</h3><p>List compute, database, secrets, artifact registry, DNS, load balancing, observability and the people authorized to fail over. Mark anything still shared across regions, then run a game-day test with an explicit recovery-time target. Redundant compute is only resilient when every critical dependency and decision path survives the same event.</p></aside></section><section class="section" id="competitors"><h2 class="section-head"><span class="section-num">03</span><span class="section-title">Competitors</span></h2><article class="item"><h3>Palantir packages an offline-capable AI data center into a deployable container</h3><p>The mobile system combines Nvidia B300 accelerators with storage, networking and cooling so models can run where a persistent public-cloud connection is unavailable. It moves the competitive question from who owns the biggest centralized campus to who can deliver a supportable slice of compute at the point of need, with logistics, environmental limits and field maintenance becoming part of the product.</p><div class="source"><a href="https://www.techradar.com/pro/palantir-debuts-war-data-center-in-a-container-full-of-nvidias-b300-ai-accelerators-and-open-weight-models" target="_blank" rel="noopener noreferrer">TechRadar Pro</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Treat edge deployment as a lifecycle, not a shipping event</h3><p>Build the readiness checklist around transport, site power, heat rejection, network intermittency, physical security, spares, remote diagnostics, software updates and recovery of failed hardware. Assign an owner and response target for each dependency. A portable system creates value only if the operating model can travel with it.</p></aside></section><section class="section" id="dc-infrastructure"><h2 class="section-head"><span class="section-num">04</span><span class="section-title">DC Infrastructure</span></h2><article class="item"><h3>A former Kentucky uranium site is slated for a 1.8GW AI campus backed by dedicated generation and storage</h3><p>The federal plan pairs the data center with 2GW of natural-gas generation, transmission upgrades and 2.6GW of battery storage at the Paducah site. The scale shows how campus development is becoming an integrated brownfield, power, environmental and grid program rather than a conventional building project.</p><div class="source"><a href="https://apnews.com/article/a4cf07af1b6776971dc5d609c996ca13" target="_blank" rel="noopener noreferrer">Associated Press</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Build one interface register across facility and energy workstreams</h3><p>Track where remediation, utility upgrades, generation, batteries, substations, commissioning and IT load depend on one another. For every interface, record the required input, acceptance evidence, owner and latest safe date. Most megaproject delays occur at boundaries, so manage the handoffs as deliberately as the individual systems.</p></aside></section><section class="section" id="ai-compute-demand"><h2 class="section-head"><span class="section-num">05</span><span class="section-title">AI &amp; Compute Demand</span></h2><article class="item"><h3>Big Tech&#x27;s cumulative AI-infrastructure spend has crossed $1 trillion, with another $745 billion expected in 2026</h3><p>The estimate covers data centers, accelerators and the power behind them across Amazon, Google, Meta and Microsoft. The important capacity signal is not spending alone but how much usable compute emerges after constraints in power delivery, memory, networking, cooling and commissioning are resolved.</p><div class="source"><a href="https://www.tomshardware.com/tech-industry/big-tech/big-tech-spends-more-than-usd1-trillion-on-ai-infrastructure-additional-usd745-billion-expected-to-be-added-to-the-figure-in-2026-alone" target="_blank" rel="noopener noreferrer">Tom&#x27;s Hardware</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Report capacity in stages, not one headline number</h3><p>Separate announced, contracted, under construction, mechanically complete, commissioned and customer-available MW or accelerator capacity. Attach confidence, constraint and forecast dates to each stage. This prevents money committed or buildings underway from being mistaken for production capacity that operations can actually support.</p></aside></section><section class="section" id="new-ai-models-releases"><h2 class="section-head"><span class="section-num">06</span><span class="section-title">New AI Models &amp; Releases</span></h2><article class="item"><h3>Kimi K3&#x27;s open-weight release is testing whether model access can scale as fast as model capability</h3><p>Moonshot AI paused new subscriptions after demand overwhelmed capacity, even as K3 gained attention for frontier-level coding performance and downloadable weights. The episode separates two kinds of availability: users may possess the model weights, yet the provider&#x27;s hosted service can still fail to meet demand.</p><div class="source"><a href="https://apnews.com/article/4c66a2e0f557ce79d3cc2d769c9a6226" target="_blank" rel="noopener noreferrer">Associated Press</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Evaluate a model with a deployment-options matrix</h3><p>Compare hosted API, private cloud and self-hosted paths across latency, capacity guarantees, data control, hardware needs, update cadence and support. Add a fallback for provider saturation or version withdrawal. Model quality starts the decision; operational fit determines whether the capability is dependable enough for real work.</p></aside></section><section class="section" id="networking"><h2 class="section-head"><span class="section-num">07</span><span class="section-title">Networking</span></h2><article class="item"><h3>Cisco is using a championship venue as a live test of high-density, temporary-demand networking</h3><p>Its R&amp;A partnership will deploy nearly 1,000 wireless access points, including Wi-Fi 7 in priority areas, alongside the network for a new headquarters. Event environments expose the same operational disciplines as a data hall: forecast burst demand, segment critical traffic, observe congestion and prepare rapid rollback while thousands of users are present.</p><div class="source"><a href="https://newsroom.cisco.com/c/r/newsroom/en/us/a/y2026/m07/the-r-a-partners-with-cisco-to-deliver-critical-networking-infrastructure-to-major-championships-and-new-global-headquarters.html" target="_blank" rel="noopener noreferrer">Cisco</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Plan for the peak minute, then protect the critical path</h3><p>Identify the highest-concurrency window, model client and application demand, reserve capacity for operational systems and define thresholds that trigger traffic controls. During the event, correlate user experience with RF, switch and uplink telemetry. Designing for the average hides the exact moment the network matters most.</p></aside></section><section class="section" id="backend-cloud-data"><h2 class="section-head"><span class="section-num">08</span><span class="section-title">Backend / Cloud &amp; Data</span></h2><article class="item"><h3>Azure PostgreSQL adds point-cloud support while broadening its managed database baseline</h3><p>The July maintenance release supports the `pg_pointcloud` extension on PostgreSQL 14–18, enabling efficient storage and analysis of spatial point data inside the managed service. New extensions expand capability but also add operational questions around upgrade compatibility, backup and restore, query cost and whether specialized workloads should share a production database.</p><div class="source"><a href="https://learn.microsoft.com/en-us/azure/postgresql/release-notes-maintenance/2026-july" target="_blank" rel="noopener noreferrer">Microsoft Learn</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Qualify an extension like any other production dependency</h3><p>Record supported engine versions, installation rights, backup behavior, replication, performance limits, upgrade path and a removal plan. Test representative data and restore it in a nonproduction environment before approval. “Managed database” reduces infrastructure work; it does not transfer responsibility for workload compatibility.</p></aside></section><section class="section" id="program-pm"><h2 class="section-head"><span class="section-num">09</span><span class="section-title">Program &amp; PM</span></h2><article class="item"><h3>The refreshed PMP exam now tests value delivery and decision-making in more realistic scenarios</h3><p>PMI&#x27;s July update sharpens the focus on the skills and mindsets used to produce meaningful outcomes, reinforcing that candidates must connect delivery choices to strategy rather than memorize isolated process steps. For an operations engineer, incident response, maintenance and capacity projects already provide strong raw material for practicing that reasoning.</p><div class="source"><a href="https://www.pmi.org/certifications/project-management-pmp/new-exam" target="_blank" rel="noopener noreferrer">Project Management Institute</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Turn one work event into a PMP-style scenario each day</h3><p>Write the context, stakeholders, constraint, risk and desired value, then ask what the project leader should do first and why. Compare the best action with what actually happened and note the principle involved. This converts daily operating experience into situational judgment instead of studying terminology in isolation.</p></aside></section>
+</main>
+<nav class="edition-nav" aria-label="Adjacent editions"><a href="2026-08-02.html">← Previous edition</a> <a href="2026-08-07.html">Next edition →</a></nav>
+
+  <footer class="foot">
+    <div class="big">DC Daily Brief</div>
+    Covers news through August 3, 2026. · Researched and generated on demand<br>
+    News, context, and learning for Robert · Historical reporting may be superseded.
+  </footer>
+
+</div>
+</body>
+</html>

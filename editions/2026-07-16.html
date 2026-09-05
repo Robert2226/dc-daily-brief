@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>DC Daily Brief — Thursday, July 16, 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,900&family=Newsreader:opsz,wght@6..72,400;6..72,500&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#F7F5EF; --panel:#FBFAF6; --ink:#1B1A17; --soft-ink:#3B3934;
+    --muted:#6B6862; --rule:#D8D3C7; --rule-strong:#B7B1A3;
+    --accent:#0F766E; --accent-ink:#0B534D; --accent-tint:#EAF1EF;
+    --serif:'Newsreader',Georgia,'Times New Roman',serif;
+    --display:'Fraunces',Georgia,serif;
+    --mono:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#14140F; --panel:#1A1A14; --ink:#ECE8DD; --soft-ink:#CFC9BB;
+      --muted:#948E80; --rule:#2E2D25; --rule-strong:#413F34;
+      --accent:#5FD3C4; --accent-ink:#8FE3D8; --accent-tint:#17241F;
+    }
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0}
+  body{
+    background:var(--bg); color:var(--ink);
+    font-family:var(--serif); font-size:18px; line-height:1.62;
+    -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+  }
+  .paper{max-width:760px; margin:0 auto; padding:40px 26px 72px;}
+
+  /* Masthead */
+  .masthead{text-align:center; padding-bottom:18px;}
+  .masthead .rule-top{border-top:3px solid var(--ink); margin-bottom:14px;}
+  .kicker-top{
+    font-family:var(--mono); font-size:11px; letter-spacing:.32em; text-transform:uppercase;
+    color:var(--muted); margin-bottom:12px;
+  }
+  .masthead h1{
+    font-family:var(--display); font-weight:900; font-size:clamp(38px,9vw,68px);
+    line-height:.94; letter-spacing:-.02em; margin:0 0 10px;
+  }
+  .masthead .tagline{
+    font-family:var(--serif); font-style:italic; color:var(--soft-ink);
+    font-size:16px; max-width:38ch; margin:0 auto 16px;
+  }
+  .dateline{
+    display:flex; justify-content:space-between; align-items:center; gap:12px;
+    border-top:1px solid var(--rule-strong); border-bottom:1px solid var(--rule-strong);
+    padding:8px 2px; font-family:var(--mono); font-size:11px; letter-spacing:.12em;
+    text-transform:uppercase; color:var(--muted);
+  }
+
+  /* Section */
+  .section{padding-top:30px;}
+  .section-head{
+    display:flex; align-items:baseline; gap:12px; margin-bottom:14px;
+    border-bottom:1px solid var(--rule); padding-bottom:8px;
+  }
+  .section-num{
+    font-family:var(--mono); font-weight:700; font-size:12px; color:var(--accent);
+    letter-spacing:.1em;
+  }
+  .section-title{
+    font-family:var(--mono); font-weight:700; font-size:12.5px; letter-spacing:.22em;
+    text-transform:uppercase; color:var(--ink);
+  }
+
+  .item{margin:0 0 20px;}
+  .item h3{
+    font-family:var(--display); font-weight:600; font-size:22px; line-height:1.2;
+    letter-spacing:-.01em; margin:0 0 6px;
+  }
+  .item p{margin:0 0 6px; color:var(--soft-ink);}
+  .item em, .practice em{font-style:italic; color:var(--ink);}
+  .source a{
+    font-family:var(--mono); font-size:11px; letter-spacing:.06em; text-transform:uppercase;
+    color:var(--accent); text-decoration:none; border-bottom:1px solid transparent;
+  }
+  .source a:hover{border-bottom-color:var(--accent);}
+  .source a::before{content:"↗ ";}
+
+  /* In Practice callout */
+  .practice{
+    background:var(--accent-tint); border-left:3px solid var(--accent);
+    padding:14px 18px; margin:6px 0 4px; border-radius:2px;
+  }
+  .practice .label{
+    display:block; font-family:var(--mono); font-size:10.5px; font-weight:700;
+    letter-spacing:.24em; text-transform:uppercase; color:var(--accent-ink); margin-bottom:6px;
+  }
+  .practice p{margin:0; font-size:16.5px; line-height:1.55; color:var(--soft-ink);}
+  .practice strong{color:var(--ink);}
+  .practice .source{margin-top:8px;}
+
+  /* Footer */
+  .foot{
+    margin-top:44px; padding-top:16px; border-top:3px solid var(--ink);
+    font-family:var(--mono); font-size:11px; letter-spacing:.08em; color:var(--muted);
+    text-align:center; line-height:1.8;
+  }
+  .foot .big{font-family:var(--display); font-size:13px; letter-spacing:.2em; text-transform:uppercase; color:var(--ink);}
+
+  a{color:var(--accent); text-underline-offset:3px; overflow-wrap:anywhere}
+  a:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-offset:4px}
+  .site-nav,.edition-nav{display:flex;justify-content:space-between;gap:16px;font-size:16px;margin:0 0 26px}
+  .edition-nav{margin-top:30px}
+  .skip-link{position:absolute;left:-10000px}
+  .skip-link:focus{position:static}
+  .section{scroll-margin-top:20px}
+  .section-head{margin-top:0}
+  .section-title{line-height:1.6;letter-spacing:.12em}
+  .section-nav{display:flex;flex-wrap:wrap;gap:8px 18px;border-bottom:1px solid var(--rule);padding:20px 0;font-size:16px}
+  .takeaways{padding:22px 0 0}
+  .takeaways h2{font-family:var(--display);font-size:26px}
+  .takeaways .item{margin-bottom:16px}
+  .takeaways .item h3{font-size:20px}
+  .takeaways .item p{font-size:17px}
+  .deep-dive{border-top:2px solid var(--accent);margin-top:28px;padding-top:18px}
+  .deep-dive h3{font-family:var(--display);font-size:28px;line-height:1.2;margin:8px 0 18px}
+  .deep-dive h4{font-family:var(--display);font-size:21px;margin:24px 0 8px}
+  .eyebrow{font:12px var(--mono);color:var(--accent);text-transform:uppercase;letter-spacing:.15em}
+  .recall{border:1px solid var(--rule);padding:14px 18px;margin:18px 0}
+  .recall summary{cursor:pointer;font-weight:600}
+  pre{white-space:pre-wrap;overflow-wrap:anywhere;background:var(--accent-tint);padding:16px;font:14px/1.7 var(--mono)}
+  .archive-list{list-style:none;padding:0}
+  .archive-list li{padding:15px 0;border-bottom:1px solid var(--rule)}
+  .archive-meta{display:block;color:var(--muted);font:12px/1.8 var(--mono)}
+  .practice .label{margin-top:0}
+  .source a{font-size:12px;line-height:1.8}
+  .source a[href^="#"]::before{content:"↓ "}
+  .coverage{font-size:14px;color:var(--muted);margin:12px 0 0}
+  hr{border:0;border-top:1px solid var(--rule);margin:22px 0}
+  @media(max-width:480px){.paper{padding:24px 18px 48px}.dateline{flex-wrap:wrap}.section-title{font-size:12px}.section-head{gap:8px}.deep-dive h3{font-size:25px}}
+</style>
+</head>
+<body>
+<div class="paper">
+<a class="skip-link" href="#content">Skip to content</a>
+<nav class="site-nav" aria-label="Main navigation"><a href="../index.html">Latest edition</a><a href="../archive.html">Archive</a></nav>
+
+  <header class="masthead">
+    <div class="rule-top"></div>
+    <div class="kicker-top">Aggregated Morning Brief · No. 005</div>
+    <h1>DC Daily Brief</h1>
+    <p class="tagline">Physical infrastructure, logical systems, and the decisions connecting them.</p>
+    <div class="dateline">
+      <span>Thursday · July 16, 2026</span>
+      <span>Curated for Robert</span>
+    </div>
+    <p class="coverage">Covers news through July 14–16, 2026.</p>
+  </header>
+
+<main id="content">
+<nav class="section-nav" aria-label="Edition sections"><a href="#equinix">Equinix</a><a href="#competitors">Competitors</a><a href="#dc-infrastructure">DC Infrastructure</a><a href="#ai-compute-demand">AI &amp; Compute Demand</a><a href="#new-ai-models-releases">New AI Models &amp; Releases</a><a href="#networking">Networking</a><a href="#backend-cloud-data">Backend / Cloud &amp; Data</a><a href="#program-pm">Program &amp; PM</a></nav><section class="section" id="equinix"><h2 class="section-head"><span class="section-num">01</span><span class="section-title">Equinix</span></h2><article class="item"><h3>Cisco-NVIDIA Secure AI Factories go live across the footprint</h3><p>Equinix is deploying the Cisco Secure AI Factory with NVIDIA across its global colo sites, pairing NVIDIA reference architectures and Cisco networking/security with Equinix power, cooling, and interconnection into a standardized &quot;AI factory&quot; blueprint. Presidio has also stood up the P.A.T.H. Lab on the same stack — a production-grade sandbox for enterprises to test AI deployments before committing capital.</p><div class="source"><a href="https://newsroom.equinix.com/2026-06-16-Equinix-Collaborates-with-Cisco-and-NVIDIA-to-Deploy-Secure-AI-Factories-Across-Global-Data-Center-Footprint" target="_blank" rel="noopener noreferrer">Equinix Newsroom</a></div></article>
+<article class="item"><h3>Raised guidance, 11th straight dividend hike, Q2 call set for July 29</h3><p>Equinix stock climbed on AI-driven demand as the company lifted full-year 2026 revenue guidance to roughly $10.14–$10.24 billion. Q2 results land at the July 29 earnings call, the first since CBO Jon Lin&#x27;s July 18 departure.</p><div class="source"><a href="https://www.fxleaders.com/news/2026/07/11/equinix-eqix-stock-rises-as-ai-data-center-demand-fuels-revenue-growth/" target="_blank" rel="noopener noreferrer">FX Leaders</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · What a &quot;reference architecture&quot; actually buys a PM</h3><p>A standardized blueprint (NVIDIA&#x27;s design + Cisco&#x27;s networking + Equinix&#x27;s facility) means the integration risks — cabling, power draw, cooling, firmware compatibility — were already solved once and are being repeated, not re-invented per customer. On a project plan, that shows up as a shorter risk register and a compressed schedule for the &quot;design&quot; phase, because you&#x27;re executing a known pattern instead of doing discovery. Recognizing when you&#x27;re buying a reference architecture vs. a custom build is the single fastest way to sanity-check a vendor&#x27;s proposed timeline.</p></aside></section><section class="section" id="competitors"><h2 class="section-head"><span class="section-num">02</span><span class="section-title">Competitors</span></h2><article class="item"><h3>CoreWeave locks in 526MW at Helios, backlog nears $100B</h3><p>Galaxy Digital delivered Phase I (133MW critical IT load) of the Helios, Texas campus — a former Bitcoin mine — to CoreWeave under a 15-year lease, with Phases II and III set to bring the site to 526MW by 2028. CoreWeave has now signed over $40B in new commitments, pushing its contracted backlog toward $100B, even as shares wobbled on a Bloomberg report that Meta plans to expand into cloud infrastructure.</p><div class="source"><a href="https://www.prnewswire.com/news-releases/galaxy-completes-phase-i-of-its-helios-data-center-campus-delivering-133-megawatts-of-critical-it-load-to-coreweave-302818664.html" target="_blank" rel="noopener noreferrer">PR Newswire</a></div></article>
+<article class="item"><h3>Digital Realty leans on high-density colo for AI tenants</h3><p>Digital Realty is positioning its High-Density Colocation product as the fast path for AI training/inference customers who need rapid time-to-revenue without building their own shell.</p><div class="source"><a href="https://www.kavout.com/market-lens/how-is-digital-realty-capitalizing-on-the-ai-data-center-boom" target="_blank" rel="noopener noreferrer">Kavout</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Sale-leaseback logic, data center edition</h3><p>Galaxy didn&#x27;t sell Helios — it converted a stranded asset (an idle Bitcoin mine with grid interconnection already secured) into contracted, investment-grade revenue via a long-term lease to a single tenant. That&#x27;s the same move as a company selling and leasing back its headquarters: you give up ownership upside in exchange for locking in cash flow and offloading operating risk. When you see a &quot;15-year lease&quot; attached to a data center deal, read it as project financing dressed up as real estate.</p></aside></section><section class="section" id="dc-infrastructure"><h2 class="section-head"><span class="section-num">03</span><span class="section-title">DC Infrastructure</span></h2><article class="item"><h3>Virginia&#x27;s data center power tax kicks in</h3><p>Effective July 1, Virginia now charges data centers $0.011 per kWh consumed, projected to raise roughly $600M for the state&#x27;s general fund over two years — a direct-assignment move to make the sector fund its own grid impact rather than spreading the cost across all ratepayers.</p><div class="source"><a href="https://www.datacenterknowledge.com/data-center-construction/new-data-center-developments-july-2026" target="_blank" rel="noopener noreferrer">Data Center Knowledge</a></div></article>
+<article class="item"><h3>Monterey Park, CA bans data centers outright</h3><p>Voters approved a ballot measure prohibiting new data centers within city limits with 86% support — the first voter-enacted municipal ban of its kind in the US.</p><div class="source"><a href="https://www.datacenterknowledge.com/data-center-construction/new-data-center-developments-july-2026" target="_blank" rel="noopener noreferrer">Data Center Knowledge</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Social license to operate</h3><p>Permits and financing aren&#x27;t the only gate on a project — communities can revoke consent after the fact, and an 86% referendum margin is a loud signal that &quot;we followed the zoning process&quot; isn&#x27;t the same as &quot;the stakeholders are actually on board.&quot; For site selection (xScale or otherwise), community relations and public communication belong in the risk register next to power and permitting, not as an afterthought — a ballot initiative can kill a project faster than a failed environmental review.</p></aside></section><section class="section" id="ai-compute-demand"><h2 class="section-head"><span class="section-num">04</span><span class="section-title">AI &amp; Compute Demand</span></h2><article class="item"><h3>Gartner: data center power demand up 26% in 2026</h3><p>Global data center electricity consumption is set to hit 565 TWh in 2026, up from 447 TWh, with AI-optimized servers alone jumping 84% (95→175 TWh) and set to overtake conventional server power draw by 2027.</p><div class="source"><a href="https://www.gartner.com/en/newsroom/press-releases/2026-06-10-gartner-says-data-center-electricity-demand-to-grow-26-percent-in-2026" target="_blank" rel="noopener noreferrer">Gartner</a></div></article>
+<article class="item"><h3>$130B in projects stalled — not for lack of chips or cash</h3><p>At least 75 US data center projects have been postponed or canceled this year purely on power availability; the bottleneck is grid interconnection and equipment, not funding.</p><div class="source"><a href="https://www.helpnetsecurity.com/2026/07/07/ai-data-centers-demand-expansion/" target="_blank" rel="noopener noreferrer">Help Net Security</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · The real long-lead item is steel and copper, not silicon</h3><p>Large power transformers and switchgear routinely run 2–5 year lead times — longer than it takes to design, fund, and permit the building around them. On any schedule with a critical-path component like this, the lesson is the same one this industry is learning at scale: identify your longest-lead procurement item on day one and order it before the design is even finished, because the schedule float always runs out on the thing you didn&#x27;t order early.</p></aside></section><section class="section" id="new-ai-models-releases"><h2 class="section-head"><span class="section-num">05</span><span class="section-title">New AI Models &amp; Releases</span></h2><article class="item"><h3>Three frontier labs, three launches, one month</h3><p>Anthropic&#x27;s Claude Sonnet 5, OpenAI&#x27;s GPT-5.6 family (Sol, Terra, Luna tiers), and xAI&#x27;s Grok 4.5 all shipped within weeks of each other in June–July, with Sol positioned as the flagship agentic model for coding, biology, and cybersecurity tasks.</p><div class="source"><a href="https://llm-stats.com/llm-updates" target="_blank" rel="noopener noreferrer">LLM Stats</a></div></article>
+<article class="item"><h3>Open-weight wave keeps pace</h3><p>GLM-5.2, DeepSeek V4, and Qwen 3.6 all launched around the same window, alongside Meta&#x27;s Muse Spark 1.1 — reinforcing that a new model now ships roughly every 3 days.</p><div class="source"><a href="https://www.buildfastwithai.com/blogs/best-ai-models-july-2026-ranked" target="_blank" rel="noopener noreferrer">BuildFastWithAI</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Why labs ship three sizes at once, not one</h3><p>Sol/Terra/Luna-style tiering isn&#x27;t marketing filler — it&#x27;s a deliberate cost/latency/capability ladder, the same logic as good/better/best service tiers in a vendor contract. The flagship (Sol) wins benchmarks but costs and latency-taxes every call; the smaller tiers exist because most production workloads don&#x27;t need frontier reasoning for every request. Picking a tier is a build-vs-buy-style tradeoff you make per use case, not a one-time &quot;which model is best&quot; decision.</p></aside></section><section class="section" id="networking"><h2 class="section-head"><span class="section-num">06</span><span class="section-title">Networking</span></h2><article class="item"><h3>Cisco Live Protect ends the patch-and-pray cycle for Nexus</h3><p>Cisco detailed Live Protect&#x27;s real-time threat mitigation for Nexus switching infrastructure, shielding known vulnerabilities the moment they&#x27;re disclosed instead of waiting for a maintenance window to apply a patch.</p><div class="source"><a href="https://www.networkworld.com/article/4191767/cisco-details-live-protects-real-time-threat-mitigation-capabilities.html" target="_blank" rel="noopener noreferrer">Network World</a></div></article>
+<article class="item"><h3>Another Cisco SD-WAN zero-day, exploited before the fix shipped</h3><p>SecurityWeek reports attackers exploited a Cisco SD-WAN zero-day for months before a patch was available, the latest in a steady drumbeat of Cisco vulnerability disclosures this year.</p><div class="source"><a href="https://www.securityweek.com/cisco-patches-another-sd-wan-zero-day-exploited-in-attacks/" target="_blank" rel="noopener noreferrer">SecurityWeek</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Virtual patching vs. the maintenance window</h3><p>Traditional patching forces a tradeoff between security (patch now, risk an outage) and availability (wait for a change window, stay exposed). Live Protect-style &quot;virtual patching&quot; — shielding the vulnerable code path at the network layer without touching the device&#x27;s running config — breaks that tradeoff, which is exactly why it matters for critical-power/DCIM environments where an unplanned reboot has real operational cost. It&#x27;s the network-security version of a redundant power path: you fix the fault without dropping the load.</p></aside></section><section class="section" id="backend-cloud-data"><h2 class="section-head"><span class="section-num">07</span><span class="section-title">Backend / Cloud &amp; Data</span></h2><article class="item"><h3>KubeCon Japan lands July 29–30; CNCF accepts HAMi for GPU fragmentation</h3><p>KubeCon + CloudNativeCon Japan 2026 hits Yokohama focused on AI, GPU orchestration, and platform engineering, while CNCF&#x27;s TOC voted HAMi into incubation — a project aimed squarely at GPU fragmentation across shared clusters.</p><div class="source"><a href="https://www.cncf.io/projects/" target="_blank" rel="noopener noreferrer">CNCF</a></div></article>
+<article class="item"><h3>Accenture breach exposes source code and access keys</h3><p>A threat actor claims roughly 35GB stolen from Accenture in an early-July intrusion, including source code and access keys that could let attackers map internal application logic and move through cloud storage and repos.</p><div class="source"><a href="https://www.cybersecuritydive.com/news/accenture-data-breach-access-keys-source-code/824694/" target="_blank" rel="noopener noreferrer">Cybersecurity Dive</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · GPU fragmentation is a bin-packing problem</h3><p>When workloads request whole GPUs but only use a fraction of one, the scheduler ends up with dozens of partially-used cards it can&#x27;t reassign to new jobs — capacity that&#x27;s technically free but effectively stranded. It&#x27;s the compute equivalent of a rack that&#x27;s fully powered but half-empty on U-space: the constraint isn&#x27;t total capacity, it&#x27;s how finely you can subdivide and reallocate it. HAMi and tools like it exist to make GPUs shareable at sub-card granularity, the same way virtualization made a whole server shareable at sub-server granularity twenty years ago.</p></aside></section><section class="section" id="program-pm"><h2 class="section-head"><span class="section-num">08</span><span class="section-title">Program &amp; PM</span></h2><article class="item"><h3>The new PMP exam is live — and it&#x27;s the biggest ECO shift in years</h3><p>PMI&#x27;s overhauled exam launched July 9, 2026: Business Environment triples from 8% to 26% of the exam while People (42%→33%) and Process (50%→41%) both shrink; new testable topics include AI in project management, sustainability, and value delivery; new question formats (case sets, drag-and-drop, graphic interpretation) join the exam; the eligible-experience lookback window extends from 8 to 10 years; and the exam grows from 230 to 240 minutes with 10 unscored pretest questions instead of 5.</p><div class="source"><a href="https://www.pmi.org/certifications/project-management-pmp/new-exam" target="_blank" rel="noopener noreferrer">PMI</a></div></article>
+<article class="item"><h3>PMI/GPM research: sustainability predicts project success, most PMOs can&#x27;t execute on it</h3><p>New joint research finds sustainability integration is the strongest predictor of project success PMI has measured, but most organizations lack the process maturity to actually act on it.</p><div class="source"><a href="https://www.pmi.org/whats-next" target="_blank" rel="noopener noreferrer">PMI</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · PMBOK 8&#x27;s six principles, and why they replaced twelve</h3><p>PMBOK 7 gave you 12 principles to hold in your head; PMBOK 8 collapses them to six more actionable guidelines — the intent is fewer, sharper heuristics you can actually apply mid-decision instead of a checklist you consult afterward. Pair that with the new &quot;case set&quot; question format (a shared scenario with multiple linked questions, versus one isolated prompt) and the exam is testing whether you can carry context across a sequence of decisions the way you would on a real, evolving project — not whether you can recall an isolated fact. For prep starting today: drill case-set-style practice questions specifically, since they&#x27;re new and under-represented in older question banks.</p></aside></section>
+</main>
+<nav class="edition-nav" aria-label="Adjacent editions"><a href="2026-07-15.html">← Previous edition</a> <a href="2026-07-17.html">Next edition →</a></nav>
+
+  <footer class="foot">
+    <div class="big">DC Daily Brief</div>
+    Covers news through July 14–16, 2026. · Researched and generated on demand<br>
+    News, context, and learning for Robert · Historical reporting may be superseded.
+  </footer>
+
+</div>
+</body>
+</html>

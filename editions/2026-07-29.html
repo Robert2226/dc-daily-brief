@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>DC Daily Brief — Wednesday, July 29, 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,900&family=Newsreader:opsz,wght@6..72,400;6..72,500&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#F7F5EF; --panel:#FBFAF6; --ink:#1B1A17; --soft-ink:#3B3934;
+    --muted:#6B6862; --rule:#D8D3C7; --rule-strong:#B7B1A3;
+    --accent:#0F766E; --accent-ink:#0B534D; --accent-tint:#EAF1EF;
+    --serif:'Newsreader',Georgia,'Times New Roman',serif;
+    --display:'Fraunces',Georgia,serif;
+    --mono:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#14140F; --panel:#1A1A14; --ink:#ECE8DD; --soft-ink:#CFC9BB;
+      --muted:#948E80; --rule:#2E2D25; --rule-strong:#413F34;
+      --accent:#5FD3C4; --accent-ink:#8FE3D8; --accent-tint:#17241F;
+    }
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0}
+  body{
+    background:var(--bg); color:var(--ink);
+    font-family:var(--serif); font-size:18px; line-height:1.62;
+    -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+  }
+  .paper{max-width:760px; margin:0 auto; padding:40px 26px 72px;}
+
+  /* Masthead */
+  .masthead{text-align:center; padding-bottom:18px;}
+  .masthead .rule-top{border-top:3px solid var(--ink); margin-bottom:14px;}
+  .kicker-top{
+    font-family:var(--mono); font-size:11px; letter-spacing:.32em; text-transform:uppercase;
+    color:var(--muted); margin-bottom:12px;
+  }
+  .masthead h1{
+    font-family:var(--display); font-weight:900; font-size:clamp(38px,9vw,68px);
+    line-height:.94; letter-spacing:-.02em; margin:0 0 10px;
+  }
+  .masthead .tagline{
+    font-family:var(--serif); font-style:italic; color:var(--soft-ink);
+    font-size:16px; max-width:38ch; margin:0 auto 16px;
+  }
+  .dateline{
+    display:flex; justify-content:space-between; align-items:center; gap:12px;
+    border-top:1px solid var(--rule-strong); border-bottom:1px solid var(--rule-strong);
+    padding:8px 2px; font-family:var(--mono); font-size:11px; letter-spacing:.12em;
+    text-transform:uppercase; color:var(--muted);
+  }
+
+  /* Section */
+  .section{padding-top:30px;}
+  .section-head{
+    display:flex; align-items:baseline; gap:12px; margin-bottom:14px;
+    border-bottom:1px solid var(--rule); padding-bottom:8px;
+  }
+  .section-num{
+    font-family:var(--mono); font-weight:700; font-size:12px; color:var(--accent);
+    letter-spacing:.1em;
+  }
+  .section-title{
+    font-family:var(--mono); font-weight:700; font-size:12.5px; letter-spacing:.22em;
+    text-transform:uppercase; color:var(--ink);
+  }
+
+  .item{margin:0 0 20px;}
+  .item h3{
+    font-family:var(--display); font-weight:600; font-size:22px; line-height:1.2;
+    letter-spacing:-.01em; margin:0 0 6px;
+  }
+  .item p{margin:0 0 6px; color:var(--soft-ink);}
+  .item em, .practice em{font-style:italic; color:var(--ink);}
+  .source a{
+    font-family:var(--mono); font-size:11px; letter-spacing:.06em; text-transform:uppercase;
+    color:var(--accent); text-decoration:none; border-bottom:1px solid transparent;
+  }
+  .source a:hover{border-bottom-color:var(--accent);}
+  .source a::before{content:"↗ ";}
+
+  /* In Practice callout */
+  .practice{
+    background:var(--accent-tint); border-left:3px solid var(--accent);
+    padding:14px 18px; margin:6px 0 4px; border-radius:2px;
+  }
+  .practice .label{
+    display:block; font-family:var(--mono); font-size:10.5px; font-weight:700;
+    letter-spacing:.24em; text-transform:uppercase; color:var(--accent-ink); margin-bottom:6px;
+  }
+  .practice p{margin:0; font-size:16.5px; line-height:1.55; color:var(--soft-ink);}
+  .practice strong{color:var(--ink);}
+  .practice .source{margin-top:8px;}
+
+  /* Footer */
+  .foot{
+    margin-top:44px; padding-top:16px; border-top:3px solid var(--ink);
+    font-family:var(--mono); font-size:11px; letter-spacing:.08em; color:var(--muted);
+    text-align:center; line-height:1.8;
+  }
+  .foot .big{font-family:var(--display); font-size:13px; letter-spacing:.2em; text-transform:uppercase; color:var(--ink);}
+
+  a{color:var(--accent); text-underline-offset:3px; overflow-wrap:anywhere}
+  a:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-offset:4px}
+  .site-nav,.edition-nav{display:flex;justify-content:space-between;gap:16px;font-size:16px;margin:0 0 26px}
+  .edition-nav{margin-top:30px}
+  .skip-link{position:absolute;left:-10000px}
+  .skip-link:focus{position:static}
+  .section{scroll-margin-top:20px}
+  .section-head{margin-top:0}
+  .section-title{line-height:1.6;letter-spacing:.12em}
+  .section-nav{display:flex;flex-wrap:wrap;gap:8px 18px;border-bottom:1px solid var(--rule);padding:20px 0;font-size:16px}
+  .takeaways{padding:22px 0 0}
+  .takeaways h2{font-family:var(--display);font-size:26px}
+  .takeaways .item{margin-bottom:16px}
+  .takeaways .item h3{font-size:20px}
+  .takeaways .item p{font-size:17px}
+  .deep-dive{border-top:2px solid var(--accent);margin-top:28px;padding-top:18px}
+  .deep-dive h3{font-family:var(--display);font-size:28px;line-height:1.2;margin:8px 0 18px}
+  .deep-dive h4{font-family:var(--display);font-size:21px;margin:24px 0 8px}
+  .eyebrow{font:12px var(--mono);color:var(--accent);text-transform:uppercase;letter-spacing:.15em}
+  .recall{border:1px solid var(--rule);padding:14px 18px;margin:18px 0}
+  .recall summary{cursor:pointer;font-weight:600}
+  pre{white-space:pre-wrap;overflow-wrap:anywhere;background:var(--accent-tint);padding:16px;font:14px/1.7 var(--mono)}
+  .archive-list{list-style:none;padding:0}
+  .archive-list li{padding:15px 0;border-bottom:1px solid var(--rule)}
+  .archive-meta{display:block;color:var(--muted);font:12px/1.8 var(--mono)}
+  .practice .label{margin-top:0}
+  .source a{font-size:12px;line-height:1.8}
+  .source a[href^="#"]::before{content:"↓ "}
+  .coverage{font-size:14px;color:var(--muted);margin:12px 0 0}
+  hr{border:0;border-top:1px solid var(--rule);margin:22px 0}
+  @media(max-width:480px){.paper{padding:24px 18px 48px}.dateline{flex-wrap:wrap}.section-title{font-size:12px}.section-head{gap:8px}.deep-dive h3{font-size:25px}}
+</style>
+</head>
+<body>
+<div class="paper">
+<a class="skip-link" href="#content">Skip to content</a>
+<nav class="site-nav" aria-label="Main navigation"><a href="../index.html">Latest edition</a><a href="../archive.html">Archive</a></nav>
+
+  <header class="masthead">
+    <div class="rule-top"></div>
+    <div class="kicker-top">Aggregated Morning Brief · No. 017</div>
+    <h1>DC Daily Brief</h1>
+    <p class="tagline">Physical infrastructure, logical systems, and the decisions connecting them.</p>
+    <div class="dateline">
+      <span>Wednesday · July 29, 2026</span>
+      <span>Curated for Robert</span>
+    </div>
+    <p class="coverage">Covers news through July 29, 2026.</p>
+  </header>
+
+<main id="content">
+<nav class="section-nav" aria-label="Edition sections"><a href="#equinix">Equinix</a><a href="#google">Google</a><a href="#competitors">Competitors</a><a href="#dc-infrastructure">DC Infrastructure</a><a href="#ai-compute-demand">AI &amp; Compute Demand</a><a href="#new-ai-models-releases">New AI Models &amp; Releases</a><a href="#networking">Networking</a><a href="#backend-cloud-data">Backend / Cloud &amp; Data</a><a href="#program-pm">Program &amp; PM</a></nav><section class="section" id="equinix"><h2 class="section-head"><span class="section-num">01</span><span class="section-title">Equinix</span></h2><article class="item"><h3>Equinix&#x27;s 500,000 interconnections show why the operating product is increasingly the ecosystem, not just the cabinet</h3><p>Equinix says its customers now use more than half a million direct physical and virtual connections across 280 data centers, representing nearly one-third of the global interconnection market. As distributed AI and cloud architectures multiply the number of dependencies between facilities, carriers and platforms, the value customers experience depends as much on predictable cross-connect delivery and network-path health as it does on space and power.</p><div class="source"><a href="https://blog.equinix.com/blog/2026/02/17/what-500000-interconnections-reveal-about-the-future-of-enterprise-connectivity/" target="_blank" rel="noopener noreferrer">Equinix Interconnections</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Manage the service chain customers actually experience</h3><p>For a cross-connect or virtual connection, map the full path from order acceptance through design, materials, installation, testing, documentation and customer turn-up. Give every handoff an owner, entry criteria and target duration, then measure first-pass success—not merely tickets closed. This is program thinking at operations scale: improving the interfaces between teams often produces more customer value than optimizing one team&#x27;s task in isolation.</p></aside></section><section class="section" id="google"><h2 class="section-head"><span class="section-num">02</span><span class="section-title">Google</span></h2><article class="item"><h3>Google&#x27;s Q2 makes infrastructure execution central to its growth story</h3><p>Alphabet reported $119.8 billion in quarterly revenue, with Google Cloud growing 82 percent, while capital spending reached $44.9 billion—more than double the year-earlier level—as the company expanded data centers, TPUs, GPUs and networking. Google also said its first-party model APIs were processing about 22 billion tokens per minute, linking customer demand directly to a much larger physical delivery and capacity-management challenge.</p><div class="source"><a href="https://blog.google/company-news/inside-google/message-ceo/alphabet-earnings-q2-2026/" target="_blank" rel="noopener noreferrer">Google</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Translate demand growth into a capacity-readiness ladder</h3><p>Track each expansion through utility power, shell, MEP systems, commissioning, network, compute installation and customer-ready capacity; do not collapse those stages into one “MW planned” number. Add the constraint, owner, confidence and earliest usable date at every gate. When demand is rising this quickly, leaders need to see not only how much capacity is coming, but which dependency controls when it can produce revenue.</p></aside></section><section class="section" id="competitors"><h2 class="section-head"><span class="section-num">03</span><span class="section-title">Competitors</span></h2><article class="item"><h3>AirTrunk secures $2.3 billion to build its 270MW JHB2 campus in Johor</h3><p>Thirty local and international financial institutions backed the financing, which includes a previously announced $175 million IFC investment and follows AirTrunk&#x27;s green-financing framework. JHB2 will sit beside the company&#x27;s expanding JHB1 campus, turning financing, construction and regional capacity delivery into one large multi-party program.</p><div class="source"><a href="https://www.datacenterdynamics.com/en/news/apac-data-center-firm-airtrunk-secures-23bn-in-funding-for-jhb2-campus-in-johor-bahru-malaysia/" target="_blank" rel="noopener noreferrer">Data Center Dynamics</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Funding approval is not delivery readiness</h3><p>Build an integrated milestone map that connects lender conditions, land and permits, utility energization, long-lead equipment, construction packages and customer commitments. Mark dependencies that can stop funding draws or delay revenue, and assign one accountable owner for each interface. A program manager earns trust by making the distance between “financed” and “service ready” visible early.</p></aside></section><section class="section" id="dc-infrastructure"><h2 class="section-head"><span class="section-num">04</span><span class="section-title">DC Infrastructure</span></h2><article class="item"><h3>PJM files two competing pathways with FERC to address the data center power gap</h3><p>The grid operator submitted alternative approaches for connecting large loads as rapid data center growth collides with generation and transmission constraints. The regulatory choice will affect who carries reliability obligations, how projects qualify for service and which assumptions developers can safely use in their schedules.</p><div class="source"><a href="https://www.datacenterdynamics.com/en/news/pjm-files-two-proposals-with-ferc-to-close-data-center-power-gap/" target="_blank" rel="noopener noreferrer">Data Center Dynamics</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Put regulatory assumptions into the project schedule</h3><p>For every utility-dependent milestone, record the governing tariff or process, required study, decision authority, queue position and fallback scenario. Treat an unapproved interconnection pathway as a risk with probability and schedule impact—not as a committed energization date. This separates the external promise from the evidence your team can actually control.</p></aside></section><section class="section" id="ai-compute-demand"><h2 class="section-head"><span class="section-num">05</span><span class="section-title">AI &amp; Compute Demand</span></h2><article class="item"><h3>Axe Compute signs a five-year, $1.5 billion contract for a 9,200-GPU cluster</h3><p>The company plans to own and operate the US-based Nvidia B300 deployment, using customer prepayments alongside project financing; the deal takes its signed 2026 contract value above $3 billion. Axe is moving from an asset-light capacity broker toward dedicated infrastructure, bringing concentration, depreciation and single-site operational risks that its own filings acknowledge.</p><div class="source"><a href="https://www.datacenterdynamics.com/en/news/axe-compute-secures-15bn-compute-contract-with-unnamed-customer/" target="_blank" rel="noopener noreferrer">Data Center Dynamics</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Convert the commercial promise into an operating baseline</h3><p>Before accepting the delivery date, baseline GPU count, rack density, electrical load, cooling envelope, network fabric, spares, acceptance tests and support model. Tie customer payments to measurable readiness gates and keep contingency for yield failures and burn-in defects. Contract value is demand evidence; a validated technical baseline is what makes that demand executable.</p></aside></section><section class="section" id="new-ai-models-releases"><h2 class="section-head"><span class="section-num">06</span><span class="section-title">New AI Models &amp; Releases</span></h2><article class="item"><h3>Nvidia and more than 30 partners form an alliance to build open AI-security tools</h3><p>The Open Secure AI Alliance will build on Linux Foundation and OpenSSF work to share tools for finding, remediating and disclosing vulnerabilities in models and AI systems. The launch shifts attention from model benchmarks toward the controls needed to operate AI safely across a supply chain of models, agents, frameworks and infrastructure.</p><div class="source"><a href="https://blogs.nvidia.com/blog/open-secure-ai-alliance/" target="_blank" rel="noopener noreferrer">Nvidia</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Add an AI security gate to release readiness</h3><p>Require a model or agent owner to document provenance, permissions, tool access, data boundaries, adversarial testing, monitoring and an emergency disable path before production use. Record accepted risks and approvers in the change package. New capability should enter operations through the same disciplined evidence trail as any other high-impact system.</p></aside></section><section class="section" id="networking"><h2 class="section-head"><span class="section-num">07</span><span class="section-title">Networking</span></h2><article class="item"><h3>AT&amp;T powers down the last long-distance 4ESS telephone switch after a five-decade run</h3><p>The final switch in Anchorage closes an era of circuit-switched backbone technology that once carried most US long-distance traffic. Its retirement is a useful reminder that removing the last legacy node requires more than migrating normal traffic: teams must find hidden dependencies, preserve obligations and prove that rollback is no longer needed.</p><div class="source"><a href="https://www.datacenterdynamics.com/en/news/att-powers-down-final-long-distance-4ess-telephone-switch-in-anchorage-alaska/" target="_blank" rel="noopener noreferrer">Data Center Dynamics</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Decommissioning needs acceptance criteria, too</h3><p>Before shutdown, inventory circuits, alarms, support contracts, regulatory records, spares and every downstream dependency; then require evidence that traffic has moved and monitoring sees the new path. Define a rollback window and the exact decision that ends it. The final milestone is not “power off”—it is verified service continuity plus controlled removal of the old risk.</p></aside></section><section class="section" id="backend-cloud-data"><h2 class="section-head"><span class="section-num">08</span><span class="section-title">Backend / Cloud &amp; Data</span></h2><article class="item"><h3>AWS moves several services into maintenance mode for new customers on July 30</h3><p>Amazon Bedrock Agents Classic, Amazon Kendra, Amazon Q Business, Cognito Sync and Simple AD are among the services that will remain supported for existing users but close to new customers. The change can split an enterprise into legacy and preferred architectures if teams do not actively govern service selection and migration.</p><div class="source"><a href="https://aws.amazon.com/about-aws/whats-new/2026/06/aws-service-availability/" target="_blank" rel="noopener noreferrer">AWS</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Treat maintenance mode as a portfolio decision, not an immediate outage</h3><p>Identify current workloads, business owners, renewal dates, data dependencies and replacement paths; then decide whether to contain, migrate or retire each use. Block new designs from adopting the legacy service and publish an approved pattern for its successor. This prevents every project from solving the same transition independently.</p></aside></section><section class="section" id="program-pm"><h2 class="section-head"><span class="section-num">09</span><span class="section-title">Program &amp; PM</span></h2><article class="item"><h3>PMI puts ethics at the center of agile change management</h3><p>A July 29 PMI webinar examines how transparency, fairness and trust shape decisions during large agile transformations. The topic matters in operational programs because frequent change can feel arbitrary to technicians unless leaders explain why priorities moved, who was consulted and how safety or workload concerns were handled.</p><div class="source"><a href="https://www.pmi.org/events/webinars" target="_blank" rel="noopener noreferrer">PMI Webinars</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Keep a decision log people can trust</h3><p>For each material program change, record the decision, date, owner, evidence considered, affected groups, tradeoff and next review point. Share the reasoning with the people executing the work and create a clear route to challenge bad assumptions. Ethical change management becomes practical when decisions are traceable, impacts are acknowledged and feedback can alter the plan.</p></aside></section>
+</main>
+<nav class="edition-nav" aria-label="Adjacent editions"><a href="2026-07-28.html">← Previous edition</a> <a href="2026-07-30.html">Next edition →</a></nav>
+
+  <footer class="foot">
+    <div class="big">DC Daily Brief</div>
+    Covers news through July 29, 2026. · Researched and generated on demand<br>
+    News, context, and learning for Robert · Historical reporting may be superseded.
+  </footer>
+
+</div>
+</body>
+</html>

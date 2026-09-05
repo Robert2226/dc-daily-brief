@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>DC Daily Brief — Tuesday, July 14, 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,900&family=Newsreader:opsz,wght@6..72,400;6..72,500&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#F7F5EF; --panel:#FBFAF6; --ink:#1B1A17; --soft-ink:#3B3934;
+    --muted:#6B6862; --rule:#D8D3C7; --rule-strong:#B7B1A3;
+    --accent:#0F766E; --accent-ink:#0B534D; --accent-tint:#EAF1EF;
+    --serif:'Newsreader',Georgia,'Times New Roman',serif;
+    --display:'Fraunces',Georgia,serif;
+    --mono:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#14140F; --panel:#1A1A14; --ink:#ECE8DD; --soft-ink:#CFC9BB;
+      --muted:#948E80; --rule:#2E2D25; --rule-strong:#413F34;
+      --accent:#5FD3C4; --accent-ink:#8FE3D8; --accent-tint:#17241F;
+    }
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0}
+  body{
+    background:var(--bg); color:var(--ink);
+    font-family:var(--serif); font-size:18px; line-height:1.62;
+    -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+  }
+  .paper{max-width:760px; margin:0 auto; padding:40px 26px 72px;}
+
+  /* Masthead */
+  .masthead{text-align:center; padding-bottom:18px;}
+  .masthead .rule-top{border-top:3px solid var(--ink); margin-bottom:14px;}
+  .kicker-top{
+    font-family:var(--mono); font-size:11px; letter-spacing:.32em; text-transform:uppercase;
+    color:var(--muted); margin-bottom:12px;
+  }
+  .masthead h1{
+    font-family:var(--display); font-weight:900; font-size:clamp(38px,9vw,68px);
+    line-height:.94; letter-spacing:-.02em; margin:0 0 10px;
+  }
+  .masthead .tagline{
+    font-family:var(--serif); font-style:italic; color:var(--soft-ink);
+    font-size:16px; max-width:38ch; margin:0 auto 16px;
+  }
+  .dateline{
+    display:flex; justify-content:space-between; align-items:center; gap:12px;
+    border-top:1px solid var(--rule-strong); border-bottom:1px solid var(--rule-strong);
+    padding:8px 2px; font-family:var(--mono); font-size:11px; letter-spacing:.12em;
+    text-transform:uppercase; color:var(--muted);
+  }
+
+  /* Section */
+  .section{padding-top:30px;}
+  .section-head{
+    display:flex; align-items:baseline; gap:12px; margin-bottom:14px;
+    border-bottom:1px solid var(--rule); padding-bottom:8px;
+  }
+  .section-num{
+    font-family:var(--mono); font-weight:700; font-size:12px; color:var(--accent);
+    letter-spacing:.1em;
+  }
+  .section-title{
+    font-family:var(--mono); font-weight:700; font-size:12.5px; letter-spacing:.22em;
+    text-transform:uppercase; color:var(--ink);
+  }
+
+  .item{margin:0 0 20px;}
+  .item h3{
+    font-family:var(--display); font-weight:600; font-size:22px; line-height:1.2;
+    letter-spacing:-.01em; margin:0 0 6px;
+  }
+  .item p{margin:0 0 6px; color:var(--soft-ink);}
+  .item em, .practice em{font-style:italic; color:var(--ink);}
+  .source a{
+    font-family:var(--mono); font-size:11px; letter-spacing:.06em; text-transform:uppercase;
+    color:var(--accent); text-decoration:none; border-bottom:1px solid transparent;
+  }
+  .source a:hover{border-bottom-color:var(--accent);}
+  .source a::before{content:"↗ ";}
+
+  /* In Practice callout */
+  .practice{
+    background:var(--accent-tint); border-left:3px solid var(--accent);
+    padding:14px 18px; margin:6px 0 4px; border-radius:2px;
+  }
+  .practice .label{
+    display:block; font-family:var(--mono); font-size:10.5px; font-weight:700;
+    letter-spacing:.24em; text-transform:uppercase; color:var(--accent-ink); margin-bottom:6px;
+  }
+  .practice p{margin:0; font-size:16.5px; line-height:1.55; color:var(--soft-ink);}
+  .practice strong{color:var(--ink);}
+  .practice .source{margin-top:8px;}
+
+  /* Footer */
+  .foot{
+    margin-top:44px; padding-top:16px; border-top:3px solid var(--ink);
+    font-family:var(--mono); font-size:11px; letter-spacing:.08em; color:var(--muted);
+    text-align:center; line-height:1.8;
+  }
+  .foot .big{font-family:var(--display); font-size:13px; letter-spacing:.2em; text-transform:uppercase; color:var(--ink);}
+
+  a{color:var(--accent); text-underline-offset:3px; overflow-wrap:anywhere}
+  a:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-offset:4px}
+  .site-nav,.edition-nav{display:flex;justify-content:space-between;gap:16px;font-size:16px;margin:0 0 26px}
+  .edition-nav{margin-top:30px}
+  .skip-link{position:absolute;left:-10000px}
+  .skip-link:focus{position:static}
+  .section{scroll-margin-top:20px}
+  .section-head{margin-top:0}
+  .section-title{line-height:1.6;letter-spacing:.12em}
+  .section-nav{display:flex;flex-wrap:wrap;gap:8px 18px;border-bottom:1px solid var(--rule);padding:20px 0;font-size:16px}
+  .takeaways{padding:22px 0 0}
+  .takeaways h2{font-family:var(--display);font-size:26px}
+  .takeaways .item{margin-bottom:16px}
+  .takeaways .item h3{font-size:20px}
+  .takeaways .item p{font-size:17px}
+  .deep-dive{border-top:2px solid var(--accent);margin-top:28px;padding-top:18px}
+  .deep-dive h3{font-family:var(--display);font-size:28px;line-height:1.2;margin:8px 0 18px}
+  .deep-dive h4{font-family:var(--display);font-size:21px;margin:24px 0 8px}
+  .eyebrow{font:12px var(--mono);color:var(--accent);text-transform:uppercase;letter-spacing:.15em}
+  .recall{border:1px solid var(--rule);padding:14px 18px;margin:18px 0}
+  .recall summary{cursor:pointer;font-weight:600}
+  pre{white-space:pre-wrap;overflow-wrap:anywhere;background:var(--accent-tint);padding:16px;font:14px/1.7 var(--mono)}
+  .archive-list{list-style:none;padding:0}
+  .archive-list li{padding:15px 0;border-bottom:1px solid var(--rule)}
+  .archive-meta{display:block;color:var(--muted);font:12px/1.8 var(--mono)}
+  .practice .label{margin-top:0}
+  .source a{font-size:12px;line-height:1.8}
+  .source a[href^="#"]::before{content:"↓ "}
+  .coverage{font-size:14px;color:var(--muted);margin:12px 0 0}
+  hr{border:0;border-top:1px solid var(--rule);margin:22px 0}
+  @media(max-width:480px){.paper{padding:24px 18px 48px}.dateline{flex-wrap:wrap}.section-title{font-size:12px}.section-head{gap:8px}.deep-dive h3{font-size:25px}}
+</style>
+</head>
+<body>
+<div class="paper">
+<a class="skip-link" href="#content">Skip to content</a>
+<nav class="site-nav" aria-label="Main navigation"><a href="../index.html">Latest edition</a><a href="../archive.html">Archive</a></nav>
+
+  <header class="masthead">
+    <div class="rule-top"></div>
+    <div class="kicker-top">Aggregated Morning Brief · No. 003</div>
+    <h1>DC Daily Brief</h1>
+    <p class="tagline">Physical infrastructure, logical systems, and the decisions connecting them.</p>
+    <div class="dateline">
+      <span>Tuesday · July 14, 2026</span>
+      <span>Curated for Robert</span>
+    </div>
+    <p class="coverage">Covers news through July 14, 2026.</p>
+  </header>
+
+<main id="content">
+<nav class="section-nav" aria-label="Edition sections"><a href="#equinix">Equinix</a><a href="#competitors">Competitors</a><a href="#dc-infrastructure">DC Infrastructure</a><a href="#ai-compute-demand">AI &amp; Compute Demand</a><a href="#new-ai-models-releases">New AI Models &amp; Releases</a><a href="#networking">Networking</a><a href="#backend-cloud-data">Backend / Cloud &amp; Data</a><a href="#program-pm">Program &amp; PM</a></nav><section class="section" id="equinix"><h2 class="section-head"><span class="section-num">01</span><span class="section-title">Equinix</span></h2><article class="item"><h3>Equinix, Cisco, and NVIDIA launch Secure AI Factories across Equinix&#x27;s global footprint</h3><p>Announced July 1, this puts pre-integrated AI infrastructure (compute, Cisco Silicon One/N9100 networking, security) directly into Equinix colo space, letting enterprises rent AI capacity without building their own clusters. It&#x27;s a direct bet that AI demand — not just interconnection — is now Equinix&#x27;s core growth driver.</p><div class="source"><a href="https://newsroom.equinix.com/" target="_blank" rel="noopener noreferrer">source</a></div></article>
+<article class="item"><h3>Q2 2026 earnings call set for July 29</h3><p>Equinix will report results for the quarter ended June 30 on July 29 at 5:30 p.m. ET. Context: Q1 sales hit $2.444B (+10% YoY), and management has raised FY26 guidance to $10.14–10.24B (+11%), so the July 29 call is worth watching for whether AI-driven demand is holding.</p><div class="source"><a href="https://newsroom.equinix.com/2026-07-01-MEDIA-ALERT-Equinix-Sets-Conference-Call-for-Second-Quarter-Results" target="_blank" rel="noopener noreferrer">source</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · REITs and the dividend requirement</h3><p>Equinix just logged its 11th consecutive annual dividend increase. As a REIT, it&#x27;s legally required to distribute at least 90% of taxable income to shareholders — which is why capacity expansion gets funded through debt and equity issuance rather than retained earnings. Understanding this financing structure explains why land/power acquisition timelines and capital raises are always in the background of Equinix&#x27;s growth story.</p></aside></section><section class="section" id="competitors"><h2 class="section-head"><span class="section-num">02</span><span class="section-title">Competitors</span></h2><article class="item"><h3>CoreWeave locks in $40B in new commitments, backlog nears $100B, but stock dips on Meta cloud threat</h3><p>CoreWeave secured long-term power (200MW live, 526MW committed across three phases) via a Galaxy Digital lease for its Helios campus, and was added to the Nasdaq-100. Shares still fell nearly 14% after a Bloomberg report that Meta plans to sell excess AI cloud capacity — a signal that hyperscalers turning into compute resellers could squeeze &quot;neocloud&quot; pure-plays like CoreWeave.</p><div class="source"><a href="https://finance.yahoo.com/markets/stocks/articles/coreweave-crwv-secures-helios-power-182144925.html" target="_blank" rel="noopener noreferrer">source</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Neocloud vs. hyperscaler vs. colo</h3><p>A colo provider (Equinix) rents space/power/interconnection and lets tenants bring their own gear. A hyperscaler (AWS/Azure/GCP) owns everything end-to-end and sells managed cloud services. A &quot;neocloud&quot; (CoreWeave, Lambda) sits in between — owns GPU fleets, leases the building/power, and sells raw AI compute. Meta reselling excess capacity blurs the hyperscaler/neocloud line and is exactly the kind of competitive dynamic worth tracking as capacity math shifts.</p></aside></section><section class="section" id="dc-infrastructure"><h2 class="section-head"><span class="section-num">03</span><span class="section-title">DC Infrastructure</span></h2><article class="item"><h3>New York becomes first state to impose a data center moratorium</h3><p>Gov. Hochul signed a July 14 executive order pausing new permits for data centers drawing 50MW+ for up to a year, citing utility bill increases, water stress, and grid uncertainty. The pause buys time for a regulatory framework requiring operators to pay into grid-investment funds — a template other states may copy.</p><div class="source"><a href="https://www.axios.com/2026/07/14/ny-gov-kathy-hochul-data-center-moratorium-executive-order" target="_blank" rel="noopener noreferrer">source</a></div></article>
+<article class="item"><h3>Virginia&#x27;s new data center electricity tax takes effect</h3><p>As of July 1, Virginia charges $0.011/kWh on all data center electricity consumption, projected to raise ~$600M/year for the general fund. Virginia (Data Center Alley) choosing to tax rather than restrict is a notably different posture than New York&#x27;s moratorium.</p><div class="source"><a href="https://www.datacenterknowledge.com/data-center-construction/new-data-center-developments-july-2026" target="_blank" rel="noopener noreferrer">source</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Why cooling dominates the power bill</h3><p>During the current U.S. heatwave, cooling alone is consuming up to 40% of a data center&#x27;s electricity — and that share climbs as outside temps rise, since chillers work harder against a higher delta-T. This is the practical reason liquid/direct-to-chip cooling is displacing air-cooled CRAC units for high-density racks: moving heat via liquid is dramatically more efficient than moving it via air, which directly lowers PUE (Power Usage Effectiveness — total facility power ÷ IT equipment power).</p></aside></section><section class="section" id="ai-compute-demand"><h2 class="section-head"><span class="section-num">04</span><span class="section-title">AI &amp; Compute Demand</span></h2><article class="item"><h3>PJM asks DOE to force data centers onto backup generators during grid emergencies</h3><p>With a severe U.S. heatwave straining supply, PJM Interconnection (the largest U.S. grid operator) requested authority to order data centers to switch to on-site backup power within 15 minutes of an emergency signal, freeing grid capacity for homes and businesses. U.S. data centers already draw ~4% of national power (heading to ~9% by 2030), and a single hyperscale site can use as much water as a city of 50,000.</p><div class="source"><a href="https://www.aljazeera.com/economy/2026/7/3/us-heatwave-raises-alarms-over-ai-data-centre-energy-demands" target="_blank" rel="noopener noreferrer">source</a></div></article>
+<article class="item"><h3>Gartner: data center electricity demand up 26% in 2026, AI servers alone up 84%</h3><p>Global data center power demand is projected to hit 132GW in 2026 (up from 104GW), with AI-optimized servers jumping from 95 to 175 TWh of consumption. Gartner&#x27;s framing lines up with the &quot;power-bound, not GPU-bound&quot; theme showing up across the industry — at least 75 U.S. data center projects worth $130B have been delayed or canceled for lack of power, not lack of chips or capital.</p><div class="source"><a href="https://www.gartner.com/en/newsroom/press-releases/2026-06-10-gartner-says-data-center-electricity-demand-to-grow-26-percent-in-2026" target="_blank" rel="noopener noreferrer">source</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Power is the new capacity planning bottleneck</h3><p>For years, GPU supply was the constraint on AI buildouts; now it&#x27;s grid interconnection queues and substation lead times (often 3-5+ years). When you see a hyperscaler announce a &quot;10 GW&quot; deal, that&#x27;s the real ceiling on how much compute they can ever turn on at that site — translate MW commitments into rough GPU-cluster scale (a 100MW site supports roughly tens of thousands of high-end GPUs) to gauge how serious an announcement actually is.</p></aside></section><section class="section" id="new-ai-models-releases"><h2 class="section-head"><span class="section-num">05</span><span class="section-title">New AI Models &amp; Releases</span></h2><article class="item"><h3>OpenAI ships the GPT-5.6 family: Sol, Terra, and Luna</h3><p>Released July 9, Sol is the agentic flagship, Terra targets everyday tasks at half the cost of GPT-5.5, and Luna optimizes for speed/affordability — a clear move toward tiered, cost-differentiated model lineups rather than one-size-fits-all releases.</p><div class="source"><a href="https://llm-stats.com/llm-updates" target="_blank" rel="noopener noreferrer">source</a></div></article>
+<article class="item"><h3>xAI launches Grok 4.5, pitched as &quot;Opus-class but cheaper and faster&quot;</h3><p>Elon Musk positioned Grok 4.5 directly against Anthropic&#x27;s top-tier model on capability while claiming better token efficiency and lower cost, continuing the pattern of frontier labs competing on price-per-token as much as raw benchmark scores.</p><div class="source"><a href="https://llm-stats.com/ai-news" target="_blank" rel="noopener noreferrer">source</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Reading a model release like a spec sheet, not a press release</h3><p>Look past the headline for three numbers: context window (how much text/code it can hold in one pass), the benchmark suite used (SWE-bench for coding, MMLU for general knowledge — and whether it&#x27;s the harder &quot;verified&quot; variant), and price per million tokens. A model that&#x27;s &quot;smarter&quot; but costs 3x more per token isn&#x27;t necessarily the better engineering choice for a given workload — that&#x27;s the same cost/benefit tradeoff you&#x27;ll make on a project business case.</p></aside></section><section class="section" id="networking"><h2 class="section-head"><span class="section-num">06</span><span class="section-title">Networking</span></h2><article class="item"><h3>Cisco Live 2026 pushes &quot;AI-native&quot; networking and 800G→1.6T silicon roadmap</h3><p>Cisco drew a hard line between legacy &quot;AI-assisted&quot; features and networks built to be self-aware and self-healing from the ground up. Headline products: the Cisco 8223 (a 51.2 Tbps router for distributed AI workloads), the N9100 switch series pairing Cisco Silicon One with Nvidia Spectrum-4 ASICs for 800G Ethernet, and a next-gen Silicon One G-series architecture designed to scale from 800G to 1.6T ports for AI training clusters.</p><div class="source"><a href="https://www.networkworld.com/article/4113462/ciscos-2026-agenda-prioritizes-ai-ready-infrastructure-connectivity.html" target="_blank" rel="noopener noreferrer">source</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Why AI clusters need different fabric than a normal data center</h3><p>Traditional east-west traffic in an enterprise DC is bursty and forgiving of some latency/packet loss. GPU training traffic (all-to-all collective operations across thousands of GPUs) needs a lossless, low-latency, non-blocking spine-leaf (Clos) fabric — a single dropped packet stalls the whole training job. That&#x27;s why RoCE (RDMA over Converged Ethernet) and ultra-high port-density switches like the N9100 exist: they&#x27;re purpose-built for GPU-to-GPU traffic patterns, not general enterprise networking.</p></aside></section><section class="section" id="backend-cloud-data"><h2 class="section-head"><span class="section-num">07</span><span class="section-title">Backend / Cloud &amp; Data</span></h2><article class="item"><h3>Kubernetes ecosystem keeps modularizing: etcd 3.7.0 ships, Kube-Wasm provisionally approved for CNCF graduation</h3><p>etcd (the distributed key-value store underpinning Kubernetes&#x27; cluster state) hits v3.7.0, while Kube-Wasm brings WebAssembly workloads into Kubernetes as first-class citizens with cold starts measured in milliseconds instead of hundreds of milliseconds. KubeCon + CloudNativeCon Japan runs July 28-30 in Yokohama.</p><div class="source"><a href="https://kubernetes.io/blog/" target="_blank" rel="noopener noreferrer">source</a></div></article>
+<article class="item"><h3>Accenture confirms breach; stolen data includes Azure keys and source code</h3><p>A threat actor claims to have exfiltrated ~35GB from Accenture, including source code, SSH/RSA keys, and Azure personal access tokens/storage keys via what appears to be an exposed Azure DevOps repo. Accenture says it has &quot;remediated the source&quot; but hasn&#x27;t confirmed the scope. Separately, CISA is warning of active exploitation of a critical SharePoint RCE (CVE-2026-45659).</p><div class="source"><a href="https://www.bleepingcomputer.com/news/security/accenture-confirms-breach-after-hacker-offers-stolen-data-for-sale/" target="_blank" rel="noopener noreferrer">source</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Why leaked cloud keys are worse than leaked passwords</h3><p>An Azure PAT (Personal Access Token) or storage access key isn&#x27;t just a login — it&#x27;s a scoped credential that can be embedded in CI/CD pipelines, scripts, and config files, often with far broader permissions than a human account and no MFA prompt to stop misuse. This is the real argument for short-lived tokens and secrets managers (Azure Key Vault, HashiCorp Vault) over long-lived static keys checked into repos: it shrinks the blast radius when — not if — a repo gets exposed.</p></aside></section><section class="section" id="program-pm"><h2 class="section-head"><span class="section-num">08</span><span class="section-title">Program &amp; PM</span></h2><article class="item"><h3>PMI Global Summit: PMOs told to become &quot;enterprise enablement engines,&quot; not report generators</h3><p>2026 thought leadership from PMI&#x27;s summit frames the PMO&#x27;s job as connecting strategy to execution and building AI-agent governance into delivery from day one, not just tracking status. Separately, PMI data shows 80% of PMOs are expected to use AI for decision support by end of 2026, with GenAI users reporting measurable gains in scope, cost, and schedule management.</p><div class="source"><a href="https://www.projectmanagement.com/webinars/1133467/the-trends-defining-2026--pmi-global-summit-and-thought-leadership-highlights" target="_blank" rel="noopener noreferrer">source</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Risk vs. Issue — say the right word</h3><p>A risk is an uncertain future event that may or may not happen (the NY moratorium becoming permanent, a vendor missing a milestone). An issue is something that has already happened and needs resolution now (a permit denial that already landed). Conflating the two in a status report is a fast way to lose stakeholder trust — risks belong in a risk register with probability/impact and a response plan; issues belong on an action log with an owner and a due date. The July ECO leans hard on this distinction under Process domain tasks.</p></aside>
+<hr>
+<p>_Want to go deeper on any item? Just ask Claude to expand it._</p></section>
+</main>
+<nav class="edition-nav" aria-label="Adjacent editions"><a href="2026-07-13.html">← Previous edition</a> <a href="2026-07-15.html">Next edition →</a></nav>
+
+  <footer class="foot">
+    <div class="big">DC Daily Brief</div>
+    Covers news through July 14, 2026. · Researched and generated on demand<br>
+    News, context, and learning for Robert · Historical reporting may be superseded.
+  </footer>
+
+</div>
+</body>
+</html>

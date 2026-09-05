@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>DC Daily Brief — Wednesday, August 19, 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,900&family=Newsreader:opsz,wght@6..72,400;6..72,500&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#F7F5EF; --panel:#FBFAF6; --ink:#1B1A17; --soft-ink:#3B3934;
+    --muted:#6B6862; --rule:#D8D3C7; --rule-strong:#B7B1A3;
+    --accent:#0F766E; --accent-ink:#0B534D; --accent-tint:#EAF1EF;
+    --serif:'Newsreader',Georgia,'Times New Roman',serif;
+    --display:'Fraunces',Georgia,serif;
+    --mono:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#14140F; --panel:#1A1A14; --ink:#ECE8DD; --soft-ink:#CFC9BB;
+      --muted:#948E80; --rule:#2E2D25; --rule-strong:#413F34;
+      --accent:#5FD3C4; --accent-ink:#8FE3D8; --accent-tint:#17241F;
+    }
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0}
+  body{
+    background:var(--bg); color:var(--ink);
+    font-family:var(--serif); font-size:18px; line-height:1.62;
+    -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+  }
+  .paper{max-width:760px; margin:0 auto; padding:40px 26px 72px;}
+
+  /* Masthead */
+  .masthead{text-align:center; padding-bottom:18px;}
+  .masthead .rule-top{border-top:3px solid var(--ink); margin-bottom:14px;}
+  .kicker-top{
+    font-family:var(--mono); font-size:11px; letter-spacing:.32em; text-transform:uppercase;
+    color:var(--muted); margin-bottom:12px;
+  }
+  .masthead h1{
+    font-family:var(--display); font-weight:900; font-size:clamp(38px,9vw,68px);
+    line-height:.94; letter-spacing:-.02em; margin:0 0 10px;
+  }
+  .masthead .tagline{
+    font-family:var(--serif); font-style:italic; color:var(--soft-ink);
+    font-size:16px; max-width:38ch; margin:0 auto 16px;
+  }
+  .dateline{
+    display:flex; justify-content:space-between; align-items:center; gap:12px;
+    border-top:1px solid var(--rule-strong); border-bottom:1px solid var(--rule-strong);
+    padding:8px 2px; font-family:var(--mono); font-size:11px; letter-spacing:.12em;
+    text-transform:uppercase; color:var(--muted);
+  }
+
+  /* Section */
+  .section{padding-top:30px;}
+  .section-head{
+    display:flex; align-items:baseline; gap:12px; margin-bottom:14px;
+    border-bottom:1px solid var(--rule); padding-bottom:8px;
+  }
+  .section-num{
+    font-family:var(--mono); font-weight:700; font-size:12px; color:var(--accent);
+    letter-spacing:.1em;
+  }
+  .section-title{
+    font-family:var(--mono); font-weight:700; font-size:12.5px; letter-spacing:.22em;
+    text-transform:uppercase; color:var(--ink);
+  }
+
+  .item{margin:0 0 20px;}
+  .item h3{
+    font-family:var(--display); font-weight:600; font-size:22px; line-height:1.2;
+    letter-spacing:-.01em; margin:0 0 6px;
+  }
+  .item p{margin:0 0 6px; color:var(--soft-ink);}
+  .item em, .practice em{font-style:italic; color:var(--ink);}
+  .source a{
+    font-family:var(--mono); font-size:11px; letter-spacing:.06em; text-transform:uppercase;
+    color:var(--accent); text-decoration:none; border-bottom:1px solid transparent;
+  }
+  .source a:hover{border-bottom-color:var(--accent);}
+  .source a::before{content:"↗ ";}
+
+  /* In Practice callout */
+  .practice{
+    background:var(--accent-tint); border-left:3px solid var(--accent);
+    padding:14px 18px; margin:6px 0 4px; border-radius:2px;
+  }
+  .practice .label{
+    display:block; font-family:var(--mono); font-size:10.5px; font-weight:700;
+    letter-spacing:.24em; text-transform:uppercase; color:var(--accent-ink); margin-bottom:6px;
+  }
+  .practice p{margin:0; font-size:16.5px; line-height:1.55; color:var(--soft-ink);}
+  .practice strong{color:var(--ink);}
+  .practice .source{margin-top:8px;}
+
+  /* Footer */
+  .foot{
+    margin-top:44px; padding-top:16px; border-top:3px solid var(--ink);
+    font-family:var(--mono); font-size:11px; letter-spacing:.08em; color:var(--muted);
+    text-align:center; line-height:1.8;
+  }
+  .foot .big{font-family:var(--display); font-size:13px; letter-spacing:.2em; text-transform:uppercase; color:var(--ink);}
+
+  a{color:var(--accent); text-underline-offset:3px; overflow-wrap:anywhere}
+  a:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-offset:4px}
+  .site-nav,.edition-nav{display:flex;justify-content:space-between;gap:16px;font-size:16px;margin:0 0 26px}
+  .edition-nav{margin-top:30px}
+  .skip-link{position:absolute;left:-10000px}
+  .skip-link:focus{position:static}
+  .section{scroll-margin-top:20px}
+  .section-head{margin-top:0}
+  .section-title{line-height:1.6;letter-spacing:.12em}
+  .section-nav{display:flex;flex-wrap:wrap;gap:8px 18px;border-bottom:1px solid var(--rule);padding:20px 0;font-size:16px}
+  .takeaways{padding:22px 0 0}
+  .takeaways h2{font-family:var(--display);font-size:26px}
+  .takeaways .item{margin-bottom:16px}
+  .takeaways .item h3{font-size:20px}
+  .takeaways .item p{font-size:17px}
+  .deep-dive{border-top:2px solid var(--accent);margin-top:28px;padding-top:18px}
+  .deep-dive h3{font-family:var(--display);font-size:28px;line-height:1.2;margin:8px 0 18px}
+  .deep-dive h4{font-family:var(--display);font-size:21px;margin:24px 0 8px}
+  .eyebrow{font:12px var(--mono);color:var(--accent);text-transform:uppercase;letter-spacing:.15em}
+  .recall{border:1px solid var(--rule);padding:14px 18px;margin:18px 0}
+  .recall summary{cursor:pointer;font-weight:600}
+  pre{white-space:pre-wrap;overflow-wrap:anywhere;background:var(--accent-tint);padding:16px;font:14px/1.7 var(--mono)}
+  .archive-list{list-style:none;padding:0}
+  .archive-list li{padding:15px 0;border-bottom:1px solid var(--rule)}
+  .archive-meta{display:block;color:var(--muted);font:12px/1.8 var(--mono)}
+  .practice .label{margin-top:0}
+  .source a{font-size:12px;line-height:1.8}
+  .source a[href^="#"]::before{content:"↓ "}
+  .coverage{font-size:14px;color:var(--muted);margin:12px 0 0}
+  hr{border:0;border-top:1px solid var(--rule);margin:22px 0}
+  @media(max-width:480px){.paper{padding:24px 18px 48px}.dateline{flex-wrap:wrap}.section-title{font-size:12px}.section-head{gap:8px}.deep-dive h3{font-size:25px}}
+</style>
+</head>
+<body>
+<div class="paper">
+<a class="skip-link" href="#content">Skip to content</a>
+<nav class="site-nav" aria-label="Main navigation"><a href="../index.html">Latest edition</a><a href="../archive.html">Archive</a></nav>
+
+  <header class="masthead">
+    <div class="rule-top"></div>
+    <div class="kicker-top">Aggregated Morning Brief · No. 029</div>
+    <h1>DC Daily Brief</h1>
+    <p class="tagline">Physical infrastructure, logical systems, and the decisions connecting them.</p>
+    <div class="dateline">
+      <span>Wednesday · August 19, 2026</span>
+      <span>Curated for Robert</span>
+    </div>
+    <p class="coverage">Covers news through August 19, 2026.</p>
+  </header>
+
+<main id="content">
+<nav class="section-nav" aria-label="Edition sections"><a href="#equinix">Equinix</a><a href="#google">Google</a><a href="#competitors">Competitors</a><a href="#dc-infrastructure">DC Infrastructure</a><a href="#ai-compute-demand">AI &amp; Compute Demand</a><a href="#new-ai-models-releases">New AI Models &amp; Releases</a><a href="#networking">Networking</a><a href="#backend-cloud-data">Backend / Cloud &amp; Data</a><a href="#program-pm">Program &amp; PM</a><a href="#pgpm-growth">PgPM Growth</a></nav><section class="section" id="equinix"><h2 class="section-head"><span class="section-num">01</span><span class="section-title">Equinix</span></h2><article class="item"><h3>Equinix replaces its revolving facility with $5.5 billion of multicurrency capacity</h3><p>The company&#x27;s second-quarter filing says the new senior unsecured revolver replaced its 2022 facility on July 27. The financing is not a site-delivery announcement, but it expands the corporate liquidity available across a capital-intensive global portfolio and makes disciplined allocation—between acquisitions, development, operations and shareholder commitments—an important execution question.</p><div class="source"><a href="https://investor.equinix.com/sec-filings/proxy-filings/content/0001101239-26-000147/0001101239-26-000147.pdf" target="_blank" rel="noopener noreferrer">Equinix · Form 10-Q</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Translate corporate liquidity into project decision rules</h3><p>A large facility is funding capacity, not permission for every project to proceed. For each capital request, show the business outcome, committed demand, power and permit evidence, schedule confidence, downside exposure and next irreversible decision. Portfolio discipline means preserving options until evidence justifies consuming capital.</p></aside></section><section class="section" id="google"><h2 class="section-head"><span class="section-num">02</span><span class="section-title">Google</span></h2><article class="item"><h3>Google and Intersect pair a Texas data center with more than a gigawatt of colocated generation and storage</h3><p>The Meitner Energy Center in Gray and Roberts Counties combines the planned data center with wind, solar and batteries, plus a minority share of firming gas, while using air cooling to limit water consumption. The arrangement moves energy development onto the same program path as the facility, but Google and Intersect&#x27;s stated community and grid benefits still need to be measured against delivered capacity, cost and operating performance.</p><div class="source"><a href="https://www.intersect.com/news/google-and-intersect-deepen-texas-roots-with-new-data-center-and-energy-investments-in-gray-and-roberts-counties" target="_blank" rel="noopener noreferrer">Intersect</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Build one integrated power-to-service schedule</h3><p>Link generation, storage, gas firming, transmission interfaces, data-hall construction, network readiness and customer service dates with explicit handoffs. Track which energy block supports each IT-capacity phase and what happens if either side slips. Colocation reduces grid dependency only when the energy and compute programs reach acceptance together.</p></aside></section><section class="section" id="competitors"><h2 class="section-head"><span class="section-num">03</span><span class="section-title">Competitors</span></h2><article class="item"><h3>CoreWeave enters Asia-Pacific with three planned Indonesian facilities totaling 360 MW</h3><p>CoreWeave says the contracted IT power is expected online in 2028 and that it will own and operate the compute environment across all three sites. The announcement establishes a regional capacity target rather than delivered service; execution now depends on local power, construction, supply chain, staffing, data-locality requirements and a repeatable operating model across the three facilities.</p><div class="source"><a href="https://www.coreweave.com/news/coreweave-expands-cloud-ai-platform-to-indonesia-marking-first-move-into-asia-pacific-region" target="_blank" rel="noopener noreferrer">CoreWeave</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Govern market entry as a capability launch</h3><p>Separate site readiness from regional service readiness: facilities, energy, network, regulatory compliance, local vendors, support coverage, spares and customer onboarding each need an accountable owner and acceptance evidence. A campus can finish on schedule while the market launch remains unable to support customers.</p></aside></section><section class="section" id="dc-infrastructure"><h2 class="section-head"><span class="section-num">04</span><span class="section-title">DC Infrastructure</span></h2><article class="item"><h3>Everllence will supply 480 MW of gas-engine power for an unnamed U.S. data-center project</h3><p>The order covers 24 medium-speed engines delivered in two phases alongside data-center commissioning, according to Data Center Dynamics. The behind-the-meter design may shorten exposure to grid queues, but the undisclosed site and customer limit independent assessment; fuel supply, emissions permits, synchronization, black-start behavior, maintenance and phased acceptance remain central delivery risks.</p><div class="source"><a href="https://www.datacenterdynamics.com/en/news/everllence-to-supply-480mw-of-gas-engines-to-data-center-developer-in-us/" target="_blank" rel="noopener noreferrer">Data Center Dynamics</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Treat on-site generation as a utility program</h3><p>Create separate readiness lines for fuel, permits, protection studies, controls, emissions systems, maintenance coverage and operator qualification; then prove islanding, load steps, unit loss and restart with representative IT demand. Owning generation changes the dependency—it does not remove the obligation to run a reliable power system.</p></aside></section><section class="section" id="ai-compute-demand"><h2 class="section-head"><span class="section-num">05</span><span class="section-title">AI &amp; Compute Demand</span></h2><article class="item"><h3>Perimeter Compute proposes putting inference GPUs into powered commercial buildings instead of waiting for greenfield campuses</h3><p>The new provider says it will use roughly 500 kW to 20 MW of excess capacity in offices and other urban properties to deliver low-latency compute near users. The model is an early company claim, not proven fleet performance, but it shows inference demand creating a market for smaller, distributed capacity with different electrical, physical-security, cooling and support constraints than hyperscale training sites.</p><div class="source"><a href="https://www.datacenterdynamics.com/en/news/distributed-ai-cloud-provider-perimeter-compute-launches/" target="_blank" rel="noopener noreferrer">Data Center Dynamics</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Qualify distributed capacity with a repeatable site envelope</h3><p>Define minimum power quality, cooling, floor loading, fire protection, security, network diversity, service access and remote-hands capability before accepting a building. Score exceptions rather than redesigning silently at every site. Speed comes from a controlled deployment pattern, not from skipping facility due diligence.</p></aside></section><section class="section" id="new-ai-models-releases"><h2 class="section-head"><span class="section-num">06</span><span class="section-title">New AI Models &amp; Releases</span></h2><article class="item"><h3>Tencent expands Hy3 globally after integrating the model across its products and cloud platform</h3><p>The 295-billion-parameter mixture-of-experts model uses 21 billion active parameters, supports a 256K context window and is available through WorkBuddy, Tencent Design Miora and Tencent Cloud TokenHub. Tencent emphasizes reasoning, agents and cost efficiency, but adopters still need their own evaluations because product integration and vendor benchmarks do not establish fit for a specific workflow.</p><div class="source"><a href="https://www.tencent.com/tencent-hy3-now-available-globally-extending-practical-ai-across-products-workflows-and-cloud-services/" target="_blank" rel="noopener noreferrer">Tencent</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Test the deployment surface as well as the model</h3><p>Run the same representative tasks through each intended access path and compare output quality, tool behavior, data handling, latency, quotas, logging and version controls. Record which platform owns prompt, context and audit data. The same model can create different operational risk depending on how it is delivered.</p></aside></section><section class="section" id="networking"><h2 class="section-head"><span class="section-num">07</span><span class="section-title">Networking</span></h2><article class="item"><h3>Arista&#x27;s first $3 billion quarter arrives with new 1.6 Tbps platforms for AI fabrics</h3><p>Arista says its 7060XE7 systems support scale-up, scale-out and scale-across designs, with up to 100 Tbps of system bandwidth and liquid-cooled options. The revenue milestone signals strong network demand around AI clusters, while adoption requires operators to qualify optics, cooling, software, telemetry and multi-path behavior as one system rather than treating switch bandwidth as the acceptance result.</p><div class="source"><a href="https://www.arista.com/company/news/press-release/24401-pr-20260804" target="_blank" rel="noopener noreferrer">Arista</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Make fabric acceptance workload-visible</h3><p>Test congestion, path failure, packet loss, tail latency and thermal behavior under representative east-west traffic; correlate each event with job completion time and accelerator idle time. Include optics and software versions in the baseline. A fast switch is valuable only when the full fabric keeps expensive compute doing useful work.</p></aside></section><section class="section" id="backend-cloud-data"><h2 class="section-head"><span class="section-num">08</span><span class="section-title">Backend / Cloud &amp; Data</span></h2><article class="item"><h3>Red Hat&#x27;s asago project aims to translate AI-governance policy into executable controls</h3><p>The open-source initiative is designed to turn corporate and regulatory requirements into standardized operational checks, with support announced from technology, research and public-interest organizations. Automation could reduce the gap between written policy and deployed configuration, but organizations still own policy interpretation, exceptions, evidence quality and accountability when a control produces the wrong result.</p><div class="source"><a href="https://www.itpro.com/software/open-source/red-hat-launches-new-open-source-project-to-drive-ai-governance" target="_blank" rel="noopener noreferrer">ITPro</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Give every policy control a testable contract</h3><p>Record the policy statement, technical rule, systems in scope, evidence produced, control owner, exception authority and failure response. Test one allowed and one denied scenario before deployment. Governance becomes operational when a reviewer can trace a requirement to a working control and a named decision owner.</p></aside></section><section class="section" id="program-pm"><h2 class="section-head"><span class="section-num">09</span><span class="section-title">Program &amp; PM</span></h2><article class="item"><h3>PMI&#x27;s 2026 research finds complexity is widespread, but deliberate management changes the outcome</h3><p>Ninety-seven percent of surveyed project professionals reported managing at least one complex project in the prior year, and 81 percent said complexity had increased; PMI found projects that managed it effectively were five times more likely to succeed. The report distinguishes complicated work, whose relationships can be understood with expertise, from complex work, where interactions remain unpredictable and require learning and adaptation.</p><div class="source"><a href="https://www.pmi.org/-/media/pmi/documents/public/pdf/learning/thought-leadership/pulse-of-the-profession_2026_pdf.pdf?rev=035022a1aba049dfa1e76c963088634e" target="_blank" rel="noopener noreferrer">PMI · 2026 Pulse of the Profession</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Diagnose before adding control</h3><p>For a complicated system, deepen expertise, decompose the work and standardize execution; for a complex stakeholder or delivery environment, shorten feedback loops, test assumptions and preserve decision options. Adding more detailed plans to unpredictable relationships can create false confidence instead of control.</p></aside></section><section class="section" id="pgpm-growth"><h2 class="section-head"><span class="section-num">10</span><span class="section-title">PgPM Growth</span></h2><article class="item"><h3>Define the vendor agreement as an operating interface, not only a commercial document</h3><p>At the foundation level, make every statement of work explicit about deliverables, assumptions, client and supplier responsibilities, management procedures, change control and acceptance criteria. In a data-center program, include access, outage coordination, submittals, testing support, training, spares and escalation so the contract describes how the teams will actually deliver together.</p><div class="source"><a href="https://www.pmi.org/learning/library/framework-delivering-higher-quality-statements-work-6012" target="_blank" rel="noopener noreferrer">PMI · Statement-of-work framework</a></div></article>
+<article class="item"><h3>Design acceptance before delivery starts</h3><p>Connect the vendor interface to measurable Owner&#x27;s Project Requirements: state the required performance, test method, test conditions, evidence, reviewer, acceptance authority and disposition for deficiencies. This lets a PgPM distinguish “installed,” “tested,” “accepted with exceptions” and “ready for Operations” instead of relying on a single percent-complete claim.</p><div class="source"><a href="https://stg.wbdg.org/building-commissioning/determine-project-performance-requirements" target="_blank" rel="noopener noreferrer">WBDG · Project performance requirements</a></div></article>
+<article class="item"><h3>Resource · Supplier-management failure patterns</h3><p>Use these lessons to check for late PM involvement, unrealistic milestones, vague responsibility matrices, hidden delivery costs and disconnected supplier plans before execution begins.</p><div class="source"><a href="https://www.pmi.org/learning/library/supplier-management-global-projects-pitfalls-7775" target="_blank" rel="noopener noreferrer">PMI · Supplier management on global projects</a></div></article>
+<article class="item"><h3>Resource · Requirements before proposals</h3><p>Use the RFP structure to separate the business need from a vendor&#x27;s preferred solution and compare responses requirement by requirement.</p><div class="source"><a href="https://www.pmi.org/learning/library/project-requirements-rfps-vendor-proposals-6673" target="_blank" rel="noopener noreferrer">PMI · Closing the requirements-to-RFP gap</a></div></article>
+<article class="item"><h3>Resource · Acceptance authority and risk ownership</h3><p>Use the role guidance to clarify what the commissioning provider verifies, what Operations contributes and which residual risks only the Owner or authorized representative can accept.</p><div class="source"><a href="https://stg.wbdg.org/building-commissioning/roles-and-responsibilities-commissioning-process" target="_blank" rel="noopener noreferrer">WBDG · Commissioning roles and responsibilities</a></div></article>
+<article class="item"><h3>Resource · Commissioning governance model</h3><p>Use the federal guide as a reference for carrying owner requirements and acceptance decisions from planning through occupancy instead of inventing the turnover process at the end.</p><div class="source"><a href="https://www.wbdg.org/gsa/criteria/building-commissioning-guide" target="_blank" rel="noopener noreferrer">GSA · Building Commissioning Guide</a></div></article>
+<aside class="practice"><h3 class="label">Daily Action · Build a vendor acceptance card</h3><p>Set a 25-minute timer and choose one hypothetical data-center system. Create a one-page card with vendor deliverable, client prerequisite, supplier owner, client owner, measurable criterion, test condition, required evidence, acceptance authority and deficiency path; then mark the two fields most likely to be ambiguous in a real handoff. Keep the exercise local and do not send it or change an external system.</p></aside></section>
+</main>
+<nav class="edition-nav" aria-label="Adjacent editions"><a href="2026-08-17.html">← Previous edition</a> <a href="2026-08-21.html">Next edition →</a></nav>
+
+  <footer class="foot">
+    <div class="big">DC Daily Brief</div>
+    Covers news through August 19, 2026. · Researched and generated on demand<br>
+    News, context, and learning for Robert · Historical reporting may be superseded.
+  </footer>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>DC Daily Brief — Friday, July 31, 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,900&family=Newsreader:opsz,wght@6..72,400;6..72,500&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#F7F5EF; --panel:#FBFAF6; --ink:#1B1A17; --soft-ink:#3B3934;
+    --muted:#6B6862; --rule:#D8D3C7; --rule-strong:#B7B1A3;
+    --accent:#0F766E; --accent-ink:#0B534D; --accent-tint:#EAF1EF;
+    --serif:'Newsreader',Georgia,'Times New Roman',serif;
+    --display:'Fraunces',Georgia,serif;
+    --mono:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#14140F; --panel:#1A1A14; --ink:#ECE8DD; --soft-ink:#CFC9BB;
+      --muted:#948E80; --rule:#2E2D25; --rule-strong:#413F34;
+      --accent:#5FD3C4; --accent-ink:#8FE3D8; --accent-tint:#17241F;
+    }
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0}
+  body{
+    background:var(--bg); color:var(--ink);
+    font-family:var(--serif); font-size:18px; line-height:1.62;
+    -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+  }
+  .paper{max-width:760px; margin:0 auto; padding:40px 26px 72px;}
+
+  /* Masthead */
+  .masthead{text-align:center; padding-bottom:18px;}
+  .masthead .rule-top{border-top:3px solid var(--ink); margin-bottom:14px;}
+  .kicker-top{
+    font-family:var(--mono); font-size:11px; letter-spacing:.32em; text-transform:uppercase;
+    color:var(--muted); margin-bottom:12px;
+  }
+  .masthead h1{
+    font-family:var(--display); font-weight:900; font-size:clamp(38px,9vw,68px);
+    line-height:.94; letter-spacing:-.02em; margin:0 0 10px;
+  }
+  .masthead .tagline{
+    font-family:var(--serif); font-style:italic; color:var(--soft-ink);
+    font-size:16px; max-width:38ch; margin:0 auto 16px;
+  }
+  .dateline{
+    display:flex; justify-content:space-between; align-items:center; gap:12px;
+    border-top:1px solid var(--rule-strong); border-bottom:1px solid var(--rule-strong);
+    padding:8px 2px; font-family:var(--mono); font-size:11px; letter-spacing:.12em;
+    text-transform:uppercase; color:var(--muted);
+  }
+
+  /* Section */
+  .section{padding-top:30px;}
+  .section-head{
+    display:flex; align-items:baseline; gap:12px; margin-bottom:14px;
+    border-bottom:1px solid var(--rule); padding-bottom:8px;
+  }
+  .section-num{
+    font-family:var(--mono); font-weight:700; font-size:12px; color:var(--accent);
+    letter-spacing:.1em;
+  }
+  .section-title{
+    font-family:var(--mono); font-weight:700; font-size:12.5px; letter-spacing:.22em;
+    text-transform:uppercase; color:var(--ink);
+  }
+
+  .item{margin:0 0 20px;}
+  .item h3{
+    font-family:var(--display); font-weight:600; font-size:22px; line-height:1.2;
+    letter-spacing:-.01em; margin:0 0 6px;
+  }
+  .item p{margin:0 0 6px; color:var(--soft-ink);}
+  .item em, .practice em{font-style:italic; color:var(--ink);}
+  .source a{
+    font-family:var(--mono); font-size:11px; letter-spacing:.06em; text-transform:uppercase;
+    color:var(--accent); text-decoration:none; border-bottom:1px solid transparent;
+  }
+  .source a:hover{border-bottom-color:var(--accent);}
+  .source a::before{content:"↗ ";}
+
+  /* In Practice callout */
+  .practice{
+    background:var(--accent-tint); border-left:3px solid var(--accent);
+    padding:14px 18px; margin:6px 0 4px; border-radius:2px;
+  }
+  .practice .label{
+    display:block; font-family:var(--mono); font-size:10.5px; font-weight:700;
+    letter-spacing:.24em; text-transform:uppercase; color:var(--accent-ink); margin-bottom:6px;
+  }
+  .practice p{margin:0; font-size:16.5px; line-height:1.55; color:var(--soft-ink);}
+  .practice strong{color:var(--ink);}
+  .practice .source{margin-top:8px;}
+
+  /* Footer */
+  .foot{
+    margin-top:44px; padding-top:16px; border-top:3px solid var(--ink);
+    font-family:var(--mono); font-size:11px; letter-spacing:.08em; color:var(--muted);
+    text-align:center; line-height:1.8;
+  }
+  .foot .big{font-family:var(--display); font-size:13px; letter-spacing:.2em; text-transform:uppercase; color:var(--ink);}
+
+  a{color:var(--accent); text-underline-offset:3px; overflow-wrap:anywhere}
+  a:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-offset:4px}
+  .site-nav,.edition-nav{display:flex;justify-content:space-between;gap:16px;font-size:16px;margin:0 0 26px}
+  .edition-nav{margin-top:30px}
+  .skip-link{position:absolute;left:-10000px}
+  .skip-link:focus{position:static}
+  .section{scroll-margin-top:20px}
+  .section-head{margin-top:0}
+  .section-title{line-height:1.6;letter-spacing:.12em}
+  .section-nav{display:flex;flex-wrap:wrap;gap:8px 18px;border-bottom:1px solid var(--rule);padding:20px 0;font-size:16px}
+  .takeaways{padding:22px 0 0}
+  .takeaways h2{font-family:var(--display);font-size:26px}
+  .takeaways .item{margin-bottom:16px}
+  .takeaways .item h3{font-size:20px}
+  .takeaways .item p{font-size:17px}
+  .deep-dive{border-top:2px solid var(--accent);margin-top:28px;padding-top:18px}
+  .deep-dive h3{font-family:var(--display);font-size:28px;line-height:1.2;margin:8px 0 18px}
+  .deep-dive h4{font-family:var(--display);font-size:21px;margin:24px 0 8px}
+  .eyebrow{font:12px var(--mono);color:var(--accent);text-transform:uppercase;letter-spacing:.15em}
+  .recall{border:1px solid var(--rule);padding:14px 18px;margin:18px 0}
+  .recall summary{cursor:pointer;font-weight:600}
+  pre{white-space:pre-wrap;overflow-wrap:anywhere;background:var(--accent-tint);padding:16px;font:14px/1.7 var(--mono)}
+  .archive-list{list-style:none;padding:0}
+  .archive-list li{padding:15px 0;border-bottom:1px solid var(--rule)}
+  .archive-meta{display:block;color:var(--muted);font:12px/1.8 var(--mono)}
+  .practice .label{margin-top:0}
+  .source a{font-size:12px;line-height:1.8}
+  .source a[href^="#"]::before{content:"↓ "}
+  .coverage{font-size:14px;color:var(--muted);margin:12px 0 0}
+  hr{border:0;border-top:1px solid var(--rule);margin:22px 0}
+  @media(max-width:480px){.paper{padding:24px 18px 48px}.dateline{flex-wrap:wrap}.section-title{font-size:12px}.section-head{gap:8px}.deep-dive h3{font-size:25px}}
+</style>
+</head>
+<body>
+<div class="paper">
+<a class="skip-link" href="#content">Skip to content</a>
+<nav class="site-nav" aria-label="Main navigation"><a href="../index.html">Latest edition</a><a href="../archive.html">Archive</a></nav>
+
+  <header class="masthead">
+    <div class="rule-top"></div>
+    <div class="kicker-top">Aggregated Morning Brief · No. 019</div>
+    <h1>DC Daily Brief</h1>
+    <p class="tagline">Physical infrastructure, logical systems, and the decisions connecting them.</p>
+    <div class="dateline">
+      <span>Friday · July 31, 2026</span>
+      <span>Curated for Robert</span>
+    </div>
+    <p class="coverage">Covers news through July 31, 2026.</p>
+  </header>
+
+<main id="content">
+<nav class="section-nav" aria-label="Edition sections"><a href="#equinix">Equinix</a><a href="#google">Google</a><a href="#competitors">Competitors</a><a href="#dc-infrastructure">DC Infrastructure</a><a href="#ai-compute-demand">AI &amp; Compute Demand</a><a href="#new-ai-models-releases">New AI Models &amp; Releases</a><a href="#networking">Networking</a><a href="#backend-cloud-data">Backend / Cloud &amp; Data</a><a href="#program-pm">Program &amp; PM</a></nav><section class="section" id="equinix"><h2 class="section-head"><span class="section-num">01</span><span class="section-title">Equinix</span></h2><article class="item"><h3>Equinix&#x27;s active expansion pipeline spans roughly 51,900 cabinets and $6.5 billion of planned investment</h3><p>The company&#x27;s latest project schedule covers major IBX builds across the Americas, EMEA and Asia-Pacific, with delivery dates extending into 2028. The pipeline shows how corporate growth depends on dozens of local programs reaching power, construction, commissioning and customer-readiness gates on different schedules.</p><div class="source"><a href="https://investor.equinix.com/sec-filings/current-reports/content/0001101239-26-000032/0001101239-26-000032.pdf" target="_blank" rel="noopener noreferrer">Equinix SEC Filing</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Report capacity by readiness state, not one grand total</h3><p>Separate planned, funded, under construction, utility-ready, commissioned and customer-ready capacity, with confidence and constraint at each stage. A cabinet or megawatt should move stages only when its evidence gate is met. This prevents distant pipeline capacity from being mistaken for inventory operations can actually sell and support.</p></aside></section><section class="section" id="google"><h2 class="section-head"><span class="section-num">02</span><span class="section-title">Google</span></h2><article class="item"><h3>Google and Energy Dome launch a 23MW/200MWh long-duration storage project in Ireland</h3><p>The CO2 Battery installation at a former thermal power station will absorb surplus renewable energy and dispatch it during grid stress. Google describes the project as a blueprint for combining data-center growth with firm, affordable clean power rather than matching consumption only with annual renewable-energy purchases.</p><div class="source"><a href="https://blog.google/intl/en-ie/company-news/google-and-energy-dome-launch-energy-storage-project/" target="_blank" rel="noopener noreferrer">Google</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Define the operating value before celebrating the technology</h3><p>Document the storage system&#x27;s charge window, discharge duration, response time, availability target, maintenance mode and grid dispatch authority. Then map which facility risks it actually reduces and which still require UPS and generator coverage. A program succeeds when the new asset has a precise role in the resilience stack, not merely an innovative label.</p></aside></section><section class="section" id="competitors"><h2 class="section-head"><span class="section-num">03</span><span class="section-title">Competitors</span></h2><article class="item"><h3>CyrusOne begins a three-building, $1.5 billion campus beside a Texas gas plant</h3><p>The 760MW Fairfield project will comprise three roughly 306,000-square-foot buildings supplied by Calpine&#x27;s 1GW Freestone combined-cycle facility; two buildings are underway and the third is due to start in August, with completion targeted for August 2027. No tenants were identified in the filings, separating construction momentum from contracted occupancy.</p><div class="source"><a href="https://www.datacenterdynamics.com/en/news/cyrusone-files-to-develop-three-buildings-for-15bn-data-center-campus-in-fairfield-texas/" target="_blank" rel="noopener noreferrer">Data Center Dynamics</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Co-location with generation does not remove interface risk</h3><p>Build a responsibility matrix for plant output, transmission path, substation, metering, protection settings, black start, maintenance coordination and fuel interruption. Test the sequence for loss and restoration of the dedicated source. Physical proximity shortens the electrical path; disciplined ownership makes that path dependable.</p></aside></section><section class="section" id="dc-infrastructure"><h2 class="section-head"><span class="section-num">04</span><span class="section-title">DC Infrastructure</span></h2><article class="item"><h3>CenterPoint adds $1.2 billion to its capital plan as more than 17GW of large loads enter ERCOT&#x27;s Batch Zero process</h3><p>About 14GW may qualify for system-wide study, and the utility still expects to energize up to 8GW of Greater Houston data-center load by 2029. Studying large requests together should expose their combined grid effect, but it also means one project&#x27;s outcome depends on assumptions and changes across the whole batch.</p><div class="source"><a href="https://www.datacenterdynamics.com/en/news/centerpoint-energy-raises-investment-plan-by-12bn-as-data-center-load-pipeline-grows/" target="_blank" rel="noopener noreferrer">Data Center Dynamics</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Manage the queue as an external dependency with scenarios</h3><p>Record the study case, competing-load assumptions, required network upgrades, decision dates and who controls each input. Maintain best, expected and constrained energization scenarios instead of one promised date. When a shared study changes, update commercial, construction and commissioning plans together so one stale schedule does not become the unofficial truth.</p></aside></section><section class="section" id="ai-compute-demand"><h2 class="section-head"><span class="section-num">05</span><span class="section-title">AI &amp; Compute Demand</span></h2><article class="item"><h3>CleanCore signs a 10-year colocation agreement built around Cerebras systems</h3><p>The agreement gives Cerebras a long-duration infrastructure commitment while the AI-chip company also expands into CrowdStrike&#x27;s security platform. A decade-long term can support capital investment, but it makes refresh cycles, power-density changes, service levels and exit conditions more consequential than in a short capacity lease.</p><div class="source"><a href="https://www.datacenterdynamics.com/en/news/cleancore-solutions-signs-on-cerebras-under-10-year-colocation-agreement/" target="_blank" rel="noopener noreferrer">Data Center Dynamics</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Design long contracts for technology that will not stand still</h3><p>Define power and cooling envelopes, refresh rights, migration windows, stranded-capacity treatment, spares, performance acceptance and end-of-life responsibilities. Schedule architecture reviews before each major hardware generation. The goal is a stable commercial relationship with controlled technical change—not freezing today&#x27;s design for ten years.</p></aside></section><section class="section" id="new-ai-models-releases"><h2 class="section-head"><span class="section-num">06</span><span class="section-title">New AI Models &amp; Releases</span></h2><article class="item"><h3>Meta releases Muse Image and previews Muse Video for generation and editing across its apps</h3><p>Muse Image supports instruction-based editing and multi-reference composition and is rolling into Meta AI, Instagram Stories and limited WhatsApp markets; Muse Video is an early preview. The launch expands model evaluation beyond text into provenance, consent, brand controls and review of media that can look production-ready before it is operationally safe.</p><div class="source"><a href="https://ai.meta.com/blog/introducing-muse-image-muse-video-msl/" target="_blank" rel="noopener noreferrer">Meta AI</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Add media-specific acceptance criteria</h3><p>Test identity preservation, unwanted object insertion, text accuracy, copyright and consent risks, watermarking, metadata retention and repeatability across representative prompts. Require human approval for external use and retain the source references and final decision. Visual quality is only one dimension of a supportable production workflow.</p></aside></section><section class="section" id="networking"><h2 class="section-head"><span class="section-num">07</span><span class="section-title">Networking</span></h2><article class="item"><h3>Deutsche Telekom contributes StratoWeave to LF Networking for open, model-driven transport automation</h3><p>The candidate project uses declarative orchestration to configure and manage complex networks and aims to reduce dependence on proprietary automation stacks. Open automation can improve portability and collaboration, but the operational risk moves into data models, controller permissions and how safely desired state becomes live change.</p><div class="source"><a href="https://www.linuxfoundation.org/press/lf-networking-expands-portfolio-with-new-stratoweave-project-contributed-by-deutsche-telekom-to-advance-open-ai-native-transport-network-automation" target="_blank" rel="noopener noreferrer">Linux Foundation</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Treat network intent as controlled code</h3><p>Put models and configurations through peer review, validation, staged rollout and automated pre/post checks; define blast-radius limits and a tested rollback. Separate the authority to propose a change from the authority to deploy it. Zero-touch should mean repeatable controls with fewer manual steps—not fewer accountable humans.</p></aside></section><section class="section" id="backend-cloud-data"><h2 class="section-head"><span class="section-num">08</span><span class="section-title">Backend / Cloud &amp; Data</span></h2><article class="item"><h3>Enterprise cloud-infrastructure spending reaches $143 billion in Q2</h3><p>Synergy Research reports an eleventh consecutive quarter of accelerating growth, driven heavily by AI workloads. The market signal is strong, but for an individual program rising cloud consumption can reflect delivered value, inefficient architecture or both unless usage is linked to owners and outcomes.</p><div class="source"><a href="https://www.datacenterdynamics.com/en/news/enterprise-cloud-infrastructure-spending-hits-143-billion-report/" target="_blank" rel="noopener noreferrer">Data Center Dynamics</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Pair every material cloud cost with an owner and a unit of value</h3><p>Tag workloads by product, environment and team, then track cost per transaction, model run, customer or other useful output alongside reliability. Review idle resources and anomalous growth on a fixed cadence. FinOps becomes program management when financial, technical and business evidence drive one prioritization conversation.</p></aside></section><section class="section" id="program-pm"><h2 class="section-head"><span class="section-num">09</span><span class="section-title">Program &amp; PM</span></h2><article class="item"><h3>PMI projects demand for project professionals to grow faster than the available talent supply</h3><p>PMI&#x27;s global talent-gap research estimates the profession could grow from about 39.6 million people in 2025 while organizations face an expanding shortfall through the next decade. For technical operators, the opportunity belongs to people who can translate field reality into scope, risk, sequencing and decisions—not those who abandon their operational expertise.</p><div class="source"><a href="https://www.pmi.org/-/media/pmi/documents/public/pdf/learning/thought-leadership/talent_gap_2025-v3.pdf" target="_blank" rel="noopener noreferrer">PMI Talent Gap</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Build a portfolio of evidence before seeking the title</h3><p>For one current initiative, keep the charter, stakeholder map, schedule, risk log, decision record, change history and lessons learned; quantify the operational outcome. Ask to own coordination across one additional team or vendor. PMP study builds the vocabulary, while documented delivery proves you can apply it under real constraints.</p></aside></section>
+</main>
+<nav class="edition-nav" aria-label="Adjacent editions"><a href="2026-07-30.html">← Previous edition</a> <a href="2026-08-02.html">Next edition →</a></nav>
+
+  <footer class="foot">
+    <div class="big">DC Daily Brief</div>
+    Covers news through July 31, 2026. · Researched and generated on demand<br>
+    News, context, and learning for Robert · Historical reporting may be superseded.
+  </footer>
+
+</div>
+</body>
+</html>

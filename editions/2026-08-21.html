@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>DC Daily Brief — Friday, August 21, 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,900&family=Newsreader:opsz,wght@6..72,400;6..72,500&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#F7F5EF; --panel:#FBFAF6; --ink:#1B1A17; --soft-ink:#3B3934;
+    --muted:#6B6862; --rule:#D8D3C7; --rule-strong:#B7B1A3;
+    --accent:#0F766E; --accent-ink:#0B534D; --accent-tint:#EAF1EF;
+    --serif:'Newsreader',Georgia,'Times New Roman',serif;
+    --display:'Fraunces',Georgia,serif;
+    --mono:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#14140F; --panel:#1A1A14; --ink:#ECE8DD; --soft-ink:#CFC9BB;
+      --muted:#948E80; --rule:#2E2D25; --rule-strong:#413F34;
+      --accent:#5FD3C4; --accent-ink:#8FE3D8; --accent-tint:#17241F;
+    }
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0}
+  body{
+    background:var(--bg); color:var(--ink);
+    font-family:var(--serif); font-size:18px; line-height:1.62;
+    -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+  }
+  .paper{max-width:760px; margin:0 auto; padding:40px 26px 72px;}
+
+  /* Masthead */
+  .masthead{text-align:center; padding-bottom:18px;}
+  .masthead .rule-top{border-top:3px solid var(--ink); margin-bottom:14px;}
+  .kicker-top{
+    font-family:var(--mono); font-size:11px; letter-spacing:.32em; text-transform:uppercase;
+    color:var(--muted); margin-bottom:12px;
+  }
+  .masthead h1{
+    font-family:var(--display); font-weight:900; font-size:clamp(38px,9vw,68px);
+    line-height:.94; letter-spacing:-.02em; margin:0 0 10px;
+  }
+  .masthead .tagline{
+    font-family:var(--serif); font-style:italic; color:var(--soft-ink);
+    font-size:16px; max-width:38ch; margin:0 auto 16px;
+  }
+  .dateline{
+    display:flex; justify-content:space-between; align-items:center; gap:12px;
+    border-top:1px solid var(--rule-strong); border-bottom:1px solid var(--rule-strong);
+    padding:8px 2px; font-family:var(--mono); font-size:11px; letter-spacing:.12em;
+    text-transform:uppercase; color:var(--muted);
+  }
+
+  /* Section */
+  .section{padding-top:30px;}
+  .section-head{
+    display:flex; align-items:baseline; gap:12px; margin-bottom:14px;
+    border-bottom:1px solid var(--rule); padding-bottom:8px;
+  }
+  .section-num{
+    font-family:var(--mono); font-weight:700; font-size:12px; color:var(--accent);
+    letter-spacing:.1em;
+  }
+  .section-title{
+    font-family:var(--mono); font-weight:700; font-size:12.5px; letter-spacing:.22em;
+    text-transform:uppercase; color:var(--ink);
+  }
+
+  .item{margin:0 0 20px;}
+  .item h3{
+    font-family:var(--display); font-weight:600; font-size:22px; line-height:1.2;
+    letter-spacing:-.01em; margin:0 0 6px;
+  }
+  .item p{margin:0 0 6px; color:var(--soft-ink);}
+  .item em, .practice em{font-style:italic; color:var(--ink);}
+  .source a{
+    font-family:var(--mono); font-size:11px; letter-spacing:.06em; text-transform:uppercase;
+    color:var(--accent); text-decoration:none; border-bottom:1px solid transparent;
+  }
+  .source a:hover{border-bottom-color:var(--accent);}
+  .source a::before{content:"↗ ";}
+
+  /* In Practice callout */
+  .practice{
+    background:var(--accent-tint); border-left:3px solid var(--accent);
+    padding:14px 18px; margin:6px 0 4px; border-radius:2px;
+  }
+  .practice .label{
+    display:block; font-family:var(--mono); font-size:10.5px; font-weight:700;
+    letter-spacing:.24em; text-transform:uppercase; color:var(--accent-ink); margin-bottom:6px;
+  }
+  .practice p{margin:0; font-size:16.5px; line-height:1.55; color:var(--soft-ink);}
+  .practice strong{color:var(--ink);}
+  .practice .source{margin-top:8px;}
+
+  /* Footer */
+  .foot{
+    margin-top:44px; padding-top:16px; border-top:3px solid var(--ink);
+    font-family:var(--mono); font-size:11px; letter-spacing:.08em; color:var(--muted);
+    text-align:center; line-height:1.8;
+  }
+  .foot .big{font-family:var(--display); font-size:13px; letter-spacing:.2em; text-transform:uppercase; color:var(--ink);}
+
+  a{color:var(--accent); text-underline-offset:3px; overflow-wrap:anywhere}
+  a:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-offset:4px}
+  .site-nav,.edition-nav{display:flex;justify-content:space-between;gap:16px;font-size:16px;margin:0 0 26px}
+  .edition-nav{margin-top:30px}
+  .skip-link{position:absolute;left:-10000px}
+  .skip-link:focus{position:static}
+  .section{scroll-margin-top:20px}
+  .section-head{margin-top:0}
+  .section-title{line-height:1.6;letter-spacing:.12em}
+  .section-nav{display:flex;flex-wrap:wrap;gap:8px 18px;border-bottom:1px solid var(--rule);padding:20px 0;font-size:16px}
+  .takeaways{padding:22px 0 0}
+  .takeaways h2{font-family:var(--display);font-size:26px}
+  .takeaways .item{margin-bottom:16px}
+  .takeaways .item h3{font-size:20px}
+  .takeaways .item p{font-size:17px}
+  .deep-dive{border-top:2px solid var(--accent);margin-top:28px;padding-top:18px}
+  .deep-dive h3{font-family:var(--display);font-size:28px;line-height:1.2;margin:8px 0 18px}
+  .deep-dive h4{font-family:var(--display);font-size:21px;margin:24px 0 8px}
+  .eyebrow{font:12px var(--mono);color:var(--accent);text-transform:uppercase;letter-spacing:.15em}
+  .recall{border:1px solid var(--rule);padding:14px 18px;margin:18px 0}
+  .recall summary{cursor:pointer;font-weight:600}
+  pre{white-space:pre-wrap;overflow-wrap:anywhere;background:var(--accent-tint);padding:16px;font:14px/1.7 var(--mono)}
+  .archive-list{list-style:none;padding:0}
+  .archive-list li{padding:15px 0;border-bottom:1px solid var(--rule)}
+  .archive-meta{display:block;color:var(--muted);font:12px/1.8 var(--mono)}
+  .practice .label{margin-top:0}
+  .source a{font-size:12px;line-height:1.8}
+  .source a[href^="#"]::before{content:"↓ "}
+  .coverage{font-size:14px;color:var(--muted);margin:12px 0 0}
+  hr{border:0;border-top:1px solid var(--rule);margin:22px 0}
+  @media(max-width:480px){.paper{padding:24px 18px 48px}.dateline{flex-wrap:wrap}.section-title{font-size:12px}.section-head{gap:8px}.deep-dive h3{font-size:25px}}
+</style>
+</head>
+<body>
+<div class="paper">
+<a class="skip-link" href="#content">Skip to content</a>
+<nav class="site-nav" aria-label="Main navigation"><a href="../index.html">Latest edition</a><a href="../archive.html">Archive</a></nav>
+
+  <header class="masthead">
+    <div class="rule-top"></div>
+    <div class="kicker-top">Aggregated Morning Brief · No. 030</div>
+    <h1>DC Daily Brief</h1>
+    <p class="tagline">Physical infrastructure, logical systems, and the decisions connecting them.</p>
+    <div class="dateline">
+      <span>Friday · August 21, 2026</span>
+      <span>Curated for Robert</span>
+    </div>
+    <p class="coverage">Covers news through August 21, 2026.</p>
+  </header>
+
+<main id="content">
+<nav class="section-nav" aria-label="Edition sections"><a href="#equinix">Equinix</a><a href="#google">Google</a><a href="#competitors">Competitors</a><a href="#dc-infrastructure">DC Infrastructure</a><a href="#ai-compute-demand">AI &amp; Compute Demand</a><a href="#new-ai-models-releases">New AI Models &amp; Releases</a><a href="#networking">Networking</a><a href="#backend-cloud-data">Backend / Cloud &amp; Data</a><a href="#program-pm">Program &amp; PM</a><a href="#pgpm-growth">PgPM Growth</a></nav><section class="section" id="equinix"><h2 class="section-head"><span class="section-num">01</span><span class="section-title">Equinix</span></h2><article class="item"><h3>Equinix adds another Singapore solar PPA, but delivery depends on a distributed generation portfolio</h3><p>The agreement with Flo Energy starts with at least 11.5 MWp from commercial and industrial rooftops and includes an option to expand to 50 MWp; Equinix says its four Singapore agreements should total 215 MWp by 2028. Aggregating constrained urban solar can diversify procurement, yet the headline capacity is not a single dispatchable plant—site enrollment, metering, certificates, production variance and contract expansion all determine the energy actually credited.</p><div class="source"><a href="https://newsroom.equinix.com/2026-08-18-Equinix-Strengthens-Singapores-Sustainable-Digital-Future-with-Additional-Renewable-Energy-Power-Purchase-Agreement-with-Flo-Energy" target="_blank" rel="noopener noreferrer">Equinix</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Govern a portfolio PPA by evidence delivered</h3><p>Separate contracted MWp, enrolled rooftops, energized generation, metered MWh and matched certificates; assign owners for each handoff and reconcile forecast against actual production monthly. Track the 50 MWp option as an unexercised decision with price, timing and approval triggers. A signed agreement creates a pathway, while operating evidence proves the coverage.</p></aside></section><section class="section" id="google"><h2 class="section-head"><span class="section-num">02</span><span class="section-title">Google</span></h2><article class="item"><h3>Google’s Americas Connect adds three subsea systems and a new Firmina branch around regional cloud hubs</h3><p>Alisios, Canoa and OlaLuz are designed to connect the Dominican Republic with Panama, Chile, Bermuda and Florida, while the additional Firmina landing extends another existing system into the region. Google presents the topology as rings and geographically separated paths to cloud regions in the United States, Latin America and Europe; the program value will depend on permits, landings, terrestrial backhaul and tested physical diversity, not the number of cable names alone.</p><div class="source"><a href="https://cloud.google.com/blog/products/infrastructure/introducing-americas-connect" target="_blank" rel="noopener noreferrer">Google Cloud</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Manage subsea resilience as an end-to-end service path</h3><p>For each promised route, map marine segment, landing station, terrestrial fiber, metro entry, cloud-region handoff and shared facilities; record owner, ready date and failure domain. Commission latency and failover from customer edge to service endpoint. Geographic diversity is real only when no hidden landing or backhaul dependency can remove both paths.</p></aside></section><section class="section" id="competitors"><h2 class="section-head"><span class="section-num">03</span><span class="section-title">Competitors</span></h2><article class="item"><h3>Centuria and ResetData connect a 250 MW-plus Australian pipeline to GPU financing and early capacity reservations</h3><p>The companies report a A$165 million Macquarie bridge facility for staged GPU purchases, 72 MW of generation equipment secured for 2028 and an initial data-center allocation that could grow from 7 MW to 10 MW. Several elements remain conditional—including a short-lived reservation and a customer memorandum—so the announcement is best read as an attempt to synchronize capital, equipment, power and demand rather than as 250 MW of committed service.</p><div class="source"><a href="https://centuria.com.au/news/centuria-and-resetdata-accelerate-250mw-ai-and-digital-pipeline/" target="_blank" rel="noopener noreferrer">Centuria</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Put every pipeline number on the same maturity ladder</h3><p>Distinguish available, reserved, ordered, financed, contracted, commissioned and customer-accepted capacity; require evidence and an expiry date before moving a block forward. Show financing covenants and customer prerequisites beside facility milestones. This prevents a conditional reservation, funded GPU order and operating megawatt from being added as though they carry equal certainty.</p></aside></section><section class="section" id="dc-infrastructure"><h2 class="section-head"><span class="section-num">04</span><span class="section-title">DC Infrastructure</span></h2><article class="item"><h3>Pennsylvania makes responsible-development requirements part of the state permitting path for data centers</h3><p>Executive Order 2026-05 directs state agencies to require proposals seeking Commonwealth permits to comply with the GRID requirements and removes data centers from fast-track permitting. The change turns electricity cost, environmental performance, community participation and proposal credibility into front-end development work, showing that a technically feasible campus can still lose schedule position when stakeholder and policy evidence is incomplete.</p><div class="source"><a href="https://www.pa.gov/governor/newsroom/2026-press-releases/governor-shapiro-signs-executive-order-on-data-center-developmen" target="_blank" rel="noopener noreferrer">Commonwealth of Pennsylvania</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Build the permit basis before promising the delivery date</h3><p>Create an evidence matrix for every GRID requirement with agency, local stakeholder, document owner, submission date, review duration and closure criterion; connect each approval to land, power and construction decisions it authorizes. Keep assumptions out of the committed baseline until the responsible authority confirms the path. Policy readiness is now a design input, not a late legal review.</p></aside></section><section class="section" id="ai-compute-demand"><h2 class="section-head"><span class="section-num">05</span><span class="section-title">AI &amp; Compute Demand</span></h2><article class="item"><h3>OpenAI’s planned Ohio campus couples an 8 GW compute lease to 10 GW of new energy generation</h3><p>Axios reports that OpenAI announced a 20-year lease for a central Ohio project to be built and owned by SB Energy, with initial capacity targeted for 2028 and financing partly guaranteed by Nvidia. The extraordinary scale is a demand signal, but it also concentrates technical, capital and counterparty dependencies across a long-duration program; announced gigawatts will arrive only through phased land, fuel, generation, grid, equipment and acceptance gates.</p><div class="source"><a href="https://www.axios.com/2026/08/17/openai-nvidia-ohio-data-center-sb-energy" target="_blank" rel="noopener noreferrer">Axios</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Decompose the megaproject into independently acceptable capacity blocks</h3><p>Give each phase its own power source, IT load, network, permits, customer need date, funding condition and acceptance test; identify which common assets can delay every block. Review guarantee and lease dependencies as program risks, not finance footnotes. Phasing creates useful optionality only when one delayed shared system cannot hold the entire campus hostage.</p></aside></section><section class="section" id="new-ai-models-releases"><h2 class="section-head"><span class="section-num">06</span><span class="section-title">New AI Models &amp; Releases</span></h2><article class="item"><h3>Gemini 3.7 Flash reaches general availability for coding and agentic work</h3><p>Google describes the August 13 release as its new workhorse model with improvements in software engineering, web development and agent workflows, offered at introductory pricing through year-end. General availability reduces lifecycle uncertainty, but teams moving from Gemini 3.6 still need to verify tool calls, output consistency, latency, cost after promotional pricing and any behaviors embedded in existing automations.</p><div class="source"><a href="https://ai.google.dev/gemini-api/docs/changelog" target="_blank" rel="noopener noreferrer">Google AI for Developers</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Run a controlled model-change acceptance test</h3><p>Freeze a representative task set and compare 3.6 with 3.7 on completion quality, tool accuracy, retries, latency, token use, safety behavior and total workflow cost; require owners to review material regressions before changing the default. Record the model identifier and evaluation date in the release decision. “GA” describes provider support, not your workflow’s readiness.</p></aside></section><section class="section" id="networking"><h2 class="section-head"><span class="section-num">07</span><span class="section-title">Networking</span></h2><article class="item"><h3>A new 2026 networking report frames AI connectivity as three coupled systems rather than one fabric</h3><p>NextGen Infra’s analysis separates scale-up inside accelerator domains, scale-out across racks and scale-across between data centers, then finds competing standards and multi-protocol hardware are likely to coexist. Its practical recommendation is to preserve architectural optionality while qualifying higher-speed switching, optics, DCI and fault tolerance—an important counterweight to designing an entire cluster around a single vendor roadmap.</p><div class="source"><a href="https://dl.nextgeninfra.io/downloads/2026-NGI-Data-Center-Networking-Report-Rev-B3.pdf" target="_blank" rel="noopener noreferrer">NextGen Infra</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Give each network domain its own acceptance contract</h3><p>Define workload, bandwidth, tail latency, loss, congestion behavior, failure recovery, telemetry and upgrade boundary for scale-up, scale-out and scale-across; then test the interfaces between them with a representative job. Track protocol and optics choices as time-bound decisions with exit costs. Optionality is useful only when the design preserves a tested migration path.</p></aside></section><section class="section" id="backend-cloud-data"><h2 class="section-head"><span class="section-num">08</span><span class="section-title">Backend / Cloud &amp; Data</span></h2><article class="item"><h3>Crusoe moves load-balancer metrics into its Cloud console as its inference platform adds trial credits</h3><p>Crusoe’s August 18 changelog says customers can now view load-balancer metrics directly in the console, extending telemetry previously exposed through PromQL; an August 19 update also gives users credits to test serverless inference and fine-tuning without a payment method. The combination lowers both operating and adoption friction, but Crusoe’s own release notes do not establish metric completeness, alert quality or production service performance.</p><div class="source"><a href="https://docs.crusoecloud.com/resources/changelog/" target="_blank" rel="noopener noreferrer">Crusoe Cloud</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Validate observability before relying on the dashboard</h3><p>Generate known traffic, saturation and backend-failure conditions; confirm metric names, units, dimensions, delay, retention and gaps against application logs, then define alerts and their response owners. Document what the console cannot show and retain an independent service-level signal. Visibility becomes operational control only after the team proves what each graph means during failure.</p></aside></section><section class="section" id="program-pm"><h2 class="section-head"><span class="section-num">09</span><span class="section-title">Program &amp; PM</span></h2><article class="item"><h3>PMI opens two standards drafts while their underlying management disciplines are changing</h3><p>PMI’s public-comment portal lists the second edition of The Standard for Business Analysis for review through August 24 and the fifth edition of The Standard for Portfolio Management through September 7. The review windows are more than publication administration: they offer practitioners a live view into whether requirements, value, governance and prioritization guidance still works in modern programs before it becomes the reference others follow.</p><div class="source"><a href="https://publiccomment.pmi.org/" target="_blank" rel="noopener noreferrer">Project Management Institute</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Use a standards review as a gap analysis for your own operating model</h3><p>Select one draft concept and compare it with a hypothetical data-center program: current practice, missing evidence, unclear decision right, adoption cost and expected value. Write one specific change you would recommend and the scenario that justifies it. Professional growth accelerates when you test guidance against real delivery conditions instead of only memorizing terminology.</p></aside></section><section class="section" id="pgpm-growth"><h2 class="section-head"><span class="section-num">10</span><span class="section-title">PgPM Growth</span></h2><article class="item"><h3>Convert a risk register into trigger-based control</h3><p>At the applied-practice level, write each material risk as cause, uncertain event and effect, then add a measurable leading indicator, threshold, response, owner and review date. For a data-center program, a utility study delay becomes controllable when the team knows which missed evidence date changes the capacity forecast, releases contingency or escalates a decision—not when the row merely remains red for weeks.</p><div class="source"><a href="https://www.apm.org.uk/resources/what-is-project-management/what-is-risk-management/" target="_blank" rel="noopener noreferrer">APM · What is risk management?</a></div></article>
+<article class="item"><h3>Communicate uncertainty as a decision, not an apology</h3><p>Connect each triggered risk to the audience’s objective: state what changed, evidence and confidence, impact range, actions underway, latest safe decision date and the recommendation or authority needed. This preserves credibility without pretending the forecast is certain and gives sponsors enough information to choose within their risk appetite.</p><div class="source"><a href="https://www.gov.uk/government/publications/orange-book/the-orange-book-management-of-risk-principles-and-concepts" target="_blank" rel="noopener noreferrer">UK Government · The Orange Book</a></div></article>
+<article class="item"><h3>Resource · Prioritize before planning every response</h3><p>Use probability, impact and secondary-risk guidance to focus mitigation effort where it changes the program outcome.</p><div class="source"><a href="https://www.apm.org.uk/resources/whitepapers/project-risk-analysis-and-management/" target="_blank" rel="noopener noreferrer">APM · Project risk analysis and management</a></div></article>
+<article class="item"><h3>Resource · Express schedule dates with confidence</h3><p>Use schedule-risk analysis to connect uncertain durations and risk drivers to a credible completion range rather than a single unsupported date.</p><div class="source"><a href="https://www.gao.gov/products/gao-16-89g" target="_blank" rel="noopener noreferrer">U.S. GAO · Schedule Assessment Guide</a></div></article>
+<article class="item"><h3>Resource · Match the message to risk tolerance</h3><p>Use the audience-specific prompts to determine when a threshold requires review and which consequence matters to each stakeholder.</p><div class="source"><a href="https://www.pmi.org/learning/library/risk-talking-points-communication-management-4281" target="_blank" rel="noopener noreferrer">PMI · Risk talking points</a></div></article>
+<article class="item"><h3>Resource · Reduce noise without hiding exposure</h3><p>Use the practical communication guidance to elevate risks that are material, actionable and time-sensitive while retaining the full register for control.</p><div class="source"><a href="https://www.pmi.org/learning/library/explaining-risk-project-stakeholders-2206" target="_blank" rel="noopener noreferrer">PMI · Explaining risk</a></div></article>
+<aside class="practice"><h3 class="label">Daily Action · Build a triggered risk decision card</h3><p>Set a 25-minute timer and choose one hypothetical data-center delivery risk. Create a one-page card with cause, event, effect, leading indicator, numeric threshold, response owner, impact range, confidence, latest safe decision date and one recommended sponsor action; then rewrite its summary in three sentences for an executive audience. Keep the artifact local and do not send it or modify an external system.</p></aside></section>
+</main>
+<nav class="edition-nav" aria-label="Adjacent editions"><a href="2026-08-19.html">← Previous edition</a> <a href="2026-08-23.html">Next edition →</a></nav>
+
+  <footer class="foot">
+    <div class="big">DC Daily Brief</div>
+    Covers news through August 21, 2026. · Researched and generated on demand<br>
+    News, context, and learning for Robert · Historical reporting may be superseded.
+  </footer>
+
+</div>
+</body>
+</html>

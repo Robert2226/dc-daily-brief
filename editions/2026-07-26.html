@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>DC Daily Brief — Sunday, July 26, 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,900&family=Newsreader:opsz,wght@6..72,400;6..72,500&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#F7F5EF; --panel:#FBFAF6; --ink:#1B1A17; --soft-ink:#3B3934;
+    --muted:#6B6862; --rule:#D8D3C7; --rule-strong:#B7B1A3;
+    --accent:#0F766E; --accent-ink:#0B534D; --accent-tint:#EAF1EF;
+    --serif:'Newsreader',Georgia,'Times New Roman',serif;
+    --display:'Fraunces',Georgia,serif;
+    --mono:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#14140F; --panel:#1A1A14; --ink:#ECE8DD; --soft-ink:#CFC9BB;
+      --muted:#948E80; --rule:#2E2D25; --rule-strong:#413F34;
+      --accent:#5FD3C4; --accent-ink:#8FE3D8; --accent-tint:#17241F;
+    }
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0}
+  body{
+    background:var(--bg); color:var(--ink);
+    font-family:var(--serif); font-size:18px; line-height:1.62;
+    -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+  }
+  .paper{max-width:760px; margin:0 auto; padding:40px 26px 72px;}
+
+  /* Masthead */
+  .masthead{text-align:center; padding-bottom:18px;}
+  .masthead .rule-top{border-top:3px solid var(--ink); margin-bottom:14px;}
+  .kicker-top{
+    font-family:var(--mono); font-size:11px; letter-spacing:.32em; text-transform:uppercase;
+    color:var(--muted); margin-bottom:12px;
+  }
+  .masthead h1{
+    font-family:var(--display); font-weight:900; font-size:clamp(38px,9vw,68px);
+    line-height:.94; letter-spacing:-.02em; margin:0 0 10px;
+  }
+  .masthead .tagline{
+    font-family:var(--serif); font-style:italic; color:var(--soft-ink);
+    font-size:16px; max-width:38ch; margin:0 auto 16px;
+  }
+  .dateline{
+    display:flex; justify-content:space-between; align-items:center; gap:12px;
+    border-top:1px solid var(--rule-strong); border-bottom:1px solid var(--rule-strong);
+    padding:8px 2px; font-family:var(--mono); font-size:11px; letter-spacing:.12em;
+    text-transform:uppercase; color:var(--muted);
+  }
+
+  /* Section */
+  .section{padding-top:30px;}
+  .section-head{
+    display:flex; align-items:baseline; gap:12px; margin-bottom:14px;
+    border-bottom:1px solid var(--rule); padding-bottom:8px;
+  }
+  .section-num{
+    font-family:var(--mono); font-weight:700; font-size:12px; color:var(--accent);
+    letter-spacing:.1em;
+  }
+  .section-title{
+    font-family:var(--mono); font-weight:700; font-size:12.5px; letter-spacing:.22em;
+    text-transform:uppercase; color:var(--ink);
+  }
+
+  .item{margin:0 0 20px;}
+  .item h3{
+    font-family:var(--display); font-weight:600; font-size:22px; line-height:1.2;
+    letter-spacing:-.01em; margin:0 0 6px;
+  }
+  .item p{margin:0 0 6px; color:var(--soft-ink);}
+  .item em, .practice em{font-style:italic; color:var(--ink);}
+  .source a{
+    font-family:var(--mono); font-size:11px; letter-spacing:.06em; text-transform:uppercase;
+    color:var(--accent); text-decoration:none; border-bottom:1px solid transparent;
+  }
+  .source a:hover{border-bottom-color:var(--accent);}
+  .source a::before{content:"↗ ";}
+
+  /* In Practice callout */
+  .practice{
+    background:var(--accent-tint); border-left:3px solid var(--accent);
+    padding:14px 18px; margin:6px 0 4px; border-radius:2px;
+  }
+  .practice .label{
+    display:block; font-family:var(--mono); font-size:10.5px; font-weight:700;
+    letter-spacing:.24em; text-transform:uppercase; color:var(--accent-ink); margin-bottom:6px;
+  }
+  .practice p{margin:0; font-size:16.5px; line-height:1.55; color:var(--soft-ink);}
+  .practice strong{color:var(--ink);}
+  .practice .source{margin-top:8px;}
+
+  /* Footer */
+  .foot{
+    margin-top:44px; padding-top:16px; border-top:3px solid var(--ink);
+    font-family:var(--mono); font-size:11px; letter-spacing:.08em; color:var(--muted);
+    text-align:center; line-height:1.8;
+  }
+  .foot .big{font-family:var(--display); font-size:13px; letter-spacing:.2em; text-transform:uppercase; color:var(--ink);}
+
+  a{color:var(--accent); text-underline-offset:3px; overflow-wrap:anywhere}
+  a:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-offset:4px}
+  .site-nav,.edition-nav{display:flex;justify-content:space-between;gap:16px;font-size:16px;margin:0 0 26px}
+  .edition-nav{margin-top:30px}
+  .skip-link{position:absolute;left:-10000px}
+  .skip-link:focus{position:static}
+  .section{scroll-margin-top:20px}
+  .section-head{margin-top:0}
+  .section-title{line-height:1.6;letter-spacing:.12em}
+  .section-nav{display:flex;flex-wrap:wrap;gap:8px 18px;border-bottom:1px solid var(--rule);padding:20px 0;font-size:16px}
+  .takeaways{padding:22px 0 0}
+  .takeaways h2{font-family:var(--display);font-size:26px}
+  .takeaways .item{margin-bottom:16px}
+  .takeaways .item h3{font-size:20px}
+  .takeaways .item p{font-size:17px}
+  .deep-dive{border-top:2px solid var(--accent);margin-top:28px;padding-top:18px}
+  .deep-dive h3{font-family:var(--display);font-size:28px;line-height:1.2;margin:8px 0 18px}
+  .deep-dive h4{font-family:var(--display);font-size:21px;margin:24px 0 8px}
+  .eyebrow{font:12px var(--mono);color:var(--accent);text-transform:uppercase;letter-spacing:.15em}
+  .recall{border:1px solid var(--rule);padding:14px 18px;margin:18px 0}
+  .recall summary{cursor:pointer;font-weight:600}
+  pre{white-space:pre-wrap;overflow-wrap:anywhere;background:var(--accent-tint);padding:16px;font:14px/1.7 var(--mono)}
+  .archive-list{list-style:none;padding:0}
+  .archive-list li{padding:15px 0;border-bottom:1px solid var(--rule)}
+  .archive-meta{display:block;color:var(--muted);font:12px/1.8 var(--mono)}
+  .practice .label{margin-top:0}
+  .source a{font-size:12px;line-height:1.8}
+  .source a[href^="#"]::before{content:"↓ "}
+  .coverage{font-size:14px;color:var(--muted);margin:12px 0 0}
+  hr{border:0;border-top:1px solid var(--rule);margin:22px 0}
+  @media(max-width:480px){.paper{padding:24px 18px 48px}.dateline{flex-wrap:wrap}.section-title{font-size:12px}.section-head{gap:8px}.deep-dive h3{font-size:25px}}
+</style>
+</head>
+<body>
+<div class="paper">
+<a class="skip-link" href="#content">Skip to content</a>
+<nav class="site-nav" aria-label="Main navigation"><a href="../index.html">Latest edition</a><a href="../archive.html">Archive</a></nav>
+
+  <header class="masthead">
+    <div class="rule-top"></div>
+    <div class="kicker-top">Aggregated Morning Brief · No. 014</div>
+    <h1>DC Daily Brief</h1>
+    <p class="tagline">Physical infrastructure, logical systems, and the decisions connecting them.</p>
+    <div class="dateline">
+      <span>Sunday · July 26, 2026</span>
+      <span>Curated for Robert</span>
+    </div>
+    <p class="coverage">Covers news through July 24–26, 2026.</p>
+  </header>
+
+<main id="content">
+<nav class="section-nav" aria-label="Edition sections"><a href="#equinix">Equinix</a><a href="#competitors">Competitors</a><a href="#dc-infrastructure">DC Infrastructure</a><a href="#ai-compute-demand">AI &amp; Compute Demand</a><a href="#new-ai-models-releases">New AI Models &amp; Releases</a><a href="#networking">Networking</a><a href="#backend-cloud-data">Backend / Cloud &amp; Data</a><a href="#program-pm">Program &amp; PM</a></nav><section class="section" id="equinix"><h2 class="section-head"><span class="section-num">01</span><span class="section-title">Equinix</span></h2><article class="item"><h3>Equinix and Milan utility A2A will turn server heat from the Settimo Milanese campus into district heating</h3><p>The partnership will recover thermal energy from Equinix facilities and feed it into A2A&#x27;s local heating network, displacing energy that would otherwise be produced specifically for nearby buildings. The project is a useful counterpoint to the industry&#x27;s power-and-water debate: the data center remains a large energy consumer, but its rejected heat becomes a usable community output rather than a facility waste stream.</p><div class="source"><a href="https://newsroom.equinix.com/2026-07-02-Decarbonization-through-heat-recovery-from-data-centers-A2A-and-Equinix-launch-a-strategic-partnership-in-Milan" target="_blank" rel="noopener noreferrer">Equinix Newsroom</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Waste-heat reuse succeeds or fails at the operating boundary between two systems</h3><p>The data center needs reliable cooling every hour; the district-heating network needs heat mainly when customers demand it, often seasonally. A strong operating agreement therefore defines minimum and maximum temperatures, flow availability, planned-maintenance notice, who owns the heat exchanger and pumps, and what happens when either side is unavailable. When you evaluate a sustainability project, ask for that interface-control document. It reveals whether the idea is an engineered service with clear owners or only an attractive annual-energy estimate.</p></aside></section><section class="section" id="competitors"><h2 class="section-head"><span class="section-num">02</span><span class="section-title">Competitors</span></h2><article class="item"><h3>Blackstone&#x27;s QTS abandons its portion of Virginia&#x27;s gigawatt-scale Digital Gateway after years of litigation</h3><p>QTS withdrew its remaining Virginia Supreme Court appeal and terminated associated filings for the 2,100-acre Prince William County development after courts voided the project&#x27;s rezoning approval. Compass had already left, and QTS said it would wind down responsibly while continuing to invest elsewhere in Virginia—showing that extraordinary demand and available capital cannot rescue a site whose legal and community path has broken down.</p><div class="source"><a href="https://www.investing.com/news/stock-market-news/blackstones-qts-terminates-digital-gateway-data-center-project-in-virginia-4774574" target="_blank" rel="noopener noreferrer">Reuters via Investing.com</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · A permit approval is a milestone, not proof that entitlement risk is closed</h3><p>Digital Gateway survived a board vote but ultimately lost its legal foundation after challenges to the approval process. On a major program, keep permitting and stakeholder acceptance as separate risk lines: one tracks whether government has authorized the scope; the other tracks whether the process, notice, record and community engagement can survive appeal. Before treating land or power spend as irreversible, require counsel to state which approvals are final, which remain challengeable and what date each challenge window closes.</p></aside></section><section class="section" id="dc-infrastructure"><h2 class="section-head"><span class="section-num">03</span><span class="section-title">DC Infrastructure</span></h2><article class="item"><h3>A transmission fault caused roughly 3GW of Northern Virginia data center load to disappear at once, sending voltage effects across a wide region</h3><p>A fault prompted facilities in Data Center Alley to transfer to backup power, abruptly removing demand roughly equivalent to several large generating units. The grid recovered within minutes, but monitoring detected voltage spikes and light flicker far beyond Virginia—real-world evidence that synchronized data center protection behavior can itself become a bulk-power-system disturbance.</p><div class="source"><a href="https://www.wsj.com/livecoverage/stock-market-today-dow-sp-500-nasdaq-07-24-2026/card/-data-center-alley-briefly-unplugs-rattling-the-power-grid-HQ9LTdaIZpKo1qtt6JZn" target="_blank" rel="noopener noreferrer">The Wall Street Journal</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Facility protection can work exactly as designed and still create a system-level failure mode</h3><p>Each site transferred away from a disturbed utility source to protect its load, but thousands of megawatts making the same decision together produced a new grid event. That is a coordination problem: relay thresholds, transfer timing, UPS behavior and generator sequencing must be evaluated not only per building but across the campus and utility territory. In a post-incident review, ask both “Did our equipment operate correctly?” and “What did correct operation do to every upstream and downstream stakeholder?” The second question is where program-level resilience begins.</p></aside></section><section class="section" id="ai-compute-demand"><h2 class="section-head"><span class="section-num">04</span><span class="section-title">AI &amp; Compute Demand</span></h2><article class="item"><h3>BloombergNEF nearly doubles its 2035 U.S. data center power forecast to 194GW</h3><p>The new estimate is 83% above the firm&#x27;s forecast from only seven months earlier and would put data centers near 20% of U.S. electricity consumption, versus roughly 5.9% today. BloombergNEF also projects a possible 19GW supply shortfall, but much of the increase comes from early-stage AI projects—meaning the forecast captures both genuine demand acceleration and a pipeline that will face financing, permitting, equipment and interconnection attrition.</p><div class="source"><a href="https://www.tomshardware.com/tech-industry/data-centers/bnef-nearly-doubles-its-us-data-center-power-forecast-to-194gw" target="_blank" rel="noopener noreferrer">Tom&#x27;s Hardware</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · A forecast revision is information about uncertainty, not only about growth</h3><p>When a respected estimate moves 83% in seven months, do not simply replace the old number in a deck. Record the delta, identify which assumptions changed, and create at least a base, constrained and high case for decisions with long lead times. For an operations or capacity program, pair every demand case with trigger points—signed customer capacity, utility study completion, transformer release or funding approval—so commitments rise as evidence improves. That is progressive elaboration applied to megawatts.</p></aside></section><section class="section" id="new-ai-models-releases"><h2 class="section-head"><span class="section-num">05</span><span class="section-title">New AI Models &amp; Releases</span></h2><article class="item"><h3>OpenAI joins Nvidia, Microsoft, Meta and other technology companies opposing premature restrictions on open-weight AI</h3><p>The industry letter argues that downloadable model weights support research, customization and domestic innovation as Washington weighs tighter controls tied to security and Chinese competition. OpenAI&#x27;s support is notable because its frontier-model business is primarily closed and API-based, illustrating that companies may defend an open ecosystem even when their most valuable products use a different distribution model.</p><div class="source"><a href="https://www.techradar.com/ai-platforms-assistants/openai-quietly-signs-letter-from-nvidia-microsoft-and-meta-warning-about-dangers-of-premature-restrictions-on-open-weight-ai-models-as-the-white-house-accuses-china-of-stealing-from-anthropic" target="_blank" rel="noopener noreferrer">TechRadar</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · “Open” describes access, not an acceptable risk level</h3><p>Open weights let an organization inspect, fine-tune and run a model inside its own environment, which can improve data control and avoid sending prompts to a vendor API. They also transfer patching, model provenance, abuse controls, capacity planning and output monitoring to the operator. If your team considers an open model, treat deployment like bringing in a new platform: name an owner, verify the license and weight source, define an update path, isolate it appropriately and document which decisions still require human review.</p></aside></section><section class="section" id="networking"><h2 class="section-head"><span class="section-num">06</span><span class="section-title">Networking</span></h2><article class="item"><h3>Arista&#x27;s 7060XE7 portfolio brings 1.6Tbps ports to Ethernet AI fabrics</h3><p>The new platforms target rack-scale accelerator clusters where east-west traffic and collective operations make the network part of compute performance, not a background utility. Arista positions 1.6T connectivity as a foundation for next-generation AI systems, intensifying competition with Nvidia and Cisco around high-radix, low-latency Ethernet fabrics.</p><div class="source"><a href="https://investors.arista.com/Communications/Press-Releases-and-Events/Press-Release-Detail/2026/Arista-Introduces-Next-Generation-1-6Terabit-Portfolio-for-AI-Fabrics/default.aspx" target="_blank" rel="noopener noreferrer">Arista Networks</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Port speed is not application throughput</h3><p>A 1.6Tbps interface states the line rate; useful training performance still depends on oversubscription, packet loss, congestion control, topology, cable reach, optics, and whether traffic is balanced across paths. When a vendor presents a faster fabric, ask for job-completion time under the workload pattern you expect, plus degraded-mode behavior after a link or switch failure. Capacity is the advertised number; performance is the result the full system can sustain.</p></aside></section><section class="section" id="backend-cloud-data"><h2 class="section-head"><span class="section-num">07</span><span class="section-title">Backend / Cloud &amp; Data</span></h2><article class="item"><h3>Kata Containers 4.0 moves its default runtime to Rust and strengthens VM-isolated container sandboxes</h3><p>The release replaces much of the legacy multi-process runtime with a Rust-first architecture while preserving the Kubernetes experience of launching containers inside lightweight virtual machines. That combination targets multi-tenant clusters, secure CI/CD and agent workloads that need a harder boundary than an ordinary shared-kernel container provides.</p><div class="source"><a href="https://katacontainers.io/blog/release-4-0-0-preview/" target="_blank" rel="noopener noreferrer">Kata Containers</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Choose isolation from the consequence of escape, not from habit</h3><p>Standard containers share the host kernel, so their speed and density come with a larger common failure boundary; a Kata sandbox adds a guest kernel and VM boundary, trading some startup time and overhead for stronger separation. Map workload classes before choosing: trusted internal services may fit normal containers, while untrusted code execution, customer-supplied jobs or autonomous agents may justify VM isolation. The operational skill is matching the control to the blast radius instead of making every workload pay the same cost.</p></aside></section><section class="section" id="program-pm"><h2 class="section-head"><span class="section-num">08</span><span class="section-title">Program &amp; PM</span></h2><article class="item"><h3>PMI Agile 2026 opens today with adaptive leadership positioned as a response to uncertainty, not a replacement for governance</h3><p>The July 26–28 conference arrives as PMI&#x27;s revised PMP places more weight on business environment, value delivery and situational judgment. Its timing reinforces the profession&#x27;s direction: project leaders are expected to adjust methods to the work while keeping outcomes, risk and stakeholder accountability visible.</p><div class="source"><a href="https://www.pmi.org/events/" target="_blank" rel="noopener noreferrer">PMI</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Agile means shortening the decision loop, not skipping the decision record</h3><p>In a data center change or improvement program, use small increments where learning is valuable: pilot one hall, validate alarms and procedures, capture operator feedback, then decide whether to scale. Keep the governance artifacts proportional but intact—success criteria, change authority, rollback conditions, risks and lessons learned. A strong hybrid leader knows which commitments must remain controlled and which assumptions should be tested quickly; that judgment matters more than whether the team calls its board agile or predictive.</p></aside></section>
+</main>
+<nav class="edition-nav" aria-label="Adjacent editions"><a href="2026-07-25.html">← Previous edition</a> <a href="2026-07-27.html">Next edition →</a></nav>
+
+  <footer class="foot">
+    <div class="big">DC Daily Brief</div>
+    Covers news through July 24–26, 2026. · Researched and generated on demand<br>
+    News, context, and learning for Robert · Historical reporting may be superseded.
+  </footer>
+
+</div>
+</body>
+</html>

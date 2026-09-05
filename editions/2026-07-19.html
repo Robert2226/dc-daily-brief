@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>DC Daily Brief — Sunday, July 19, 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,900&family=Newsreader:opsz,wght@6..72,400;6..72,500&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#F7F5EF; --panel:#FBFAF6; --ink:#1B1A17; --soft-ink:#3B3934;
+    --muted:#6B6862; --rule:#D8D3C7; --rule-strong:#B7B1A3;
+    --accent:#0F766E; --accent-ink:#0B534D; --accent-tint:#EAF1EF;
+    --serif:'Newsreader',Georgia,'Times New Roman',serif;
+    --display:'Fraunces',Georgia,serif;
+    --mono:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#14140F; --panel:#1A1A14; --ink:#ECE8DD; --soft-ink:#CFC9BB;
+      --muted:#948E80; --rule:#2E2D25; --rule-strong:#413F34;
+      --accent:#5FD3C4; --accent-ink:#8FE3D8; --accent-tint:#17241F;
+    }
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0}
+  body{
+    background:var(--bg); color:var(--ink);
+    font-family:var(--serif); font-size:18px; line-height:1.62;
+    -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+  }
+  .paper{max-width:760px; margin:0 auto; padding:40px 26px 72px;}
+
+  /* Masthead */
+  .masthead{text-align:center; padding-bottom:18px;}
+  .masthead .rule-top{border-top:3px solid var(--ink); margin-bottom:14px;}
+  .kicker-top{
+    font-family:var(--mono); font-size:11px; letter-spacing:.32em; text-transform:uppercase;
+    color:var(--muted); margin-bottom:12px;
+  }
+  .masthead h1{
+    font-family:var(--display); font-weight:900; font-size:clamp(38px,9vw,68px);
+    line-height:.94; letter-spacing:-.02em; margin:0 0 10px;
+  }
+  .masthead .tagline{
+    font-family:var(--serif); font-style:italic; color:var(--soft-ink);
+    font-size:16px; max-width:38ch; margin:0 auto 16px;
+  }
+  .dateline{
+    display:flex; justify-content:space-between; align-items:center; gap:12px;
+    border-top:1px solid var(--rule-strong); border-bottom:1px solid var(--rule-strong);
+    padding:8px 2px; font-family:var(--mono); font-size:11px; letter-spacing:.12em;
+    text-transform:uppercase; color:var(--muted);
+  }
+
+  /* Section */
+  .section{padding-top:30px;}
+  .section-head{
+    display:flex; align-items:baseline; gap:12px; margin-bottom:14px;
+    border-bottom:1px solid var(--rule); padding-bottom:8px;
+  }
+  .section-num{
+    font-family:var(--mono); font-weight:700; font-size:12px; color:var(--accent);
+    letter-spacing:.1em;
+  }
+  .section-title{
+    font-family:var(--mono); font-weight:700; font-size:12.5px; letter-spacing:.22em;
+    text-transform:uppercase; color:var(--ink);
+  }
+
+  .item{margin:0 0 20px;}
+  .item h3{
+    font-family:var(--display); font-weight:600; font-size:22px; line-height:1.2;
+    letter-spacing:-.01em; margin:0 0 6px;
+  }
+  .item p{margin:0 0 6px; color:var(--soft-ink);}
+  .item em, .practice em{font-style:italic; color:var(--ink);}
+  .source a{
+    font-family:var(--mono); font-size:11px; letter-spacing:.06em; text-transform:uppercase;
+    color:var(--accent); text-decoration:none; border-bottom:1px solid transparent;
+  }
+  .source a:hover{border-bottom-color:var(--accent);}
+  .source a::before{content:"↗ ";}
+
+  /* In Practice callout */
+  .practice{
+    background:var(--accent-tint); border-left:3px solid var(--accent);
+    padding:14px 18px; margin:6px 0 4px; border-radius:2px;
+  }
+  .practice .label{
+    display:block; font-family:var(--mono); font-size:10.5px; font-weight:700;
+    letter-spacing:.24em; text-transform:uppercase; color:var(--accent-ink); margin-bottom:6px;
+  }
+  .practice p{margin:0; font-size:16.5px; line-height:1.55; color:var(--soft-ink);}
+  .practice strong{color:var(--ink);}
+  .practice .source{margin-top:8px;}
+
+  /* Footer */
+  .foot{
+    margin-top:44px; padding-top:16px; border-top:3px solid var(--ink);
+    font-family:var(--mono); font-size:11px; letter-spacing:.08em; color:var(--muted);
+    text-align:center; line-height:1.8;
+  }
+  .foot .big{font-family:var(--display); font-size:13px; letter-spacing:.2em; text-transform:uppercase; color:var(--ink);}
+
+  a{color:var(--accent); text-underline-offset:3px; overflow-wrap:anywhere}
+  a:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-offset:4px}
+  .site-nav,.edition-nav{display:flex;justify-content:space-between;gap:16px;font-size:16px;margin:0 0 26px}
+  .edition-nav{margin-top:30px}
+  .skip-link{position:absolute;left:-10000px}
+  .skip-link:focus{position:static}
+  .section{scroll-margin-top:20px}
+  .section-head{margin-top:0}
+  .section-title{line-height:1.6;letter-spacing:.12em}
+  .section-nav{display:flex;flex-wrap:wrap;gap:8px 18px;border-bottom:1px solid var(--rule);padding:20px 0;font-size:16px}
+  .takeaways{padding:22px 0 0}
+  .takeaways h2{font-family:var(--display);font-size:26px}
+  .takeaways .item{margin-bottom:16px}
+  .takeaways .item h3{font-size:20px}
+  .takeaways .item p{font-size:17px}
+  .deep-dive{border-top:2px solid var(--accent);margin-top:28px;padding-top:18px}
+  .deep-dive h3{font-family:var(--display);font-size:28px;line-height:1.2;margin:8px 0 18px}
+  .deep-dive h4{font-family:var(--display);font-size:21px;margin:24px 0 8px}
+  .eyebrow{font:12px var(--mono);color:var(--accent);text-transform:uppercase;letter-spacing:.15em}
+  .recall{border:1px solid var(--rule);padding:14px 18px;margin:18px 0}
+  .recall summary{cursor:pointer;font-weight:600}
+  pre{white-space:pre-wrap;overflow-wrap:anywhere;background:var(--accent-tint);padding:16px;font:14px/1.7 var(--mono)}
+  .archive-list{list-style:none;padding:0}
+  .archive-list li{padding:15px 0;border-bottom:1px solid var(--rule)}
+  .archive-meta{display:block;color:var(--muted);font:12px/1.8 var(--mono)}
+  .practice .label{margin-top:0}
+  .source a{font-size:12px;line-height:1.8}
+  .source a[href^="#"]::before{content:"↓ "}
+  .coverage{font-size:14px;color:var(--muted);margin:12px 0 0}
+  hr{border:0;border-top:1px solid var(--rule);margin:22px 0}
+  @media(max-width:480px){.paper{padding:24px 18px 48px}.dateline{flex-wrap:wrap}.section-title{font-size:12px}.section-head{gap:8px}.deep-dive h3{font-size:25px}}
+</style>
+</head>
+<body>
+<div class="paper">
+<a class="skip-link" href="#content">Skip to content</a>
+<nav class="site-nav" aria-label="Main navigation"><a href="../index.html">Latest edition</a><a href="../archive.html">Archive</a></nav>
+
+  <header class="masthead">
+    <div class="rule-top"></div>
+    <div class="kicker-top">Aggregated Morning Brief · No. 008</div>
+    <h1>DC Daily Brief</h1>
+    <p class="tagline">Physical infrastructure, logical systems, and the decisions connecting them.</p>
+    <div class="dateline">
+      <span>Sunday · July 19, 2026</span>
+      <span>Curated for Robert</span>
+    </div>
+    <p class="coverage">Covers news through July 17–19, 2026.</p>
+  </header>
+
+<main id="content">
+<nav class="section-nav" aria-label="Edition sections"><a href="#equinix">Equinix</a><a href="#competitors">Competitors</a><a href="#dc-infrastructure">DC Infrastructure</a><a href="#ai-compute-demand">AI &amp; Compute Demand</a><a href="#new-ai-models-releases">New AI Models &amp; Releases</a><a href="#networking">Networking</a><a href="#backend-cloud-data">Backend / Cloud &amp; Data</a><a href="#program-pm">Program &amp; PM</a></nav><section class="section" id="equinix"><h2 class="section-head"><span class="section-num">01</span><span class="section-title">Equinix</span></h2><article class="item"><h3>Equinix raises full-year 2026 guidance on AI-driven bookings</h3><p>Following a Q1 print of $2.444B in revenue (+10% YoY) and $415M GAAP net income (+21%), Equinix lifted its FY2026 sales target to $10.14B–$10.24B, roughly 11% above 2025 — management points directly to enterprises renting more Equinix space and power for AI training and inference. The next data point lands at Equinix&#x27;s Q2 earnings call on July 29.</p><div class="source"><a href="https://www.fxleaders.com/news/2026/07/11/equinix-eqix-stock-rises-as-ai-data-center-demand-fuels-revenue-growth/" target="_blank" rel="noopener noreferrer">FX Leaders</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Guidance is a company&#x27;s own forecast — and it&#x27;s the one forecast you can hold them to</h3><p>Unlike an analyst price target (which reflects someone else&#x27;s model of the company), guidance is management&#x27;s own stated commitment to investors, usually reaffirmed or revised every quarter. Raising guidance mid-year is a stronger signal than a single good quarter, because it means leadership has visibility into bookings/backlog several quarters out and is willing to be held accountable for hitting the new number. Watch whether Q2&#x27;s actuals land inside the new range — a miss against your <em>own</em> raised guidance reads very differently than missing a Wall Street consensus estimate.</p></aside></section><section class="section" id="competitors"><h2 class="section-head"><span class="section-num">02</span><span class="section-title">Competitors</span></h2><article class="item"><h3>CoreWeave drops 14% on report that Meta plans to expand its own cloud business</h3><p>A Bloomberg report that Meta is building out cloud infrastructure services sent CoreWeave shares down 13.9% on July 1, since Meta is also one of CoreWeave&#x27;s largest customers. The selloff reflects a specific fear: large AI buyers eventually build enough of their own infrastructure that they stop needing specialized GPU-cloud providers, even with CoreWeave sitting on a $99.4B contracted backlog and 3.5+ GW of contracted power.</p><div class="source"><a href="https://www.fool.com/coverage/stock-market-today/2026/07/01/stock-market-today-july-1-coreweave-stock-tumbles-as-meta-cloud-report-raises-customer-concerns/" target="_blank" rel="noopener noreferrer">The Motley Fool</a></div></article>
+<article class="item"><h3>Amazon and Google commit $25B combined to Montgomery County data center campuses</h3><p>Amazon is investing $10B and Google $15B in separate hyperscale campuses in the same Ohio county, part of the broader hyperscaler capital wave chasing AI capacity regardless of the community-opposition and regulatory headwinds showing up elsewhere this week (see DC Infrastructure, below).</p><div class="source"><a href="https://www.datacenterknowledge.com/data-center-construction/new-data-center-developments-july-2026" target="_blank" rel="noopener noreferrer">DataCenterKnowledge</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · &quot;Customer concentration risk&quot; is a specific, checkable thing — not a vibe</h3><p>It means a meaningful share of a company&#x27;s revenue comes from a small number of buyers who could plausibly leave, and it&#x27;s a standard line item in credit and equity analysis (often disclosed as &quot;% of revenue from top N customers&quot; in a 10-K). For infrastructure providers like CoreWeave, the risk isn&#x27;t that the customer churns to a competitor — it&#x27;s that the customer becomes a competitor by building the capability in-house, which is exactly the fear the Meta report triggered. When you see a stock move 14% on a single report with no new financials, check whether the underlying fear is about demand disappearing or about a customer&#x27;s <em>make-vs-buy</em> decision changing.</p></aside></section><section class="section" id="dc-infrastructure"><h2 class="section-head"><span class="section-num">03</span><span class="section-title">DC Infrastructure</span></h2><article class="item"><h3>New York becomes the first US state to impose a hyperscale data center moratorium</h3><p>Governor Hochul signed an executive order pausing discretionary state environmental permits for new large-scale data centers for up to a year, directing the Department of Public Service to draft a Generic Environmental Impact Statement and a Community Investment Framework (due within 60 days) before development resumes. Stated rationale: protecting ratepayers, the grid, and local communities from AI-driven build-out costs.</p><div class="source"><a href="https://www.governor.ny.gov/news/first-statewide-moratorium-new-hyperscale-data-centers-launched-governor-kathy-hochul" target="_blank" rel="noopener noreferrer">NY Governor&#x27;s Office</a></div></article>
+<article class="item"><h3>Microsoft brings its $3.3B Wisconsin campus fully online</h3><p>Microsoft cut the ribbon on the first data center at its Mount Pleasant, Wisconsin campus, which has moved from limited operations to fully online status — one of the largest single-site AI infrastructure investments completed so far this year.</p><div class="source"><a href="https://www.datacenterknowledge.com/data-center-construction/new-data-center-developments-july-2026" target="_blank" rel="noopener noreferrer">DataCenterKnowledge</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · A moratorium pauses permits, not demand — and that gap is where site-selection strategy lives</h3><p>Executive orders like New York&#x27;s don&#x27;t reduce the AI capacity hyperscalers need; they just remove one jurisdiction from the map for up to a year while it builds a regulatory framework. The practical effect is to accelerate capital toward states that already have a clear framework (Virginia, with its new consumption tax, is a jurisdiction that chose to tax rather than pause). If you&#x27;re tracking site-selection trends, the interesting variable isn&#x27;t &quot;is opposition rising&quot; — it&#x27;s which states are converging on <em>predictable</em> rules (tax, environmental review timeline) versus open-ended pauses, since predictability is what capital actually prices.</p></aside></section><section class="section" id="ai-compute-demand"><h2 class="section-head"><span class="section-num">04</span><span class="section-title">AI &amp; Compute Demand</span></h2><article class="item"><h3>Liquid cooling becomes the default, not the exception, for AI racks in 2026</h3><p>With individual AI data center sites now drawing 100–750MW and roughly 76% of AI servers expected to be liquid-cooled this year, air cooling is falling out of contention for new high-density GPU deployments as power and thermal constraints — not chip availability — become the binding limit on how fast capacity can come online.</p><div class="source"><a href="https://www.gigenet.com/blog/ai-data-center-power-crisis/" target="_blank" rel="noopener noreferrer">GigeNET</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Why liquid cooling stopped being optional once density crossed a threshold</h3><p>Air cooling removes heat by moving large volumes of chilled air across a rack — it works fine up to roughly 15–20kW per rack, but modern GPU racks (NVIDIA Blackwell-class) now routinely draw 100kW+, far past what airflow alone can dissipate without impractical fan power and floor space. Direct-to-chip or immersion liquid cooling moves coolant much closer to (or over) the silicon itself, which is thermodynamically necessary, not just efficient, at these densities. If you&#x27;re evaluating a facility&#x27;s AI-readiness, &quot;liquid-cooling capable&quot; is now a harder requirement than &quot;has enough power,&quot; because you can sometimes add power capacity faster than you can retrofit a cooling loop.</p></aside></section><section class="section" id="new-ai-models-releases"><h2 class="section-head"><span class="section-num">05</span><span class="section-title">New AI Models &amp; Releases</span></h2><article class="item"><h3>China&#x27;s Moonshot AI ships Kimi K3, the largest open-weight model yet, rattling chip stocks</h3><p>Released July 16 with full weights following July 27, the 2.8-trillion-parameter Kimi K3 scored third overall on the GDPval-AA v2 real-world task benchmark (behind only Claude Fable 5 Max and GPT-5.6 Sol Max) while ranking first on 4 of 8 automation benchmarks — at roughly half the per-task cost of Anthropic&#x27;s Opus 4.8. The release triggered a bear-market move in chip stocks on efficiency-driven demand-destruction fears.</p><div class="source"><a href="https://venturebeat.com/technology/chinas-moonshot-ai-releases-kimi-k3-the-largest-open-source-model-ever-rivaling-top-u-s-systems" target="_blank" rel="noopener noreferrer">VentureBeat</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · An open-weight frontier model changes the competitive math differently than a closed one</h3><p>&quot;Open-weight&quot; means Moonshot published the actual trained parameters, so anyone with enough GPU capacity can run, fine-tune, or host Kimi K3 themselves — no API dependency on Moonshot at all. That&#x27;s structurally different from GPT-5.6 or Claude Sonnet 5, where the lab controls access and pricing. A high-performing open-weight model pressures closed-model pricing (why pay premium API rates for marginal capability gains) and, notably here, pressures chip demand forecasts too — if a smaller, more efficient architecture gets frontier-level results, the &quot;we need exponentially more GPUs&quot; thesis gets a genuine data point against it, not just a talking point.</p></aside></section><section class="section" id="networking"><h2 class="section-head"><span class="section-num">06</span><span class="section-title">Networking</span></h2><article class="item"><h3>A Cisco SD-WAN zero-day was exploited in the wild for months before patching</h3><p>CVE-2026-20245, the 7th Cisco SD-WAN vulnerability exploited this year, let an authenticated local attacker run arbitrary root commands via the Catalyst SD-WAN Manager CLI — and was actively used against targets well before Cisco disclosed and patched it.</p><div class="source"><a href="https://www.securityweek.com/cisco-sd-wan-zero-day-exploited-months-before-patching/" target="_blank" rel="noopener noreferrer">SecurityWeek</a></div></article>
+<article class="item"><h3>Cisco rolls out Quantum Ready Assessments globally this month</h3><p>The new assessment product identifies which network assets are most exposed to &quot;harvest now, decrypt later&quot; attacks — where encrypted traffic is captured today to be decrypted once quantum computing matures — giving enterprises a starting inventory for post-quantum cryptography migration planning.</p><div class="source"><a href="https://newsroom.cisco.com/c/r/newsroom/en/us/a/y2026/m06/cisco-unveils-agentic-platform-for-operating-and-defending-critical-it-infrastructure.html" target="_blank" rel="noopener noreferrer">Cisco Newsroom</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · &quot;Harvest now, decrypt later&quot; is why post-quantum migration can&#x27;t wait for quantum computers to actually arrive</h3><p>The threat model isn&#x27;t that an attacker breaks your encryption today — it&#x27;s that they capture your encrypted traffic <em>now</em>, store it, and decrypt it once a sufficiently powerful quantum computer exists (years away, but not infinitely far). That makes the risk urgency depend on how long your data needs to stay confidential: a password reset link is safe, but data with a 10+ year sensitivity window (health records, IP, classified material) is already exposed to a future break. Assessments like Cisco&#x27;s exist to answer one question first — which of your assets have that long a shelf life — before spending anything on post-quantum algorithm migration.</p></aside></section><section class="section" id="backend-cloud-data"><h2 class="section-head"><span class="section-num">07</span><span class="section-title">Backend / Cloud &amp; Data</span></h2><article class="item"><h3>Kubernetes 1.35 locks Dynamic Resource Allocation on by default, ending the device-plugin era for GPU scheduling</h3><p>DRA reached GA in 1.34 and is now permanently enabled in 1.35, replacing the old &quot;give me one GPU&quot; integer-count model with attribute-based `ResourceClaims` that let a pod request a device by memory, architecture, or topology using CEL expressions. NVIDIA has moved its GPU driver into Kubernetes SIGs to align with the new model — though driver and managed-service maturity still vary by cloud provider.</p><div class="source"><a href="https://www.cncf.io/blog/2026/07/01/understanding-dynamic-resource-allocation-in-kubernetes/" target="_blank" rel="noopener noreferrer">CNCF</a></div></article>
+<article class="item"><h3>KDDI discloses breach exposing up to 14.22 million customer email accounts</h3><p>The Japanese telco&#x27;s email system, also used by five partner ISPs, was compromised, potentially exposing email addresses and passwords across its customer base — one of the larger disclosed breaches this month alongside Nissan&#x27;s PeopleSoft-linked incident and Abbott&#x27;s ongoing ShinyHunters investigation.</p><div class="source"><a href="https://cybernews.com/" target="_blank" rel="noopener noreferrer">Cybernews</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · DRA&#x27;s shift from &quot;count&quot; to &quot;attributes&quot; mirrors a pattern worth recognizing across infrastructure</h3><p>The old device-plugin model treated GPUs like a fungible resource pool — you asked for a quantity, and the scheduler handed you <em>any</em> N GPUs. DRA treats each device as having properties that matter (memory size, driver version, NVLink topology) and lets a workload&#x27;s request encode which properties it actually needs. This is the same maturation arc storage and networking went through in Kubernetes years earlier (raw volumes to StorageClasses with attributes, flat networking to NetworkPolicy with selectors) — infrastructure scheduling generally evolves from &quot;how many&quot; to &quot;which kind,&quot; and GPUs are just the latest resource type to make that jump.</p></aside></section><section class="section" id="program-pm"><h2 class="section-head"><span class="section-num">08</span><span class="section-title">Program &amp; PM</span></h2><article class="item"><h3>PMI publishes &quot;The Standard for Artificial Intelligence in Portfolio, Program, and Project Management&quot;</h3><p>The new standard gives PMs a formal framework for applying AI responsibly across portfolio, program, and project work, arriving alongside a broader shift toward &quot;agentic PMOs&quot; — organizations reporting 20–40% reductions in coordination overhead from AI agents handling task allocation, risk prediction, and cross-tool workflow orchestration.</p><div class="source"><a href="https://www.projectmanagement.com/" target="_blank" rel="noopener noreferrer">ProjectManagement.com</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Governance-first standards exist to prevent the failure mode that killed past automation waves</h3><p>Every prior generation of PM automation (RPA, basic workflow bots) delivered efficiency gains on paper but often failed in practice because teams didn&#x27;t trust the outputs enough to act on them without re-checking everything manually — which erases the time savings. A standard that addresses AI <em>governance</em> explicitly (not just capability) is trying to head that off: defining who&#x27;s accountable when an agent&#x27;s risk prediction is wrong, what gets logged, and where a human sign-off is mandatory. If you&#x27;re rolling out AI tooling on a project team, treat the adoption itself as a change-management project — with the same stakeholder buy-in and communication plan you&#x27;d use for any process change — rather than a tool swap.</p></aside></section>
+</main>
+<nav class="edition-nav" aria-label="Adjacent editions"><a href="2026-07-18.html">← Previous edition</a> <a href="2026-07-20.html">Next edition →</a></nav>
+
+  <footer class="foot">
+    <div class="big">DC Daily Brief</div>
+    Covers news through July 17–19, 2026. · Researched and generated on demand<br>
+    News, context, and learning for Robert · Historical reporting may be superseded.
+  </footer>
+
+</div>
+</body>
+</html>

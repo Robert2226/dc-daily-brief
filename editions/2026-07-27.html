@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>DC Daily Brief — Monday, July 27, 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,900&family=Newsreader:opsz,wght@6..72,400;6..72,500&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#F7F5EF; --panel:#FBFAF6; --ink:#1B1A17; --soft-ink:#3B3934;
+    --muted:#6B6862; --rule:#D8D3C7; --rule-strong:#B7B1A3;
+    --accent:#0F766E; --accent-ink:#0B534D; --accent-tint:#EAF1EF;
+    --serif:'Newsreader',Georgia,'Times New Roman',serif;
+    --display:'Fraunces',Georgia,serif;
+    --mono:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#14140F; --panel:#1A1A14; --ink:#ECE8DD; --soft-ink:#CFC9BB;
+      --muted:#948E80; --rule:#2E2D25; --rule-strong:#413F34;
+      --accent:#5FD3C4; --accent-ink:#8FE3D8; --accent-tint:#17241F;
+    }
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0}
+  body{
+    background:var(--bg); color:var(--ink);
+    font-family:var(--serif); font-size:18px; line-height:1.62;
+    -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+  }
+  .paper{max-width:760px; margin:0 auto; padding:40px 26px 72px;}
+
+  /* Masthead */
+  .masthead{text-align:center; padding-bottom:18px;}
+  .masthead .rule-top{border-top:3px solid var(--ink); margin-bottom:14px;}
+  .kicker-top{
+    font-family:var(--mono); font-size:11px; letter-spacing:.32em; text-transform:uppercase;
+    color:var(--muted); margin-bottom:12px;
+  }
+  .masthead h1{
+    font-family:var(--display); font-weight:900; font-size:clamp(38px,9vw,68px);
+    line-height:.94; letter-spacing:-.02em; margin:0 0 10px;
+  }
+  .masthead .tagline{
+    font-family:var(--serif); font-style:italic; color:var(--soft-ink);
+    font-size:16px; max-width:38ch; margin:0 auto 16px;
+  }
+  .dateline{
+    display:flex; justify-content:space-between; align-items:center; gap:12px;
+    border-top:1px solid var(--rule-strong); border-bottom:1px solid var(--rule-strong);
+    padding:8px 2px; font-family:var(--mono); font-size:11px; letter-spacing:.12em;
+    text-transform:uppercase; color:var(--muted);
+  }
+
+  /* Section */
+  .section{padding-top:30px;}
+  .section-head{
+    display:flex; align-items:baseline; gap:12px; margin-bottom:14px;
+    border-bottom:1px solid var(--rule); padding-bottom:8px;
+  }
+  .section-num{
+    font-family:var(--mono); font-weight:700; font-size:12px; color:var(--accent);
+    letter-spacing:.1em;
+  }
+  .section-title{
+    font-family:var(--mono); font-weight:700; font-size:12.5px; letter-spacing:.22em;
+    text-transform:uppercase; color:var(--ink);
+  }
+
+  .item{margin:0 0 20px;}
+  .item h3{
+    font-family:var(--display); font-weight:600; font-size:22px; line-height:1.2;
+    letter-spacing:-.01em; margin:0 0 6px;
+  }
+  .item p{margin:0 0 6px; color:var(--soft-ink);}
+  .item em, .practice em{font-style:italic; color:var(--ink);}
+  .source a{
+    font-family:var(--mono); font-size:11px; letter-spacing:.06em; text-transform:uppercase;
+    color:var(--accent); text-decoration:none; border-bottom:1px solid transparent;
+  }
+  .source a:hover{border-bottom-color:var(--accent);}
+  .source a::before{content:"↗ ";}
+
+  /* In Practice callout */
+  .practice{
+    background:var(--accent-tint); border-left:3px solid var(--accent);
+    padding:14px 18px; margin:6px 0 4px; border-radius:2px;
+  }
+  .practice .label{
+    display:block; font-family:var(--mono); font-size:10.5px; font-weight:700;
+    letter-spacing:.24em; text-transform:uppercase; color:var(--accent-ink); margin-bottom:6px;
+  }
+  .practice p{margin:0; font-size:16.5px; line-height:1.55; color:var(--soft-ink);}
+  .practice strong{color:var(--ink);}
+  .practice .source{margin-top:8px;}
+
+  /* Footer */
+  .foot{
+    margin-top:44px; padding-top:16px; border-top:3px solid var(--ink);
+    font-family:var(--mono); font-size:11px; letter-spacing:.08em; color:var(--muted);
+    text-align:center; line-height:1.8;
+  }
+  .foot .big{font-family:var(--display); font-size:13px; letter-spacing:.2em; text-transform:uppercase; color:var(--ink);}
+
+  a{color:var(--accent); text-underline-offset:3px; overflow-wrap:anywhere}
+  a:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-offset:4px}
+  .site-nav,.edition-nav{display:flex;justify-content:space-between;gap:16px;font-size:16px;margin:0 0 26px}
+  .edition-nav{margin-top:30px}
+  .skip-link{position:absolute;left:-10000px}
+  .skip-link:focus{position:static}
+  .section{scroll-margin-top:20px}
+  .section-head{margin-top:0}
+  .section-title{line-height:1.6;letter-spacing:.12em}
+  .section-nav{display:flex;flex-wrap:wrap;gap:8px 18px;border-bottom:1px solid var(--rule);padding:20px 0;font-size:16px}
+  .takeaways{padding:22px 0 0}
+  .takeaways h2{font-family:var(--display);font-size:26px}
+  .takeaways .item{margin-bottom:16px}
+  .takeaways .item h3{font-size:20px}
+  .takeaways .item p{font-size:17px}
+  .deep-dive{border-top:2px solid var(--accent);margin-top:28px;padding-top:18px}
+  .deep-dive h3{font-family:var(--display);font-size:28px;line-height:1.2;margin:8px 0 18px}
+  .deep-dive h4{font-family:var(--display);font-size:21px;margin:24px 0 8px}
+  .eyebrow{font:12px var(--mono);color:var(--accent);text-transform:uppercase;letter-spacing:.15em}
+  .recall{border:1px solid var(--rule);padding:14px 18px;margin:18px 0}
+  .recall summary{cursor:pointer;font-weight:600}
+  pre{white-space:pre-wrap;overflow-wrap:anywhere;background:var(--accent-tint);padding:16px;font:14px/1.7 var(--mono)}
+  .archive-list{list-style:none;padding:0}
+  .archive-list li{padding:15px 0;border-bottom:1px solid var(--rule)}
+  .archive-meta{display:block;color:var(--muted);font:12px/1.8 var(--mono)}
+  .practice .label{margin-top:0}
+  .source a{font-size:12px;line-height:1.8}
+  .source a[href^="#"]::before{content:"↓ "}
+  .coverage{font-size:14px;color:var(--muted);margin:12px 0 0}
+  hr{border:0;border-top:1px solid var(--rule);margin:22px 0}
+  @media(max-width:480px){.paper{padding:24px 18px 48px}.dateline{flex-wrap:wrap}.section-title{font-size:12px}.section-head{gap:8px}.deep-dive h3{font-size:25px}}
+</style>
+</head>
+<body>
+<div class="paper">
+<a class="skip-link" href="#content">Skip to content</a>
+<nav class="site-nav" aria-label="Main navigation"><a href="../index.html">Latest edition</a><a href="../archive.html">Archive</a></nav>
+
+  <header class="masthead">
+    <div class="rule-top"></div>
+    <div class="kicker-top">Aggregated Morning Brief · No. 015</div>
+    <h1>DC Daily Brief</h1>
+    <p class="tagline">Physical infrastructure, logical systems, and the decisions connecting them.</p>
+    <div class="dateline">
+      <span>Monday · July 27, 2026</span>
+      <span>Curated for Robert</span>
+    </div>
+    <p class="coverage">Covers news through July 27, 2026.</p>
+  </header>
+
+<main id="content">
+<nav class="section-nav" aria-label="Edition sections"><a href="#equinix">Equinix</a><a href="#competitors">Competitors</a><a href="#dc-infrastructure">DC Infrastructure</a><a href="#ai-compute-demand">AI &amp; Compute Demand</a><a href="#new-ai-models-releases">New AI Models &amp; Releases</a><a href="#networking">Networking</a><a href="#backend-cloud-data">Backend / Cloud &amp; Data</a><a href="#program-pm">Program &amp; PM</a></nav><section class="section" id="equinix"><h2 class="section-head"><span class="section-num">01</span><span class="section-title">Equinix</span></h2><article class="item"><h3>Equinix reports second-quarter results Wednesday, putting execution—not just AI demand—in focus</h3><p>The July 29 call will cover the quarter ended June 30, giving operators and investors a fresh view of bookings, interconnection growth, development timing and capital deployment. After another quarter of enormous industry demand announcements, the useful question is how much demand has converted into contracted, deliverable capacity with power, equipment and schedules behind it.</p><div class="source"><a href="https://newsroom.equinix.com/2026-07-01-MEDIA-ALERT-Equinix-Sets-Conference-Call-for-Second-Quarter-Results" target="_blank" rel="noopener noreferrer">Equinix Investor Relations</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Read results as an operator before reading them as a headline</h3><p>Build a one-page pre-read with three columns: what management previously committed, what evidence would show progress, and what operating constraint could explain a miss. Listen for changes in delivery dates, utilization, power availability and customer mix—not only revenue or adjusted funds from operations. This habit develops the program-manager skill of separating outcome variance from execution variance and asking a precise follow-up instead of reacting to a top-line number.</p></aside></section><section class="section" id="competitors"><h2 class="section-head"><span class="section-num">02</span><span class="section-title">Competitors</span></h2><article class="item"><h3>Google files for a second $1 billion data center building at its developing LaGrange, Georgia campus</h3><p>The proposed 470,000-square-foot facility would join a building already under development, with construction potentially continuing through 2029. The filing says later phases remain speculative, a useful distinction between the funded next increment and the maximum campus story often carried in market headlines.</p><div class="source"><a href="https://www.datacenterdynamics.com/en/news/google-files-to-expand-data-center-campus-in-lagrange-georgia/" target="_blank" rel="noopener noreferrer">Data Center Dynamics</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Separate campus potential from authorized scope</h3><p>For a competitor build, record land capacity, filed capacity, funded capacity, under-construction capacity and commissioned capacity as different fields. Each is real information, but only the last three meaningfully tighten the delivery forecast. Using that maturity ladder in status reports prevents a speculative master plan from being compared with an energized Equinix phase as though both megawatts were equally available.</p></aside></section><section class="section" id="dc-infrastructure"><h2 class="section-head"><span class="section-num">03</span><span class="section-title">DC Infrastructure</span></h2><article class="item"><h3>PG&amp;E&#x27;s proposed data center pipeline more than doubles in one quarter to 12.7GW</h3><p>California&#x27;s largest utility reported 12.7GW of requests at the end of Q2, up from 5.1GW in Q1, while only about 1.8GW is expected to become operational by 2030. That gap is the story: utilities must plan for a very large queue even though projects will be delayed, resized or cancelled before energization.</p><div class="source"><a href="https://www.datacenterdynamics.com/en/news/pge-data-center-pipeline-more-than-doubles-to-127gw-compared-to-last-quarter/" target="_blank" rel="noopener noreferrer">Data Center Dynamics</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · A queue is demand evidence, not a delivery promise</h3><p>Build capacity forecasts with stage-weighted megawatts: inquiry, formal request, completed study, signed agreement, construction and energized. Give each stage an owner, exit criteria and confidence range, then show both gross pipeline and probability-adjusted capacity. This lets operations plan long-lead labor and equipment without pretending all 12.7GW will arrive, while preserving an upside trigger if projects mature faster than expected.</p></aside></section><section class="section" id="ai-compute-demand"><h2 class="section-head"><span class="section-num">04</span><span class="section-title">AI &amp; Compute Demand</span></h2><article class="item"><h3>Nvidia and SK Group announce a $500 billion-plus AI agreement that includes a 2GW South Korean AI factory</h3><p>Letters of intent cover the gigawatt-scale facility plus joint work on high-bandwidth memory and other next-generation components; the first factory is targeted for 2027. The package joins accelerators, memory, networking, cloud capacity and construction into one ecosystem program, showing that AI demand is increasingly secured through coordinated supply chains rather than isolated server purchases.</p><div class="source"><a href="https://www.datacenterdynamics.com/en/news/nvidia-and-sk-group-announce-500bn-ai-agreement-includes-2gw-of-data-center-capacity/" target="_blank" rel="noopener noreferrer">Data Center Dynamics</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Translate the announcement into a dependency map</h3><p>Put utility power, substations, cooling, GPUs, HBM, network fabric, building delivery and customer workloads on one page, then draw which milestone gates the next. A letter of intent and a 2027 target do not remove those dependencies. The program leader&#x27;s value is finding the constraint that controls the integrated date, naming its owner and maintaining an alternate path before the constraint becomes a public delay.</p></aside></section><section class="section" id="new-ai-models-releases"><h2 class="section-head"><span class="section-num">05</span><span class="section-title">New AI Models &amp; Releases</span></h2><article class="item"><h3>Moonshot AI publishes the open weights for its 2.8-trillion-parameter Kimi K3 model</h3><p>The mixture-of-experts model activates 16 of 896 experts per token and supports a one-million-token context window, but the downloadable package is still roughly terabyte-scale rather than a model most teams can run on a workstation. Its release makes independent testing and private deployment possible while shifting infrastructure, security, license review and serving economics onto the adopter.</p><div class="source"><a href="https://huggingface.co/moonshotai/Kimi-K3" target="_blank" rel="noopener noreferrer">Moonshot AI on Hugging Face</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · “Downloadable” is the start of the feasibility test</h3><p>Before proposing an open model, calculate weight storage, accelerator memory, replicas, expected tokens per second, power and monthly utilization; then compare cost per successfully completed work task with the API alternative. Shadow-test real, sanitized prompts and score quality, latency and failure modes. That turns model enthusiasm into a defensible pilot with acceptance criteria—the same discipline you would apply to any new facility platform.</p></aside></section><section class="section" id="networking"><h2 class="section-head"><span class="section-num">06</span><span class="section-title">Networking</span></h2><article class="item"><h3>Arista adds zero-trust Edge Threat Management to VeloCloud SD-WAN</h3><p>The software combines firewalling, threat prevention, segmentation, DNS filtering and AI-assisted policy insight at the branch edge, with general availability planned for Q4. Collapsing connectivity and security into a common platform can reduce appliances and policy drift, but it also increases the consequence of a bad configuration or failed upgrade at that shared control point.</p><div class="source"><a href="https://www.arista.com/en/company/news/press-release/24357-pr-20260721" target="_blank" rel="noopener noreferrer">Arista Networks</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Consolidation reduces components but concentrates change risk</h3><p>Pilot the combined edge at a low-criticality site, define application and security test cases, capture the last known-good policy, and prove both remote and local rollback before broad rollout. Track success with user-path availability, blocked-threat accuracy and configuration-error rate—not “device installed.” In a change review, explicitly ask what connectivity remains if the unified edge fails.</p></aside></section><section class="section" id="backend-cloud-data"><h2 class="section-head"><span class="section-num">07</span><span class="section-title">Backend / Cloud &amp; Data</span></h2><article class="item"><h3>AWS Security Hub expands into Microsoft Azure and adds an organization-wide AI asset inventory</h3><p>Security Hub can now discover Azure virtual machines, container images, Function Apps and identities, normalize their findings beside AWS risks, and inventory models, agents and external model endpoints across AWS environments. The broader view reduces tool fragmentation, but a common dashboard does not automatically resolve which cloud team owns remediation or who has authority during a cross-platform incident.</p><div class="source"><a href="https://aws.amazon.com/blogs/security/security-hub-adds-ai-workload-protection-and-multicloud-support-for-microsoft-azure/" target="_blank" rel="noopener noreferrer">AWS Security Blog</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Centralize visibility and clarify accountability at the same time</h3><p>For each normalized finding, require a resource owner, severity rule, response target and escalation authority that works across both cloud teams. Run one tabletop in which a compromised identity touches Azure and an AWS-hosted AI workload; time the handoffs and record where permissions or ownership stop the response. A single pane of glass creates value only when the operating model can act on what it sees.</p></aside></section><section class="section" id="program-pm"><h2 class="section-head"><span class="section-num">08</span><span class="section-title">Program &amp; PM</span></h2><article class="item"><h3>Today&#x27;s PMI Agile session asks what remains valuable when AI starts doing traditional project-management work</h3><p>“When AI Starts Doing Your Job: Surviving the PM Identity Crisis” focuses on practitioners who can see AI changing other roles but have not yet translated it into their own work. The deeper answer is not becoming a full-time prompt writer: AI can draft status, summarize meetings and organize risks, while the project leader remains accountable for context, tradeoffs, stakeholder trust and decisions.</p><div class="source"><a href="https://podcasts.apple.com/no/podcast/agile-2026-preview-pm-identity-crisis/id1121124593?i=1000777507686" target="_blank" rel="noopener noreferrer">PMI Agile 2026 Session Preview</a></div></article>
+<aside class="practice"><h3 class="label">In Practice · Reinvest automation savings in judgment, not more administration</h3><p>This week, choose one recurring coordination task—meeting notes, action extraction or first-draft status—and let AI produce a reviewed draft. Track minutes saved, corrections required and any missed nuance. Spend the recovered time on one higher-value act: walking a technical dependency with an engineer, resolving an owner gap or preparing a stakeholder decision. Your career advantage is not producing artifacts faster; it is using better context to move the right work.</p></aside></section>
+</main>
+<nav class="edition-nav" aria-label="Adjacent editions"><a href="2026-07-26.html">← Previous edition</a> <a href="2026-07-28.html">Next edition →</a></nav>
+
+  <footer class="foot">
+    <div class="big">DC Daily Brief</div>
+    Covers news through July 27, 2026. · Researched and generated on demand<br>
+    News, context, and learning for Robert · Historical reporting may be superseded.
+  </footer>
+
+</div>
+</body>
+</html>

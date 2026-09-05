@@ -39,3 +39,11 @@ Prefer pairs that reinforce each other, such as:
 - Program leadership + value realization
 
 Vary the pairings over time. A Daily Action should combine both topics when possible and produce an artifact Robert can reuse, such as a stakeholder map, one-page update, decision brief, RAID entry, dependency map, RACI, acceptance checklist, meeting agenda, or business-case comparison.
+
+## Technical PgPM practice
+Robert already works as a technical PgPM across physical and logical systems. Foundation
+lessons define unfamiliar concepts rather than assuming a novice career stage. Add
+controls/DCOS/DCIM integration, configuration baselines, operational data quality and
+OT change governance to the delivery and handoff tracks. Reuse hypothetical cases across
+editions, developing their technical, commercial and leadership dimensions. Include
+a worked example and a short optional practice task; do not equate coverage with mastery.
