@@ -40,14 +40,25 @@ Program & PM`. Each has 1–2 worthwhile stories plus an In Practice learning bi
 research finds no material news, explicitly say so and still teach. Use multiple
 purposeful source links as needed; external links open in a new tab.
 
-Include one rotating 500–800-word deep dive within a news section. Every fourth expanded
-edition uses a synthesis deep dive. Track topics/cases in edition metadata, not inferred
-reader mastery. Vary mechanisms, examples, comparisons, failure scenarios and judgment.
+New editions use format 3: one dated source generates separate News and Deep Dives
+pages. News has the ten sections above, with short learning bites. Deep Dives has three
+subjects: physical infrastructure, logical systems, and PgPM Growth. Each technical
+subject contains one 500–800-word lesson, examples and useful sources. Every fourth
+expanded edition (counting formats 2 and 3 together, starting September 5) uses one
+technical subject for synthesis. Track topics/cases in metadata, not inferred mastery.
+Vary mechanisms, examples, comparisons, failure scenarios and judgment.
 
-`PgPM Growth` is Section 11, immediately after Program & PM. Invoke the local
-`$build-pgpm-growth` skill for two connected lessons, exactly six researched sources
-(three per topic), a worked example and one short optional time-boxed Daily Action.
-Historical editions keep their original content and section counts.
+Invoke the local `$build-pgpm-growth` skill for the third learning subject: two connected
+lessons, exactly six researched sources (three per topic), a worked example and one
+short optional time-boxed Daily Action. Keep the source heading `PgPM Growth`; it follows
+`Physical Deep Dive` and `Logical Deep Dive`. Historical combined editions retain their
+original content, section counts and URLs (including format-2 Section 11).
+
+Every page has News | Deep Dives | Archive navigation. Latest routes are `index.html`
+and `deep-dives.html`; paired dated routes are `editions/YYYY-MM-DD.html` and
+`deep-dives/YYYY-MM-DD.html`. Link each subject to related news and vice versa using
+`learn:subject-id` and `news:section-slug` links. Dated pairing always stays on that date.
+The archive labels earlier pages as combined editions.
 
 ### DCOS, DCIM, BMS & Controls
 DCOS means Data Center Operating System; DCIM means Data Center Infrastructure
@@ -110,9 +121,9 @@ Do not invent Equinix-specific architecture, instructions or procedures.
 The user asks Codex to run the brief. Read this file, EDITORIAL.md, SOURCES.md, recent
 editions and the manifest; research all ten categories including the mandatory Google
 and Crusoe checks. Record research evidence and access gaps in research/YYYY-MM-DD.md.
-Use `$build-pgpm-growth` for Section 11, write the dated Markdown with format-2 metadata,
+Use `$build-pgpm-growth` for the third learning subject, write the dated Markdown with format-3 metadata,
 then run `python3 build.py briefs/YYYY-MM-DD.md` and the tests. The builder produces the
-latest homepage, dated HTML archive, latest.md and stable edition-manifest.json.
+latest News and Deep Dives pages, paired dated HTML pages, archive, latest.md and stable edition-manifest.json.
 Content-only daily runs commit/push directly to main using publish.sh; structure,
 styling, workflow, skill and documentation changes use the manual branch/PR process.
 

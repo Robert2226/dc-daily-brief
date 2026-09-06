@@ -31,18 +31,21 @@ current importance. Quality and depth matter more than a fixed reading time.
    the AGENTS.md order, each with 1–2 worthwhile stories and one In Practice bite.
    If a reasonable research pass finds no material update, say so and still teach.
    More links are useful only when they add evidence, a perspective, or understanding.
-7. Add exactly three opening takeaways linking to their relevant section. Include
-   one 500–800-word deep dive within an existing news section. Rotate infrastructure,
-   controls, networking/cloud/software, and program/business topics based on relevance
-   and prior coverage. Every fourth format-2 edition uses track `synthesis`: revisit
-   developments and earlier lessons with explicit links to original external sources.
-   Include short recall questions with revealable answers when useful.
-8. Invoke $build-pgpm-growth for Section 11. Use two connected lessons, six researched
-   links (three per lesson), and a short optional time-boxed Daily Action with a worked
-   example. Advance recurring hypothetical cases and explain what changed in the lesson.
+7. Add exactly three opening takeaways linking to news sections. Put long learning on
+   the separate Deep Dives page: exactly three subjects, physical, logical and PgPM.
+   Each technical subject gets one 500–800-word deep dive with concrete examples and
+   sources. Vary subjects each run based on prior coverage. Every fourth expanded
+   edition (formats 2 and 3 together, starting September 5) marks one technical subject
+   `synthesis: true`, explicitly revisiting earlier concepts. Recall answers are optional.
+8. Invoke $build-pgpm-growth for the third subject. Keep two connected lessons, exactly
+   six researched external links (three per lesson), a worked example and one optional
+   time-boxed Daily Action. Link all three subjects to relevant news and news back to
+   those subjects. Do not duplicate the news summary inside a lesson.
 9. Run `python3 build.py briefs/YYYY-MM-DD.md` and `python3 -m unittest discover -s tests`.
-   Check sourcing manually: validation checks structure, not truth. Inspect the latest
-   page, navigation, and archive. Publishing uses `./publish.sh YYYY-MM-DD` from main.
+   Validation checks structure and internal destinations, not factual truth. Inspect
+   both latest pages, paired dates, archive, historical pages, mobile/dark presentation,
+   keyboard navigation and recall. Content-only publishing uses `./publish.sh YYYY-MM-DD`
+   from main. Structural launches include their full launch edition in the manual PR.
 
 ## Writing
 Each story explains what changed and why it matters. Include a mechanism or concrete
@@ -58,12 +61,15 @@ The title and coverage line retain their historical format. Add one single-line 
 metadata comment. `coverage_start` is the previous edition date; `coverage_end` matches
 the filename. `topics` and `pgpm_topics` describe what was taught, not completed study.
 `research_log` is the relative path to the corresponding research record. The first
-expanded edition begins a new four-edition synthesis cycle. Metadata `format` is 2.
+expanded edition (September 5, format 2) begins the four-edition synthesis cycle.
+New sources use `format: 3`. Metadata `subjects` must contain three ordered entries with
+unique slug `id`, `track` (physical/logical/pgpm), and reader-facing `title`. The optional
+`synthesis: true` belongs on one technical subject. Format 2 remains readable unchanged.
 
 ```markdown
-# DC Daily Brief — Saturday, September 5, 2026
-_Covers September 3–5, 2026; since the previous edition._
-<!-- edition: {"format":2,"coverage_start":"2026-09-03","coverage_end":"2026-09-05","deep_dive_track":"controls","topics":["Alarm path"],"pgpm_topics":["Configuration baselines — applied","Verification vs validation — applied"],"case":"Hypothetical Hall A cooling","research_log":"research/2026-09-05.md"} -->
+# DC Daily Brief — Sunday, September 6, 2026
+_Covers September 5–6, 2026; since the previous edition._
+<!-- edition: {"format":3,"coverage_start":"2026-09-05","coverage_end":"2026-09-06","subjects":[{"id":"cooling-capacity","track":"physical","title":"Physical · Cooling capacity"},{"id":"telemetry-replay","track":"logical","title":"Logical · Telemetry replay"},{"id":"pilot-to-fleet","track":"pgpm","title":"PgPM Growth · Pilot to fleet"}],"topics":["Cooling capacity","Telemetry replay"],"pgpm_topics":["Representative pilots — leadership","Progressive rollouts — leadership"],"case":"Hypothetical Hall A","research_log":"research/2026-09-06.md"} -->
 
 ## Today at a glance
 - **Takeaway headline** — Why it matters. [Read](#dcos-dcim-bms-controls)
@@ -79,26 +85,48 @@ Context paragraphs support **bold**, *italic*, and [inline links](https://exampl
 
 > **In Practice · A concrete lesson.** Explain the mechanism or use a worked example.
 
-:::deep-dive From sensor to operator
-### Follow the signal
-Write paragraphs separated by blank lines. Add a fenced text diagram if it helps.
+[Study the relevant lesson](learn:telemetry-replay)
+
+## Physical Deep Dive
+:::deep-dive Cooling capacity
+Write the first technical lesson here (500–800 words plus purposeful sources).
+[Related infrastructure news](news:dc-infrastructure)
+:::
+
+## Logical Deep Dive
+:::deep-dive Telemetry replay
+### Follow a delayed measurement
+Write the second 500–800-word lesson. Add sources and a fenced diagram if helpful.
+[Related controls story](news:dcos-dcim-bms-controls)
 :::
 
 :::recall If the supervisory server fails, must the local controller stop?
-Revealable answer explaining why the actual control architecture determines behavior.
+Revealable answer explaining the failure behavior.
 :::
 ```
 
 Only `deep-dive` and `recall` containers are supported; close each with `:::` and do
 not nest them. Fenced code renders as escaped text, not executable diagrams. Bullets,
 headings, and plain paragraphs are retained. External links open in a new tab; fragment
-links remain in the page. No raw HTML, scripts, or executable URL schemes are accepted.
+links remain in the page. Use `learn:subject-id` from news and `news:section-slug`
+from learning for paired-date cross-links. These resolve to dated pages and stay in the
+same tab. Use `#section-slug` for news takeaways. Each technical source section contains
+exactly one deep-dive block; PgPM Growth follows both technical sections using its skill.
+The three source sections become three numbered subjects on the learning page. No raw HTML, scripts, or executable URL schemes are accepted.
 
 ## Archive and numbering
-`build.py` renders all dated Markdown files to editions/YYYY-MM-DD.html, creates
-archive.html, and chooses the newest filename for index.html and latest.md. Historical
-content is preserved rather than retrofitted with new sections. Historical facts are
-not re-verified by rendering. `edition-manifest.json` assigns issue numbers once; retain
-it in version control so later editions or backfills never renumber published issues.
-Use `--output-dir /tmp/brief-preview` for an isolated build. No build is needed to read
-any generated HTML. Google Fonts are optional external enhancements with local fallbacks.
+`build.py` renders all dated sources to editions/YYYY-MM-DD.html. Format-3 sources also
+produce deep-dives/YYYY-MM-DD.html. The newest source supplies index.html and latest.md;
+the newest split edition supplies deep-dives.html. One issue number covers both pages.
+Top navigation opens latest News, latest Deep Dives or Archive. Matching-edition links
+and story/lesson links stay on the same date. Learning previous/next links traverse
+only split editions; news previous/next links traverse all dates. Historical combined
+content retains its URL and is labeled in the archive. When building only legacy sources,
+the learning landing page explains that earlier learning lives in combined editions.
+
+The manifest assigns issue numbers once; keep it in version control. Backfills never
+renumber published editions. All documents, subject contracts and generated internal
+paths/anchors are validated before output is written. External links require manual
+source review. Use `--output-dir /tmp/brief-preview` for isolated output. No build is
+needed to read HTML; Google Fonts have local fallbacks. Publishing stages both latest
+pages and both dated directories while refusing unrelated structural edits.

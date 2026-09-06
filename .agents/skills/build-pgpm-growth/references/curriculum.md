@@ -47,3 +47,11 @@ controls/DCOS/DCIM integration, configuration baselines, operational data qualit
 OT change governance to the delivery and handoff tracks. Reuse hypothetical cases across
 editions, developing their technical, commercial and leadership dimensions. Include
 a worked example and a short optional practice task; do not equate coverage with mastery.
+
+## Split-page curriculum
+From September 6, 2026, PgPM Growth is the third subject on Deep Dives, after one physical
+and one logical technical subject. Keep two connected lessons and six sources. Connect
+the PgPM case to technical subjects when useful without repeating their explanation.
+Add representative pilots, progressive rollout decisions, and transfer of evidence
+between sites to the cross-functional delivery track. Every fourth expanded edition
+uses one technical subject for synthesis; PgPM progression continues independently.

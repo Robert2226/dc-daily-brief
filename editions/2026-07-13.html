@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>DC Daily Brief — Monday, July 13, 2026</title>
+<title>DC Daily Brief — News — Monday, July 13, 2026</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,900&family=Newsreader:opsz,wght@6..72,400;6..72,500&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
@@ -106,7 +106,8 @@
 
   a{color:var(--accent); text-underline-offset:3px; overflow-wrap:anywhere}
   a:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-offset:4px}
-  .site-nav,.edition-nav{display:flex;justify-content:space-between;gap:16px;font-size:16px;margin:0 0 26px}
+  .site-nav [aria-current]{font-weight:700;text-decoration-thickness:2px}
+  .site-nav,.edition-nav{flex-wrap:wrap;display:flex;justify-content:space-between;gap:16px;font-size:16px;margin:0 0 26px}
   .edition-nav{margin-top:30px}
   .skip-link{position:absolute;left:-10000px}
   .skip-link:focus{position:static}
@@ -140,11 +141,11 @@
 <body>
 <div class="paper">
 <a class="skip-link" href="#content">Skip to content</a>
-<nav class="site-nav" aria-label="Main navigation"><a href="../index.html">Latest edition</a><a href="../archive.html">Archive</a></nav>
+<nav class="site-nav" aria-label="Main navigation"><a href="../index.html" aria-current="page">News</a> <a href="../deep-dives.html">Deep Dives</a> <a href="../archive.html">Archive</a></nav>
 
   <header class="masthead">
     <div class="rule-top"></div>
-    <div class="kicker-top">Aggregated Morning Brief · No. 002</div>
+    <div class="kicker-top">News · No. 002</div>
     <h1>DC Daily Brief</h1>
     <p class="tagline">Physical infrastructure, logical systems, and the decisions connecting them.</p>
     <div class="dateline">
