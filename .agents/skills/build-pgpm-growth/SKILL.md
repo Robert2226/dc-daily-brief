@@ -5,7 +5,7 @@ description: Create the permanent PgPM Growth section for the DC Daily Brief. Us
 
 # Build PgPM Growth
 
-Create Section 11 as a deliberate professional-development curriculum. Teach role-relevant judgment and reusable practices; do not turn the section into another news roundup.
+Create the third subject on the separate Deep Dives page as a deliberate professional-development curriculum. Format-2 historical editions retain Section 11. Teach role-relevant judgment and reusable practices; do not turn the section into another news roundup.
 
 ## Prepare
 
@@ -26,7 +26,7 @@ Create Section 11 as a deliberate professional-development curriculum. Teach rol
 
 ## Write
 
-Append this section after `## Program & PM`:
+In format 3, append this source section after `## Physical Deep Dive` and `## Logical Deep Dive`. Display it as the third learning subject, with its metadata title. Use a `news:program-pm` link back to relevant news and a corresponding `learn:subject-id` link from news. Internal cross-links do not count toward the six external resources:
 
 ```markdown
 ## PgPM Growth
@@ -43,8 +43,8 @@ Keep the two lessons substantive and the four resources concise. Write for Rober
 
 ## Validate
 
-- Confirm `PgPM Growth` is Section 11 and follows `Program & PM`.
-- Confirm there are two connected topics, six unique links, three links per topic, and one Daily Action.
+- Confirm `PgPM Growth` is the third learning subject and follows the physical and logical source sections. Historical format 2 retains Section 11 after Program & PM.
+- Confirm there are two connected topics, six unique external links, three links per topic, and one Daily Action.
 - Confirm the Daily Action is time-boxed, useful, and does not create an external side effect.
 - Confirm the content advances beyond recent editions and contains no invented internal Equinix claims.
 - Confirm all six links render with `target="_blank"` after building the edition.

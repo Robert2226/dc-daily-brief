@@ -32,6 +32,7 @@ class RenderingTests(unittest.TestCase):
         for source in sorted((ROOT / 'briefs').glob('*.md')):
             md = source.read_text()
             doc = build.parse(md)
+            if doc['meta'].get('format') == 3: continue
             page = Page(build.render(doc, 1, (ROOT / 'template.html').read_text()))
             text = ''.join(page.text)
             for title in re.findall(r'^- \*\*(.+?)\*\* — ', md, re.M):
@@ -84,14 +85,17 @@ class RenderingTests(unittest.TestCase):
             build.build(root)
             before = json.loads((root / 'edition-manifest.json').read_text())
             homepage = (root / 'index.html').read_text()
-            for pagefile in [root / 'index.html', root / 'archive.html', *(root / 'editions').glob('*.html')]:
+            for pagefile in [root / 'index.html', root / 'archive.html', root / 'deep-dives.html', *(root / 'editions').glob('*.html'), *(root / 'deep-dives').glob('*.html')]:
                 page = Page(pagefile.read_text())
                 for a in page.links:
                     href = a['href']
                     if href.startswith('#'):
                         self.assertIn(href[1:], page.ids)
                     elif not href.startswith('http'):
-                        self.assertTrue((pagefile.parent / href).is_file(), (pagefile, href))
+                        target, _, anchor = href.partition('#')
+                        targetfile = pagefile.parent / target
+                        self.assertTrue(targetfile.is_file(), (pagefile, href))
+                        if anchor: self.assertIn(anchor, Page(targetfile.read_text()).ids)
             (root / 'briefs/2026-01-01.md').write_text('# DC Daily Brief — January 1, 2026\n## Equinix\nHistorical backfill.')
             build.build(root)
             after = json.loads((root / 'edition-manifest.json').read_text())
@@ -121,6 +125,72 @@ class RenderingTests(unittest.TestCase):
             last.write_text(last.read_text().replace('"deep_dive_track":"controls"', '"deep_dive_track":"synthesis"'))
             build.build(root)
             self.assertIn('Tuesday, September 8, 2026', (root / 'index.html').read_text())
+
+    def test_split_pages_preserve_content_and_pairing(self):
+        with tempfile.TemporaryDirectory() as directory:
+            out = Path(directory)
+            build.build(output=out)
+            news = Page((out / 'index.html').read_text())
+            learning = Page((out / 'deep-dives.html').read_text())
+            self.assertEqual(news.tags.count('section'), 10)
+            self.assertEqual(learning.tags.count('section'), 3)
+            self.assertEqual(news.tags.count('details'), 0)
+            self.assertEqual(learning.tags.count('details'), 3)
+            self.assertNotIn('Today at a glance', ''.join(learning.text))
+            self.assertNotIn('Worked example · Hall A', ''.join(news.text))
+            source = (ROOT / 'briefs/2026-09-06.md').read_text()
+            for title in re.findall(r'^- \*\*(.+?)\*\* — ', source, re.M):
+                self.assertIn(title, ''.join(news.text + learning.text))
+            for _, url in build.LINK.findall(source):
+                if url.startswith('https:'):
+                    self.assertTrue(any(a['href'] == url for a in news.links + learning.links), url)
+            for kind in ('editions', 'deep-dives'):
+                page = Page((out / f'{kind}/2026-09-06.html').read_text())
+                for expected in ('../index.html', '../deep-dives.html', '../archive.html',
+                                 '../editions/2026-09-06.html', '../deep-dives/2026-09-06.html'):
+                    self.assertIn(expected, [a['href'] for a in page.links])
+            internal = [a for a in news.links + learning.links if not a['href'].startswith('https:')]
+            self.assertTrue(all('target' not in a for a in internal))
+            self.assertIn('Combined edition', (out / 'archive.html').read_text())
+            self.assertFalse((out / 'deep-dives/2026-09-05.html').exists())
+
+    def test_invalid_split_contracts(self):
+        base = build.parse((ROOT / 'briefs/2026-09-06.md').read_text())
+        edits = [lambda d: d['meta']['subjects'].pop(),
+                 lambda d: d['meta']['subjects'][0].update(track='logical'),
+                 lambda d: d['meta']['subjects'][0].update(id='telemetry-replay'),
+                 lambda d: d['sections'][10]['blocks'][0]['blocks'].clear(),
+                 lambda d: d['sections'][0]['blocks'].append(d['sections'][10]['blocks'][0]),
+                 lambda d: d['sections'][1]['blocks'][0].update(text='[Bad](learn:missing)'),
+                 lambda d: d['sections'][10]['blocks'][0]['blocks'][-1].update(text='No related news link')]
+        for edit in edits:
+            doc = copy.deepcopy(base); edit(doc)
+            with self.assertRaises(ValueError): build.validate(doc, '2026-09-06')
+
+    def test_cross_format_synthesis_cadence(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            shutil.copytree(ROOT / 'briefs', root / 'briefs')
+            shutil.copytree(ROOT / 'research', root / 'research')
+            shutil.copy(ROOT / 'template.html', root)
+            base = (root / 'briefs/2026-09-06.md').read_text()
+            for day in (7, 8):
+                date = build.dt.date(2026, 9, day)
+                text = base.replace('Sunday, September 6, 2026', f'{date:%A, %B} {day}, 2026').replace('"coverage_end":"2026-09-06"', f'"coverage_end":"{date}"')
+                (root / f'briefs/{date}.md').write_text(text)
+            with self.assertRaisesRegex(ValueError, 'fourth'): build.build(root)
+            last = root / 'briefs/2026-09-08.md'
+            last.write_text(last.read_text().replace('"track":"physical"', '"track":"physical","synthesis":true'))
+            build.build(root)
+            self.assertIn('September 8, 2026', (root / 'deep-dives.html').read_text())
+            earlier = (root / 'deep-dives/2026-09-06.html').read_text()
+            self.assertIn('../editions/2026-09-06.html#program-pm', earlier)
+            self.assertNotIn('../editions/2026-09-08.html#program-pm', earlier)
+
+    def test_generated_broken_links_rejected(self):
+        for href in ('missing.html', '#missing', 'learn:unresolved'):
+            with self.assertRaisesRegex(ValueError, 'Broken link'):
+                build.validate_page_links({'index.html': f'<a href="{href}">Bad</a>'})
 
     def test_validation_precedes_output(self):
         with tempfile.TemporaryDirectory() as directory:

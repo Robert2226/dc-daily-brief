@@ -20,11 +20,11 @@ fi
 python3 - "$BRIEF_DATE" <<'PY'
 import subprocess, sys
 from pathlib import Path
-allowed = {'index.html', 'latest.md', 'archive.html', 'edition-manifest.json',
+allowed = {'index.html', 'deep-dives.html', 'latest.md', 'archive.html', 'edition-manifest.json',
            f'briefs/{sys.argv[1]}.md', f'research/{sys.argv[1]}.md'}
 paths = subprocess.check_output(['git', 'diff', '--name-only', '-z']).decode().split('\0')
 paths += subprocess.check_output(['git', 'ls-files', '--others', '--exclude-standard', '-z']).decode().split('\0')
-bad = [p for p in paths if p and p not in allowed and not (p.startswith('editions/') and p.endswith('.html'))]
+bad = [p for p in paths if p and p not in allowed and not (p.startswith(('editions/', 'deep-dives/')) and p.endswith('.html'))]
 if bad:
     sys.exit('Non-edition changes need a PR: ' + ', '.join(bad))
 latest = max(Path('briefs').glob('????-??-??.md')).stem
@@ -33,7 +33,8 @@ if sys.argv[1] != latest:
 PY
 python3 build.py "$BRIEF"
 python3 -m unittest discover -s tests
-paths=("$BRIEF" index.html latest.md archive.html edition-manifest.json editions)
+paths=("$BRIEF" index.html deep-dives.html latest.md archive.html edition-manifest.json editions)
+if [ -d deep-dives ]; then paths+=(deep-dives); fi
 if [ -f "research/${BRIEF_DATE}.md" ]; then paths+=("research/${BRIEF_DATE}.md"); fi
 git add -- "${paths[@]}"
 if ! git diff --cached --quiet; then

@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>DC Daily Brief — Deep Dives — Sunday, September 6, 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,900&family=Newsreader:opsz,wght@6..72,400;6..72,500&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#F7F5EF; --panel:#FBFAF6; --ink:#1B1A17; --soft-ink:#3B3934;
+    --muted:#6B6862; --rule:#D8D3C7; --rule-strong:#B7B1A3;
+    --accent:#0F766E; --accent-ink:#0B534D; --accent-tint:#EAF1EF;
+    --serif:'Newsreader',Georgia,'Times New Roman',serif;
+    --display:'Fraunces',Georgia,serif;
+    --mono:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,monospace;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#14140F; --panel:#1A1A14; --ink:#ECE8DD; --soft-ink:#CFC9BB;
+      --muted:#948E80; --rule:#2E2D25; --rule-strong:#413F34;
+      --accent:#5FD3C4; --accent-ink:#8FE3D8; --accent-tint:#17241F;
+    }
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0}
+  body{
+    background:var(--bg); color:var(--ink);
+    font-family:var(--serif); font-size:18px; line-height:1.62;
+    -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+  }
+  .paper{max-width:760px; margin:0 auto; padding:40px 26px 72px;}
+
+  /* Masthead */
+  .masthead{text-align:center; padding-bottom:18px;}
+  .masthead .rule-top{border-top:3px solid var(--ink); margin-bottom:14px;}
+  .kicker-top{
+    font-family:var(--mono); font-size:11px; letter-spacing:.32em; text-transform:uppercase;
+    color:var(--muted); margin-bottom:12px;
+  }
+  .masthead h1{
+    font-family:var(--display); font-weight:900; font-size:clamp(38px,9vw,68px);
+    line-height:.94; letter-spacing:-.02em; margin:0 0 10px;
+  }
+  .masthead .tagline{
+    font-family:var(--serif); font-style:italic; color:var(--soft-ink);
+    font-size:16px; max-width:38ch; margin:0 auto 16px;
+  }
+  .dateline{
+    display:flex; justify-content:space-between; align-items:center; gap:12px;
+    border-top:1px solid var(--rule-strong); border-bottom:1px solid var(--rule-strong);
+    padding:8px 2px; font-family:var(--mono); font-size:11px; letter-spacing:.12em;
+    text-transform:uppercase; color:var(--muted);
+  }
+
+  /* Section */
+  .section{padding-top:30px;}
+  .section-head{
+    display:flex; align-items:baseline; gap:12px; margin-bottom:14px;
+    border-bottom:1px solid var(--rule); padding-bottom:8px;
+  }
+  .section-num{
+    font-family:var(--mono); font-weight:700; font-size:12px; color:var(--accent);
+    letter-spacing:.1em;
+  }
+  .section-title{
+    font-family:var(--mono); font-weight:700; font-size:12.5px; letter-spacing:.22em;
+    text-transform:uppercase; color:var(--ink);
+  }
+
+  .item{margin:0 0 20px;}
+  .item h3{
+    font-family:var(--display); font-weight:600; font-size:22px; line-height:1.2;
+    letter-spacing:-.01em; margin:0 0 6px;
+  }
+  .item p{margin:0 0 6px; color:var(--soft-ink);}
+  .item em, .practice em{font-style:italic; color:var(--ink);}
+  .source a{
+    font-family:var(--mono); font-size:11px; letter-spacing:.06em; text-transform:uppercase;
+    color:var(--accent); text-decoration:none; border-bottom:1px solid transparent;
+  }
+  .source a:hover{border-bottom-color:var(--accent);}
+  .source a::before{content:"↗ ";}
+
+  /* In Practice callout */
+  .practice{
+    background:var(--accent-tint); border-left:3px solid var(--accent);
+    padding:14px 18px; margin:6px 0 4px; border-radius:2px;
+  }
+  .practice .label{
+    display:block; font-family:var(--mono); font-size:10.5px; font-weight:700;
+    letter-spacing:.24em; text-transform:uppercase; color:var(--accent-ink); margin-bottom:6px;
+  }
+  .practice p{margin:0; font-size:16.5px; line-height:1.55; color:var(--soft-ink);}
+  .practice strong{color:var(--ink);}
+  .practice .source{margin-top:8px;}
+
+  /* Footer */
+  .foot{
+    margin-top:44px; padding-top:16px; border-top:3px solid var(--ink);
+    font-family:var(--mono); font-size:11px; letter-spacing:.08em; color:var(--muted);
+    text-align:center; line-height:1.8;
+  }
+  .foot .big{font-family:var(--display); font-size:13px; letter-spacing:.2em; text-transform:uppercase; color:var(--ink);}
+
+  a{color:var(--accent); text-underline-offset:3px; overflow-wrap:anywhere}
+  a:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-offset:4px}
+  .site-nav [aria-current]{font-weight:700;text-decoration-thickness:2px}
+  .site-nav,.edition-nav{flex-wrap:wrap;display:flex;justify-content:space-between;gap:16px;font-size:16px;margin:0 0 26px}
+  .edition-nav{margin-top:30px}
+  .skip-link{position:absolute;left:-10000px}
+  .skip-link:focus{position:static}
+  .section{scroll-margin-top:20px}
+  .section-head{margin-top:0}
+  .section-title{line-height:1.6;letter-spacing:.12em}
+  .section-nav{display:flex;flex-wrap:wrap;gap:8px 18px;border-bottom:1px solid var(--rule);padding:20px 0;font-size:16px}
+  .takeaways{padding:22px 0 0}
+  .takeaways h2{font-family:var(--display);font-size:26px}
+  .takeaways .item{margin-bottom:16px}
+  .takeaways .item h3{font-size:20px}
+  .takeaways .item p{font-size:17px}
+  .deep-dive{border-top:2px solid var(--accent);margin-top:28px;padding-top:18px}
+  .deep-dive h3{font-family:var(--display);font-size:28px;line-height:1.2;margin:8px 0 18px}
+  .deep-dive h4{font-family:var(--display);font-size:21px;margin:24px 0 8px}
+  .eyebrow{font:12px var(--mono);color:var(--accent);text-transform:uppercase;letter-spacing:.15em}
+  .recall{border:1px solid var(--rule);padding:14px 18px;margin:18px 0}
+  .recall summary{cursor:pointer;font-weight:600}
+  pre{white-space:pre-wrap;overflow-wrap:anywhere;background:var(--accent-tint);padding:16px;font:14px/1.7 var(--mono)}
+  .archive-list{list-style:none;padding:0}
+  .archive-list li{padding:15px 0;border-bottom:1px solid var(--rule)}
+  .archive-meta{display:block;color:var(--muted);font:12px/1.8 var(--mono)}
+  .practice .label{margin-top:0}
+  .source a{font-size:12px;line-height:1.8}
+  .source a[href^="#"]::before{content:"↓ "}
+  .coverage{font-size:14px;color:var(--muted);margin:12px 0 0}
+  hr{border:0;border-top:1px solid var(--rule);margin:22px 0}
+  @media(max-width:480px){.paper{padding:24px 18px 48px}.dateline{flex-wrap:wrap}.section-title{font-size:12px}.section-head{gap:8px}.deep-dive h3{font-size:25px}}
+</style>
+</head>
+<body>
+<div class="paper">
+<a class="skip-link" href="#content">Skip to content</a>
+<nav class="site-nav" aria-label="Main navigation"><a href="../index.html">News</a> <a href="../deep-dives.html" aria-current="page">Deep Dives</a> <a href="../archive.html">Archive</a></nav>
+
+  <header class="masthead">
+    <div class="rule-top"></div>
+    <div class="kicker-top">Deep Dives · No. 038</div>
+    <h1>DC Daily Brief</h1>
+    <p class="tagline">Physical infrastructure, logical systems, and the decisions connecting them.</p>
+    <div class="dateline">
+      <span>Sunday · September 6, 2026</span>
+      <span>Curated for Robert</span>
+    </div>
+    <p class="coverage">Deep Dives · Physical infrastructure, logical systems, and PgPM Growth. Background teaching with hypothetical examples.</p>
+  </header>
+
+<main id="content">
+<nav class="edition-nav" aria-label="Matching edition"><a href="../editions/2026-09-06.html">2026-09-06 · News</a><a href="../deep-dives/2026-09-06.html">2026-09-06 · Deep Dives</a></nav><nav class="section-nav" aria-label="Edition sections"><a href="#cooling-capacity">Physical · The cooling capacity hidden behind a megawatt rating</a><a href="#telemetry-replay">Logical · Reliable telemetry when messages arrive late or twice</a><a href="#pilot-to-fleet">PgPM Growth · From a successful pilot to a defensible rollout</a></nav><section class="section" id="cooling-capacity"><h2 class="section-head"><span class="section-num">01</span><span class="section-title">Physical · The cooling capacity hidden behind a megawatt rating</span></h2><div class="deep-dive"><p class="eyebrow">Deep dive</p><h3>The cooling capacity hidden behind a megawatt rating</h3><h4>Start with two water loops</h4>
+<p>Yesterday&#x27;s Hall A example followed an alarm. Today, imagine that same hypothetical hall adding a liquid-cooled compute row. The team has a “1 MW CDU” on its equipment schedule. A coolant distribution unit transfers heat between the technology cooling loop serving the IT equipment and the facility water loop carrying heat toward the cooling plant. Its heat exchanger separates the fluids; pumps, valves and controls manage conditions within the selected design. The two loops do not need identical flow or chemistry. The ASHRAE handbook describes this separation; use it to understand the architecture before comparing equipment ratings.</p><div class="source"><a href="https://handbook.ashrae.org/Handbooks/A23/SI/A23_Ch20/a23_ch20_si.aspx" target="_blank" rel="noopener noreferrer">Architecture background</a></div>
+<h4>Calculate the flow behind the label</h4>
+<p>Assume, purely for teaching, that 1,000 kW enters a water loop and the water warms by 5 kelvin as it passes through the IT load. Ignore pump heat and other losses. Use water&#x27;s approximate specific heat of 4.18 kJ per kilogram per kelvin. The steady-state energy balance gives mass flow equal to heat load divided by specific heat and temperature rise: 1,000 / (4.18 × 5), or about 47.8 kilograms per second. At approximately one kilogram per liter, that is 2,870 liters per minute. These are rounded classroom assumptions, not a vendor selection or a site operating instruction.</p>
+<p>Now keep the same heat load but allow a 10 kelvin temperature rise. The calculated mass flow halves. That does not mean the system can safely run at half its original flow: the IT equipment&#x27;s permitted inlet temperature, cold-plate behavior, minimum flow and pressure drop still constrain the choice. This example explains why a capacity comparison needs stated thermal conditions. Two products labeled one megawatt may achieve that rating at different temperatures and flows. Ask for the actual selection point, including fluid properties, instead of comparing the largest number on each brochure.</p>
+<h4>Budget the temperature difference too</h4>
+<p>The CDU also needs a temperature difference across its heat exchanger. For this simplified example, define approach as technology-loop supply temperature minus facility-water supply temperature. Suppose the facility supplies 28°C water and the selected operating point requires a 4 kelvin approach. The technology supply is then approximately 32°C. If facility supply rises to 31°C while the same approach is needed, technology supply becomes approximately 35°C. Whether that remains acceptable depends on the connected equipment. Airedale&#x27;s published tables illustrate how ratings specify approach, flow and fluid conditions together; they do not certify this hypothetical arrangement.</p><div class="source"><a href="https://www.airedale.com/data-centers/liquid-cooling/cdu/" target="_blank" rel="noopener noreferrer">Manufacturer example · Selection conditions</a></div>
+<h4>Test the limiting condition</h4>
+<p>A useful design conversation now has several concrete questions. What happens at the hottest facility-water condition? What available flow and pressure remain during the planned maintenance state? Does a partially loaded row behave differently from a fully loaded row? Increasing pump speed cannot solve every thermal limitation, and a warm-water design does not automatically eliminate the need for mechanical cooling in every climate. Integrated design requires the electrical, IT and heat-rejection assumptions to agree.</p><div class="source"><a href="https://www.ashrae.org/technical-resources/ai-data-center-framework/integrated-design-principles" target="_blank" rel="noopener noreferrer">Integrated design background</a></div>
+<p>For the PgPM, turn those dependencies into one shared performance envelope: load, inlet temperatures, fluid, flow, allowable pressure and maintenance state, with each supplier&#x27;s contribution identified. In our imagined Hall A, the equipment order should reference that envelope and the acceptance evidence should test it. If the row arrives before the plant can provide its assumed water conditions, the schedule has delivered hardware without proving usable capacity. That is the physical counterpart to today&#x27;s telemetry lesson: a component&#x27;s advertised capability is only one part of an end-to-end service.</p><div class="source"><a href="../editions/2026-09-06.html#dc-infrastructure">Related news · Infrastructure</a></div></div>
+<details class="recall"><summary>If a 1 MW water loop allows only a 5 K rise instead of 10 K, what happens to calculated flow?</summary><p>It doubles in the simplified steady-state calculation. Actual selection still depends on fluid properties, hydraulic limits and equipment requirements; the equation alone does not approve a design.</p></details></section><section class="section" id="telemetry-replay"><h2 class="section-head"><span class="section-num">02</span><span class="section-title">Logical · Reliable telemetry when messages arrive late or twice</span></h2><div class="deep-dive"><p class="eyebrow">Deep dive</p><h3>Reliable telemetry when messages arrive late or twice</h3><h4>The outage ends; the ambiguity begins</h4>
+<p>Imagine Hall A&#x27;s local cooling controller continues operating while its gateway loses the connection to an operational-data platform for ten minutes. When connectivity returns, the gateway sends buffered measurements alongside new readings. The dashboard begins moving again. But “moving” is not the same as “current,” and a repeated message is not necessarily a repeated physical event. Yesterday we distinguished control from visibility. Today we examine the delivery contract that makes recovered visibility trustworthy. This is a hypothetical integration, not a claim about any Equinix system or vendor&#x27;s installed architecture.</p>
+<p>First separate three moments: when the condition was measured, when an intermediary received it, and when an application acted on it. OPC UA&#x27;s DataValue model distinguishes source timestamp, server timestamp and status. Preserving that distinction helps an integration retain the origin and quality of a value as it travels. A server timestamp is not simply a universal measurement time, and a source timestamp may reflect the last value or status change. Your point model therefore needs to explain timestamp meaning as well as clock synchronization.</p><div class="source"><a href="https://reference.opcfoundation.org/specs/OPC-10000-4/7.11" target="_blank" rel="noopener noreferrer">Technical reference · OPC UA DataValue</a></div>
+<h4>Delivery is different from application effect</h4>
+<p>MQTT defines three quality-of-service levels: best-effort delivery with possible loss, delivery that can produce duplicates, and exactly-once delivery at the relevant protocol exchange. That last phrase matters. MQTT does not make an entire gateway-to-broker-to-database-to-ticket workflow one transaction. If an application creates a ticket and then crashes before recording completion, a retry can create another ticket unless the application handles that case. Do not use a protocol capability as evidence for a broader business guarantee.</p><div class="source"><a href="https://docs.oasis-open.org/mqtt/mqtt/v5.0/os/mqtt-v5.0-os.html" target="_blank" rel="noopener noreferrer">Protocol reference · MQTT 5</a></div>
+<p>For our imagined integration, define a durable event identity using a device identity, a restart epoch and a sequence number. This is one possible application design, not a mandated protocol field. The restart epoch avoids treating sequence number 12 after a reboot as the same event as number 12 before it. A consumer can record an event identity with its resulting action so repeating the same input does not repeat the effect. The engineering team must still define atomicity, retention and recovery: forgetting identities too early can make an old replay look new.</p>
+<h4>Put a number on recovery</h4>
+<p>Assume the gateway buffers 100 events per second for 600 seconds. It accumulates 60,000 events. After reconnection, suppose the downstream path can process 300 events per second while new events continue arriving at 100 per second. Net backlog drainage is 200 per second, so recovery takes about 300 seconds. That calculation assumes steady rates, sufficient storage and no further failures. If throughput returns at only 100 per second, the backlog does not shrink. “Link restored” and “data caught up” belong at different points on the incident timeline.</p>
+<p>Queues also have limits. OpenTelemetry&#x27;s Collector guidance describes buffering, retry behavior and persistent storage, while identifying loss when capacity, retry duration or storage fails. It is an adjacent software example of the same design problem, not a claim that an OT gateway uses OpenTelemetry. Measure oldest-event age, queue capacity and rejected records; test restart and sustained downstream unavailability as separate cases.</p><div class="source"><a href="https://opentelemetry.io/docs/collector/resiliency/" target="_blank" rel="noopener noreferrer">Operational background · Collector resilience</a></div>
+<h4>Decide what replay is allowed to change</h4>
+<p>In Hall A, historical storage may accept an old sample into its original time position while the live view refuses to replace a newer value with it. A repeated alarm transition should not automatically produce another work order. DCIM may consume selected operational values to contextualize asset and capacity records, while BMS or DCOS views apply their own freshness and quality rules. Ask the integration owners to demonstrate those outcomes with delayed, duplicated and out-of-order inputs. Acceptance then describes observable behavior across systems, rather than stopping at “the connector supports the protocol.”</p><div class="source"><a href="../editions/2026-09-06.html#dcos-dcim-bms-controls">Related news · Controls integration</a> · <a href="../editions/2026-09-06.html#networking">Related news · Recovery traffic</a></div></div>
+<details class="recall"><summary>The link is back, but new events arrive as quickly as the consumer processes them. When does the backlog clear?</summary><p>It does not clear under those steady-rate assumptions. Recovery needs additional processing capacity, reduced incoming volume, or an explicitly approved retention policy. Reconnection alone does not establish freshness.</p></details>
+<details class="recall"><summary>Does MQTT QoS 2 prove that only one work order will be created?</summary><p>No. Its delivery guarantee has a protocol scope. The application must separately make its database writes and external actions safe to retry across crashes and recovery.</p></details></section><section class="section" id="pilot-to-fleet"><h2 class="section-head"><span class="section-num">03</span><span class="section-title">PgPM Growth · From a successful pilot to a defensible rollout</span></h2><article class="item"><h3>Choose a pilot that can challenge your rollout assumption</h3><p>A pilot is useful when its conditions expose the uncertainty behind the next investment decision. Google&#x27;s canary guidance emphasizes representative populations, sufficient observation and attributable signals. Apply that reasoning to Hall A: if the first deployment uses one gateway version on a lightly loaded row, it provides limited evidence for a busier site with another controller family. Build a small matrix of differences that could change the result, then choose the next cohort to test the most consequential unproven difference. September 5&#x27;s lesson established what configuration passed; this lesson asks how far that evidence travels. The PgPM contribution is coordinating operations, engineering and vendors around that boundary, rather than treating a green pilot report as fleet approval.</p><div class="source"><a href="https://sre.google/workbook/canarying-releases/" target="_blank" rel="noopener noreferrer">Topic 1 · Representative canaries</a></div></article>
+<article class="item"><h3>Make expansion a decision with a stop condition</h3><p>Progressive exposure means widening a change&#x27;s reach as evidence supports it. Microsoft&#x27;s safe-deployment guidance combines gradual rollout with health checks, observation and recovery. For an operational-data integration, define the next cohort, the behavior that must remain acceptable, the observation conditions and who can pause expansion. Distinguish reverting software from undoing physical work or historical data changes: the available recovery path may be isolation or forward repair. A sponsor can then approve a bounded next step with visible residual uncertainty. This advances yesterday&#x27;s acceptance lesson into cross-functional rollout judgment: evidence must authorize a specific increase in exposure, and an adverse observation must have an agreed consequence.</p><div class="source"><a href="https://learn.microsoft.com/en-us/azure/well-architected/operational-excellence/safe-deployments" target="_blank" rel="noopener noreferrer">Topic 2 · Progressive exposure and recovery</a></div></article>
+<article class="item"><h3>Resource · Topic 1: Test with real users before broadening access</h3><p>GOV.UK&#x27;s private-to-public beta model offers a practical comparison for expanding a pilot after feedback and demonstrated ability to operate at scale; adapt the learning sequence, not its government assessment process.</p><div class="source"><a href="https://www.gov.uk/service-manual/agile-delivery/how-the-beta-phase-works" target="_blank" rel="noopener noreferrer">Private and public beta</a></div></article>
+<article class="item"><h3>Resource · Topic 1: Measure the operator’s actual task</h3><p>Combine performance measures with user feedback: successful event ingestion can coexist with operators struggling to interpret a replayed condition.</p><div class="source"><a href="https://www.gov.uk/service-manual/measuring-success/measuring-the-success-of-your-service" target="_blank" rel="noopener noreferrer">Measure service success</a></div></article>
+<article class="item"><h3>Resource · Topic 2: Give a reliability objective a decision consequence</h3><p>Google&#x27;s SLO guidance connects agreed objectives to prioritization. Use it to discuss when poor data freshness should pause the next integration cohort; do not borrow an arbitrary percentage.</p><div class="source"><a href="https://sre.google/workbook/implementing-slos/" target="_blank" rel="noopener noreferrer">Implementing SLOs</a></div></article>
+<article class="item"><h3>Resource · Topic 2: Repeat the release, not the improvisation</h3><p>Reproducible release engineering helps separate a deliberate site variation from an accidental difference in what was deployed.</p><div class="source"><a href="https://sre.google/sre-book/release-engineering/" target="_blank" rel="noopener noreferrer">Release engineering</a></div></article>
+<h4>Worked example · Hall A to the next two halls</h4>
+<p>Imagine the first hall passes the replay test in the logical lesson using gateway family X. Hall B uses the same family at higher event volume; Hall C uses family Y. The proposed expansion is B first, with a controlled recovery exercise and an agreed data-freshness objective. C remains outside that decision because its restart and event-identity behavior is unproven. These cohorts and criteria are illustrative, not operational instructions.</p>
+<p>During the exercise, B&#x27;s link returns but its oldest-event age keeps rising. The team pauses expansion because recovery capacity is below incoming demand. The sponsor receives a specific recommendation: retain the supported first deployment, correct and retest B&#x27;s recovery behavior, and schedule a separate family-Y qualification before including C. A delay now protects the validity of the eventual scale claim. The lesson is not “always start small”; it is to make the next group answer the next important question.</p><div class="source"><a href="../editions/2026-09-06.html#program-pm">Related news · Program delivery</a></div>
+<aside class="practice"><h3 class="label">Daily Action · Draft the next-cohort decision</h3><p>Optional 8-minute exercise: choose an imaginary pilot and write four sentences naming what it proved, one material difference in the next cohort, the observation that would stop expansion, and the recovery path. Then replace any vague “successful” or “stable” with observable behavior. Keep this as a private practice artifact.</p></aside></section>
+</main>
+<nav class="edition-nav" aria-label="Adjacent learning editions"></nav>
+
+  <footer class="foot">
+    <div class="big">DC Daily Brief</div>
+    Deep Dives · Physical infrastructure, logical systems, and PgPM Growth. Background teaching with hypothetical examples. · Researched and generated on demand<br>
+    News, context, and learning for Robert · Historical reporting may be superseded.
+  </footer>
+
+</div>
+</body>
+</html>

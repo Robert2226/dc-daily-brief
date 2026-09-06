@@ -54,3 +54,11 @@ News belongs in this section when supervisory software, controls, operational da
 or their integration is the main development. Cooling/power equipment belongs in DC
 Infrastructure unless controls are the central issue; general network developments
 belong in Networking. Cross-reference without copying a story into multiple sections.
+
+## Additional discovery and technical references (September 6)
+- [Modius integration scope](https://modius.com/works-with/): vendor claims to qualify,
+  not proof of each point's end-to-end behavior.
+- [Siemens press](https://press.siemens.com/global/en): electrical architecture and controls ecosystem.
+- [OpenTelemetry resilience](https://opentelemetry.io/docs/collector/resiliency/): adjacent logical-system queue/recovery teaching.
+- [OPC UA DataValue](https://reference.opcfoundation.org/specs/OPC-10000-4/7.11): timestamp and quality semantics.
+- [Airedale CDU specifications](https://www.airedale.com/data-centers/liquid-cooling/cdu/): selection conditions; manufacturer ratings need operating-point context.

@@ -163,5 +163,39 @@
     ],
     "case": "Hypothetical Hall A cooling controls migration",
     "research_log": "research/2026-09-05.md"
+  },
+  "2026-09-06": {
+    "issue": 38,
+    "title": "Sunday, September 6, 2026",
+    "format": 3,
+    "coverage_start": "2026-09-05",
+    "coverage_end": "2026-09-06",
+    "subjects": [
+      {
+        "id": "cooling-capacity",
+        "track": "physical",
+        "title": "Physical · The cooling capacity hidden behind a megawatt rating"
+      },
+      {
+        "id": "telemetry-replay",
+        "track": "logical",
+        "title": "Logical · Reliable telemetry when messages arrive late or twice"
+      },
+      {
+        "id": "pilot-to-fleet",
+        "track": "pgpm",
+        "title": "PgPM Growth · From a successful pilot to a defensible rollout"
+      }
+    ],
+    "topics": [
+      "CDU thermal budgets and flow — worked example",
+      "Telemetry replay, delivery semantics and backpressure — failure scenario"
+    ],
+    "pgpm_topics": [
+      "Representative pilots — cross-functional leadership",
+      "Progressive rollout decisions — cross-functional leadership"
+    ],
+    "case": "Hypothetical Hall A cooling expansion and telemetry rollout",
+    "research_log": "research/2026-09-06.md"
   }
 }
