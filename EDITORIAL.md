@@ -13,7 +13,9 @@ current importance. Quality and depth matter more than a fixed reading time.
 2. Cover the previous edition's date through today's local date, inclusive: the
    previous run's exact research cutoff may be unknown. Deduplicate already covered
    stories; use the boundary-day overlap to catch later announcements. Record both
-   publication and event dates where they differ. Label older background explicitly.
+   publication and event dates where they differ. Also search the last seven calendar
+   days (today plus six preceding dates) for worthwhile stories not previously covered.
+   Label their actual dates; older useful reading is explicitly analysis or a case study.
 3. Search the public web and read accessible newsrooms, release notes, technical
    publications, and independent reporting for all ten news categories. Search broad
    categories as well as named vendors, discovering players beyond the watchlist.
@@ -29,7 +31,7 @@ current importance. Quality and depth matter more than a fixed reading time.
    material gap, explain it in the affected section; do not infer no news from failure.
 6. Write briefs/YYYY-MM-DD.md using the format below. Preserve ten news sections in
    the AGENTS.md order, each with 1–2 worthwhile stories and one In Practice bite.
-   If a reasonable research pass finds no material update, say so and still teach.
+   Use the research breadth gate below before accepting a quiet section.
    More links are useful only when they add evidence, a perspective, or understanding.
 7. Add exactly three opening takeaways linking to news sections. Put long learning on
    the separate Deep Dives page: exactly three subjects, physical, logical and PgPM.
@@ -46,6 +48,32 @@ current importance. Quality and depth matter more than a fixed reading time.
    both latest pages, paired dates, archive, historical pages, mobile/dark presentation,
    keyboard navigation and recall. Content-only publishing uses `./publish.sh YYYY-MM-DD`
    from main. Structural launches include their full launch edition in the manual PR.
+
+## Research breadth gate
+For every category, run at least three distinct discovery angles: topic/mechanism,
+companies/customers, and development types (deployments, releases, outages, financing,
+standards, acquisitions or delivery case studies). Include searches without literal
+calendar-date strings; apply recency filters and verify dates on the underlying pages.
+Inspect relevant articles across multiple publishers, combining specialist/independent
+reporting with primary announcements, filings, customer accounts and technical material.
+Expand synonyms and regional coverage when the first pass returns duplicates or little
+of value. Newsroom indexes and search snippets are discovery, not completed reporting.
+
+Build a candidate pool before choosing the one or two items for each category. Record
+queries/angles, candidates, publication/event dates, selected/rejected reasons, duplication
+checks and access gaps. Syndicated copies count as one underlying report. Add productive
+new sources to the watchlist through the manual-change workflow, not a content-only push.
+
+Prefer news since the last run, then uncovered news from the seven-day window, then
+clearly dated useful analysis or a case study that explains its relevance to Robert.
+Do not substitute generic learning because the first searches were thin. “No new news”
+is not a default story. Only after broader research finds nothing worthwhile, retain a
+compact honest note and the short practice bite; never invent freshness or pad a quota.
+Research depth is an editorial review, not something renderer tests can establish.
+
+Competitors must cover the broader operator/developer market. Google and Crusoe checks
+are mandatory inputs, not category boundaries. Include relevant global and regional
+coverage; route controls, physical construction, demand and cloud stories by main angle.
 
 ## Writing
 Each story explains what changed and why it matters. Include a mechanism or concrete
