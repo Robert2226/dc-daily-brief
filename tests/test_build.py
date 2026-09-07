@@ -130,8 +130,10 @@ class RenderingTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as directory:
             out = Path(directory)
             build.build(output=out)
-            news = Page((out / 'index.html').read_text())
-            learning = Page((out / 'deep-dives.html').read_text())
+            # This fixture's assertions describe the launch edition, even after
+            # later editions replace the latest routes.
+            news = Page((out / 'editions/2026-09-06.html').read_text())
+            learning = Page((out / 'deep-dives/2026-09-06.html').read_text())
             self.assertEqual(news.tags.count('section'), 10)
             self.assertEqual(learning.tags.count('section'), 3)
             self.assertEqual(news.tags.count('details'), 0)
