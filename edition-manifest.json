@@ -197,5 +197,39 @@
     ],
     "case": "Hypothetical Hall A cooling expansion and telemetry rollout",
     "research_log": "research/2026-09-06.md"
+  },
+  "2026-09-07": {
+    "issue": 39,
+    "title": "Monday, September 7, 2026",
+    "format": 3,
+    "coverage_start": "2026-09-06",
+    "coverage_end": "2026-09-07",
+    "subjects": [
+      {
+        "id": "failure-boundaries",
+        "track": "physical",
+        "title": "Physical · Redundancy depends on failure boundaries"
+      },
+      {
+        "id": "control-authority",
+        "track": "logical",
+        "title": "Logical · Read access is not control authority"
+      },
+      {
+        "id": "shared-risk-cost",
+        "track": "pgpm",
+        "title": "PgPM Growth · Shared risk and lifecycle cost"
+      }
+    ],
+    "topics": [
+      "Redundancy, shared dependencies and maintenance states — worked failure scenario",
+      "OT segmentation and read versus write authority — architecture comparison"
+    ],
+    "pgpm_topics": [
+      "Systemic risk across shared dependencies — strategic judgment",
+      "Lifecycle alternatives and sensitivity — cross-functional business case"
+    ],
+    "case": "Hypothetical Hall A expansion: shared cooling dependencies, monitoring access and support alternatives",
+    "research_log": "research/2026-09-07.md"
   }
 }
