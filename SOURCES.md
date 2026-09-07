@@ -62,3 +62,25 @@ belong in Networking. Cross-reference without copying a story into multiple sect
 - [OpenTelemetry resilience](https://opentelemetry.io/docs/collector/resiliency/): adjacent logical-system queue/recovery teaching.
 - [OPC UA DataValue](https://reference.opcfoundation.org/specs/OPC-10000-4/7.11): timestamp and quality semantics.
 - [Airedale CDU specifications](https://www.airedale.com/data-centers/liquid-cooling/cdu/): selection conditions; manufacturer ratings need operating-point context.
+
+## Breadth by research angle
+Use this expandable map, not a fixed list of pages to scan. For each category search
+at least three distinct angles and inspect relevant material from multiple publishers.
+Use recency filters plus searches without date strings; confirm dates in the articles.
+
+| Category | Additional discovery angles and sources |
+| --- | --- |
+| Equinix | Customer/partner deployments, regional news, interconnection use cases, filings; Equinix blog plus independent regional and industry reporting. |
+| Google | Utilities and customers, regional infrastructure and cloud operations, product release notes; mandatory indexes plus independent reporting. |
+| Competitors | Digital Realty, QTS, Vantage, CyrusOne, NTT, STACK, Aligned, EdgeConneX, CoreSite, Iron Mountain, STT GDC, GDS, regional and emerging operators; customer wins, finance, ownership, expansion. Crusoe is one check. |
+| Infrastructure | Power interconnection, substations, UPS, cooling, construction and commissioning; DCD, DCK, Construction Dive, Facilities Dive, regional planning/utility records, supplier and customer case studies. |
+| Controls | Building automation, industrial software, historians, instrumentation, OT security, integrations; Automation World, Control Global, Smart Buildings Technology, CISA advisories, integrators and standards bodies. Search beyond the words DCIM/BMS. |
+| AI demand | Customer contracts, accelerator shipments/utilization, cloud capacity and research infrastructure; filings, operator/customer disclosures, Reuters and specialist reporting. |
+| Models | Lab announcements, open-model repositories, inference/tool releases and independent evaluations; use primary release/model cards to verify status. |
+| Networking | Ethernet/optics, DCI/subsea, routing/security, operator deployments; Light Reading, Network World, The Register, IEEE ComSoc, OIF, Ethernet Alliance and vendor technical releases. |
+| Backend/cloud | AWS/Azure releases, databases, storage, Kubernetes/CNCF, reliability incidents; InfoQ, The New Stack, official project release notes and engineering postmortems. |
+| Program/PM | Delivery case studies, procurement/supply chain, workforce and organizational research; PMI/APM, government audit reports, practitioner and customer accounts. |
+
+Selection order: since last run → uncovered last-seven-day news → dated useful analysis
+or case study. Track rejected duplicates and access gaps. A quiet homepage does not mean
+a quiet market; repeat discovery with different terms and publishers before concluding.

@@ -31,13 +31,18 @@ program delivery.
 Follow [EDITORIAL.md](EDITORIAL.md) for research, Markdown, metadata and validation,
 and [SOURCES.md](SOURCES.md) for the expandable research watchlist. Generation is
 user-initiated, typically every two days; cover since the previous edition, not just
-calendar-day headlines. Quality and depth take precedence over reading-time targets.
+calendar-day headlines. Prioritize developments since the previous edition, then select
+previously uncovered stories from the last seven calendar days, clearly dated. Quality
+and depth take precedence over reading-time targets. Follow the breadth requirements
+in EDITORIAL.md before concluding that a category is quiet.
 
 Start with three linked takeaways. The ten numbered news sections, in order, are:
 `Equinix · Google · Competitors · DC Infrastructure · DCOS, DCIM, BMS & Controls ·
 AI & Compute Demand · New AI Models & Releases · Networking · Backend / Cloud & Data ·
 Program & PM`. Each has 1–2 worthwhile stories plus an In Practice learning bite. When
-research finds no material news, explicitly say so and still teach. Use multiple
+fresh reporting is thin, select useful analysis or a deployment case study with its
+actual date. Only after documented broader research finds nothing worthwhile, use a
+compact honest note; do not default to a “no new news” headline. Use multiple
 purposeful source links as needed; external links open in a new tab.
 
 New editions use format 3: one dated source generates separate News and Deep Dives
@@ -88,6 +93,15 @@ Do not invent Equinix-specific architecture, instructions or procedures.
   important angle is GCP deployment, infrastructure, operations, or business impact.
 - Do not repeat the same Google story under `Competitors`, `AI & Compute Demand`, `New
   AI Models & Releases`, or `Backend / Cloud & Data`.
+
+### Competitive-market breadth
+Competitors covers the market, not a single monitored company. Search established colo
+operators, hyperscalers, regional developers and emerging AI infrastructure providers.
+Examples include Digital Realty, QTS, Vantage, CyrusOne, NTT, STACK, Aligned, EdgeConneX,
+CoreSite, Iron Mountain, atNorth, STT GDC, GDS and others discovered through reporting.
+Search customers, expansion, financing, acquisitions, partnerships and regional markets.
+Crusoe's required check is one input, never a substitute for researching this category.
+Route stories by primary angle; do not duplicate them to fill sections.
 
 ### Crusoe monitoring
 - Check Crusoe's homepage, newsroom, and resource pages during every daily research
