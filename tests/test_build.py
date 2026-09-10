@@ -124,7 +124,7 @@ class RenderingTests(unittest.TestCase):
             last = root / 'briefs/2026-09-08.md'
             last.write_text(last.read_text().replace('"deep_dive_track":"controls"', '"deep_dive_track":"synthesis"'))
             build.build(root)
-            self.assertIn('Tuesday, September 8, 2026', (root / 'index.html').read_text())
+            self.assertIn('Tuesday, September 8, 2026', (root / 'editions/2026-09-08.html').read_text())
 
     def test_split_pages_preserve_content_and_pairing(self):
         with tempfile.TemporaryDirectory() as directory:
@@ -184,7 +184,7 @@ class RenderingTests(unittest.TestCase):
             last = root / 'briefs/2026-09-08.md'
             last.write_text(last.read_text().replace('"track":"physical"', '"track":"physical","synthesis":true'))
             build.build(root)
-            self.assertIn('September 8, 2026', (root / 'deep-dives.html').read_text())
+            self.assertIn('September 8, 2026', (root / 'deep-dives/2026-09-08.html').read_text())
             earlier = (root / 'deep-dives/2026-09-06.html').read_text()
             self.assertIn('../editions/2026-09-06.html#program-pm', earlier)
             self.assertNotIn('../editions/2026-09-08.html#program-pm', earlier)
