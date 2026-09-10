@@ -231,5 +231,40 @@
     ],
     "case": "Hypothetical Hall A expansion: shared cooling dependencies, monitoring access and support alternatives",
     "research_log": "research/2026-09-07.md"
+  },
+  "2026-09-09": {
+    "issue": 40,
+    "title": "Wednesday, September 9, 2026",
+    "format": 3,
+    "coverage_start": "2026-09-07",
+    "coverage_end": "2026-09-09",
+    "subjects": [
+      {
+        "id": "degraded-capacity",
+        "track": "physical",
+        "title": "Physical · When capacity and evidence disagree",
+        "synthesis": true
+      },
+      {
+        "id": "reconciliation",
+        "track": "logical",
+        "title": "Logical · Desired state is not delivered capacity"
+      },
+      {
+        "id": "resource-constrained-delivery",
+        "track": "pgpm",
+        "title": "PgPM Growth · Find the real schedule constraint"
+      }
+    ],
+    "topics": [
+      "Synthesis — cooling capacity, shared dependencies, telemetry freshness and control authority",
+      "Declarative reconciliation and multi-cluster failover — applied"
+    ],
+    "pgpm_topics": [
+      "Resource-constrained scheduling — cross-functional application",
+      "Schedule compression tradeoffs — leadership judgment"
+    ],
+    "case": "Hypothetical Hall A: degraded cooling, workload placement and a shared commissioning specialist",
+    "research_log": "research/2026-09-09.md"
   }
 }
