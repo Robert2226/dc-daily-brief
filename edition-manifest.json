@@ -266,5 +266,39 @@
     ],
     "case": "Hypothetical Hall A: degraded cooling, workload placement and a shared commissioning specialist",
     "research_log": "research/2026-09-09.md"
+  },
+  "2026-09-11": {
+    "issue": 41,
+    "title": "Friday, September 11, 2026",
+    "format": 3,
+    "coverage_start": "2026-09-09",
+    "coverage_end": "2026-09-11",
+    "subjects": [
+      {
+        "id": "electrical-capacity",
+        "track": "physical",
+        "title": "Physical · Translate electrical ratings into usable capacity"
+      },
+      {
+        "id": "consistent-copies",
+        "track": "logical",
+        "title": "Logical · What does a storage copy actually preserve?"
+      },
+      {
+        "id": "productive-disagreement",
+        "track": "pgpm",
+        "title": "PgPM Growth · Turn disagreement into a defensible choice"
+      }
+    ],
+    "topics": [
+      "MW, MVA, power factor and facility overhead — worked capacity comparison",
+      "Storage copies, database consistency and recovery boundaries — failure scenario"
+    ],
+    "pgpm_topics": [
+      "Resolve competing stakeholder interests — cross-functional leadership",
+      "Agree decision criteria and test ranking sensitivity — cross-functional leadership"
+    ],
+    "case": "Hypothetical Hall A: electrical capacity envelope and a database rehearsal with competing stakeholder priorities",
+    "research_log": "research/2026-09-11.md"
   }
 }
