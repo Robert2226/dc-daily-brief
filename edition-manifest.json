@@ -300,5 +300,39 @@
     ],
     "case": "Hypothetical Hall A: electrical capacity envelope and a database rehearsal with competing stakeholder priorities",
     "research_log": "research/2026-09-11.md"
+  },
+  "2026-09-14": {
+    "issue": 42,
+    "title": "Monday, September 14, 2026",
+    "format": 3,
+    "coverage_start": "2026-09-11",
+    "coverage_end": "2026-09-14",
+    "subjects": [
+      {
+        "id": "thermal-time",
+        "track": "physical",
+        "title": "Physical · How much time does cooling really buy?"
+      },
+      {
+        "id": "security-invariants",
+        "track": "logical",
+        "title": "Logical · Healthy systems can still break their access rules"
+      },
+      {
+        "id": "commercial-control",
+        "track": "pgpm",
+        "title": "PgPM Growth · Match commercial risk to delivery control"
+      }
+    ],
+    "topics": [
+      "Cooling transients, thermal storage and recovery time — worked energy balance",
+      "Configuration changes and security invariants — negative-test scenario"
+    ],
+    "pgpm_topics": [
+      "Allocate commercial risk to controllable causes — strategic judgment",
+      "Design service measures and incentives together — cross-functional leadership"
+    ],
+    "case": "Hypothetical Hall A: cooling recovery, reporting access and a multi-vendor service agreement",
+    "research_log": "research/2026-09-14.md"
   }
 }
