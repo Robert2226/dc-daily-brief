@@ -110,7 +110,11 @@ class RenderingTests(unittest.TestCase):
     def test_fourth_expanded_edition_requires_synthesis(self):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
-            shutil.copytree(ROOT / 'briefs', root / 'briefs')
+            # Keep this synthetic cadence independent of later published editions.
+            (root / 'briefs').mkdir()
+            for source in (ROOT / 'briefs').glob('*.md'):
+                if source.stem <= '2026-09-06':
+                    shutil.copy(source, root / 'briefs')
             shutil.copytree(ROOT / 'research', root / 'research')
             shutil.copy(ROOT / 'template.html', root)
             base = (root / 'briefs/2026-09-05.md').read_text()
@@ -172,7 +176,11 @@ class RenderingTests(unittest.TestCase):
     def test_cross_format_synthesis_cadence(self):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory)
-            shutil.copytree(ROOT / 'briefs', root / 'briefs')
+            # Keep this synthetic cadence independent of later published editions.
+            (root / 'briefs').mkdir()
+            for source in (ROOT / 'briefs').glob('*.md'):
+                if source.stem <= '2026-09-06':
+                    shutil.copy(source, root / 'briefs')
             shutil.copytree(ROOT / 'research', root / 'research')
             shutil.copy(ROOT / 'template.html', root)
             base = (root / 'briefs/2026-09-06.md').read_text()
