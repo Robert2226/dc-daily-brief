@@ -334,5 +334,39 @@
     ],
     "case": "Hypothetical Hall A: cooling recovery, reporting access and a multi-vendor service agreement",
     "research_log": "research/2026-09-14.md"
+  },
+  "2026-09-17": {
+    "issue": 43,
+    "title": "Thursday, September 17, 2026",
+    "format": 3,
+    "coverage_start": "2026-09-14",
+    "coverage_end": "2026-09-17",
+    "subjects": [
+      {
+        "id": "electrical-load-steps",
+        "track": "physical",
+        "title": "Physical · Why a generator rating cannot prove load acceptance"
+      },
+      {
+        "id": "inference-admission",
+        "track": "logical",
+        "title": "Logical · Keep inference useful when requests exceed capacity"
+      },
+      {
+        "id": "forecast-assurance",
+        "track": "pgpm",
+        "title": "PgPM Growth · Put the delivery forecast under independent challenge"
+      }
+    ],
+    "topics": [
+      "Generator load acceptance, constant-power behavior and electrical transients — worked comparison",
+      "Inference admission control, batching and request deadlines — overload scenario"
+    ],
+    "pgpm_topics": [
+      "Reference-class forecasting and comparable evidence — applied practice",
+      "Risk-directed independent assurance — strategic governance"
+    ],
+    "case": "Hypothetical Hall A: generator integration, inference admission and a challenged delivery forecast",
+    "research_log": "research/2026-09-17.md"
   }
 }
