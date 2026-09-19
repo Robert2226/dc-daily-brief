@@ -202,6 +202,66 @@ class RenderingTests(unittest.TestCase):
             with self.assertRaisesRegex(ValueError, 'Broken link'):
                 build.validate_page_links({'index.html': f'<a href="{href}">Bad</a>'})
 
+    def incident_fixture(self):
+        text = (ROOT / 'briefs/2026-09-17.md').read_text()
+        text = text.replace('Thursday, September 17, 2026', 'Saturday, September 19, 2026')
+        text = text.replace('"format":3', '"format":3,"news_profile":"incidents-v1"')
+        text = text.replace('"coverage_end":"2026-09-17"', '"coverage_end":"2026-09-19"')
+        text = text.replace('## Competitors', '## Incidents, Reliability & Remediation')
+        text = text.replace('"track":"physical"', '"track":"physical","synthesis":true')
+        text = text.replace('news:dc-infrastructure', 'news:incidents-reliability-remediation')
+        return text
+
+    def test_profile_validation_and_crosslinks(self):
+        base = build.parse(self.incident_fixture())
+        build.validate(base, '2026-09-19')
+        edits = [lambda d: d['meta'].pop('news_profile'),
+                 lambda d: d['meta'].update(news_profile='unknown'),
+                 lambda d: d['meta'].update(news_profile=[]),
+                 lambda d: d['meta'].update(format=2),
+                 lambda d: d['sections'][2].update(name='Competitors'),
+                 lambda d: d['sections'][10]['blocks'][0]['blocks'][-1].update(text='[Bad](news:competitors)'),
+                 lambda d: d['takeaways'][0].update(text='[Bad](#competitors)')]
+        for edit in edits:
+            doc = copy.deepcopy(base); edit(doc)
+            with self.assertRaises(ValueError): build.validate(doc, '2026-09-19')
+        legacy = build.parse((ROOT / 'briefs/2026-09-17.md').read_text())
+        build.validate(legacy, '2026-09-17')
+        legacy['sections'][10]['blocks'][0]['blocks'][-1]['text'] = '[Bad](news:incidents-reliability-remediation)'
+        with self.assertRaisesRegex(ValueError, 'Unknown edition link'):
+            build.validate(legacy, '2026-09-17')
+        # No format metadata may bypass the date rule, even in a minimal document.
+        for date in ('2026-09-19', '2027-01-01'):
+            with self.assertRaisesRegex(ValueError, 'news_profile'):
+                build.validate(build.parse('# DC Daily Brief — Test\n## Equinix\nOld'), date)
+
+    def test_profile_launch_preserves_history_pairing_and_eighth_synthesis(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            (root / 'briefs').mkdir()
+            for source in (ROOT / 'briefs').glob('*.md'):
+                if source.stem <= '2026-09-17': shutil.copy(source, root / 'briefs')
+            shutil.copytree(ROOT / 'research', root / 'research')
+            shutil.copy(ROOT / 'template.html', root)
+            build.build(root)
+            historical = (root / 'editions/2026-09-14.html').read_bytes()
+            launch = root / 'briefs/2026-09-19.md'
+            launch.write_text(self.incident_fixture().replace(',"synthesis":true', ''))
+            with self.assertRaisesRegex(ValueError, 'fourth'): build.build(root)
+            launch.write_text(self.incident_fixture())
+            build.build(root)
+            self.assertEqual(historical, (root / 'editions/2026-09-14.html').read_bytes())
+            old = Page((root / 'editions/2026-09-17.html').read_text())
+            self.assertIn('competitors', old.ids)
+            for path in ('index.html', 'editions/2026-09-19.html'):
+                page = Page((root / path).read_text())
+                self.assertEqual(page.tags.count('section'), 10)
+                self.assertIn('incidents-reliability-remediation', page.ids)
+                self.assertNotIn('competitors', page.ids)
+            for path, prefix in [('deep-dives.html', ''), ('deep-dives/2026-09-19.html', '../')]:
+                page = Page((root / path).read_text())
+                self.assertIn(prefix + 'editions/2026-09-19.html#incidents-reliability-remediation', [a['href'] for a in page.links])
+
     def test_validation_precedes_output(self):
         with tempfile.TemporaryDirectory() as directory:
             root = Path(directory); (root / 'briefs').mkdir()

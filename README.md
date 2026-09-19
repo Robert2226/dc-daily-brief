@@ -14,6 +14,12 @@ integrations, and relevant hardware. DCOS means Data Center Operating System; DC
 Data Center Infrastructure Management. Broad category discovery and vendor research run
 each edition; AVEVA, FactoryTalk and Emerson are examples, not a closed list.
 
+From September 19, 2026, **Incidents, Reliability & Remediation** replaces Competitors
+in position three. It follows significant facility and service failures, concrete risks,
+postmortems and corrective work across operators. Format-3 editions declare
+`news_profile: "incidents-v1"`; earlier editions retain their original lineup and links.
+Relevant incident cases also inform the learning curriculum.
+
 ## Reading and generation
 The site is static HTML/CSS with no backend, JavaScript requirement, or reader build step.
 External Google Fonts have local fallbacks. Recall answers use native HTML disclosure.

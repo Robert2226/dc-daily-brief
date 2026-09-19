@@ -368,5 +368,41 @@
     ],
     "case": "Hypothetical Hall A: generator integration, inference admission and a challenged delivery forecast",
     "research_log": "research/2026-09-17.md"
+  },
+  "2026-09-19": {
+    "issue": 44,
+    "title": "Saturday, September 19, 2026",
+    "format": 3,
+    "news_profile": "incidents-v1",
+    "coverage_start": "2026-09-17",
+    "coverage_end": "2026-09-19",
+    "subjects": [
+      {
+        "id": "fuel-boundaries-recovery",
+        "track": "physical",
+        "title": "Physical · Connect fuel handling, controls and recovery",
+        "synthesis": true
+      },
+      {
+        "id": "independent-recovery",
+        "track": "logical",
+        "title": "Logical · Keep recovery independent of the failure"
+      },
+      {
+        "id": "learning-and-effectiveness",
+        "track": "pgpm",
+        "title": "PgPM Growth · Turn incident learning into verified improvement"
+      }
+    ],
+    "topics": [
+      "Fuel handling, independent protection, failure boundaries and staged recovery — synthesis",
+      "Recovery control paths and static stability — dependency failure scenario"
+    ],
+    "pgpm_topics": [
+      "Facilitating evidence-led learning reviews — cross-functional leadership",
+      "Corrective-action effectiveness and closure evidence — strategic judgment"
+    ],
+    "case": "Hypothetical Hall A: fuel-transfer protection, unavailable management paths and evidence-based corrective-action closure",
+    "research_log": "research/2026-09-19.md"
   }
 }

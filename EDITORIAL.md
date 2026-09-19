@@ -71,9 +71,27 @@ is not a default story. Only after broader research finds nothing worthwhile, re
 compact honest note and the short practice bite; never invent freshness or pad a quota.
 Research depth is an editorial review, not something renderer tests can establish.
 
-Competitors must cover the broader operator/developer market. Google and Crusoe checks
-are mandatory inputs, not category boundaries. Include relevant global and regional
-coverage; route controls, physical construction, demand and cloud stories by main angle.
+## Incident coverage and routing
+The third section is **Incidents, Reliability & Remediation** beginning September 19.
+Search provider status histories (AWS, Google Cloud and Azure explicitly), engineering
+postmortems, regulator notices, local reporting and independent industry coverage every
+run. Log the history interval checked, candidate events, material updates, negative
+checks and access gaps. Check older open incidents for substantive findings or corrective
+actions; present event dates and update dates separately. Do not infer an incident-free
+period from a currently green dashboard or an inaccessible history.
+
+Select consequential physical/environmental events, service outages, specific operational
+risks and remediation. Exclude minor status blips and generic risk commentary. Every
+incident story states impact, the source/status of causal claims, response, and unresolved
+questions. A company's preliminary explanation is not a regulator's final finding; service
+restoration is not proof that recurrence prevention or environmental cleanup is complete.
+All operators' incidents belong here, including Equinix and Google. Cross-reference rather
+than duplicate. Broad operator discovery continues, routing expansion/customer/financing
+stories to Infrastructure, AI Demand or Cloud by main development.
+
+When pertinent, use sourced incidents in all three learning subjects. Label reported facts,
+engineering interpretations and hypothetical examples distinctly. Do not infer an unpublished
+root cause or internal Equinix design. Teach mechanisms and judgment, not speculative blame.
 
 ## Writing
 Each story explains what changed and why it matters. Include a mechanism or concrete
@@ -90,7 +108,13 @@ metadata comment. `coverage_start` is the previous edition date; `coverage_end` 
 the filename. `topics` and `pgpm_topics` describe what was taught, not completed study.
 `research_log` is the relative path to the corresponding research record. The first
 expanded edition (September 5, format 2) begins the four-edition synthesis cycle.
-New sources use `format: 3`. Metadata `subjects` must contain three ordered entries with
+New sources use `format: 3`. Editions dated September 19, 2026 onward must also set
+`news_profile: "incidents-v1"`, replacing Competitors with Incidents, Reliability &
+Remediation in position three. Earlier sources without a profile keep their historical
+lineup. Validation, section navigation and `news:` destinations follow the edition profile;
+use `news:incidents-reliability-remediation` for the new section. The September 6 example
+below illustrates the historical profile and must not be copied without adding the new
+profile for a current edition. Metadata `subjects` must contain three ordered entries with
 unique slug `id`, `track` (physical/logical/pgpm), and reader-facing `title`. The optional
 `synthesis: true` belongs on one technical subject. Format 2 remains readable unchanged.
 
