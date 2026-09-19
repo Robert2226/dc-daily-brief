@@ -37,7 +37,7 @@ and depth take precedence over reading-time targets. Follow the breadth requirem
 in EDITORIAL.md before concluding that a category is quiet.
 
 Start with three linked takeaways. The ten numbered news sections, in order, are:
-`Equinix · Google · Competitors · DC Infrastructure · DCOS, DCIM, BMS & Controls ·
+`Equinix · Google · Incidents, Reliability & Remediation · DC Infrastructure · DCOS, DCIM, BMS & Controls ·
 AI & Compute Demand · New AI Models & Releases · Networking · Backend / Cloud & Data ·
 Program & PM`. Each has 1–2 worthwhile stories plus an In Practice learning bite. When
 fresh reporting is thin, select useful analysis or a deployment case study with its
@@ -45,8 +45,10 @@ actual date. Only after documented broader research finds nothing worthwhile, us
 compact honest note; do not default to a “no new news” headline. Use multiple
 purposeful source links as needed; external links open in a new tab.
 
-New editions use format 3: one dated source generates separate News and Deep Dives
-pages. News has the ten sections above, with short learning bites. Deep Dives has three
+New editions dated September 19, 2026 onward use format 3 with
+`news_profile: "incidents-v1"`. Earlier editions retain their original lineup and default
+profile; never rewrite their content. One dated source generates separate News and Deep
+Dives pages. News has the ten sections above, with short learning bites. Deep Dives has three
 subjects: physical infrastructure, logical systems, and PgPM Growth. Each technical
 subject contains one 500–800-word lesson, examples and useful sources. Every fourth
 expanded edition (counting formats 2 and 3 together, starting September 5) uses one
@@ -87,21 +89,34 @@ Do not invent Equinix-specific architecture, instructions or procedures.
   Also check independent reporting such as Reuters and Data Center Dynamics so the
   section is not limited to Google's framing.
 - Cover Google corporate infrastructure, Google Cloud/GCP, data centers, power and
-  cooling, TPU/AI infrastructure, outages, partnerships, regions, and material platform
+  cooling, TPU/AI infrastructure, partnerships, regions, and material platform
   releases.
 - Keep pure Gemini model launches in `New AI Models & Releases`; use `Google` when the
   important angle is GCP deployment, infrastructure, operations, or business impact.
-- Do not repeat the same Google story under `Competitors`, `AI & Compute Demand`, `New
-  AI Models & Releases`, or `Backend / Cloud & Data`.
+- Route Google incidents to `Incidents, Reliability & Remediation`. Do not repeat the
+  same story under `AI & Compute Demand`, `New AI Models & Releases`, or
+  `Backend / Cloud & Data`.
 
-### Competitive-market breadth
-Competitors covers the market, not a single monitored company. Search established colo
-operators, hyperscalers, regional developers and emerging AI infrastructure providers.
-Examples include Digital Realty, QTS, Vantage, CyrusOne, NTT, STACK, Aligned, EdgeConneX,
-CoreSite, Iron Mountain, atNorth, STT GDC, GDS and others discovered through reporting.
-Search customers, expansion, financing, acquisitions, partnerships and regional markets.
-Crusoe's required check is one input, never a substitute for researching this category.
-Route stories by primary angle; do not duplicate them to fill sections.
+### Incidents, Reliability & Remediation
+Position three covers significant physical/environmental incidents, service outages,
+concrete operational risks, postmortems and remediation across Equinix, Google, AWS,
+Azure, other hyperscalers and colo operators. Route incidents here regardless of company;
+use short cross-references elsewhere rather than duplicate stories. Exclude minor status
+blips and generic risk commentary. Distinguish incident date from publication/update date,
+impact, confirmed versus suspected cause, response and unresolved questions. Revisit older
+incidents when findings or remediation materially change; label older missed coverage.
+
+Every run must search provider status histories, engineering postmortems, regulators,
+local reporting and independent industry sources. Record checks and access gaps in the
+research log; a green dashboard is not evidence that the coverage interval was incident-free.
+Use relevant incidents in physical, logical and PgPM lessons, separating reported facts
+from hypothetical examples and engineering interpretations. Never infer unpublished causes.
+
+Continue broad operator discovery: established colo operators, hyperscalers, regional
+developers and emerging AI infrastructure providers. Route worthwhile expansion, financing,
+partnership and customer developments to DC Infrastructure, AI & Compute Demand or
+Backend / Cloud & Data according to the main development. Crusoe is one input, not the
+boundary of research. Do not duplicate stories to fill sections.
 
 ### Crusoe monitoring
 - Check Crusoe's homepage, newsroom, and resource pages during every daily research
@@ -110,8 +125,8 @@ Route stories by primary angle; do not duplicate them to fill sections.
   TechRadar, ITPro, and other credible outlets so coverage is not limited to Crusoe's
   own framing. Prefer independent confirmation for material capacity, financing,
   customer, schedule, and reliability claims.
-- Route each Crusoe story by its primary angle: company strategy, financing,
-  partnerships, market position, or capacity pipeline to `Competitors`; campuses,
+- Route each Crusoe story by its primary angle: incidents, concrete operational risks and remediation to
+  `Incidents, Reliability & Remediation`; campuses, capacity pipeline, related financing,
   construction, power, UPS, cooling, batteries, manufacturing, or commissioning to
   `DC Infrastructure`; contracted capacity, GPU deployments, hyperscaler demand, or
   AI-factory growth to `AI & Compute Demand`; Crusoe Cloud, inference, fine-tuning,

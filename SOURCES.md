@@ -10,8 +10,10 @@ homepages as evidence for a specific claim. Add productive sources as they emerg
 - Crusoe (check each run): https://www.crusoe.ai/ ; https://www.crusoe.ai/resources/newsroom ; https://www.crusoe.ai/resources/blog . Follow current resource links from the homepage if a path fails.
 - Independent coverage: Reuters, AP, Data Center Dynamics, Data Center Knowledge,
   Light Reading, The Register, IEEE Spectrum, and other credible specialist publications.
-- Competitors: broad company/campus/financing searches; expand beyond incumbent colo
-  operators to hyperscalers, regional operators, and emerging AI infrastructure providers.
+- Incidents, Reliability & Remediation: provider histories, postmortems, regulators,
+  local reporting and independent industry investigations; see the required checks below.
+- Operator developments: broad company/campus/financing searches across colo, hyperscalers,
+  regional and emerging providers; route to Infrastructure, AI Demand or Cloud by angle.
 - Infrastructure: Uptime Institute, ASHRAE, OCP, utility/regulator publications and equipment manufacturers.
 - Models: official lab announcements, model/system cards, release notes, primary papers;
   independently reported limitations and deployment evidence when available.
@@ -72,7 +74,8 @@ Use recency filters plus searches without date strings; confirm dates in the art
 | --- | --- |
 | Equinix | Customer/partner deployments, regional news, interconnection use cases, filings; Equinix blog plus independent regional and industry reporting. |
 | Google | Utilities and customers, regional infrastructure and cloud operations, product release notes; mandatory indexes plus independent reporting. |
-| Competitors | Digital Realty, QTS, Vantage, CyrusOne, NTT, STACK, Aligned, EdgeConneX, CoreSite, Iron Mountain, STT GDC, GDS, regional and emerging operators; customer wins, finance, ownership, expansion. Crusoe is one check. |
+| Incidents, Reliability & Remediation | Provider status histories and engineering reports; environmental/safety regulators and local reporting; independent industry investigations and corrective-action updates. |
+| Operator discovery across Infrastructure, AI Demand and Cloud | Digital Realty, QTS, Vantage, CyrusOne, NTT, STACK, Aligned, EdgeConneX, CoreSite, Iron Mountain, STT GDC, GDS, regional and emerging operators; customer wins, finance, ownership, expansion. Crusoe is one check. |
 | Infrastructure | Power interconnection, substations, UPS, cooling, construction and commissioning; DCD, DCK, Construction Dive, Facilities Dive, regional planning/utility records, supplier and customer case studies. |
 | Controls | Building automation, industrial software, historians, instrumentation, OT security, integrations; Automation World, Control Global, Smart Buildings Technology, CISA advisories, integrators and standards bodies. Search beyond the words DCIM/BMS. |
 | AI demand | Customer contracts, accelerator shipments/utilization, cloud capacity and research infrastructure; filings, operator/customer disclosures, Reuters and specialist reporting. |
@@ -84,3 +87,21 @@ Use recency filters plus searches without date strings; confirm dates in the art
 Selection order: since last run → uncovered last-seven-day news → dated useful analysis
 or case study. Track rejected duplicates and access gaps. A quiet homepage does not mean
 a quiet market; repeat discovery with different terms and publishers before concluding.
+
+## Required incident checks on every run
+- AWS public service history: https://health.aws.amazon.com/health/status
+- AWS engineering post-event summaries: https://aws.amazon.com/premiumsupport/technology/pes/
+- Google Cloud service history and linked incident reports: https://status.cloud.google.com/
+- Azure public history and post-incident reviews: https://azure.status.microsoft/en-us/status/history/
+- Relevant regulator records and statements (for example NJDEP https://dep.nj.gov/),
+  local emergency/environmental authorities and regional reporting near the affected
+  facility. Choose relevant local outlets for each incident rather than a fixed case list.
+- Independent DCD/DCK, Reuters/AP and specialist reporting; search each named provider,
+  other hyperscalers and colo operators for outages, fuel spills, fires, cooling/power
+  failures, concrete risks and remediation. Expand operators and geography as stories arise.
+
+Read history entries and dated reports, not just current green status. Follow material
+older events for new findings and corrective actions. Record inaccessible histories and
+unpublished final reports honestly. Keep reported, suspected and unresolved causes distinct;
+verify the actual affected waterway, facility, region or service instead of repeating a
+headline's broader geography. Do not equate containment, service restoration and closure.

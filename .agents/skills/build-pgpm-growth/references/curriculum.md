@@ -55,3 +55,12 @@ the PgPM case to technical subjects when useful without repeating their explanat
 Add representative pilots, progressive rollout decisions, and transfer of evidence
 between sites to the cross-functional delivery track. Every fourth expanded edition
 uses one technical subject for synthesis; PgPM progression continues independently.
+
+## Incident learning
+When pertinent, connect incident command and evidence-based communication to learning
+reviews, corrective-action prioritization, effectiveness checks and cross-site transfer.
+Advance beyond assigning owners: examine why safeguards failed, whether proposed actions
+change the failure mechanism, and how learning survives handover. Use public reports as
+bounded evidence; keep reported facts separate from hypothetical Hall A scenarios and
+engineering interpretation. Do not assume unpublished causes or internal Equinix practices.
+Incident cases complement the curriculum; they do not replace its breadth or progression.

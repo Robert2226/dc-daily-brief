@@ -22,11 +22,12 @@ Create the third subject on the separate Deep Dives page as a deliberate profess
 - Prefer direct source pages over search results, aggregators, or generic homepages.
 - Verify that every link opens and supports the associated teaching.
 - Use current material when the topic is time-sensitive; use durable guidance when recency adds no value.
+- Use publicly reported incidents and remediation as teaching cases when pertinent. Distinguish sourced facts, uncertain causal claims, engineering interpretations and hypothetical leadership examples; never infer an unpublished root cause. Incident cases are optional, not a daily quota.
 - Do not claim or imply knowledge of confidential Equinix policies, systems, customers, or incidents. Frame company-specific applications as recommendations or hypothetical examples.
 
 ## Write
 
-In format 3, append this source section after `## Physical Deep Dive` and `## Logical Deep Dive`. Display it as the third learning subject, with its metadata title. Use a `news:program-pm` link back to relevant news and a corresponding `learn:subject-id` link from news. Internal cross-links do not count toward the six external resources:
+In format 3, append this source section after `## Physical Deep Dive` and `## Logical Deep Dive`. Display it as the third learning subject, with its metadata title. Use a `news:program-pm` or another relevant profile-valid link (including `news:incidents-reliability-remediation` for incidents-v1 editions) back to news and a corresponding `learn:subject-id` link from news. Internal cross-links do not count toward the six external resources:
 
 ```markdown
 ## PgPM Growth

@@ -22,6 +22,20 @@ SECTIONS = ['Equinix', 'Google', 'Competitors', 'DC Infrastructure',
             'New AI Models & Releases', 'Networking', 'Backend / Cloud & Data',
             'Program & PM', 'PgPM Growth']
 SPLIT_SECTIONS = SECTIONS[:-1] + ['Physical Deep Dive', 'Logical Deep Dive', 'PgPM Growth']
+NEWS_PROFILES = {'incidents-v1': SECTIONS[:2] + ['Incidents, Reliability & Remediation'] + SECTIONS[3:-1]}
+PROFILE_REQUIRED_FROM = '2026-09-19'
+
+
+def news_sections(doc):
+    """Resolve the edition's lineup without changing historical defaults."""
+    profile = doc['meta'].get('news_profile')
+    if profile is None:
+        return SECTIONS[:-1]
+    if not isinstance(profile, str) or profile not in NEWS_PROFILES or doc['meta'].get('format') != 3:
+        raise ValueError('Unknown news profile or incompatible format')
+    return NEWS_PROFILES[profile]
+
+
 LINK = re.compile(r'\[([^\]]+)\]\(([^\s)]+)\)')
 META = re.compile(r'^<!-- edition: (.+) -->$')
 
@@ -160,8 +174,11 @@ def walk(blocks):
 def validate(doc, date):
     """Historical editions remain readable; expanded editions satisfy their format contract."""
     version = doc['meta'].get('format')
+    lineup = news_sections(doc)
+    if date >= PROFILE_REQUIRED_FROM and doc['meta'].get('news_profile') != 'incidents-v1':
+        raise ValueError('Editions from September 19 require news_profile incidents-v1')
     subjects = doc['meta'].get('subjects', [])
-    destinations = {'learn:' + x.get('id', '') for x in subjects} | {'news:' + slug(x) for x in SECTIONS[:-1]}
+    destinations = {'learn:' + x.get('id', '') for x in subjects} | {'news:' + slug(x) for x in lineup}
     for block in walk(doc['takeaways'] + [b for s in doc['sections'] for b in s['blocks']]):
         for _, url in LINK.findall(block.get('text', '')):
             safe_url(url)
@@ -173,7 +190,8 @@ def validate(doc, date):
         if any(s['name'] == SECTIONS[4] for s in doc['sections']):
             raise ValueError('Expanded controls section requires format-2 or format-3 metadata')
         return
-    if [s['name'] for s in doc['sections']] != (SPLIT_SECTIONS if version == 3 else SECTIONS):
+    expected = lineup + ['Physical Deep Dive', 'Logical Deep Dive', 'PgPM Growth'] if version == 3 else SECTIONS
+    if [s['name'] for s in doc['sections']] != expected:
         raise ValueError('Expanded editions require their format-specific sections in editorial order')
     if len(doc['takeaways']) != 3:
         raise ValueError('Exactly three opening takeaways required')
@@ -213,7 +231,7 @@ def validate(doc, date):
                 raise ValueError('Long lessons and recall belong on Deep Dives')
             for b in walk(section['blocks']):
                 for _, url in LINK.findall(b.get('text', '')):
-                    if url.startswith('#') and url[1:] not in {slug(x) for x in SECTIONS[:-1]}:
+                    if url.startswith('#') and url[1:] not in {slug(x) for x in lineup}:
                         raise ValueError('News anchors must stay on news; use learn: links')
         for section in doc['sections'][10:12]:
             if len([b for b in section['blocks'] if b['kind'] == 'deep-dive']) != 1:
@@ -347,7 +365,7 @@ def build(root=ROOT, output=None):
         if split:
             subjects = doc['meta']['subjects']
             links = {'learn:' + x['id']: f'{prefix}deep-dives/{date}.html#{x["id"]}' for x in subjects}
-            links.update({'news:' + slug(x): f'{prefix}editions/{date}.html#{slug(x)}' for x in SECTIONS[:-1]})
+            links.update({'news:' + slug(x): f'{prefix}editions/{date}.html#{slug(x)}' for x in news_sections(doc)})
             paired = f'<nav class="edition-nav" aria-label="Matching edition"><a href="{prefix}editions/{date}.html">{date} · News</a><a href="{prefix}deep-dives/{date}.html">{date} · Deep Dives</a></nav>'
             if learning:
                 doc['takeaways'] = []
