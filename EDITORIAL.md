@@ -46,9 +46,10 @@ current importance. Quality and depth matter more than a fixed reading time.
    those subjects. Do not duplicate the news summary inside a lesson.
 9. Run `python3 build.py briefs/YYYY-MM-DD.md` and `python3 -m unittest discover -s tests`.
    Validation checks structure and internal destinations, not factual truth. Inspect
-   both latest pages, paired dates, archive, historical pages, mobile/dark presentation,
+   both latest pages, paired dates, archive, historical pages, desktop presentation,
    keyboard navigation and recall. Content-only publishing uses `./publish.sh YYYY-MM-DD`
-   from main. Structural launches include their full launch edition in the manual PR.
+   from main. Do not run mobile/phone-width checks; Robert reads on desktop.
+   Structural launches include their full launch edition in the manual PR.
 
 ## Research breadth gate
 For every category, run at least three distinct discovery angles: topic/mechanism,

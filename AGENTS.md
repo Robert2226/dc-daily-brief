@@ -138,7 +138,8 @@ boundary of research. Do not duplicate stories to fill sections.
 
 ## Design system (editorial newsletter)
 - **Layout:** single centered column, ~760px, newspaper masthead + dateline + numbered
-  sections + "In Practice" callout boxes + footer. Responsive (phone-first reading).
+  sections + "In Practice" callout boxes + footer. Desktop reading is the target;
+  retain existing responsive CSS, but do not run mobile/phone-width checks.
 - **Type:** `Fraunces` (masthead/headlines, serif), `Newsreader` (body, serif),
   `JetBrains Mono` (kickers, labels, source tags, meta).
 - **Palette:** light "newsprint" default + automatic dark mode via
