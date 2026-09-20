@@ -6,7 +6,7 @@
 
 Robert's on-demand newspaper and learning companion: data-center facilities, logical
 systems, and the craft of technical program delivery. Researched when requested,
-usually every two days, with three takeaways, ten news categories, a separate learning page with physical and logical deep dives,
+usually every two days, with ten news categories, a separate learning page with physical and logical deep dives,
 and progressive PgPM learning. Quality and depth come before a fixed reading time.
 
 The dedicated **DCOS, DCIM, BMS & Controls** section spans the vendor ecosystem, software,
@@ -19,6 +19,10 @@ in position three. It follows significant facility and service failures, concret
 postmortems and corrective work across operators. Format-3 editions declare
 `news_profile: "incidents-v1"`; earlier editions retain their original lineup and links.
 Relevant incident cases also inform the learning curriculum.
+
+The latest News page starts directly with section navigation and news, without a
+"Today at a glance" summary. New editions from September 20 omit that summary;
+older dated editions retain their original content.
 
 ## Reading and generation
 The site is static HTML/CSS with no backend, JavaScript requirement, or reader build step.

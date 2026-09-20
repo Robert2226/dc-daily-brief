@@ -28,6 +28,19 @@ class Page(HTMLParser):
 
 
 class RenderingTests(unittest.TestCase):
+    def test_lean_opening_preserves_historical_summary(self):
+        doc = build.parse((ROOT / 'briefs/2026-09-19.md').read_text())
+        doc['title'] = 'Sunday, September 20, 2026'
+        doc['meta']['coverage_end'] = '2026-09-20'
+        with self.assertRaisesRegex(ValueError, 'without opening takeaways'):
+            build.validate(doc, '2026-09-20')
+        doc['takeaways'] = []
+        build.validate(doc, '2026-09-20')
+        with tempfile.TemporaryDirectory() as directory:
+            build.build(output=Path(directory))
+            self.assertNotIn('Today at a glance', (Path(directory) / 'index.html').read_text())
+            self.assertIn('Today at a glance', (Path(directory) / 'editions/2026-09-19.html').read_text())
+
     def test_all_historical_headlines_and_sources_survive(self):
         for source in sorted((ROOT / 'briefs').glob('*.md')):
             md = source.read_text()

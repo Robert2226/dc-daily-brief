@@ -36,7 +36,8 @@ previously uncovered stories from the last seven calendar days, clearly dated. Q
 and depth take precedence over reading-time targets. Follow the breadth requirements
 in EDITORIAL.md before concluding that a category is quiet.
 
-Start with three linked takeaways. The ten numbered news sections, in order, are:
+Start directly with the news; do not generate a "Today at a glance" summary.
+The ten numbered news sections, in order, are:
 `Equinix · Google · Incidents, Reliability & Remediation · DC Infrastructure · DCOS, DCIM, BMS & Controls ·
 AI & Compute Demand · New AI Models & Releases · Networking · Backend / Cloud & Data ·
 Program & PM`. Each has 1–2 worthwhile stories plus an In Practice learning bite. When
@@ -137,7 +138,8 @@ boundary of research. Do not duplicate stories to fill sections.
 
 ## Design system (editorial newsletter)
 - **Layout:** single centered column, ~760px, newspaper masthead + dateline + numbered
-  sections + "In Practice" callout boxes + footer. Responsive (phone-first reading).
+  sections + "In Practice" callout boxes + footer. Desktop reading is the target;
+  retain existing responsive CSS, but do not run mobile/phone-width checks.
 - **Type:** `Fraunces` (masthead/headlines, serif), `Newsreader` (body, serif),
   `JetBrains Mono` (kickers, labels, source tags, meta).
 - **Palette:** light "newsprint" default + automatic dark mode via

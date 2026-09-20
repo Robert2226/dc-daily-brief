@@ -193,7 +193,9 @@ def validate(doc, date):
     expected = lineup + ['Physical Deep Dive', 'Logical Deep Dive', 'PgPM Growth'] if version == 3 else SECTIONS
     if [s['name'] for s in doc['sections']] != expected:
         raise ValueError('Expanded editions require their format-specific sections in editorial order')
-    if len(doc['takeaways']) != 3:
+    if date >= '2026-09-20' and doc['takeaways']:
+        raise ValueError('New editions start with news, without opening takeaways')
+    if date < '2026-09-20' and len(doc['takeaways']) != 3:
         raise ValueError('Exactly three opening takeaways required')
     edition_date = dt.date.fromisoformat(date)
     expected_title = f'{edition_date:%A, %B} {edition_date.day}, {edition_date.year}'
@@ -357,8 +359,10 @@ def build(root=ROOT, output=None):
     template = (root / 'template.html').read_text()
     pages = {}
     dates = list(documents)
-    def edition_page(date, prefix='', learning=False, adjacent=''):
+    def edition_page(date, prefix='', learning=False, adjacent='', lean=False):
         doc = copy.deepcopy(documents[date])
+        if lean:
+            doc['takeaways'] = []
         split = doc['meta'].get('format') == 3
         links = {}
         paired = ''
@@ -396,7 +400,7 @@ def build(root=ROOT, output=None):
                 adjacent += f'<a href="{split_dates[j+1]}.html">Next Deep Dives →</a>'
             pages[f'deep-dives/{date}.html'] = edition_page(date, '../', True, adjacent + '</nav>')
     latest = dates[-1]
-    pages['index.html'] = edition_page(latest)
+    pages['index.html'] = edition_page(latest, lean=True)
     if split_dates:
         pages['deep-dives.html'] = edition_page(split_dates[-1], learning=True)
     else:
