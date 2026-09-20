@@ -33,7 +33,8 @@ current importance. Quality and depth matter more than a fixed reading time.
    the AGENTS.md order, each with 1–2 worthwhile stories and one In Practice bite.
    Use the research breadth gate below before accepting a quiet section.
    More links are useful only when they add evidence, a perspective, or understanding.
-7. Add exactly three opening takeaways linking to news sections. Put long learning on
+7. Start directly with news; do not write opening takeaways or "Today at a glance".
+   Put long learning on
    the separate Deep Dives page: exactly three subjects, physical, logical and PgPM.
    Each technical subject gets one 500–800-word deep dive with concrete examples and
    sources. Vary subjects each run based on prior coverage. Every fourth expanded
@@ -123,11 +124,11 @@ unique slug `id`, `track` (physical/logical/pgpm), and reader-facing `title`. Th
 _Covers September 5–6, 2026; since the previous edition._
 <!-- edition: {"format":3,"coverage_start":"2026-09-05","coverage_end":"2026-09-06","subjects":[{"id":"cooling-capacity","track":"physical","title":"Physical · Cooling capacity"},{"id":"telemetry-replay","track":"logical","title":"Logical · Telemetry replay"},{"id":"pilot-to-fleet","track":"pgpm","title":"PgPM Growth · Pilot to fleet"}],"topics":["Cooling capacity","Telemetry replay"],"pgpm_topics":["Representative pilots — leadership","Progressive rollouts — leadership"],"case":"Hypothetical Hall A","research_log":"research/2026-09-06.md"} -->
 
-## Today at a glance
-- **Takeaway headline** — Why it matters. [Read](#dcos-dcim-bms-controls)
 ```
 
-Add exactly three takeaways. Normal sections use:
+New editions dated September 20, 2026 onward omit opening takeaways. Historical dated
+editions retain them; the latest homepage omits them even when showing an older edition.
+Normal sections use:
 
 ```markdown
 ## DCOS, DCIM, BMS & Controls
@@ -162,7 +163,7 @@ not nest them. Fenced code renders as escaped text, not executable diagrams. Bul
 headings, and plain paragraphs are retained. External links open in a new tab; fragment
 links remain in the page. Use `learn:subject-id` from news and `news:section-slug`
 from learning for paired-date cross-links. These resolve to dated pages and stay in the
-same tab. Use `#section-slug` for news takeaways. Each technical source section contains
+same tab. Historical news takeaways use `#section-slug`. Each technical source section contains
 exactly one deep-dive block; PgPM Growth follows both technical sections using its skill.
 The three source sections become three numbered subjects on the learning page. No raw HTML, scripts, or executable URL schemes are accepted.
 

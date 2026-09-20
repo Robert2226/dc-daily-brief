@@ -36,7 +36,8 @@ previously uncovered stories from the last seven calendar days, clearly dated. Q
 and depth take precedence over reading-time targets. Follow the breadth requirements
 in EDITORIAL.md before concluding that a category is quiet.
 
-Start with three linked takeaways. The ten numbered news sections, in order, are:
+Start directly with the news; do not generate a "Today at a glance" summary.
+The ten numbered news sections, in order, are:
 `Equinix · Google · Incidents, Reliability & Remediation · DC Infrastructure · DCOS, DCIM, BMS & Controls ·
 AI & Compute Demand · New AI Models & Releases · Networking · Backend / Cloud & Data ·
 Program & PM`. Each has 1–2 worthwhile stories plus an In Practice learning bite. When
