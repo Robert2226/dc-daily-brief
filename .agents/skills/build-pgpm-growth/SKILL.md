@@ -10,8 +10,8 @@ Create the third subject on the separate Deep Dives page as a deliberate profess
 ## Prepare
 
 1. Read [references/curriculum.md](references/curriculum.md) completely.
-2. Search all dated briefs for prior `## PgPM Growth` sections.
-3. Review the topics, maturity levels, actions, and URLs in the latest 30 editions, plus the edition manifest. Record the new pairing and recurring hypothetical case in edition metadata and map the six resources to the two topics in the research log.
+2. Read the latest lesson and the last 30 editions' topic metadata in the edition manifest.
+3. Open older lessons only where a proposed topic overlaps and the prior maturity level, action or URLs need checking; do not scan all full briefs each run. Record the new pairing and recurring hypothetical case in edition metadata and briefly map the six resources to the two topics in the research log.
 4. Select two connected topics that advance the curriculum. Prefer a connection to that day's brief when it is genuinely useful.
 5. Do not repeat a topic at the same maturity level or the same exercise from those 30 editions. Reuse authoritative URLs when the application advances; explain the progression. Metadata records teaching, never assumed mastery.
 
@@ -27,7 +27,7 @@ Create the third subject on the separate Deep Dives page as a deliberate profess
 
 ## Write
 
-In format 3, append this source section after `## Physical Deep Dive` and `## Logical Deep Dive`. Display it as the third learning subject, with its metadata title. Use a `news:program-pm` or another relevant profile-valid link (including `news:incidents-reliability-remediation` for incidents-v1 editions) back to news and a corresponding `learn:subject-id` link from news. Internal cross-links do not count toward the six external resources:
+In format 3, append this source section after `## Physical Deep Dive` and `## Logical Deep Dive`. Display it as the third learning subject, with its metadata title. Professional growth stands on its own; do not force a tie-in to a news story. New lean-v1 editions have no Program & PM news section and no study links from News. An optional, relevant `news:` reference from a lesson does not count toward the six external resources:
 
 ```markdown
 ## PgPM Growth

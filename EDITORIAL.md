@@ -8,8 +8,10 @@ architectures or processes. PMP preparation is optional until Robert confirms it
 current importance. Quality and depth matter more than a fixed reading time.
 
 ## Every on-demand run
-1. Read AGENTS.md, this guide, SOURCES.md, the latest edition, the last 30 editions'
-   learning topics, and edition-manifest.json. The manifest tracks teaching, not mastery.
+1. Read AGENTS.md, this guide, SOURCES.md, the latest edition, and the last 30 editions'
+   topic metadata in edition-manifest.json. Open older lessons only when a proposed
+   topic overlaps and its action or sources need checking. Do not reread the whole archive.
+   The manifest tracks teaching, not mastery.
 2. Cover the previous edition's date through today's local date, inclusive: the
    previous run's exact research cutoff may be unknown. Deduplicate already covered
    stories; use the boundary-day overlap to catch later announcements. Record both
@@ -17,7 +19,7 @@ current importance. Quality and depth matter more than a fixed reading time.
    days (today plus six preceding dates) for worthwhile stories not previously covered.
    Label their actual dates; older useful reading is explicitly analysis or a case study.
 3. Search the public web and read accessible newsrooms, release notes, technical
-   publications, and independent reporting for all ten news categories. Search broad
+   publications, and independent reporting for all nine news categories. Search broad
    categories as well as named vendors, discovering players beyond the watchlist.
    Check all three Google sources and Crusoe homepage, newsroom and resource/blog
    pages each run. Research runs with the user request; no scheduled scraper or backend.
@@ -25,11 +27,11 @@ current importance. Quality and depth matter more than a fixed reading time.
    preview, available, planned), and units. Search snippets alone are discovery aids.
    Independent articles repeating one original report are not separate confirmation.
    Use company-claim attribution where appropriate. Never fabricate a link or date.
-5. Keep a concise research/YYYY-MM-DD.md log: queries, sources checked, selected
-   stories, publication/event dates, duplication decisions, resource-to-lesson mapping,
-   and access gaps. Do not copy full source articles. If inaccessible sources leave a
+5. Keep a compact research/YYYY-MM-DD.md log: selected sources and dates, required
+   checks, meaningful duplication decisions, resource-to-lesson mapping and access gaps.
+   Do not narrate every query or rejected candidate. If inaccessible sources leave a
    material gap, explain it in the affected section; do not infer no news from failure.
-6. Write briefs/YYYY-MM-DD.md using the format below. Preserve ten news sections in
+6. Write briefs/YYYY-MM-DD.md using the format below. Preserve nine news sections in
    the AGENTS.md order, each with 1–2 worthwhile stories and one In Practice bite.
    Use the research breadth gate below before accepting a quiet section.
    More links are useful only when they add evidence, a perspective, or understanding.
@@ -42,28 +44,30 @@ current importance. Quality and depth matter more than a fixed reading time.
    `synthesis: true`, explicitly revisiting earlier concepts. Recall answers are optional.
 8. Invoke $build-pgpm-growth for the third subject. Keep two connected lessons, exactly
    six researched external links (three per lesson), a worked example and one optional
-   time-boxed Daily Action. Link all three subjects to relevant news and news back to
-   those subjects. Do not duplicate the news summary inside a lesson.
-9. Run `python3 build.py briefs/YYYY-MM-DD.md` and `python3 -m unittest discover -s tests`.
-   Validation checks structure and internal destinations, not factual truth. Inspect
-   both latest pages, paired dates, archive, historical pages, desktop presentation,
-   keyboard navigation and recall. Content-only publishing uses `./publish.sh YYYY-MM-DD`
-   from main. Do not run mobile/phone-width checks; Robert reads on desktop.
-   Structural launches include their full launch edition in the manual PR.
+   time-boxed Daily Action. Do not add study links inside News or force a news tie-in
+   for professional growth. A lesson may reference relevant news when useful.
+9. For content-only runs, use `./publish.sh YYYY-MM-DD` from main as the single normal
+   build-and-test pass. Confirm deployment and the live date, with a quick desktop
+   check of the new content. Rerun only after a correction or failed check. Automated
+   tests cover structure and internal links, not factual truth. Do not recheck unchanged
+   archives, historical pages, navigation, keyboard behavior or recall every run.
+   Full affected-feature visual checks are for renderer/layout changes or a reported
+   defect. No mobile checks. Structural changes use the branch/PR workflow.
 
 ## Research breadth gate
-For every category, run at least three distinct discovery angles: topic/mechanism,
-companies/customers, and development types (deployments, releases, outages, financing,
-standards, acquisitions or delivery case studies). Include searches without literal
-calendar-date strings; apply recency filters and verify dates on the underlying pages.
+Cover every category with targeted discovery; there is no minimum query count.
+Batch related searches and reuse relevant results across categories without duplicating
+stories. Expand topic, vendor, region or development-type searches when initial coverage
+is weak, stale or one-sided. Stop when the selected story is adequately verified and
+required source checks are complete. Verify dates on underlying pages.
 Inspect relevant articles across multiple publishers, combining specialist/independent
 reporting with primary announcements, filings, customer accounts and technical material.
 Expand synonyms and regional coverage when the first pass returns duplicates or little
 of value. Newsroom indexes and search snippets are discovery, not completed reporting.
 
-Build a candidate pool before choosing the one or two items for each category. Record
-queries/angles, candidates, publication/event dates, selected/rejected reasons, duplication
-checks and access gaps. Syndicated copies count as one underlying report. Add productive
+Choose one strong item by default; add a second when it materially improves coverage.
+Record selected evidence and important gaps, not exhaustive candidate narratives.
+Syndicated copies count as one underlying report. Add productive
 new sources to the watchlist through the manual-change workflow, not a content-only push.
 
 Prefer news since the last run, then uncovered news from the seven-day window, then
@@ -110,9 +114,9 @@ metadata comment. `coverage_start` is the previous edition date; `coverage_end` 
 the filename. `topics` and `pgpm_topics` describe what was taught, not completed study.
 `research_log` is the relative path to the corresponding research record. The first
 expanded edition (September 5, format 2) begins the four-edition synthesis cycle.
-New sources use `format: 3`. Editions dated September 19, 2026 onward must also set
-`news_profile: "incidents-v1"`, replacing Competitors with Incidents, Reliability &
-Remediation in position three. Earlier sources without a profile keep their historical
+New sources use `format: 3` and, from September 20, `news_profile: "lean-v1"`.
+This retains Incidents, Reliability & Remediation in position three and drops Program & PM
+from News, leaving nine sections. September 19 uses `incidents-v1`. Earlier sources keep their historical
 lineup. Validation, section navigation and `news:` destinations follow the edition profile;
 use `news:incidents-reliability-remediation` for the new section. The September 6 example
 below illustrates the historical profile and must not be copied without adding the new
@@ -139,8 +143,6 @@ Context paragraphs support **bold**, *italic*, and [inline links](https://exampl
 
 > **In Practice · A concrete lesson.** Explain the mechanism or use a worked example.
 
-[Study the relevant lesson](learn:telemetry-replay)
-
 ## Physical Deep Dive
 :::deep-dive Cooling capacity
 Write the first technical lesson here (500–800 words plus purposeful sources).
@@ -162,8 +164,9 @@ Revealable answer explaining the failure behavior.
 Only `deep-dive` and `recall` containers are supported; close each with `:::` and do
 not nest them. Fenced code renders as escaped text, not executable diagrams. Bullets,
 headings, and plain paragraphs are retained. External links open in a new tab; fragment
-links remain in the page. Use `learn:subject-id` from news and `news:section-slug`
-from learning for paired-date cross-links. These resolve to dated pages and stay in the
+links remain in the page. Use `news:section-slug` from learning for optional paired-date
+references. Do not use `learn:` links in new News.
+Historical cross-links resolve to dated pages and stay in the
 same tab. Historical news takeaways use `#section-slug`. Each technical source section contains
 exactly one deep-dive block; PgPM Growth follows both technical sections using its skill.
 The three source sections become three numbered subjects on the learning page. No raw HTML, scripts, or executable URL schemes are accepted.

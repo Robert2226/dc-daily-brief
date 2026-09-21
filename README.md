@@ -6,7 +6,7 @@
 
 Robert's on-demand newspaper and learning companion: data-center facilities, logical
 systems, and the craft of technical program delivery. Researched when requested,
-usually every two days, with ten news categories, a separate learning page with physical and logical deep dives,
+usually every two days, with nine news categories, a separate learning page with physical and logical deep dives,
 and progressive PgPM learning. Quality and depth come before a fixed reading time.
 
 The dedicated **DCOS, DCIM, BMS & Controls** section spans the vendor ecosystem, software,
@@ -23,6 +23,16 @@ Relevant incident cases also inform the learning curriculum.
 The latest News page starts directly with section navigation and news, without a
 "Today at a glance" summary. New editions from September 20 omit that summary;
 older dated editions retain their original content.
+
+From September 20, `news_profile: "lean-v1"` drops Program & PM news while retaining
+PgPM Growth learning. Latest pages adopt the lean presentation immediately: no study
+links in News, no duplicate date navigation, and no subject contents list on Deep Dives.
+The top News | Deep Dives | Archive navigation remains. Historical dated pages are preserved.
+
+Daily work uses targeted research without a search quota, manifest-first topic review,
+compact evidence notes, one normal publish/build/test pass and a quick desktop content
+check. Full layout/archive/keyboard checks are reserved for relevant structural changes;
+mobile checks are not required. Mandatory Google, Crusoe and incident checks remain.
 
 ## Reading and generation
 The site is static HTML/CSS with no backend, JavaScript requirement, or reader build step.
@@ -51,6 +61,6 @@ publish from main with `./publish.sh YYYY-MM-DD` (defaults to today's local date
 Generation is not scheduled and publishing does not research or write the brief for you.
 
 New editions share one date and issue across News and Deep Dives. Top navigation opens
-the latest pages; matching-edition and story/lesson links stay on the same date. Older
+the latest pages; optional lesson-to-news references stay on the same date. Older
 combined editions keep their URLs and original content. Each technical deep dive runs
 500–800 words; PgPM Growth is the third learning subject with two connected lessons.

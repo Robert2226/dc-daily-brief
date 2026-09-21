@@ -20,7 +20,7 @@ homepages as evidence for a specific claim. Add productive sources as they emerg
 - Networking: standards bodies, network and optical vendors, operator deployments and incident reports.
 - Backend/cloud: AWS What's New, Azure updates, Google Cloud, CNCF projects, database
   releases and platform engineering sources. Avoid repeating Google stories elsewhere.
-- Program/PM: PMI, APM, government delivery guidance, NASA systems engineering and
+- PgPM Growth learning only (not a news category): PMI, APM, government delivery guidance, NASA systems engineering and
   credible case studies. Durable learning is not mislabeled as today's news.
 
 ## DCOS, DCIM, BMS & Controls
@@ -66,8 +66,8 @@ belong in Networking. Cross-reference without copying a story into multiple sect
 - [Airedale CDU specifications](https://www.airedale.com/data-centers/liquid-cooling/cdu/): selection conditions; manufacturer ratings need operating-point context.
 
 ## Breadth by research angle
-Use this expandable map, not a fixed list of pages to scan. For each category search
-at least three distinct angles and inspect relevant material from multiple publishers.
+Use this expandable map, not a fixed list of pages to scan or a query quota. Start with
+targeted searches; broaden only when coverage is weak, stale or one-sided.
 Use recency filters plus searches without date strings; confirm dates in the articles.
 
 | Category | Additional discovery angles and sources |
@@ -82,7 +82,7 @@ Use recency filters plus searches without date strings; confirm dates in the art
 | Models | Lab announcements, open-model repositories, inference/tool releases and independent evaluations; use primary release/model cards to verify status. |
 | Networking | Ethernet/optics, DCI/subsea, routing/security, operator deployments; Light Reading, Network World, The Register, IEEE ComSoc, OIF, Ethernet Alliance and vendor technical releases. |
 | Backend/cloud | AWS/Azure releases, databases, storage, Kubernetes/CNCF, reliability incidents; InfoQ, The New Stack, official project release notes and engineering postmortems. |
-| Program/PM | Delivery case studies, procurement/supply chain, workforce and organizational research; PMI/APM, government audit reports, practitioner and customer accounts. |
+| PgPM Growth learning | Role-specific leadership and delivery guidance; PMI/APM, government audit reports, practitioner and customer accounts. No separate news search required. |
 
 Selection order: since last run → uncovered last-seven-day news → dated useful analysis
 or case study. Track rejected duplicates and access gaps. A quiet homepage does not mean

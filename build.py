@@ -23,6 +23,7 @@ SECTIONS = ['Equinix', 'Google', 'Competitors', 'DC Infrastructure',
             'Program & PM', 'PgPM Growth']
 SPLIT_SECTIONS = SECTIONS[:-1] + ['Physical Deep Dive', 'Logical Deep Dive', 'PgPM Growth']
 NEWS_PROFILES = {'incidents-v1': SECTIONS[:2] + ['Incidents, Reliability & Remediation'] + SECTIONS[3:-1]}
+NEWS_PROFILES['lean-v1'] = NEWS_PROFILES['incidents-v1'][:-1]
 PROFILE_REQUIRED_FROM = '2026-09-19'
 
 
@@ -175,7 +176,10 @@ def validate(doc, date):
     """Historical editions remain readable; expanded editions satisfy their format contract."""
     version = doc['meta'].get('format')
     lineup = news_sections(doc)
-    if date >= PROFILE_REQUIRED_FROM and doc['meta'].get('news_profile') != 'incidents-v1':
+    lean = doc['meta'].get('news_profile') == 'lean-v1'
+    if date >= '2026-09-20' and not lean:
+        raise ValueError('Editions from September 20 require news_profile lean-v1')
+    if PROFILE_REQUIRED_FROM <= date < '2026-09-20' and doc['meta'].get('news_profile') != 'incidents-v1':
         raise ValueError('Editions from September 19 require news_profile incidents-v1')
     subjects = doc['meta'].get('subjects', [])
     destinations = {'learn:' + x.get('id', '') for x in subjects} | {'news:' + slug(x) for x in lineup}
@@ -208,7 +212,8 @@ def validate(doc, date):
     for field in ('topics', 'pgpm_topics', 'case', 'research_log') + (('deep_dive_track',) if version == 2 else ('subjects',)):
         if not doc['meta'].get(field):
             raise ValueError(f'Missing metadata: {field}')
-    for section in doc['sections'][:10]:
+    count = len(lineup)
+    for section in doc['sections'][:count]:
         if len([b for b in section['blocks'] if b['kind'] == 'practice']) != 1:
             raise ValueError(f'One learning bite required: {section["name"]}')
     dives = [b for s in doc['sections'] for b in s['blocks'] if b['kind'] == 'deep-dive']
@@ -226,22 +231,26 @@ def validate(doc, date):
             raise ValueError('Subject ids must be distinct slugs')
         if any(not x.get('title') for x in subjects) or subjects[-1].get('synthesis'):
             raise ValueError('Subject titles required; synthesis belongs to a technical subject')
-        for section in doc['sections'][:10]:
+        for section in doc['sections'][:count]:
             if not 1 <= sum(b['kind'] == 'item' for b in section['blocks']) <= 2:
                 raise ValueError('News sections require one or two items')
             if any(b['kind'] in ('deep-dive', 'recall') for b in walk(section['blocks'])):
                 raise ValueError('Long lessons and recall belong on Deep Dives')
             for b in walk(section['blocks']):
                 for _, url in LINK.findall(b.get('text', '')):
+                    if lean and url.startswith('learn:'):
+                        raise ValueError('Lean news does not include study links')
                     if url.startswith('#') and url[1:] not in {slug(x) for x in lineup}:
                         raise ValueError('News anchors must stay on news; use learn: links')
-        for section in doc['sections'][10:12]:
+        for section in doc['sections'][count:count+2]:
             if len([b for b in section['blocks'] if b['kind'] == 'deep-dive']) != 1:
                 raise ValueError('One deep dive per technical subject required')
             if not any(u.startswith('https://') for b in walk(section['blocks']) for _, u in LINK.findall(b.get('text', ''))):
                 raise ValueError('Technical subjects require sources')
-        news_links = {u for sec in doc['sections'][:10] for b in walk(sec['blocks']) for _, u in LINK.findall(b.get('text', ''))}
-        for section, subject in zip(doc['sections'][10:], subjects):
+        news_links = {u for sec in doc['sections'][:count] for b in walk(sec['blocks']) for _, u in LINK.findall(b.get('text', ''))}
+        for section, subject in zip(doc['sections'][count:], subjects):
+            if lean:
+                continue
             if 'learn:' + subject['id'] not in news_links:
                 raise ValueError('Each subject needs a related news link')
             if not any(u.startswith('news:') for b in walk(section['blocks']) for _, u in LINK.findall(b.get('text', ''))):
@@ -258,6 +267,22 @@ def validate(doc, date):
     actions = [b for b in growth if b['kind'] == 'practice' and b['title'].startswith('Daily Action')]
     if len(actions) != 1 or not re.search(r'\b\d+[ -]minute', actions[0]['text']):
         raise ValueError('One time-boxed Daily Action required')
+
+
+def strip_study_links(blocks):
+    """Adapt latest historical news without modifying its archived source."""
+    result = []
+    for original in blocks:
+        block = copy.deepcopy(original)
+        text = block.get('text', '')
+        if any(url.startswith('learn:') for _, url in LINK.findall(text)):
+            block['text'] = LINK.sub(lambda m: '' if m[2].startswith('learn:') else m[0], text).strip(' ·')
+            if not block['text'] and block['kind'] == 'paragraph':
+                continue
+        if 'blocks' in block:
+            block['blocks'] = strip_study_links(block['blocks'])
+        result.append(block)
+    return result
 
 
 def render_blocks(blocks, links=None):
@@ -286,11 +311,11 @@ def render_blocks(blocks, links=None):
     return '\n'.join(out)
 
 
-def render(doc, number, template, prefix='', adjacent='', links=None, active='news', paired=''):
+def render(doc, number, template, prefix='', adjacent='', links=None, active='news', paired='', lean=False):
     nav = '<nav class="section-nav" aria-label="Edition sections">' + ''.join(
         f'<a href="#{s.get("id", slug(s["name"]))}">{esc(s["name"])}</a>' for s in doc['sections']) + '</nav>'
     takeaways = ('<aside class="takeaways"><h2>Today at a glance</h2>' + render_blocks(doc['takeaways'], links) + '</aside>') if doc['takeaways'] else ''
-    content = paired + takeaways + nav
+    content = ('' if lean else paired) + takeaways + ('' if lean and active == 'learning' else nav)
     for i, s in enumerate(doc['sections'], 1):
         content += f'<section class="section" id="{s.get("id", slug(s["name"]))}"><h2 class="section-head"><span class="section-num">{i:02}</span><span class="section-title">{esc(s["name"])}</span></h2>{render_blocks(s["blocks"], links)}</section>'
     values = {'DATE': doc['title'], 'DATELINE': doc['title'].replace(', ', ' · ', 1), 'ISSUE': f'{number:03}', 'COVERAGE': doc['coverage'], 'PAGE_KIND': {'news': 'News', 'learning': 'Deep Dives', 'archive': 'Archive'}[active]}
@@ -361,26 +386,32 @@ def build(root=ROOT, output=None):
     dates = list(documents)
     def edition_page(date, prefix='', learning=False, adjacent='', lean=False):
         doc = copy.deepcopy(documents[date])
+        lean = lean or doc['meta'].get('news_profile') == 'lean-v1'
         if lean:
             doc['takeaways'] = []
         split = doc['meta'].get('format') == 3
         links = {}
         paired = ''
         if split:
+            count = len(news_sections(doc))
             subjects = doc['meta']['subjects']
             links = {'learn:' + x['id']: f'{prefix}deep-dives/{date}.html#{x["id"]}' for x in subjects}
             links.update({'news:' + slug(x): f'{prefix}editions/{date}.html#{slug(x)}' for x in news_sections(doc)})
             paired = f'<nav class="edition-nav" aria-label="Matching edition"><a href="{prefix}editions/{date}.html">{date} · News</a><a href="{prefix}deep-dives/{date}.html">{date} · Deep Dives</a></nav>'
             if learning:
                 doc['takeaways'] = []
-                doc['sections'] = doc['sections'][10:]
+                doc['sections'] = doc['sections'][count:]
                 for section, subject in zip(doc['sections'], subjects):
                     section.update(name=subject['title'], id=subject['id'])
                 doc['coverage'] = 'Deep Dives · Physical infrastructure, logical systems, and PgPM Growth. Background teaching with hypothetical examples.'
             else:
-                doc['sections'] = doc['sections'][:10]
+                doc['sections'] = doc['sections'][:count]
+                if lean:
+                    doc['sections'] = [s for s in doc['sections'] if s['name'] != 'Program & PM']
+                    for section in doc['sections']:
+                        section['blocks'] = strip_study_links(section['blocks'])
         return render(doc, registry[date]['issue'], template, prefix, adjacent, links,
-                      'learning' if learning else 'news', paired)
+                      'learning' if learning else 'news', paired, lean)
 
     split_dates = [d for d in dates if documents[d]['meta'].get('format') == 3]
     for i, date in enumerate(dates):
@@ -402,7 +433,7 @@ def build(root=ROOT, output=None):
     latest = dates[-1]
     pages['index.html'] = edition_page(latest, lean=True)
     if split_dates:
-        pages['deep-dives.html'] = edition_page(split_dates[-1], learning=True)
+        pages['deep-dives.html'] = edition_page(split_dates[-1], learning=True, lean=True)
     else:
         empty = {'title': 'Deep Dives', 'coverage': 'Earlier learning is included in combined editions in the archive.', 'sections': [], 'takeaways': []}
         pages['deep-dives.html'] = render(empty, registry[latest]['issue'], template, active='learning')
