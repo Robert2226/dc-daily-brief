@@ -37,19 +37,20 @@ and depth take precedence over reading-time targets. Follow the breadth requirem
 in EDITORIAL.md before concluding that a category is quiet.
 
 Start directly with the news; do not generate a "Today at a glance" summary.
-The ten numbered news sections, in order, are:
+The nine numbered news sections, in order, are:
 `Equinix · Google · Incidents, Reliability & Remediation · DC Infrastructure · DCOS, DCIM, BMS & Controls ·
-AI & Compute Demand · New AI Models & Releases · Networking · Backend / Cloud & Data ·
-Program & PM`. Each has 1–2 worthwhile stories plus an In Practice learning bite. When
+AI & Compute Demand · New AI Models & Releases · Networking · Backend / Cloud & Data`.
+Program & PM is no longer a news section; professional development remains in PgPM Growth.
+Each has 1–2 worthwhile stories plus an In Practice learning bite. When
 fresh reporting is thin, select useful analysis or a deployment case study with its
 actual date. Only after documented broader research finds nothing worthwhile, use a
 compact honest note; do not default to a “no new news” headline. Use multiple
 purposeful source links as needed; external links open in a new tab.
 
-New editions dated September 19, 2026 onward use format 3 with
-`news_profile: "incidents-v1"`. Earlier editions retain their original lineup and default
+New editions dated September 20, 2026 onward use format 3 with
+`news_profile: "lean-v1"`; September 19 uses `incidents-v1`. Earlier editions retain their original lineup and default
 profile; never rewrite their content. One dated source generates separate News and Deep
-Dives pages. News has the ten sections above, with short learning bites. Deep Dives has three
+Dives pages. News has the nine sections above, with short learning bites. Deep Dives has three
 subjects: physical infrastructure, logical systems, and PgPM Growth. Each technical
 subject contains one 500–800-word lesson, examples and useful sources. Every fourth
 expanded edition (counting formats 2 and 3 together, starting September 5) uses one
@@ -64,8 +65,10 @@ original content, section counts and URLs (including format-2 Section 11).
 
 Every page has News | Deep Dives | Archive navigation. Latest routes are `index.html`
 and `deep-dives.html`; paired dated routes are `editions/YYYY-MM-DD.html` and
-`deep-dives/YYYY-MM-DD.html`. Link each subject to related news and vice versa using
-`learn:subject-id` and `news:section-slug` links. Dated pairing always stays on that date.
+`deep-dives/YYYY-MM-DD.html`. Do not add study links inside News. Deep Dives starts
+with the lessons, without duplicate dated links or a subject contents list. Keep the
+top News | Deep Dives | Archive navigation. Optional lesson-to-news references must be
+genuinely useful; do not force a news connection for PgPM Growth. Historical links remain valid.
 The archive labels earlier pages as combined editions.
 
 ### DCOS, DCIM, BMS & Controls
@@ -149,11 +152,12 @@ boundary of research. Do not duplicate stories to fill sections.
 - Reuse the CSS variables already defined in `index.html`; don't hardcode new hex values.
 
 ## How it's generated
-The user asks Codex to run the brief. Read this file, EDITORIAL.md, SOURCES.md, recent
-editions and the manifest; research all ten categories including the mandatory Google
+The user asks Codex to run the brief. Read this file, EDITORIAL.md, SOURCES.md, the latest
+edition and topic metadata in the manifest; open older content only for relevant duplication checks.
+Research all nine categories including the mandatory Google
 and Crusoe checks. Record research evidence and access gaps in research/YYYY-MM-DD.md.
 Use `$build-pgpm-growth` for the third learning subject, write the dated Markdown with format-3 metadata,
-then run `python3 build.py briefs/YYYY-MM-DD.md` and the tests. The builder produces the
+then use the lean validation/publication sequence in EDITORIAL.md. The builder produces the
 latest News and Deep Dives pages, paired dated HTML pages, archive, latest.md and stable edition-manifest.json.
 Content-only daily runs commit/push directly to main using publish.sh; structure,
 styling, workflow, skill and documentation changes use the manual branch/PR process.

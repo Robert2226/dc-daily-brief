@@ -32,14 +32,33 @@ class RenderingTests(unittest.TestCase):
         doc = build.parse((ROOT / 'briefs/2026-09-19.md').read_text())
         doc['title'] = 'Sunday, September 20, 2026'
         doc['meta']['coverage_end'] = '2026-09-20'
+        doc['meta']['news_profile'] = 'lean-v1'
+        doc['sections'].pop(9)
+        for section in doc['sections']:
+            section['blocks'] = build.strip_study_links(section['blocks'])
+            for block in build.walk(section['blocks']):
+                block['text'] = build.LINK.sub(lambda m: '' if m[2].startswith('news:') else m[0], block.get('text', ''))
+        doc['takeaways'] = [{'kind': 'paragraph', 'text': 'Unwanted summary'}]
         with self.assertRaisesRegex(ValueError, 'without opening takeaways'):
             build.validate(doc, '2026-09-20')
         doc['takeaways'] = []
         build.validate(doc, '2026-09-20')
+        invalid = copy.deepcopy(doc)
+        invalid['sections'][0]['blocks'].append({'kind': 'paragraph', 'text': '[Study](learn:' + doc['meta']['subjects'][0]['id'] + ')'})
+        with self.assertRaisesRegex(ValueError, 'study links'):
+            build.validate(invalid, '2026-09-20')
         with tempfile.TemporaryDirectory() as directory:
             build.build(output=Path(directory))
             self.assertNotIn('Today at a glance', (Path(directory) / 'index.html').read_text())
             self.assertIn('Today at a glance', (Path(directory) / 'editions/2026-09-19.html').read_text())
+            news = Page((Path(directory) / 'index.html').read_text())
+            self.assertNotIn('program-pm', news.ids)
+            self.assertEqual(sum(x in news.ids for x in map(build.slug, build.NEWS_PROFILES['lean-v1'])), 9)
+            self.assertFalse(any('deep-dives/' in a['href'] for a in news.links))
+            learning = (Path(directory) / 'deep-dives.html').read_text()
+            self.assertNotIn('aria-label="Edition sections"', learning)
+            self.assertNotIn('aria-label="Matching edition"', learning)
+            self.assertIn('PgPM Growth', learning)
 
     def test_all_historical_headlines_and_sources_survive(self):
         for source in sorted((ROOT / 'briefs').glob('*.md')):
@@ -268,7 +287,7 @@ class RenderingTests(unittest.TestCase):
             self.assertIn('competitors', old.ids)
             for path in ('index.html', 'editions/2026-09-19.html'):
                 page = Page((root / path).read_text())
-                self.assertEqual(page.tags.count('section'), 10)
+                self.assertEqual(page.tags.count('section'), 9 if path == 'index.html' else 10)
                 self.assertIn('incidents-reliability-remediation', page.ids)
                 self.assertNotIn('competitors', page.ids)
             for path, prefix in [('deep-dives.html', ''), ('deep-dives/2026-09-19.html', '../')]:
