@@ -56,11 +56,18 @@ The build renders every dated edition and always selects the newest date for the
 homepage. `--output-dir /tmp/brief-preview` isolates generated output for inspection.
 Historical editions retain their content and are not fact-checked again by rendering.
 
-Manual changes use branch → PR → review → merge. User-initiated content-only editions
-publish from main with `./publish.sh YYYY-MM-DD` (defaults to today's local date).
+Routine work uses one reviewed commit and push directly to main, without a PR.
+Publish with `./publish.sh YYYY-MM-DD` (defaults to today's local date). To include
+related workflow/docs/layout changes in that same batch, append their explicit file paths:
+`./publish.sh YYYY-MM-DD AGENTS.md EDITORIAL.md`. Unlisted unrelated edits are refused.
+Reserve branches/PRs for larger or risky changes or when requested.
 Generation is not scheduled and publishing does not research or write the brief for you.
 
 New editions share one date and issue across News and Deep Dives. Top navigation opens
 the latest pages; optional lesson-to-news references stay on the same date. Older
 combined editions keep their URLs and original content. Each technical deep dive runs
-500–800 words; PgPM Growth is the third learning subject with two connected lessons.
+300–450 words from September 21 onward (historical lessons remain unchanged); PgPM Growth
+is the third learning subject, with two connected lessons in roughly 350–450 words total.
+Each technical lesson focuses on one mechanism, one example and one takeaway. Liquid
+cooling is researched each run within the existing news categories and recurs in focused
+learning; it does not add another section.

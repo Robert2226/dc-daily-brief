@@ -40,7 +40,12 @@ In format 3, append this source section after `## Physical Deep Dive` and `## Lo
 > **Daily Action · <Action title>.** <One optional, safe, concrete, short time-boxed exercise that produces a useful artifact or practices a behavior today. Do not send messages or modify external systems.>
 ```
 
-Keep the two lessons substantive and the four resources concise. Write for Robert as an established technical PgPM spanning physical facilities, logical systems, and cross-functional delivery. Include a worked hypothetical example before a short optional exercise; connect the two lessons to the edition's technical context when useful. Explain unfamiliar concepts plainly without talking down to him.
+From September 21 onward, aim for 350–450 words total, including resources, worked example
+and Daily Action. Keep each teaching entry to one focused paragraph and each resource
+annotation to one short sentence. Use one compact example connecting both topics, not
+multiple scenarios or repeated summaries. Retain all six sources. Write for Robert as an
+established technical PgPM spanning physical facilities, logical systems and delivery;
+connect to the technical context only when useful. Explain unfamiliar concepts plainly.
 
 ## Validate
 

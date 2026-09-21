@@ -15,6 +15,10 @@ homepages as evidence for a specific claim. Add productive sources as they emerg
 - Operator developments: broad company/campus/financing searches across colo, hyperscalers,
   regional and emerging providers; route to Infrastructure, AI Demand or Cloud by angle.
 - Infrastructure: Uptime Institute, ASHRAE, OCP, utility/regulator publications and equipment manufacturers.
+- Liquid cooling (each run): broad deployment and technical searches covering direct-to-chip,
+  immersion, CDUs, residual air loads, coolant compatibility and commissioning. Start with
+  OCP, ASHRAE, Schneider Electric, Vertiv, Munters and independent industry reporting;
+  these are discovery inputs, not an exhaustive vendor list or mandatory homepage tour.
 - Models: official lab announcements, model/system cards, release notes, primary papers;
   independently reported limitations and deployment evidence when available.
 - Networking: standards bodies, network and optical vendors, operator deployments and incident reports.

@@ -28,6 +28,21 @@ class Page(HTMLParser):
 
 
 class RenderingTests(unittest.TestCase):
+    def test_focused_lessons_enforce_new_bounds_without_changing_history(self):
+        doc = build.parse((ROOT / 'briefs/2026-09-21.md').read_text())
+        for words, valid in ((299, False), (300, True), (450, True), (451, False)):
+            changed = copy.deepcopy(doc)
+            dive = next(b for b in changed['sections'][9]['blocks'] if b['kind'] == 'deep-dive')
+            dive['blocks'] = [{'kind': 'paragraph', 'text':
+                               ('word ' * (words - 1)) + '[Source](https://example.org/)'}]
+            if valid:
+                build.validate(changed, '2026-09-21')
+            else:
+                with self.assertRaisesRegex(ValueError, '300–450'):
+                    build.validate(changed, '2026-09-21')
+        historical = build.parse((ROOT / 'briefs/2026-09-19.md').read_text())
+        build.validate(historical, '2026-09-19')
+
     def test_lean_opening_preserves_historical_summary(self):
         doc = build.parse((ROOT / 'briefs/2026-09-19.md').read_text())
         doc['title'] = 'Sunday, September 20, 2026'

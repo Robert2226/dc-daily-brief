@@ -404,5 +404,40 @@
     ],
     "case": "Hypothetical Hall A: fuel-transfer protection, unavailable management paths and evidence-based corrective-action closure",
     "research_log": "research/2026-09-19.md"
+  },
+  "2026-09-21": {
+    "issue": 45,
+    "title": "Monday, September 21, 2026",
+    "format": 3,
+    "news_profile": "lean-v1",
+    "coverage_start": "2026-09-19",
+    "coverage_end": "2026-09-21",
+    "subjects": [
+      {
+        "id": "liquid-air-boundary",
+        "track": "physical",
+        "title": "Physical · Liquid cooling does not erase the air load"
+      },
+      {
+        "id": "cooling-metric-semantics",
+        "track": "logical",
+        "title": "Logical · Read the metric before reading the chart"
+      },
+      {
+        "id": "finish-smaller-batches",
+        "track": "pgpm",
+        "title": "PgPM Growth · Finish more by starting less"
+      }
+    ],
+    "topics": [
+      "Residual air load and liquid-to-air heat rejection",
+      "Cooling telemetry gauges versus counters"
+    ],
+    "pgpm_topics": [
+      "Work-in-progress limits — applied practice",
+      "Small independently reviewable batches — cross-functional leadership"
+    ],
+    "case": "Hypothetical Hall A cooling review",
+    "research_log": "research/2026-09-21.md"
   }
 }

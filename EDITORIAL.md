@@ -38,21 +38,26 @@ current importance. Quality and depth matter more than a fixed reading time.
 7. Start directly with news; do not write opening takeaways or "Today at a glance".
    Put long learning on
    the separate Deep Dives page: exactly three subjects, physical, logical and PgPM.
-   Each technical subject gets one 500–800-word deep dive with concrete examples and
-   sources. Vary subjects each run based on prior coverage. Every fourth expanded
+   From September 21 each technical subject gets 300–450 words: one mechanism, one
+   worked example and one practical takeaway, with purposeful sources. Earlier editions
+   retain 500–800 words. Keep PgPM Growth around 350–450 words total, including resources
+   and action. Research liquid cooling each run and rotate focused cooling lessons into
+   learning without adding a news section or a daily lesson quota. Vary subjects based
+   on prior coverage. Every fourth expanded
    edition (formats 2 and 3 together, starting September 5) marks one technical subject
    `synthesis: true`, explicitly revisiting earlier concepts. Recall answers are optional.
 8. Invoke $build-pgpm-growth for the third subject. Keep two connected lessons, exactly
    six researched external links (three per lesson), a worked example and one optional
    time-boxed Daily Action. Do not add study links inside News or force a news tie-in
    for professional growth. A lesson may reference relevant news when useful.
-9. For content-only runs, use `./publish.sh YYYY-MM-DD` from main as the single normal
+9. Use `./publish.sh YYYY-MM-DD [reviewed-related-file ...]` from main as the single normal
    build-and-test pass. Confirm deployment and the live date, with a quick desktop
    check of the new content. Rerun only after a correction or failed check. Automated
    tests cover structure and internal links, not factual truth. Do not recheck unchanged
    archives, historical pages, navigation, keyboard behavior or recall every run.
    Full affected-feature visual checks are for renderer/layout changes or a reported
-   defect. No mobile checks. Structural changes use the branch/PR workflow.
+   defect. No mobile checks. Routine related changes share one direct-main commit/push;
+   reserve branches/PRs for larger or risky changes or an explicit request.
 
 ## Research breadth gate
 Cover every category with targeted discovery; there is no minimum query count.
@@ -68,7 +73,7 @@ of value. Newsroom indexes and search snippets are discovery, not completed repo
 Choose one strong item by default; add a second when it materially improves coverage.
 Record selected evidence and important gaps, not exhaustive candidate narratives.
 Syndicated copies count as one underlying report. Add productive
-new sources to the watchlist through the manual-change workflow, not a content-only push.
+new sources to the watchlist as explicitly reviewed files in the same routine batch.
 
 Prefer news since the last run, then uncovered news from the seven-day window, then
 clearly dated useful analysis or a case study that explains its relevance to Robert.
@@ -145,14 +150,14 @@ Context paragraphs support **bold**, *italic*, and [inline links](https://exampl
 
 ## Physical Deep Dive
 :::deep-dive Cooling capacity
-Write the first technical lesson here (500–800 words plus purposeful sources).
+Write one focused technical lesson here (300–450 words for current editions).
 [Related infrastructure news](news:dc-infrastructure)
 :::
 
 ## Logical Deep Dive
 :::deep-dive Telemetry replay
 ### Follow a delayed measurement
-Write the second 500–800-word lesson. Add sources and a fenced diagram if helpful.
+Write the second focused 300–450-word lesson. Add purposeful sources.
 [Related controls story](news:dcos-dcim-bms-controls)
 :::
 

@@ -18,12 +18,13 @@ program delivery.
 
 ## Version control workflow
 - **`main` is always deployable** (GitHub Pages serves it).
-- **The user-initiated daily brief commits straight to `main`.** These are content-only
-  commits; the user starts each run in Codex.
-- **Every manual change** (structure, styling, features, docs) goes through:
-  1. `git switch -c <type>/<short-desc>` off `main`  (types: `feat`, `fix`, `docs`, `chore`, `style`)
-  2. commit (small, focused commits)
-  3. `git push -u origin <branch>` → open a **PR** → review → **merge to `main`** → delete branch
+- **Routine work commits directly to `main`:** briefs, documentation, workflow/skill
+  refinements and small layout fixes. Review the scoped diff, validate once, then make
+  one commit and one push per completed request batch. Include related brief and workflow
+  changes together. No routine branch, PR, merge or branch-cleanup cycle.
+- Reserve branches/PRs for larger or risky changes, or when explicitly requested.
+- Preserve unrelated local edits; stage only reviewed files. Never force-push. Use a
+  revert commit if a published change needs undoing.
 - Commit messages: imperative subject line; end AI-assisted commits with the standard
   `Co-Authored-By` trailer.
 
@@ -52,7 +53,9 @@ New editions dated September 20, 2026 onward use format 3 with
 profile; never rewrite their content. One dated source generates separate News and Deep
 Dives pages. News has the nine sections above, with short learning bites. Deep Dives has three
 subjects: physical infrastructure, logical systems, and PgPM Growth. Each technical
-subject contains one 500–800-word lesson, examples and useful sources. Every fourth
+subject contains one focused 300–450-word lesson from September 21 onward: one main
+mechanism, one worked example and one useful takeaway. Earlier editions retain their
+500–800-word contract. Keep PgPM Growth around 350–450 words total. Every fourth
 expanded edition (counting formats 2 and 3 together, starting September 5) uses one
 technical subject for synthesis. Track topics/cases in metadata, not inferred mastery.
 Vary mechanisms, examples, comparisons, failure scenarios and judgment.
@@ -82,6 +85,15 @@ security developments. Teach architecture, protocols, alarms, data quality, redu
 OT security, commissioning and handover; connect technology to delivery and lifecycle
 tradeoffs. Hardware gets lighter coverage unless a development warrants a deep dive.
 Do not invent Equinix-specific architecture, instructions or procedures.
+
+### Liquid cooling
+Research liquid-cooling developments each run alongside the existing categories; do not
+add a section or force a story when nothing material is new. Cover direct-to-chip,
+immersion, CDUs, fluid quality, heat rejection, residual air cooling and commissioning.
+Route equipment/deployments to DC Infrastructure, instrumentation/integration to Controls,
+and consequential failures to Incidents. Use primary technical guidance and independent
+reporting. Include liquid cooling in the recurring physical-learning rotation, with
+logical or delivery lessons when useful; vary the mechanism rather than repeating basics.
 
 ### Google section
 - Place `Google` directly after `Equinix` in every new edition, beginning July 29, 2026.
@@ -159,8 +171,8 @@ and Crusoe checks. Record research evidence and access gaps in research/YYYY-MM-
 Use `$build-pgpm-growth` for the third learning subject, write the dated Markdown with format-3 metadata,
 then use the lean validation/publication sequence in EDITORIAL.md. The builder produces the
 latest News and Deep Dives pages, paired dated HTML pages, archive, latest.md and stable edition-manifest.json.
-Content-only daily runs commit/push directly to main using publish.sh; structure,
-styling, workflow, skill and documentation changes use the manual branch/PR process.
+Routine runs commit/push directly to main using publish.sh. Pass any explicitly reviewed
+related files after the date to include them in the same batch; unrelated edits are refused.
 
 ## Roadmap / not yet
 - Optional topic index beyond the dated archive.

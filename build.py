@@ -221,8 +221,9 @@ def validate(doc, date):
         raise ValueError('Incorrect number of technical deep dives')
     for dive in dives:
         words = sum(len(b.get('text', '').split()) for b in walk(dive['blocks']))
-        if not 500 <= words <= 800:
-            raise ValueError(f'Deep dive must be 500–800 words; found {words}')
+        minimum, maximum = (300, 450) if date >= '2026-09-21' else (500, 800)
+        if not minimum <= words <= maximum:
+            raise ValueError(f'Deep dive must be {minimum}–{maximum} words; found {words}')
     if version == 3:
         if len(subjects) != 3 or [x.get('track') for x in subjects] != ['physical', 'logical', 'pgpm']:
             raise ValueError('Three subjects required: physical, logical, pgpm')
